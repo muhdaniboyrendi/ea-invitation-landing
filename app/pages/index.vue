@@ -4,5 +4,7 @@
     <Hero />
     <Features />
     <Package />
+    <Themes />
+    <Footer />
   </div>
 </template>

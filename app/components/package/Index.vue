@@ -1,15 +1,96 @@
+<script setup>
+
+// Reactive state
+const isYearly = ref(false)
+
+// Methods
+const toggleBilling = () => {
+  isYearly.value = !isYearly.value
+}
+
+// Package data
+const packages = [
+  {
+    name: "Starter",
+    description: "Perfect for individuals getting started",
+    monthlyPrice: 29,
+    yearlyPrice: 290,
+    savings: 58,
+    icon: '',
+    iconBg: "bg-gradient-to-br from-blue-500 to-indigo-500",
+    featured: false,
+    bestSeller: false,
+    ctaText: "Start Free Trial",
+    features: [
+      "Up to 5 projects",
+      "10GB storage",
+      "Basic analytics",
+      "Email support",
+      "Mobile app access",
+      "Standard templates"
+    ],
+    additionalBenefits: ["7-day trial", "Basic tutorials"]
+  },
+  {
+    name: "Professional",
+    description: "Ideal for growing businesses",
+    monthlyPrice: 79,
+    yearlyPrice: 790,
+    savings: 158,
+    icon: '',
+    iconBg: "bg-gradient-to-br from-purple-500 to-pink-500",
+    featured: true,
+    bestSeller: true,
+    ctaText: "Choose Professional",
+    features: [
+      "Unlimited projects",
+      "100GB storage",
+      "Advanced analytics",
+      "Priority support",
+      "Mobile app access",
+      "Premium templates",
+      "Team collaboration",
+      "API access",
+      "Custom integrations"
+    ],
+    additionalBenefits: ["14-day trial", "Onboarding session", "Advanced tutorials"]
+  },
+  {
+    name: "Enterprise",
+    description: "For large teams and organizations",
+    monthlyPrice: 149,
+    yearlyPrice: 1490,
+    savings: 298,
+    icon: '',
+    iconBg: "bg-gradient-to-br from-orange-500 to-red-500",
+    featured: false,
+    bestSeller: false,
+    ctaText: "Contact Sales",
+    features: [
+      "Unlimited everything",
+      "1TB storage",
+      "Enterprise analytics",
+      "24/7 dedicated support",
+      "Mobile app access",
+      "Custom templates",
+      "Advanced team features",
+      "Full API access",
+      "Custom integrations",
+      "SSO & security features",
+      "Dedicated account manager"
+    ],
+    additionalBenefits: ["30-day trial", "White-glove onboarding", "Training sessions"]
+  }
+]
+</script>
+
 <template>
   <section class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-purple-50/50 via-pink-50/30 to-indigo-50/50 dark:from-gray-900 dark:via-purple-950/30 dark:to-gray-900">
     
     <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
-      <!-- Animated Background Orbs -->
-      <div class="absolute top-1/3 left-1/4 w-72 h-72 bg-gradient-to-r from-purple-400/20 to-pink-400/20 rounded-full blur-3xl animate-float-slow"></div>
-      <div class="absolute bottom-1/4 right-1/3 w-96 h-96 bg-gradient-to-r from-indigo-400/15 to-purple-400/15 rounded-full blur-3xl animate-float-reverse"></div>
-      <div class="absolute top-1/2 right-1/6 w-64 h-64 bg-gradient-to-r from-pink-400/25 to-indigo-400/25 rounded-full blur-3xl animate-float"></div>
-      
       <!-- Premium Grid Pattern -->
-      <div class="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(139,92,246,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.02)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_30%,transparent_100%)]"></div>
+      <div class="absolute inset-0 bg-[linear-gradient(rgba(139,92,246,0.2)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.2)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(139,92,246,0.3)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.3)_1px,transparent_1px)] bg-[size:60px_60px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black_30%,transparent_100%)]"></div>
     </div>
 
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,24 +116,6 @@
         <p class="text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
           Select the perfect package that matches your needs. All plans include our premium features with varying levels of access and support.
         </p>
-
-        <!-- Billing Toggle -->
-        <div class="flex items-center justify-center space-x-4 mt-8">
-          <span class="text-sm font-medium text-gray-600 dark:text-gray-400">Monthly</span>
-          <button
-            @click="toggleBilling"
-            class="relative inline-flex h-6 w-11 items-center rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-sm border border-white/30 dark:border-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2"
-          >
-            <span
-              class="inline-block h-4 w-4 transform rounded-full bg-gradient-to-r from-purple-500 to-pink-500 shadow-lg transition-transform"
-              :class="isYearly ? 'translate-x-6' : 'translate-x-1'"
-            ></span>
-          </button>
-          <span class="text-sm font-medium text-gray-600 dark:text-gray-400">
-            Yearly 
-            <span class="text-xs text-purple-600 dark:text-purple-400 font-semibold">(Save 20%)</span>
-          </span>
-        </div>
       </div>
 
       <!-- Packages Grid -->
@@ -204,92 +267,6 @@
     </div>
   </section>
 </template>
-
-<script setup>
-
-// Reactive state
-const isYearly = ref(false)
-
-// Methods
-const toggleBilling = () => {
-  isYearly.value = !isYearly.value
-}
-
-// Package data
-const packages = [
-  {
-    name: "Starter",
-    description: "Perfect for individuals getting started",
-    monthlyPrice: 29,
-    yearlyPrice: 290,
-    savings: 58,
-    icon: '',
-    iconBg: "bg-gradient-to-br from-blue-500 to-indigo-500",
-    featured: false,
-    bestSeller: false,
-    ctaText: "Start Free Trial",
-    features: [
-      "Up to 5 projects",
-      "10GB storage",
-      "Basic analytics",
-      "Email support",
-      "Mobile app access",
-      "Standard templates"
-    ],
-    additionalBenefits: ["7-day trial", "Basic tutorials"]
-  },
-  {
-    name: "Professional",
-    description: "Ideal for growing businesses",
-    monthlyPrice: 79,
-    yearlyPrice: 790,
-    savings: 158,
-    icon: '',
-    iconBg: "bg-gradient-to-br from-purple-500 to-pink-500",
-    featured: true,
-    bestSeller: true,
-    ctaText: "Choose Professional",
-    features: [
-      "Unlimited projects",
-      "100GB storage",
-      "Advanced analytics",
-      "Priority support",
-      "Mobile app access",
-      "Premium templates",
-      "Team collaboration",
-      "API access",
-      "Custom integrations"
-    ],
-    additionalBenefits: ["14-day trial", "Onboarding session", "Advanced tutorials"]
-  },
-  {
-    name: "Enterprise",
-    description: "For large teams and organizations",
-    monthlyPrice: 149,
-    yearlyPrice: 1490,
-    savings: 298,
-    icon: '',
-    iconBg: "bg-gradient-to-br from-orange-500 to-red-500",
-    featured: false,
-    bestSeller: false,
-    ctaText: "Contact Sales",
-    features: [
-      "Unlimited everything",
-      "1TB storage",
-      "Enterprise analytics",
-      "24/7 dedicated support",
-      "Mobile app access",
-      "Custom templates",
-      "Advanced team features",
-      "Full API access",
-      "Custom integrations",
-      "SSO & security features",
-      "Dedicated account manager"
-    ],
-    additionalBenefits: ["30-day trial", "White-glove onboarding", "Training sessions"]
-  }
-]
-</script>
 
 <style scoped>
 /* Custom Animations */

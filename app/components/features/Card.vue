@@ -9,7 +9,7 @@ const props = defineProps(["feature"]);
   >
     <!-- Feature Card -->
     <div
-      class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/20 dark:bg-white/5 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105 hover:bg-white/25 dark:hover:bg-white/10 group"
+      class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/20 dark:bg-black/30 backdrop-blur-xl border border-white/30 dark:border-white/10 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 hover:scale-105 hover:bg-white/25 dark:hover:bg-black/50 group"
     >
       <!-- Card Background Gradient -->
       <div
@@ -38,45 +38,9 @@ const props = defineProps(["feature"]);
           >
             {{ props.feature.title }}
           </h3>
-          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+          <p class="text-gray-600 dark:text-gray-200 leading-relaxed">
             {{ props.feature.description }}
           </p>
-        </div>
-
-        <!-- props.Feature Benefits -->
-        <div class="space-y-3">
-          <div
-            v-for="benefit in props.feature.benefits"
-            :key="benefit"
-            class="flex items-center space-x-3 text-sm text-gray-700 dark:text-gray-300"
-          >
-            <div
-              class="w-2 h-2 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 flex-shrink-0"
-            ></div>
-            <span>{{ benefit }}</span>
-          </div>
-        </div>
-
-        <!-- Action Link -->
-        <div class="pt-4">
-          <button
-            class="group/btn inline-flex items-center space-x-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 font-medium text-sm transition-colors duration-300"
-          >
-            <span>Learn More</span>
-            <svg
-              class="w-4 h-4 group-hover/btn:translate-x-1 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </button>
         </div>
       </div>
 

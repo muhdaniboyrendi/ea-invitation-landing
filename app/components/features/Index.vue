@@ -7,12 +7,6 @@ const features = [
       "Experience unmatched aesthetic appeal with our meticulously crafted design language that sets new standards in luxury.",
     icon: "",
     iconBg: "bg-gradient-to-br from-purple-500 to-pink-500",
-    benefits: [
-      "Hand-crafted visual elements",
-      "Consistent design language",
-      "Responsive across all devices",
-      "Accessibility-first approach",
-    ],
   },
   {
     title: "Advanced Security",
@@ -20,12 +14,6 @@ const features = [
       "Your data and privacy are protected with enterprise-grade security measures and end-to-end encryption.",
     icon: "",
     iconBg: "bg-gradient-to-br from-emerald-500 to-teal-500",
-    benefits: [
-      "End-to-end encryption",
-      "Multi-factor authentication",
-      "Regular security audits",
-      "GDPR compliant",
-    ],
   },
   {
     title: "Smart Automation",
@@ -33,12 +21,6 @@ const features = [
       "Leverage intelligent automation to streamline workflows and enhance productivity with minimal effort.",
     icon: "",
     iconBg: "bg-gradient-to-br from-blue-500 to-indigo-500",
-    benefits: [
-      "AI-powered workflows",
-      "Custom automation rules",
-      "Real-time processing",
-      "Integration capabilities",
-    ],
   },
   {
     title: "Analytics & Insights",
@@ -46,12 +28,6 @@ const features = [
       "Gain deep insights into your data with comprehensive analytics and real-time reporting capabilities.",
     icon: "",
     iconBg: "bg-gradient-to-br from-orange-500 to-red-500",
-    benefits: [
-      "Real-time dashboards",
-      "Custom report generation",
-      "Predictive analytics",
-      "Data visualization tools",
-    ],
   },
   {
     title: "Global Scalability",
@@ -59,12 +35,6 @@ const features = [
       "Built to scale globally with robust infrastructure that grows with your business needs seamlessly.",
     icon: "",
     iconBg: "bg-gradient-to-br from-cyan-500 to-blue-500",
-    benefits: [
-      "Global CDN network",
-      "Auto-scaling infrastructure",
-      "99.9% uptime guarantee",
-      "Multi-region deployment",
-    ],
   },
   {
     title: "Customer Success",
@@ -72,12 +42,6 @@ const features = [
       "Dedicated support and success management to ensure you achieve maximum value from our platform.",
     icon: "",
     iconBg: "bg-gradient-to-br from-pink-500 to-rose-500",
-    benefits: [
-      "24/7 premium support",
-      "Dedicated success manager",
-      "Comprehensive onboarding",
-      "Regular check-ins",
-    ],
   },
 ];
 </script>
@@ -148,38 +112,6 @@ const features = [
           :key="index"
           :feature="feature"
         />
-      </div>
-
-      <!-- Call to Action -->
-      <div class="text-center mt-16 lg:mt-24">
-        <div class="inline-flex flex-col sm:flex-row gap-4 lg:gap-6">
-          <button
-            class="group px-8 py-4 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold rounded-2xl shadow-xl hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105"
-          >
-            <span class="flex items-center justify-center space-x-2">
-              <span>Explore All Features</span>
-              <svg
-                class="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M17 8l4 4m0 0l-4 4m4-4H3"
-                />
-              </svg>
-            </span>
-          </button>
-
-          <button
-            class="px-8 py-4 bg-white/20 dark:bg-white/10 backdrop-blur-sm hover:bg-white/30 dark:hover:bg-white/20 text-gray-700 dark:text-gray-200 font-semibold rounded-2xl border border-white/20 dark:border-white/10 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
-          >
-            Schedule Demo
-          </button>
-        </div>
       </div>
     </div>
   </section>
