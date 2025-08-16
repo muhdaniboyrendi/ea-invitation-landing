@@ -1,3 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Cantata+One&family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap");
+
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-off-white: #faf9f6;
+  --color-dark: #1b1c1e;
+
+  --font-primary: "Quicksand", sans-serif;
+  --font-secondary: "Cantata One", serif;
+  --font-tertiary: "Fredoka", sans-serif;
+}
