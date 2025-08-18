@@ -28,13 +28,13 @@ const closeMobile = () => {
 };
 
 // Close mobile menu when clicking outside
-onMounted(() => {
-  document.addEventListener("click", (e) => {
-    if (!e.target.closest("nav") && isMobileOpen.value) {
-      isMobileOpen.value = false;
-    }
-  });
-});
+// onMounted(() => {
+//   document.addEventListener("click", (e) => {
+//     if (!e.target.closest("nav") && isMobileOpen.value) {
+//       isMobileOpen.value = false;
+//     }
+//   });
+// });
 </script>
 
 <template>
@@ -47,31 +47,24 @@ onMounted(() => {
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <!-- Logo -->
-          <div class="flex-shrink-0 group">
-            <NuxtLink to="/" class="flex items-center space-x-3">
-              <div
-                class="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-purple-500/25 transition-all duration-300 group-hover:scale-105"
-              >
-                <svg
-                  class="w-6 h-6 lg:w-7 lg:h-7 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-                  />
-                </svg>
-              </div>
-              <div class="hidden lg:block">
-                <h1
-                  class="text-xl font-bold bg-gradient-to-r from-gray-900 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent"
-                >
-                  EA Invitation
-                </h1>
-              </div>
-            </NuxtLink>
+          <!-- Logo Section -->
+        <div class="flex items-center space-x-3">
+          <div class="relative group">
+            <!-- Logo Glow Effect -->
+            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-400/30 to-purple-400/30 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+            <div class="relative w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
+              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+              </svg>
+            </div>
           </div>
+          <div class="flex flex-col">
+            <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200">
+              EA Invitation
+            </span>
+            <span class="text-xs text-white/60 -mt-1 hidden sm:block">Digital Wedding Invitation</span>
+          </div>
+        </div>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:block">
@@ -80,11 +73,11 @@ onMounted(() => {
                 v-for="item in navigation"
                 :key="item.name"
                 :to="item.href"
-                class="relative px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group"
+                class="relative px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 group"
               >
                 {{ item.name }}
                 <span
-                  class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                  class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                 ></span>
               </NuxtLink>
             </div>
@@ -123,7 +116,7 @@ onMounted(() => {
 
             <!-- CTA Button -->
             <button
-              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 border border-white/20"
+              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-cyan-500/80 to-purple-500/80 hover:from-cyan-400 hover:to-purple-400 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 border border-white/20"
             >
               Get Started
             </button>
@@ -179,14 +172,14 @@ onMounted(() => {
             :key="item.name"
             :to="item.href"
             @click="closeMobile"
-            class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-purple-600 dark:hover:text-purple-400 hover:bg-white/50 dark:hover:bg-white/10 rounded-xl transition-all duration-300"
+            class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white/50 dark:hover:bg-white/10 rounded-xl transition-all duration-300"
           >
             {{ item.name }}
           </NuxtLink>
 
           <div class="pt-4 border-t border-white/20 dark:border-white/10">
             <button
-              class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-base font-semibold rounded-xl shadow-lg transition-all duration-300"
+              class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white text-base font-semibold rounded-xl shadow-lg transition-all duration-300"
             >
               Get Started
             </button>
@@ -232,14 +225,5 @@ html {
 
 ::-webkit-scrollbar-track {
   background: transparent;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #9333ea, #ec4899);
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #7c3aed, #db2777);
 }
 </style>
