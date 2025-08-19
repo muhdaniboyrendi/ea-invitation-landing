@@ -48,23 +48,37 @@ const closeMobile = () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
           <!-- Logo Section -->
-        <div class="flex items-center space-x-3">
-          <div class="relative group">
-            <!-- Logo Glow Effect -->
-            <div class="absolute -inset-2 bg-gradient-to-r from-cyan-400/30 to-purple-400/30 blur-lg rounded-xl opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
-            <div class="relative w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg">
-              <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-              </svg>
+          <div class="flex items-center space-x-3">
+            <div class="relative group">
+              <div
+                class="relative w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg"
+              >
+                <svg
+                  class="w-6 h-6 text-white"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M13 10V3L4 14h7v7l9-11h-7z"
+                  ></path>
+                </svg>
+              </div>
+            </div>
+            <div class="flex flex-col">
+              <span
+                class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200"
+              >
+                EA Invitation
+              </span>
+              <span class="text-xs text-white/60 -mt-1 hidden sm:block"
+                >Digital Wedding Invitation</span
+              >
             </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200">
-              EA Invitation
-            </span>
-            <span class="text-xs text-white/60 -mt-1 hidden sm:block">Digital Wedding Invitation</span>
-          </div>
-        </div>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:block">
@@ -88,7 +102,7 @@ const closeMobile = () => {
             <!-- Theme Toggle -->
             <button
               @click="toggleTheme"
-              class="p-2 lg:p-2.5 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 backdrop-blur-sm transition-all duration-300 hover:scale-105 border border-white/20 dark:border-white/10"
+              class="p-2 lg:p-2.5 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 dark:border-white/10"
             >
               <svg
                 v-if="isDark"
@@ -124,7 +138,7 @@ const closeMobile = () => {
             <!-- Mobile menu button -->
             <button
               @click="toggleMobile"
-              class="md:hidden p-2 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 backdrop-blur-sm transition-all duration-300 border border-white/20 dark:border-white/10"
+              class="md:hidden p-2 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 border border-white/20 dark:border-white/10"
             >
               <svg
                 class="w-6 h-6 text-gray-700 dark:text-gray-300"
@@ -191,34 +205,10 @@ const closeMobile = () => {
 </template>
 
 <style scoped>
-/* Additional glassmorphism effects */
-.backdrop-blur-xl {
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-}
-
-/* Custom gradient animations */
-@keyframes gradient-shift {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-.bg-gradient-to-r {
-  background-size: 200% 200%;
-  animation: gradient-shift 3s ease infinite;
-}
-
-/* Smooth scrolling for better UX */
 html {
   scroll-behavior: smooth;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
 }

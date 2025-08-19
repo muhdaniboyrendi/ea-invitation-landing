@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-black"
+    class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
   >
     <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
@@ -36,9 +36,6 @@
             >Undangan Pernikahan</span
           >
           Digital
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/20 via-purple-400/10 to-transparent blur-lg rounded-lg"
-          ></div>
         </h1>
 
         <!-- Description -->
@@ -54,12 +51,9 @@
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
           <button
-            class="group relative px-8 py-4 backdrop-blur-md bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             <span class="relative z-10">Buat Undangan</span>
-            <div
-              class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all duration-300 rounded-xl"
-            ></div>
           </button>
 
           <button
@@ -95,13 +89,8 @@
 
           <!-- Main Card -->
           <div
-            class="relative w-80 h-96 lg:w-96 lg:h-[480px] backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-all duration-700 overflow-hidden"
+            class="relative w-80 h-96 lg:w-96 lg:h-[480px] backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 rounded-3xl shadow-2xl transform transition-all duration-700 overflow-hidden"
           >
-            <!-- Card Glow -->
-            <div
-              class="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent rounded-3xl"
-            ></div>
-
             <!-- Card Content -->
             <div class="relative z-10 p-8 h-full flex flex-col justify-center">
               <div class="mb-6">
@@ -181,7 +170,7 @@
             class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl mb-6 flex items-center justify-center"
@@ -213,7 +202,7 @@
             class="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-pink-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl mb-6 flex items-center justify-center"
@@ -247,7 +236,7 @@
             class="absolute -inset-2 bg-gradient-to-r from-green-400/20 to-teal-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-all duration-300 hover:scale-105"
+            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl mb-6 flex items-center justify-center"
@@ -279,7 +268,9 @@
         <div
           class="flex flex-col sm:flex-row gap-y-4 justify-center items-center w-fit mx-auto px-8 py-4 backdrop-blur-md bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-2xl"
         >
-          <span class="text-white font-medium mr-4 block">Siap untuk memulai?</span>
+          <span class="text-white font-medium mr-4 block"
+            >Siap untuk memulai?</span
+          >
           <button
             class="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-lg transform hover:scale-105 transition-all duration-300"
           >
@@ -292,27 +283,6 @@
 </template>
 
 <style scoped>
-/* Custom animations */
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-}
-
-@keyframes float-delayed {
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-30px);
-  }
-}
-
 @keyframes gradient-x {
   0%,
   100% {
@@ -323,14 +293,6 @@
     background-size: 200% 200%;
     background-position: right center;
   }
-}
-
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-
-.animate-float-delayed {
-  animation: float-delayed 8s ease-in-out infinite;
 }
 
 .animate-gradient-x {
@@ -346,35 +308,5 @@
     ),
     linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
   background-size: 60px 60px;
-}
-
-/* Glassmorphism enhancements */
-.backdrop-blur-xl {
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-}
-
-.backdrop-blur-md {
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-
-/* Custom scrollbar for webkit browsers */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #06b6d4, #8b5cf6);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #0891b2, #7c3aed);
 }
 </style>

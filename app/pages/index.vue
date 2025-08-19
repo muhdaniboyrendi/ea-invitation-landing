@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg-off-white dark:bg-dark">
     <Navbar />
     <Hero />
     <Features />
