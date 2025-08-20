@@ -1,0 +1,11 @@
+User-Agent: *
+Allow: /
+Allow: /login
+Allow: /register
+
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /*.json$
+
+Sitemap: https://ea-invitation-landing.vercel.app/sitemap.xml

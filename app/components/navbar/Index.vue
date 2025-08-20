@@ -92,7 +92,7 @@ const closeMobile = () => {
 
             <!-- CTA Button -->
             <NuxtLink
-              to="/"
+              to="/login"
               class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-cyan-500/80 to-purple-500/80 hover:from-cyan-400 hover:to-purple-400 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 border border-white/20"
             >
               Login
@@ -155,11 +155,12 @@ const closeMobile = () => {
           </NuxtLink>
 
           <div class="pt-4 border-t border-white/20 dark:border-white/10">
-            <button
+            <NuxtLink
+              to="/login"
               class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white text-base font-semibold rounded-xl shadow-lg transition-all duration-300"
             >
               Login
-            </button>
+            </NuxtLink>
           </div>
         </div>
       </div>

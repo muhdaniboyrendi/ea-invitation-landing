@@ -1,0 +1,14 @@
+/* TEAM */
+Developer: EA Invitation Team
+Site: https://ea-invitation-landing.vercel.app
+Contact: info [at] ea-invitation-landing.vercel.app
+Location: Indonesia
+
+/* SITE */
+Software: Nuxt.js, Vue.js
+Language: Indonesian
+
+/* THANKS */
+Thanks to all couples who trust us with their special moments.
+
+---
