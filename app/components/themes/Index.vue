@@ -180,6 +180,7 @@ const getThemeCount = (categoryId) => {
 
 <template>
   <section
+    id="themes"
     class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-violet-900/90 to-slate-900 dark:from-black dark:via-violet-950/20 dark:to-dark"
   >
     <!-- Background Elements -->
@@ -201,19 +202,7 @@ const getThemeCount = (categoryId) => {
           <span class="text-sm font-medium text-white/80"
             >Beautiful Themes</span
           >
-          <svg
-            class="w-4 h-4 ml-2 text-white/60"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z"
-            ></path>
-          </svg>
+          <i class="bi bi-palette2 ml-2 text-sm text-white/60"></i>
         </div>
 
         <!-- Main Title -->
@@ -247,7 +236,7 @@ const getThemeCount = (categoryId) => {
               ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
               : 'backdrop-blur-md bg-white/5 text-white/70 hover:text-white hover:bg-white/10'
           "
-          class="group relative px-6 py-3 border border-white/10 hover:border-white/20 rounded-2xl font-medium transition-all duration-300 hover:scale-105"
+          class="group relative px-4 py-2 border border-white/10 hover:border-white/20 rounded-xl font-medium transition-all duration-300 hover:scale-105"
         >
           <!-- Active Glow Effect -->
           <div
@@ -255,7 +244,7 @@ const getThemeCount = (categoryId) => {
             class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-xl rounded-2xl"
           ></div>
 
-          <span class="relative flex items-center">
+          <span class="relative flex items-center text-sm">
             {{ category.name }}
             <span class="ml-2 text-xs bg-white/10 px-2 py-1 rounded-full">
               {{ getThemeCount(category.id) }}
@@ -268,95 +257,11 @@ const getThemeCount = (categoryId) => {
       <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8"
       >
-        <div
+        <ThemesCard
           v-for="theme in filteredThemes"
           :key="theme.id"
-          class="group relative"
-        >
-          <!-- Theme Card -->
-          <div
-            class="relative backdrop-blur-xl bg-white/5 border border-white/10 hover:border-white/20 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-105 hover:bg-white/10"
-          >
-            <!-- Theme Preview Image -->
-            <div class="relative h-48 lg:h-56 overflow-hidden">
-              <!-- Mock Browser Window -->
-              <div class="absolute inset-0 p-4">
-                <div
-                  class="bg-white/10 rounded-xl h-full border border-white/20 overflow-hidden"
-                >
-                  <!-- Browser Header -->
-                  <div
-                    class="flex items-center px-4 py-2 border-b border-white/10"
-                  >
-                    <div class="flex space-x-2">
-                      <div class="w-3 h-3 bg-red-400 rounded-full"></div>
-                      <div class="w-3 h-3 bg-yellow-400 rounded-full"></div>
-                      <div class="w-3 h-3 bg-green-400 rounded-full"></div>
-                    </div>
-                    <div class="flex-1 mx-4">
-                      <div class="bg-white/10 rounded px-3 py-1">
-                        <div class="w-24 h-2 bg-white/20 rounded"></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <!-- Mock Content -->
-                  <div class="p-4 space-y-3">
-                    <div :class="theme.contentBg" class="h-3 rounded"></div>
-                    <div class="flex space-x-2">
-                      <div
-                        :class="theme.accentBg"
-                        class="h-2 w-16 rounded"
-                      ></div>
-                      <div
-                        :class="theme.contentBg"
-                        class="h-2 flex-1 rounded"
-                      ></div>
-                    </div>
-                    <div class="grid grid-cols-3 gap-2 mt-3">
-                      <div :class="theme.cardBg" class="h-12 rounded"></div>
-                      <div :class="theme.cardBg" class="h-12 rounded"></div>
-                      <div :class="theme.cardBg" class="h-12 rounded"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Theme Type Badge -->
-              <div class="absolute top-6 right-6 z-10">
-                <span
-                  :class="theme.badgeBg + ' ' + theme.badgeText"
-                  class="px-3 py-1 rounded-full text-xs font-semibold"
-                >
-                  Premium
-                </span>
-              </div>
-            </div>
-
-            <!-- Theme Info -->
-            <div class="p-4 pt-0">
-              <div class="flex items-start justify-between mb-4">
-                <div>
-                  <h3 class="text-lg font-bold text-white">
-                    {{ theme.name }}
-                  </h3>
-                </div>
-                <span
-                  class="py-1 px-2 rounded-lg bg-white/10 text-sm text-white/80"
-                >
-                  Modern
-                </span>
-              </div>
-
-              <button
-                class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 backdrop-blur-md bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-              >
-                <span class="relative z-10">Lihat Tema</span>
-                <i class="bi bi-arrow-right ml-2"></i>
-              </button>
-            </div>
-          </div>
-        </div>
+          :theme="theme"
+        />
       </div>
 
       <!-- Load More Button -->

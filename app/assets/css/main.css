@@ -12,3 +12,7 @@
   --font-secondary: "Cantata One", serif;
   --font-tertiary: "Fredoka", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,20 +1,18 @@
 <template>
   <div
+    id="home"
     class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
   >
-    <!-- Animated Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
-      <!-- Grid Pattern -->
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
     </div>
 
     <!-- Hero Section Part 1 -->
     <section
-      class="relative w-full max-w-400 mx-auto z-10 flex flex-col lg:flex-row lg:gap-x-20 items-center justify-between min-h-screen px-6 lg:px-12 xl:px-20 py-30"
+      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-20 lg:flex-row items-center justify-between min-h-dvh px-6 md:px-10 py-30"
     >
       <!-- Left Content -->
-      <div class="text-center lg:text-left mb-12 lg:mb-0">
-        <!-- Badge -->
+      <div class="text-center lg:text-left lg:mb-0">
         <div
           class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 rounded-full shadow-lg"
         >
@@ -26,7 +24,6 @@
           >
         </div>
 
-        <!-- Main Heading -->
         <h1
           class="relative text-5xl lg:text-7xl font-bold mb-6 text-off-white dark:text-off-white/90"
         >
@@ -38,7 +35,6 @@
           Digital
         </h1>
 
-        <!-- Description -->
         <p
           class="text-xl lg:text-2xl text-white/80 mb-8 max-w-2xl leading-relaxed"
         >
@@ -46,7 +42,6 @@
           elegan dan interaktif
         </p>
 
-        <!-- CTA Buttons -->
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
@@ -61,25 +56,13 @@
           >
             <span class="flex justify-center items-center">
               Lihat Demo
-              <svg
-                class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h1m4 0h1"
-                ></path>
-              </svg>
+              <i class="bi bi-play-circle ml-2"></i>
             </span>
           </button>
         </div>
       </div>
 
-      <!-- Right Content - 3D Card -->
+      <!-- Right Content -->
       <div class="flex justify-center lg:justify-end">
         <div class="relative group">
           <!-- Glow Effect -->
@@ -175,19 +158,7 @@
             <div
               class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl mb-6 flex items-center justify-center"
             >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"
-                ></path>
-              </svg>
+              <i class="bi bi-lightning-charge text-white text-xl"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-3">Instant</h3>
             <p class="text-white/70">
@@ -207,19 +178,7 @@
             <div
               class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl mb-6 flex items-center justify-center"
             >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
-                ></path>
-              </svg>
+              <i class="bi bi-layers text-white text-xl"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-3">
               Anti-mainstream Design
@@ -241,19 +200,7 @@
             <div
               class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl mb-6 flex items-center justify-center"
             >
-              <svg
-                class="w-6 h-6 text-white"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
-                ></path>
-              </svg>
+              <i class="bi bi-sliders2 text-white text-xl"></i>
             </div>
             <h3 class="text-xl font-semibold text-white mb-3">Limitless</h3>
             <p class="text-white/70">
@@ -272,7 +219,7 @@
             >Siap untuk memulai?</span
           >
           <button
-            class="px-6 py-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-lg transform hover:scale-105 transition-all duration-300"
+            class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-xl transform hover:scale-105 transition-all duration-300"
           >
             Buat Undangan Sekarang
           </button>

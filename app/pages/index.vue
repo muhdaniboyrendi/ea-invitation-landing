@@ -6,5 +6,6 @@
     <Package />
     <Themes />
     <Footer />
+    <SupportButton />
   </div>
 </template>

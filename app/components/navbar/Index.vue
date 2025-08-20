@@ -1,20 +1,17 @@
 <script setup>
 const colorMode = useColorMode();
 
-// Reactive states
 const isMobileOpen = ref(false);
 const isDark = computed(() => colorMode.value === "dark");
 
-// Navigation items
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Fitur", href: "/" },
-  { name: "Products", href: "/" },
-  { name: "Tema", href: "/" },
-  { name: "Contact", href: "/" },
+  { name: "Home", href: "#home" },
+  { name: "Fitur", href: "#features" },
+  { name: "Products", href: "#packages" },
+  { name: "Tema", href: "#themes" },
+  { name: "Contact", href: "#contact" },
 ];
 
-// Methods
 const toggleTheme = () => {
   colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
 };
@@ -26,46 +23,23 @@ const toggleMobile = () => {
 const closeMobile = () => {
   isMobileOpen.value = false;
 };
-
-// Close mobile menu when clicking outside
-// onMounted(() => {
-//   document.addEventListener("click", (e) => {
-//     if (!e.target.closest("nav") && isMobileOpen.value) {
-//       isMobileOpen.value = false;
-//     }
-//   });
-// });
 </script>
 
 <template>
   <nav
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
   >
-    <!-- Glassmorphism Background -->
     <div
-      class="backdrop-blur-xl bg-white/10 dark:bg-black/10 border-b border-white/20 dark:border-white/10 shadow-2xl"
+      class="backdrop-blur-xl bg-black/10 border-b dark:border-white/10 shadow-2xl"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <!-- Logo Section -->
           <div class="flex items-center space-x-3">
             <div class="relative group">
               <div
                 class="relative w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg"
               >
-                <svg
-                  class="w-6 h-6 text-white"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M13 10V3L4 14h7v7l9-11h-7z"
-                  ></path>
-                </svg>
+                <i class="bi bi-cup-hot text-white text-xl"></i>
               </div>
             </div>
             <div class="flex flex-col">
@@ -87,7 +61,7 @@ const closeMobile = () => {
                 v-for="item in navigation"
                 :key="item.name"
                 :to="item.href"
-                class="relative px-3 py-2 text-sm font-medium text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 transition-all duration-300 group"
+                class="relative px-3 py-2 text-sm font-medium text-gray-200 hover:text-cyan-400 transition-all duration-300 group"
               >
                 {{ item.name }}
                 <span
@@ -99,49 +73,38 @@ const closeMobile = () => {
 
           <!-- Right Side Actions -->
           <div class="flex items-center space-x-4">
-            <!-- Theme Toggle -->
-            <button
-              @click="toggleTheme"
-              class="p-2 lg:p-2.5 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/20 dark:border-white/10"
-            >
-              <svg
-                v-if="isDark"
-                class="w-5 h-5 text-yellow-500"
-                fill="currentColor"
-                viewBox="0 0 20 20"
+            <!-- Theme Toggle with ClientOnly -->
+            <ClientOnly>
+              <button
+                @click="toggleTheme"
+                class="h-10 aspect-square rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10"
               >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              <svg
-                v-else
-                class="w-5 h-5 text-gray-700 dark:text-gray-300"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"
-                />
-              </svg>
-            </button>
+                <i v-if="isDark" class="bi bi-sun-fill text-yellow-500"></i>
+                <i v-else class="bi bi-moon-fill text-gray-300"></i>
+              </button>
+              <template #fallback>
+                <!-- Placeholder untuk server-side rendering -->
+                <div
+                  class="h-10 aspect-square rounded-xl bg-white/10 border border-white/10 flex items-center justify-center"
+                ></div>
+              </template>
+            </ClientOnly>
 
             <!-- CTA Button -->
-            <button
+            <NuxtLink
+              to="/"
               class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-cyan-500/80 to-purple-500/80 hover:from-cyan-400 hover:to-purple-400 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 border border-white/20"
             >
-              Get Started
-            </button>
+              Login
+            </NuxtLink>
 
             <!-- Mobile menu button -->
             <button
               @click="toggleMobile"
-              class="md:hidden p-2 rounded-xl bg-white/20 dark:bg-white/10 hover:bg-white/30 dark:hover:bg-white/20 transition-all duration-300 border border-white/20 dark:border-white/10"
+              class="md:hidden p-2 rounded-xl bg-white/10 transition-all duration-300 border border-white/10"
             >
               <svg
-                class="w-6 h-6 text-gray-700 dark:text-gray-300"
+                class="w-6 h-6 text-gray-300"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -178,7 +141,7 @@ const closeMobile = () => {
     >
       <div
         v-show="isMobileOpen"
-        class="md:hidden backdrop-blur-xl bg-white/10 dark:bg-black/10 border-b border-white/20 dark:border-white/10 shadow-2xl"
+        class="md:hidden backdrop-blur-xl bg-black/10 border-b border-white/10 shadow-2xl"
       >
         <div class="px-4 pt-4 pb-6 space-y-3 text-center">
           <NuxtLink
@@ -186,7 +149,7 @@ const closeMobile = () => {
             :key="item.name"
             :to="item.href"
             @click="closeMobile"
-            class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-cyan-600 dark:hover:text-cyan-400 hover:bg-white/50 dark:hover:bg-white/10 rounded-xl transition-all duration-300"
+            class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-cyan-400 hover:bg-white/10 rounded-xl transition-all duration-300"
           >
             {{ item.name }}
           </NuxtLink>
@@ -195,7 +158,7 @@ const closeMobile = () => {
             <button
               class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white text-base font-semibold rounded-xl shadow-lg transition-all duration-300"
             >
-              Get Started
+              Login
             </button>
           </div>
         </div>
@@ -203,17 +166,3 @@ const closeMobile = () => {
     </Transition>
   </nav>
 </template>
-
-<style scoped>
-html {
-  scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: transparent;
-}
-</style>

@@ -1,5 +1,6 @@
 <template>
   <section
+    id="packages"
     class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-indigo-900/90 to-slate-900 dark:from-black dark:via-indigo-950/20 dark:to-dark"
   >
     <!-- Background Elements -->
