@@ -3,9 +3,6 @@ Allow: /
 Allow: /login
 Allow: /register
 
-Disallow: /admin/
-Disallow: /dashboard/
-Disallow: /api/
-Disallow: /*.json$
+Disallow: 
 
 Sitemap: https://ea-invitation-landing.vercel.app/sitemap.xml

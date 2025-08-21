@@ -5,11 +5,11 @@ const isMobileOpen = ref(false);
 const isDark = computed(() => colorMode.value === "dark");
 
 const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "Fitur", href: "#features" },
-  { name: "Products", href: "#packages" },
-  { name: "Tema", href: "#themes" },
-  { name: "Contact", href: "#contact" },
+  { name: "Beranda", href: "/#home" },
+  { name: "Fitur", href: "/#features" },
+  { name: "Harga", href: "/#packages" },
+  { name: "Tema", href: "/#themes" },
+  { name: "Kontak", href: "/#footer" },
 ];
 
 const toggleTheme = () => {

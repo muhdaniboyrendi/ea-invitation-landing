@@ -219,14 +219,14 @@ const handleRegister = async () => {
                 <label class="text-white/70 text-sm leading-relaxed">
                   Saya menyetujui
                   <NuxtLink
-                    to="/terms"
+                    to="/"
                     class="text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
                     Syarat & Ketentuan
                   </NuxtLink>
                   dan
                   <NuxtLink
-                    to="/privacy"
+                    to="/"
                     class="text-cyan-400 hover:text-cyan-300 transition-colors"
                   >
                     Kebijakan Privasi

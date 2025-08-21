@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  modules: ["@nuxtjs/color-mode", "@nuxt/image", "@nuxtjs/seo"],
+  modules: ["@nuxtjs/color-mode", "@nuxt/image", "@nuxtjs/seo", "@pinia/nuxt"],
   colorMode: {
     classSuffix: "",
   },
@@ -22,6 +22,13 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
+    },
+  },
+  runtimeConfig: {
+    public: {
+      apiBaseUrl: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",
+      storageBaseUrl:
+        process.env.STORAGE_BASE_URL || "http://127.0.0.1:8000/storage",
     },
   },
   site: {
