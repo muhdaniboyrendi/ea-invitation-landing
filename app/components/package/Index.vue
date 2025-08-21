@@ -60,8 +60,6 @@ const packagesList = [
     ],
   },
 ];
-
-const packagesUsed = packages ? packages : packagesList;
 </script>
 
 <template>
@@ -82,8 +80,15 @@ const packagesUsed = packages ? packages : packagesList;
       <!-- Pricing Cards -->
       <PackageSkeleton v-if="pending" class="mx-auto" />
 
+      <div
+        v-else-if="packages.length > 0"
+        class="flex flex-wrap justify-center gap-8 mb-16"
+      >
+        <PackageCard v-for="pkg in packages" :key="pkg.id" :package="pkg" />
+      </div>
+
       <div v-else class="flex flex-wrap justify-center gap-8 mb-16">
-        <PackageCard v-for="pkg in packagesUsed" :key="pkg.id" :package="pkg" />
+        <PackageCard v-for="pkg in packagesList" :key="pkg.id" :package="pkg" />
       </div>
 
       <!-- Additional Info Section -->
