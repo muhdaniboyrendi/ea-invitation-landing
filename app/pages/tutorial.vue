@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "EA Invitation - Website Undangan Pernikahan Digital",
+  title: "EA Invitation - Tutorial Pembuatan Undangan",
   meta: [
     {
       name: "description",
@@ -24,7 +24,7 @@ useHead({
     // Open Graph Meta Tags
     {
       property: "og:title",
-      content: "EA Invitation - Website Undangan Pernikahan Digital",
+      content: "EA Invitation - Tutorial Pembuatan Undangan",
     },
     {
       property: "og:description",
@@ -104,7 +104,7 @@ useSchemaOrg([
   defineOrganization({
     name: "EA Invitation",
     url: "https://ea-invitation-landing.vercel.app",
-    logo: "https://ea-invitation-landing.vercel.app/logo.png",
+    logo: "https://ea-invitation-landing.vercel.app/og.png",
     description:
       "Penyedia layanan undangan pernikahan digital terbaik di Indonesia",
     address: {
@@ -147,10 +147,7 @@ useSchemaOrg([
 <template>
   <div class="bg-off-white dark:bg-dark">
     <NuxtLayout>
-      <Hero />
-      <Features />
-      <Package />
-      <ThemesHome />
+      <Demo />
     </NuxtLayout>
   </div>
 </template>

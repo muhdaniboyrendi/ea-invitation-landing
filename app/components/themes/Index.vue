@@ -6,10 +6,6 @@ const activeCategory = ref("all");
 // Categories with icons
 const categoriesFake = ref([
   {
-    id: "all",
-    name: "All Themes",
-  },
-  {
     id: "business",
     name: "Business",
   },
@@ -85,7 +81,7 @@ const themesFake = ref([
 
 // Computed filtered themes
 const filteredThemes = computed(() => {
-  if (themes.value.length > 0) {
+  if (themes.value) {
     if (activeCategory.value === "all") {
       return themes.value;
     }
@@ -104,7 +100,7 @@ const filteredThemes = computed(() => {
 
 // Get theme count for category
 const getThemeCount = (categoryId) => {
-  if (categories.value.length > 0) {
+  if (categories.value) {
     if (categoryId === "all") {
       return themes.value.length;
     }
@@ -151,8 +147,8 @@ const getThemeCount = (categoryId) => {
         <p
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
-          Discover professionally designed themes crafted for modern websites
-          and applications
+          Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
+          memukau dan interaktif
         </p>
       </div>
 
@@ -182,9 +178,7 @@ const getThemeCount = (categoryId) => {
         </button>
 
         <button
-          v-for="category in categories.length > 0
-            ? categories
-            : categoriesFake"
+          v-for="category in categories ? categories : categoriesFake"
           :key="category.id"
           @click="activeCategory = category.id"
           :class="

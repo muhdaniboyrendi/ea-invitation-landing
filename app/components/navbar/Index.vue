@@ -9,7 +9,7 @@ const navigation = [
   { name: "Fitur", href: "/#features" },
   { name: "Harga", href: "/#packages" },
   { name: "Tema", href: "/#themes" },
-  { name: "Kontak", href: "/#footer" },
+  { name: "Tutorial", href: "/tutorial" },
 ];
 
 const toggleTheme = () => {

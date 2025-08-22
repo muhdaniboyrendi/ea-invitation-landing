@@ -54,7 +54,7 @@ const themesFake = ref([
 ]);
 
 const filteredThemes = computed(() => {
-  if (themes.value.length > 0) {
+  if (themes.value) {
     return themes.value.slice(0, 6);
   } else {
     return themesFake.value.slice(0, 6);
@@ -104,8 +104,8 @@ const filteredThemes = computed(() => {
         <p
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
-          Discover professionally designed themes crafted for modern websites
-          and applications
+          Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
+          memukau dan interaktif
         </p>
       </div>
 

@@ -38,8 +38,8 @@
         <p
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
-          Discover powerful tools designed to accelerate your workflow and
-          unlock new possibilities
+          Berbagai macam fitur lengkap dan modern yang akan membuat undangan
+          pernikahan digital Anda tampil memukau dan berkesan
         </p>
       </div>
 

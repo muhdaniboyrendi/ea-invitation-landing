@@ -24,7 +24,7 @@
     <p
       class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed mb-8"
     >
-      Choose the perfect plan for your needs. Upgrade or downgrade at any time.
+      Pilih paket yang sesuai dengan kebutuhan dan upgrade paket kapan saja.
     </p>
   </div>
 </template>

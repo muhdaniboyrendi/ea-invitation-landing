@@ -81,7 +81,7 @@ const packagesList = [
       <PackageSkeleton v-if="pending" class="mx-auto" />
 
       <div
-        v-else-if="packages.length > 0"
+        v-else-if="packages"
         class="flex flex-wrap justify-center gap-8 mb-16"
       >
         <PackageCard v-for="pkg in packages" :key="pkg.id" :package="pkg" />
