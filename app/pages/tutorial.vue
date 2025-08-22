@@ -147,7 +147,7 @@ useSchemaOrg([
 <template>
   <div class="bg-off-white dark:bg-dark">
     <NuxtLayout>
-      <Demo />
+      <Tutorial />
     </NuxtLayout>
   </div>
 </template>
