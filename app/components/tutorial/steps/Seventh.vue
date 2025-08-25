@@ -36,34 +36,87 @@
         <div
           class="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden"
         >
-          <!-- Mock Interface -->
+          <!-- Mock Interface untuk Bagikan Undangan -->
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <h4 class="text-white font-semibold">Form Data Mempelai</h4>
+              <h4 class="text-white font-semibold">Bagikan Undangan</h4>
               <div
                 class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
               ></div>
             </div>
 
-            <div class="space-y-3">
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-white/50 text-xs mb-1">Nama Mempelai Pria</p>
-                <p class="text-white">Ahmad Rizky Pratama</p>
+            <!-- URL Undangan -->
+            <div class="bg-white/10 rounded-lg p-4">
+              <p class="text-white/50 text-xs mb-2">Link Undangan Digital</p>
+              <div class="flex items-center gap-2">
+                <p class="text-cyan-400 text-sm flex-1">
+                  https://eainvitation.com/ahmad-siti
+                </p>
+                <button
+                  class="bg-cyan-500/20 hover:bg-cyan-500/30 px-3 py-1 rounded text-cyan-400 text-xs transition-colors"
+                >
+                  Salin
+                </button>
               </div>
+            </div>
 
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-white/50 text-xs mb-1">Nama Mempelai Wanita</p>
-                <p class="text-white">Siti Nurhaliza</p>
+            <!-- Opsi Berbagi -->
+            <div class="space-y-3">
+              <p class="text-white/70 text-sm">Bagikan melalui:</p>
+
+              <div class="grid grid-cols-2 gap-3">
+                <div
+                  class="bg-green-500/20 hover:bg-green-500/30 rounded-lg p-3 cursor-pointer transition-colors group"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-white text-xs">W</span>
+                    </div>
+                    <p class="text-white text-sm">WhatsApp</p>
+                  </div>
+                </div>
+
+                <div
+                  class="bg-blue-500/20 hover:bg-blue-500/30 rounded-lg p-3 cursor-pointer transition-colors group"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-white text-xs">T</span>
+                    </div>
+                    <p class="text-white text-sm">Telegram</p>
+                  </div>
+                </div>
               </div>
 
               <div class="grid grid-cols-2 gap-3">
-                <div class="bg-white/10 rounded-lg p-3">
-                  <p class="text-white/50 text-xs mb-1">Ayah Pria</p>
-                  <p class="text-white text-sm">Bapak Suharto</p>
+                <div
+                  class="bg-blue-600/20 hover:bg-blue-600/30 rounded-lg p-3 cursor-pointer transition-colors group"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-6 h-6 bg-blue-600 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-white text-xs">F</span>
+                    </div>
+                    <p class="text-white text-sm">Facebook</p>
+                  </div>
                 </div>
-                <div class="bg-white/10 rounded-lg p-3">
-                  <p class="text-white/50 text-xs mb-1">Ibu Pria</p>
-                  <p class="text-white text-sm">Ibu Sari</p>
+
+                <div
+                  class="bg-pink-500/20 hover:bg-pink-500/30 rounded-lg p-3 cursor-pointer transition-colors group"
+                >
+                  <div class="flex items-center gap-2">
+                    <div
+                      class="w-6 h-6 bg-pink-500 rounded-full flex items-center justify-center"
+                    >
+                      <span class="text-white text-xs">I</span>
+                    </div>
+                    <p class="text-white text-sm">Instagram</p>
+                  </div>
                 </div>
               </div>
             </div>
