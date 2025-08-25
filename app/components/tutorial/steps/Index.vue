@@ -15,17 +15,13 @@
 
       <!-- Steps -->
       <div class="space-y-24">
-        <!-- Step 1 -->
         <TutorialStepsFirst />
-
-        <!-- Step 2 -->
         <TutorialStepsSecond />
-
-        <!-- Step 3 -->
         <TutorialStepsThird />
-
-        <!-- Step 4 -->
         <TutorialStepsFourth />
+        <TutorialStepsFifth />
+        <TutorialStepsSixth />
+        <TutorialStepsSeventh />
       </div>
     </div>
   </section>

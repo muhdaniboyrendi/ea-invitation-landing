@@ -8,111 +8,122 @@
         <div
           class="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden"
         >
-          <!-- Mock Calendar Interface -->
-          <div class="space-y-4">
+          <!-- Package Selection Interface -->
+          <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <h4 class="text-white font-semibold">Pilih Tanggal & Waktu</h4>
-              <i class="bi bi-calendar-heart text-purple-400"></i>
+              <h4 class="text-white font-semibold text-lg">Paket Undangan</h4>
+              <i class="bi bi-heart-fill text-purple-400"></i>
             </div>
 
-            <!-- Calendar Mock -->
-            <div class="bg-white/10 rounded-lg p-4">
-              <div class="grid grid-cols-7 gap-1 mb-3">
-                <div class="text-center text-white/50 text-xs p-1">Min</div>
-                <div class="text-center text-white/50 text-xs p-1">Sen</div>
-                <div class="text-center text-white/50 text-xs p-1">Sel</div>
-                <div class="text-center text-white/50 text-xs p-1">Rab</div>
-                <div class="text-center text-white/50 text-xs p-1">Kam</div>
-                <div class="text-center text-white/50 text-xs p-1">Jum</div>
-                <div class="text-center text-white/50 text-xs p-1">Sab</div>
-              </div>
-              <div class="grid grid-cols-7 gap-1">
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  1
+            <!-- Package Options -->
+            <div class="space-y-4">
+              <!-- Economy Package -->
+              <div
+                class="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all cursor-pointer"
+              >
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-gray-400 to-gray-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="bi bi-star text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-white font-semibold">Economy</h5>
+                      <p class="text-white/60 text-xs">Paket dasar</p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-white font-bold">Rp 50K</p>
+                    <p class="text-white/50 text-xs">sekali bayar</p>
+                  </div>
                 </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  2
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  3
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  4
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  5
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  6
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  7
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  8
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  9
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  10
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  11
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  12
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  13
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center text-white/30 text-sm"
-                >
-                  14
-                </div>
-                <div
-                  class="aspect-square flex items-center justify-center bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm rounded-lg font-bold"
-                >
-                  15
+                <div class="flex items-center space-x-2 text-xs">
+                  <i class="bi bi-check text-green-400"></i>
+                  <span class="text-white/70"
+                    >Max 100 tamu • 3 Template • Fitur dasar</span
+                  >
                 </div>
               </div>
-            </div>
 
-            <div class="grid grid-cols-2 gap-3">
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-purple-400 text-xs mb-1">Akad Nikah</p>
-                <p class="text-white">08:00 WIB</p>
+              <!-- Premium Package - Selected -->
+              <div
+                class="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border-2 border-purple-400/50 rounded-lg p-4 relative overflow-hidden"
+              >
+                <div class="absolute top-2 right-2">
+                  <span
+                    class="bg-purple-500 text-white text-xs px-2 py-1 rounded-full"
+                    >Dipilih</span
+                  >
+                </div>
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="bi bi-star-fill text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-white font-semibold">Premium</h5>
+                      <p class="text-purple-300 text-xs">Paling populer</p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-white font-bold">Rp 150K</p>
+                    <p class="text-white/50 text-xs">sekali bayar</p>
+                  </div>
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center space-x-2 text-xs">
+                    <i class="bi bi-check text-green-400"></i>
+                    <span class="text-white/70"
+                      >Max 500 tamu • 10 Template premium</span
+                    >
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs">
+                    <i class="bi bi-check text-green-400"></i>
+                    <span class="text-white/70"
+                      >Musik, Gallery, Timeline & Maps</span
+                    >
+                  </div>
+                </div>
               </div>
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-pink-400 text-xs mb-1">Resepsi</p>
-                <p class="text-white">19:00 WIB</p>
+
+              <!-- Business Package -->
+              <div
+                class="bg-white/5 border border-white/10 rounded-lg p-4 hover:bg-white/10 transition-all cursor-pointer"
+              >
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center space-x-3">
+                    <div
+                      class="w-8 h-8 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center"
+                    >
+                      <i class="bi bi-gem text-white text-sm"></i>
+                    </div>
+                    <div>
+                      <h5 class="text-white font-semibold">Business</h5>
+                      <p class="text-white/60 text-xs">Fitur lengkap</p>
+                    </div>
+                  </div>
+                  <div class="text-right">
+                    <p class="text-white font-bold">Rp 300K</p>
+                    <p class="text-white/50 text-xs">sekali bayar</p>
+                  </div>
+                </div>
+                <div class="space-y-1">
+                  <div class="flex items-center space-x-2 text-xs">
+                    <i class="bi bi-check text-green-400"></i>
+                    <span class="text-white/70"
+                      >Tamu unlimited • Custom domain</span
+                    >
+                  </div>
+                  <div class="flex items-center space-x-2 text-xs">
+                    <i class="bi bi-check text-green-400"></i>
+                    <span class="text-white/70"
+                      >Analytics & Live streaming</span
+                    >
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -121,12 +132,14 @@
     </div>
 
     <div class="order-1 lg:order-2">
-      <div class="relative group">
+      <div
+        class="relative group bg-white dark:bg-black rounded-3xl hover:scale-105 transition-transform duration-500"
+      >
         <div
           class="absolute -inset-4 bg-gradient-to-r from-purple-400/30 via-pink-400/30 to-purple-400/30 blur-2xl rounded-3xl"
         ></div>
         <div
-          class="relative backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 rounded-3xl p-8 hover:scale-105 transition-transform duration-500"
+          class="relative bg-linear-to-r from-purple-900/90 to-pink-900/90 dark:from-purple-900/10 dark:to-pink-900/10 border border-white/20 rounded-3xl p-8"
         >
           <div class="flex items-center mb-6">
             <div
@@ -134,13 +147,12 @@
             >
               2
             </div>
-            <h3 class="text-2xl font-bold text-white">Atur Jadwal Acara</h3>
+            <h3 class="text-2xl font-bold text-white">Pilih Paket Undangan</h3>
           </div>
 
           <div class="space-y-4 mb-6">
             <p class="text-white/80 leading-relaxed">
-              Tentukan tanggal pernikahan, waktu akad nikah, dan waktu resepsi.
-              Pastikan semua detail waktu sudah akurat.
+              Pilih paket undangan yang sesuai dengan tema dan kebutuhan Anda.
             </p>
           </div>
 
@@ -148,9 +160,9 @@
             <div class="flex items-start space-x-3">
               <i class="bi bi-check-circle-fill text-purple-400 mt-1"></i>
               <div>
-                <p class="text-white font-medium">Pilih Tanggal</p>
+                <p class="text-white font-medium">Ekonomy</p>
                 <p class="text-white/70 text-sm">
-                  Gunakan kalender interaktif untuk memilih tanggal
+                  Sesuai untuk undangan sederhana dengan fitur dasar
                 </p>
               </div>
             </div>
@@ -158,9 +170,9 @@
             <div class="flex items-start space-x-3">
               <i class="bi bi-check-circle-fill text-purple-400 mt-1"></i>
               <div>
-                <p class="text-white font-medium">Waktu Akad & Resepsi</p>
+                <p class="text-white font-medium">Premium</p>
                 <p class="text-white/70 text-sm">
-                  Tentukan jam mulai untuk setiap acara
+                  Fitur tambahan untuk undangan yang lebih mewah
                 </p>
               </div>
             </div>
@@ -168,9 +180,9 @@
             <div class="flex items-start space-x-3">
               <i class="bi bi-check-circle-fill text-purple-400 mt-1"></i>
               <div>
-                <p class="text-white font-medium">Lokasi Acara</p>
+                <p class="text-white font-medium">Business</p>
                 <p class="text-white/70 text-sm">
-                  Tambahkan alamat lengkap dan link Google Maps
+                  Fitur lengkap untuk undangan dengan tamu tanpa batas
                 </p>
               </div>
             </div>

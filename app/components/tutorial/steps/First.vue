@@ -89,34 +89,105 @@
         <div
           class="relative bg-gradient-to-br from-slate-800/50 to-slate-900/50 backdrop-blur-xl border border-white/10 rounded-3xl p-8 overflow-hidden"
         >
-          <!-- Mock Interface -->
-          <div class="space-y-4">
+          <!-- Checklist Progress -->
+          <div class="space-y-6">
             <div class="flex items-center justify-between">
-              <h4 class="text-white font-semibold">Form Data Mempelai</h4>
+              <h4 class="text-white font-semibold text-lg">
+                Checklist Persiapan
+              </h4>
+              <div class="flex items-center space-x-2">
+                <div
+                  class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                ></div>
+                <span class="text-green-400 text-sm font-medium"
+                  >3/5 Selesai</span
+                >
+              </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="w-full bg-white/10 rounded-full h-2">
               <div
-                class="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                class="bg-gradient-to-r from-cyan-400 to-blue-500 h-2 rounded-full transition-all duration-700"
+                style="width: 60%"
               ></div>
             </div>
 
-            <div class="space-y-3">
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-white/50 text-xs mb-1">Nama Mempelai Pria</p>
-                <p class="text-white">Ahmad Rizky Pratama</p>
-              </div>
-
-              <div class="bg-white/10 rounded-lg p-3">
-                <p class="text-white/50 text-xs mb-1">Nama Mempelai Wanita</p>
-                <p class="text-white">Siti Nurhaliza</p>
-              </div>
-
-              <div class="grid grid-cols-2 gap-3">
-                <div class="bg-white/10 rounded-lg p-3">
-                  <p class="text-white/50 text-xs mb-1">Ayah Pria</p>
-                  <p class="text-white text-sm">Bapak Suharto</p>
+            <!-- Checklist Items -->
+            <div class="space-y-4">
+              <div
+                class="flex items-center space-x-3 p-3 bg-green-500/10 border border-green-500/20 rounded-lg"
+              >
+                <div
+                  class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="bi bi-check text-white text-xs"></i>
                 </div>
-                <div class="bg-white/10 rounded-lg p-3">
-                  <p class="text-white/50 text-xs mb-1">Ibu Pria</p>
-                  <p class="text-white text-sm">Ibu Sari</p>
+                <div class="flex-1">
+                  <p class="text-green-400 font-medium text-sm">
+                    Data Mempelai
+                  </p>
+                  <p class="text-green-300/70 text-xs">
+                    Nama lengkap & orang tua ✓
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-3 p-3 bg-green-500/10 border border-green-500/20 rounded-lg"
+              >
+                <div
+                  class="w-5 h-5 bg-green-500 rounded-full flex items-center justify-center"
+                >
+                  <i class="bi bi-check text-white text-xs"></i>
+                </div>
+                <div class="flex-1">
+                  <p class="text-green-400 font-medium text-sm">Detail Acara</p>
+                  <p class="text-green-300/70 text-xs">
+                    Tanggal: 15 Oktober 2024 ✓
+                  </p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-3 p-3 bg-blue-500/10 border border-blue-500/20 rounded-lg"
+              >
+                <div
+                  class="w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center animate-pulse"
+                >
+                  <div class="w-2 h-2 bg-white rounded-full"></div>
+                </div>
+                <div class="flex-1">
+                  <p class="text-blue-400 font-medium text-sm">
+                    Foto Prewedding
+                  </p>
+                  <p class="text-blue-300/70 text-xs">Sedang diupload... 65%</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-3 p-3 bg-white/5 border border-white/10 rounded-lg"
+              >
+                <div
+                  class="w-5 h-5 bg-white/20 rounded-full border-2 border-white/30"
+                ></div>
+                <div class="flex-1">
+                  <p class="text-white/60 font-medium text-sm">Kisah Cinta</p>
+                  <p class="text-white/40 text-xs">Belum diisi (opsional)</p>
+                </div>
+              </div>
+
+              <div
+                class="flex items-center space-x-3 p-3 bg-white/5 border border-white/10 rounded-lg"
+              >
+                <div
+                  class="w-5 h-5 bg-white/20 rounded-full border-2 border-white/30"
+                ></div>
+                <div class="flex-1">
+                  <p class="text-white/60 font-medium text-sm">
+                    Amplop Digital
+                  </p>
+                  <p class="text-white/40 text-xs">Belum diisi (opsional)</p>
                 </div>
               </div>
             </div>
