@@ -3,6 +3,8 @@ export default defineEventHandler(async (event) => {
 
   const routes = [
     { url: "/", changefreq: "daily", priority: "1.0" },
+    { url: "/tutorial", changefreq: "monthly", priority: "0.5" },
+    { url: "/themes", changefreq: "monthly", priority: "0.5" },
     { url: "/login", changefreq: "monthly", priority: "0.3" },
     { url: "/register", changefreq: "monthly", priority: "0.3" },
   ];

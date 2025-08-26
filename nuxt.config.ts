@@ -46,14 +46,14 @@ export default defineNuxtConfig({
     },
   },
   robots: {
-    allow: ["/", "/login", "/register"],
+    allow: ["/", "/tutorial", "/themes", "/login", "/register"],
     disallow: ["/admin", "/dashboard"],
     sitemap: "https://ea-invitation-landing.vercel.app/sitemap.xml",
   },
   sitemap: {
     hostname: "https://ea-invitation-landing.vercel.app",
     gzip: true,
-    routes: ["/", "/login", "/register"],
+    routes: ["/", "/tutorial", "/themes", "/login", "/register"],
   },
   ogImage: {
     enabled: true,
