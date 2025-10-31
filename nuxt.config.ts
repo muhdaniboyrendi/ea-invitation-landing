@@ -29,6 +29,14 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",
       storageBaseUrl:
         process.env.STORAGE_BASE_URL || "http://127.0.0.1:8000/storage",
+
+      themeMap: {
+        // Ganti '1', '2' dengan ID tema aktual Anda (bisa string atau angka)
+        1: process.env.THEME_1_URL || "http://localhost:3002",
+        2: process.env.THEME_2_URL || "http://localhost:3003",
+        3: process.env.THEME_3_URL || "http://localhost:3004",
+        // Tambahkan tema lainnya di sini
+      },
     },
   },
   site: {

@@ -1,22 +1,97 @@
 <script setup>
+const { checkInvitation } = useInvitationStore();
 const route = useRoute();
+const config = useRuntimeConfig(); // <-- 1. Ambil runtime config
 
+const slug = route.params.slug;
 const guest = route.query.guest;
 
 const progress = ref(0);
+const errorState = ref(null); // <-- Untuk menangani error
+const targetUrl = ref(null); // <-- Untuk menyimpan URL tujuan
+
+/**
+ * Memuat data undangan dan menentukan URL tema.
+ */
+const loadInvitation = async () => {
+  try {
+    const response = await checkInvitation(slug);
+
+    if (!response || !response.theme_id) {
+      throw new Error(
+        "Data undangan tidak valid atau tidak memiliki 'theme_id'."
+      );
+    }
+
+    // 2. Dapatkan theme_id dari respons API Anda
+    const themeId = response.theme_id;
+
+    // 3. Cari URL dasar tema dari themeMap di config
+    const themeMap = config.public.themeMap;
+    const baseUrl = themeMap[themeId];
+
+    if (!baseUrl) {
+      throw new Error(`Konfigurasi untuk tema ID: ${themeId} tidak ditemukan.`);
+    }
+
+    // 4. Bangun URL lengkap (termasuk slug dan guest)
+    let finalUrl = `${baseUrl}/${slug}`;
+    if (guest) {
+      // Gunakan encodeURIComponent untuk keamanan jika nama tamu mengandung spasi/simbol
+      finalUrl += `?guest=${encodeURIComponent(guest)}`;
+    }
+
+    // 5. Simpan URL target. Ini akan memicu progress bar selesai.
+    targetUrl.value = finalUrl;
+
+    console.log(`Mengalihkan ke: ${finalUrl}`);
+  } catch (error) {
+    console.error("Gagal memuat undangan:", error);
+    errorState.value =
+      error.message || "Gagal memuat undangan. Silakan coba lagi.";
+  }
+};
+
+/**
+ * Awasi (watch) perubahan pada progress bar.
+ * Saat mencapai 100, lakukan pengalihan jika URL target valid.
+ */
+watch(progress, (newProgress) => {
+  if (newProgress >= 100) {
+    // Jika tidak ada error dan URL target sudah siap
+    if (targetUrl.value && !errorState.value) {
+      // 6. Lakukan pengalihan EKSTERNAL
+      navigateTo(targetUrl.value, {
+        external: true,
+      });
+    }
+    // Jika ada error, progress bar berhenti di 100 tapi tidak ada pengalihan.
+    // Kita bisa menampilkan pesan errorState di template.
+  }
+});
 
 onMounted(() => {
+  // Mulai animasi progress bar
   const interval = setInterval(() => {
     if (progress.value < 100) {
-      progress.value += Math.random() * 15;
-      if (progress.value > 100) progress.value = 100;
+      // Jika data sudah selesai dimuat (targetUrl siap) ATAU terjadi error,
+      // langsung set progress ke 100 untuk memicu watcher.
+      if (targetUrl.value || errorState.value) {
+        progress.value = 100;
+        clearInterval(interval);
+      } else {
+        // Jika belum, lanjutkan progress palsu TAPI berhenti di 90%
+        // agar terlihat sedang "menyelesaikan"
+        let newProgress = progress.value + Math.random() * 15;
+        progress.value = Math.min(newProgress, 90); // Berhenti di 90
+      }
     } else {
       clearInterval(interval);
-      setTimeout(() => {
-        console.log("Loading complete");
-      }, 500);
     }
   }, 200);
+
+  // Mulai proses pemuatan data undangan
+  loadInvitation();
 });
 </script>
 
@@ -56,13 +131,34 @@ onMounted(() => {
         <h1
           class="text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200 mb-4"
         >
-          Memuat Undangan
+          {{ errorState ? "Terjadi Kesalahan" : "Memuat Undangan" }}
         </h1>
 
         <!-- Subtitle -->
         <p class="text-xl lg:text-2xl text-white/70 mb-8">
-          Mohon tunggu sebentar...
+          {{
+            errorState
+              ? "Undangan tidak dapat dimuat."
+              : "Mohon tunggu sebentar..."
+          }}
         </p>
+
+        <div
+          v-if="errorState"
+          class="my-4 text-red-400 text-lg p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
+        >
+          {{ errorState }}
+        </div>
+
+        <div
+          v-if="!errorState"
+          class="flex items-center justify-center space-x-2"
+        ></div>
+
+        <div
+          v-if="!errorState"
+          class="mt-12 w-64 animate-fade-in-up animation-delay-600"
+        ></div>
 
         <!-- Loading Dots -->
         <div class="flex items-center justify-center space-x-2">
