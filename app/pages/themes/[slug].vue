@@ -1,6 +1,6 @@
 <script setup>
 useHead({
-  title: "EA Invitation - Koleksi Tema Undangan",
+  title: "EA Invitation - Website Undangan Pernikahan Digital",
   meta: [
     {
       name: "description",
@@ -24,7 +24,7 @@ useHead({
     // Open Graph Meta Tags
     {
       property: "og:title",
-      content: "EA Invitation - Koleksi Tema Undangan",
+      content: "EA Invitation - Website Undangan Pernikahan Digital",
     },
     {
       property: "og:description",
@@ -119,35 +119,38 @@ useSchemaOrg([
     },
   }),
 
-  // defineWebsite({
-  //   name: 'EA Invitation',
-  //   url: 'https://ea-invitation-landing.vercel.app',
-  //   description: 'Website undangan pernikahan digital yang elegan dan interaktif',
-  //   inLanguage: 'id',
-  //   potentialAction: {
-  //     '@type': 'SearchAction',
-  //     target: 'https://ea-invitation-landing.vercel.app/search?q={search_term_string}',
-  //     'query-input': 'required name=search_term_string'
-  //   }
-  // }),
+  defineWebSite({
+    name: "EA Invitation",
+    url: "https://ea-invitation-landing.vercel.app",
+    description:
+      "Website undangan pernikahan digital yang elegan dan interaktif",
+    inLanguage: "id",
+    potentialAction: {
+      "@type": "SearchAction",
+      target:
+        "https://ea-invitation-landing.vercel.app/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  }),
 
-  // defineService({
-  //   name: 'Undangan Pernikahan Digital',
-  //   description: 'Layanan pembuatan undangan pernikahan digital yang elegan dan interaktif',
-  //   provider: {
-  //     '@type': 'Organization',
-  //     name: 'EA Invitation'
-  //   },
-  //   areaServed: 'Indonesia',
-  //   serviceType: 'Digital Wedding Invitation Service'
-  // })
+  defineReview({
+    name: "Undangan Pernikahan Digital",
+    description:
+      "Layanan pembuatan undangan pernikahan digital yang elegan dan interaktif",
+    provider: {
+      "@type": "Organization",
+      name: "EA Invitation",
+    },
+    areaServed: "Indonesia",
+    serviceType: "Digital Wedding Invitation Service",
+  }),
 ]);
 </script>
 
 <template>
   <div class="bg-off-white dark:bg-dark">
-    <NuxtLayout>
-      <Themes />
+    <NuxtLayout name="auth">
+      <ThemesLoading />
     </NuxtLayout>
   </div>
 </template>

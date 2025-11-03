@@ -34,12 +34,9 @@ export default defineNuxtConfig({
       storageBaseUrl:
         process.env.STORAGE_BASE_URL || "http://127.0.0.1:8000/storage",
 
+      // Themes Base URL
       themeMap: {
-        // Ganti '1', '2' dengan ID tema aktual Anda (bisa string atau angka)
-        1: process.env.THEME_1_URL || "http://localhost:4000",
-        2: process.env.THEME_2_URL || "http://localhost:4001",
-        3: process.env.THEME_3_URL || "http://localhost:4002",
-        // Tambahkan tema lainnya di sini
+        instagram: process.env.THEME_INSTAGRAM_URL || "http://localhost:4000",
       },
     },
   },

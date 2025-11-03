@@ -1,93 +1,61 @@
 <script setup>
-const { checkInvitation } = useInvitationStore();
 const route = useRoute();
 const config = useRuntimeConfig();
 
 const slug = route.params.slug;
-const guest = route.query.guest;
+const themeMap = config.public.themeMap;
 
 const progress = ref(0);
 const errorState = ref(null);
 const targetUrl = ref(null);
 
-const loadInvitation = async () => {
+const loadTheme = async () => {
   try {
-    const response = await checkInvitation(slug);
+    const baseUrl = themeMap[slug];
 
-    if (!response || !response.theme_id) {
+    if (!baseUrl) {
       throw new Error(
-        "Data undangan tidak valid atau tidak memiliki 'theme_id'."
+        `Tema dengan slug "${slug}" tidak ditemukan dalam konfigurasi.`
       );
     }
 
-    const themeSlug = response.theme.slug;
+    const finalUrl = `${baseUrl}/themes/${slug}`;
 
-    // 3. Cari URL dasar tema dari themeMap di config
-    const themeMap = config.public.themeMap;
-    const baseUrl = themeMap[themeSlug];
-
-    if (!baseUrl) {
-      throw new Error(`Konfigurasi untuk tema ID: ${themeSlug} tidak ditemukan.`);
-    }
-
-    // 4. Bangun URL lengkap (termasuk slug dan guest)
-    let finalUrl = `${baseUrl}/${slug}`;
-    if (guest) {
-      // Gunakan encodeURIComponent untuk keamanan jika nama tamu mengandung spasi/simbol
-      finalUrl += `?guest=${encodeURIComponent(guest)}`;
-    }
-
-    // 5. Simpan URL target. Ini akan memicu progress bar selesai.
     targetUrl.value = finalUrl;
 
     console.log(`Mengalihkan ke: ${finalUrl}`);
   } catch (error) {
-    console.error("Gagal memuat undangan:", error);
-    errorState.value =
-      error.message || "Gagal memuat undangan. Silakan coba lagi.";
+    console.error("Gagal memuat tema:", error);
+    errorState.value = error.message || "Gagal memuat tema. Silakan coba lagi.";
   }
 };
 
-/**
- * Awasi (watch) perubahan pada progress bar.
- * Saat mencapai 100, lakukan pengalihan jika URL target valid.
- */
 watch(progress, (newProgress) => {
   if (newProgress >= 100) {
-    // Jika tidak ada error dan URL target sudah siap
     if (targetUrl.value && !errorState.value) {
-      // 6. Lakukan pengalihan EKSTERNAL
       navigateTo(targetUrl.value, {
         external: true,
       });
     }
-    // Jika ada error, progress bar berhenti di 100 tapi tidak ada pengalihan.
-    // Kita bisa menampilkan pesan errorState di template.
   }
 });
 
 onMounted(() => {
-  // Mulai animasi progress bar
   const interval = setInterval(() => {
     if (progress.value < 100) {
-      // Jika data sudah selesai dimuat (targetUrl siap) ATAU terjadi error,
-      // langsung set progress ke 100 untuk memicu watcher.
       if (targetUrl.value || errorState.value) {
         progress.value = 100;
         clearInterval(interval);
       } else {
-        // Jika belum, lanjutkan progress palsu TAPI berhenti di 90%
-        // agar terlihat sedang "menyelesaikan"
         let newProgress = progress.value + Math.random() * 15;
-        progress.value = Math.min(newProgress, 90); // Berhenti di 90
+        progress.value = Math.min(newProgress, 90);
       }
     } else {
       clearInterval(interval);
     }
   }, 200);
 
-  // Mulai proses pemuatan data undangan
-  loadInvitation();
+  loadTheme();
 });
 </script>
 
@@ -127,37 +95,29 @@ onMounted(() => {
         <h1
           class="text-4xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200 mb-4"
         >
-          {{ errorState ? "Terjadi Kesalahan" : "Memuat Undangan" }}
+          {{ errorState ? "Terjadi Kesalahan" : "Memuat Tema" }}
         </h1>
 
         <!-- Subtitle -->
         <p class="text-xl lg:text-2xl text-white/70 mb-8">
           {{
-            errorState
-              ? "Undangan tidak dapat dimuat."
-              : "Mohon tunggu sebentar..."
+            errorState ? "Tema tidak dapat dimuat." : "Mohon tunggu sebentar..."
           }}
         </p>
 
+        <!-- Error Message -->
         <div
           v-if="errorState"
-          class="my-4 text-red-400 text-lg p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
+          class="my-4 text-red-400 text-lg p-4 bg-red-900/20 border border-red-500/30 rounded-lg max-w-md"
         >
           {{ errorState }}
         </div>
 
+        <!-- Loading Dots -->
         <div
           v-if="!errorState"
           class="flex items-center justify-center space-x-2"
-        ></div>
-
-        <div
-          v-if="!errorState"
-          class="mt-12 w-64 animate-fade-in-up animation-delay-600"
-        ></div>
-
-        <!-- Loading Dots -->
-        <div class="flex items-center justify-center space-x-2">
+        >
           <div
             class="w-3 h-3 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full loader-dot"
           ></div>
@@ -201,12 +161,14 @@ onMounted(() => {
       </div>
 
       <!-- Progress Bar -->
-      <div class="mt-12 w-64 animate-fade-in-up animation-delay-600">
+      <div
+        v-if="!errorState"
+        class="mt-12 w-64 animate-fade-in-up animation-delay-600"
+      >
         <div
           class="h-1 bg-white/10 rounded-full overflow-hidden backdrop-blur-sm"
         >
           <div
-            ref="progressBar"
             class="h-full bg-gradient-to-r from-cyan-400 to-purple-600 rounded-full transition-all duration-300"
             :style="{ width: progress + '%' }"
           ></div>
@@ -229,26 +191,6 @@ onMounted(() => {
   }
   50% {
     transform: translateY(-20px);
-  }
-}
-
-@keyframes pulse-ring {
-  0% {
-    transform: scale(0.8);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2);
-    opacity: 0;
-  }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
   }
 }
 
@@ -284,18 +226,6 @@ onMounted(() => {
   animation-delay: 1s;
 }
 
-.animate-pulse-ring {
-  animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-pulse-ring-delayed {
-  animation-delay: 0.5s;
-}
-
-.animate-spin-slow {
-  animation: spin-slow 3s linear infinite;
-}
-
 .animate-fade-in-up {
   animation: fade-in-up 0.8s ease-out forwards;
 }
@@ -303,11 +233,9 @@ onMounted(() => {
 .animation-delay-200 {
   animation-delay: 0.2s;
 }
-
 .animation-delay-400 {
   animation-delay: 0.4s;
 }
-
 .animation-delay-600 {
   animation-delay: 0.6s;
 }
@@ -328,7 +256,6 @@ onMounted(() => {
 .loader-dot-2 {
   animation-delay: 0.2s;
 }
-
 .loader-dot-3 {
   animation-delay: 0.4s;
 }
