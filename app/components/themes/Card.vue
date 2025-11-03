@@ -1,4 +1,8 @@
 <script setup>
+const config = useRuntimeConfig();
+
+const appUrl = config.public.appUrl;
+
 const props = defineProps(["theme"]);
 </script>
 
@@ -52,7 +56,7 @@ const props = defineProps(["theme"]);
         </div>
 
         <a
-          :href="props.theme?.link || '#'"
+          :href="`${appUrl}/themes/${props.theme?.slug}` || '#'"
           target="_blank"
           :rel="props.theme?.name || 'null'"
           class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 backdrop-blur-md bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
