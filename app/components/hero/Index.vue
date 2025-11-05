@@ -1,3 +1,9 @@
+<script setup>
+const config = useRuntimeConfig();
+
+const dashboardAppUrl = config.public.dashboardAppUrl;
+</script>
+
 <template>
   <div
     id="home"
@@ -9,10 +15,10 @@
 
     <!-- Hero Section Part 1 -->
     <section
-      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-20 lg:flex-row items-center justify-between min-h-dvh px-6 md:px-10 py-30"
+      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 lg:flex-row items-center justify-between min-h-dvh py-30"
     >
       <!-- Left Content -->
-      <div class="text-center lg:text-left lg:mb-0">
+      <div class="text-center lg:text-left lg:mb-0 px-4 lg:pl-10 lg:pr-0">
         <div
           class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 rounded-full shadow-lg"
         >
@@ -25,7 +31,7 @@
         </div>
 
         <h1
-          class="relative text-5xl lg:text-7xl font-bold mb-6 text-off-white dark:text-off-white/90"
+          class="relative max-w-2xl mx-auto lg:mx-0 text-5xl lg:text-7xl font-bold mb-6 text-off-white dark:text-off-white/90"
         >
           Website
           <span
@@ -45,85 +51,37 @@
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <NuxtLink to="/login"
+          <a
+            :href="dashboardAppUrl"
             class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             <span class="relative z-10">Buat Undangan</span>
-          </NuxtLink>
+          </a>
 
           <NuxtLink
             to="/tutorial"
             class="group px-8 py-4 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
           >
-              Tutorial
-              <i class="bi bi-play-circle ml-1"></i>
+            Tutorial
+            <i class="bi bi-play-circle ml-1"></i>
           </NuxtLink>
         </div>
       </div>
 
       <!-- Right Content -->
       <div class="flex justify-center lg:justify-end">
-        <div class="relative group">
+        <div class="relative group max-w-xl">
           <!-- Glow Effect -->
           <div
-            class="absolute -inset-4 bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 blur-2xl rounded-3xl group-hover:blur-3xl transition-all duration-500"
+            class="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 blur-2xl rounded-3xl group-hover:blur-3xl transition-all duration-500"
           ></div>
-
-          <!-- Main Card -->
-          <div
-            class="relative w-80 h-96 lg:w-96 lg:h-[480px] backdrop-blur-xl bg-white/10 dark:bg-black/20 border border-white/20 rounded-3xl shadow-2xl transform transition-all duration-700 overflow-hidden"
-          >
-            <!-- Card Content -->
-            <div class="relative z-10 p-8 h-full flex flex-col justify-center">
-              <div class="mb-6">
-                <div
-                  class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-2xl mb-4 flex items-center justify-center shadow-lg"
-                >
-                  <svg
-                    class="w-8 h-8 text-white"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M13 10V3L4 14h7v7l9-11h-7z"
-                    ></path>
-                  </svg>
-                </div>
-                <h3 class="text-2xl font-bold text-white mb-2">
-                  Lightning Fast
-                </h3>
-                <p class="text-white/70">
-                  Experience unmatched performance with our optimized
-                  infrastructure.
-                </p>
-              </div>
-
-              <!-- Feature List -->
-              <div class="space-y-3">
-                <div class="flex items-center text-white/80">
-                  <div class="w-2 h-2 bg-cyan-400 rounded-full mr-3"></div>
-                  <span>Real-time processing</span>
-                </div>
-                <div class="flex items-center text-white/80">
-                  <div class="w-2 h-2 bg-purple-400 rounded-full mr-3"></div>
-                  <span>Advanced analytics</span>
-                </div>
-                <div class="flex items-center text-white/80">
-                  <div class="w-2 h-2 bg-pink-400 rounded-full mr-3"></div>
-                  <span>Seamless integration</span>
-                </div>
-              </div>
-            </div>
-
-            <!-- Animated Lines -->
-            <div
-              class="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400"
-            ></div>
-          </div>
+          <!-- Card Content -->
+          <NuxtImg
+            src="/img/hero.png"
+            class="relative w-full"
+            width="800"
+            height="450"
+          />
         </div>
       </div>
     </section>
@@ -147,12 +105,14 @@
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
       >
         <!-- Feature 1 -->
-        <div class="group relative">
+        <div
+          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-cyan-400 dark:to-blue-600 hover:scale-105 transition-all duration-300"
+        >
           <div
             class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
+            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-cyan-950/90 to-blue-900/90 dark:from-black/70 dark:to-black/60"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl mb-6 flex items-center justify-center"
@@ -167,12 +127,14 @@
         </div>
 
         <!-- Feature 2 -->
-        <div class="group relative">
+        <div
+          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-purple-400 dark:to-pink-600 hover:scale-105 transition-all duration-300"
+        >
           <div
             class="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-pink-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
+            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-purple-950/90 to-pink-900/90 dark:from-black/70 dark:to-black/60"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl mb-6 flex items-center justify-center"
@@ -189,12 +151,14 @@
         </div>
 
         <!-- Feature 3 -->
-        <div class="group relative">
+        <div
+          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-green-400 dark:to-teal-600 hover:scale-105 transition-all duration-300"
+        >
           <div
             class="absolute -inset-2 bg-gradient-to-r from-green-400/20 to-teal-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
           ></div>
           <div
-            class="relative backdrop-blur-xl bg-white/5 dark:bg-black/10 border border-white/10 rounded-2xl p-8 hover:bg-white/10 dark:hover:bg-black/5 transition-all duration-300 hover:scale-105"
+            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-green-950/90 to-teal-900/90 dark:from-black/70 dark:to-black/60"
           >
             <div
               class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl mb-6 flex items-center justify-center"
@@ -217,11 +181,12 @@
           <span class="text-white font-medium mr-4 block"
             >Siap untuk memulai?</span
           >
-          <button
+          <a
+            :href="dashboardAppUrl"
             class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-xl transform hover:scale-105 transition-all duration-300"
           >
             Buat Undangan Sekarang
-          </button>
+          </a>
         </div>
       </div>
     </section>

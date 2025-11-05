@@ -37,20 +37,8 @@
         class="group relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
       >
         <span class="relative z-10 flex items-center">
-          Buat Undangan Gratis
-          <svg
-            class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
-            ></path>
-          </svg>
+          Buat Undangan
+          <i class="bi bi-arrow-right ml-2"></i>
         </span>
         <div
           class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition-all duration-300 rounded-xl"

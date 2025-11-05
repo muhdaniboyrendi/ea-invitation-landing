@@ -8,37 +8,37 @@
     </h4>
     <ul class="space-y-4">
       <li>
-        <a
-          href="#"
+        <NuxtLink
+          to="/faq"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >
           <div
             class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"
           ></div>
           FAQ
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#"
+        <NuxtLink
+          to="/tutorial"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >
           <div
             class="w-1.5 h-1.5 bg-blue-400 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"
           ></div>
           Tutorial
-        </a>
+        </NuxtLink>
       </li>
       <li>
-        <a
-          href="#"
+        <NuxtLink
+          to="/support"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >
           <div
             class="w-1.5 h-1.5 bg-indigo-400 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"
           ></div>
           Bantuan
-        </a>
+        </NuxtLink>
       </li>
       <li>
         <a
@@ -52,15 +52,15 @@
         </a>
       </li>
       <li>
-        <a
-          href="#"
+        <NuxtLink
+          to="/terms-and-conditions"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >
           <div
             class="w-1.5 h-1.5 bg-amber-400 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"
           ></div>
           Syarat & Ketentuan
-        </a>
+        </NuxtLink>
       </li>
     </ul>
   </div>

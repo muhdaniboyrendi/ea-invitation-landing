@@ -28,6 +28,7 @@ export default defineNuxtConfig({
     public: {
       // App
       appUrl: process.env.APP_URL || "http://localhost:3000",
+      dashboardAppUrl: process.env.DASHBOARD_APP_URL || "http://localhost:3001",
 
       // API
       apiBaseUrl: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",

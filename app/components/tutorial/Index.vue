@@ -1,242 +1,606 @@
 <script setup>
-// Reactive data
-const showVideoModal = ref(false);
-const videoLength = ref("12:45");
-const currentTime = ref(0);
-const currentProgress = ref(0);
+const config = useRuntimeConfig();
 
-// Methods
-const playVideo = () => {
-  showVideoModal.value = true;
-  // Simulate video progress
-  const interval = setInterval(() => {
-    currentTime.value += 1;
-    currentProgress.value = (currentTime.value / 765) * 100; // 12:45 = 765 seconds
-
-    if (currentTime.value >= 765) {
-      clearInterval(interval);
-    }
-  }, 1000);
-};
-
-const closeVideo = () => {
-  showVideoModal.value = false;
-  currentTime.value = 0;
-  currentProgress.value = 0;
-};
-
-const formatTime = (seconds) => {
-  const mins = Math.floor(seconds / 60);
-  const secs = seconds % 60;
-  return `${mins}:${secs.toString().padStart(2, "0")}`;
-};
-
-const scrollToVideo = () => {
-  const element = document.getElementById("video-tutorial");
-  element?.scrollIntoView({ behavior: "smooth" });
-};
-
-const shareVideo = () => {
-  if (navigator.share) {
-    navigator.share({
-      title: "Tutorial EA Invitation - Cara Membuat Undangan Digital",
-      text: "Pelajari cara membuat undangan pernikahan digital yang menawan!",
-      url: window.location.href,
-    });
-  } else {
-    // Fallback copy to clipboard
-    navigator.clipboard.writeText(window.location.href);
-    alert("Link tutorial telah disalin ke clipboard!");
-  }
-};
-
-// Lifecycle
-onMounted(() => {
-  // Initialize any required animations or observers
-});
+const dashboardAppUrl = config.public.dashboardAppUrl;
 </script>
 
 <template>
-  <div
+  <section
     id="tutorial"
-    class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
+    class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
   >
+    <!-- Background Elements -->
     <div class="absolute inset-0 overflow-hidden">
-      <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
+      <!-- Grid Pattern -->
+      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <!-- Hero Section -->
-    <TutorialHero @scroll-to-video="scrollToVideo" />
-
-    <!-- Tutorial Steps -->
-    <TutorialSteps />
-
-    <!-- Video Tutorial Section -->
-    <section id="video-tutorial" class="relative z-10 px-6 md:px-10 py-20">
-      <div class="max-w-7xl mx-auto">
-        <!-- Section Header -->
-        <div class="text-center mb-16">
-          <div
-            class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 rounded-full shadow-lg"
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+      <!-- Section Header -->
+      <div class="text-center mb-20">
+        <!-- Badge -->
+        <div
+          class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-full shadow-lg"
+        >
+          <span
+            class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-3 animate-pulse"
+          ></span>
+          <span class="text-sm font-medium text-white/80"
+            >Step by Step Guide</span
           >
-            <i class="bi bi-play-btn text-red-400 mr-2 animate-pulse"></i>
-            <span class="text-sm font-medium text-white/90"
-              >Video Tutorial</span
-            >
-          </div>
-
-          <h2 class="text-4xl lg:text-6xl font-bold mb-6 text-white">
-            Tonton
-            <span
-              class="bg-gradient-to-r from-red-400 via-pink-400 to-red-400 bg-clip-text text-transparent animate-gradient-x"
-              >Video Tutorial</span
-            >
-            Lengkap
-          </h2>
-
-          <p
-            class="text-xl lg:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
-          >
-            Ikuti panduan video step-by-step untuk membuat undangan digital yang
-            sempurna dalam hitungan menit
-          </p>
+          <i class="bi bi-arrow-right ml-2 text-white/60 text-sm"></i>
         </div>
 
-        <!-- Video Player Card -->
-        <TutorialVideo @play="playVideo" />
+        <!-- Main Title -->
+        <h2
+          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+        >
+          Panduan Lengkap
+          <br />
+          <span class="text-3xl lg:text-5xl text-white/60"
+            >Membuat Undangan Digital</span
+          >
+        </h2>
 
-        <!-- Bottom CTA -->
-        <div class="text-center mt-16">
-          <div class="max-w-4xl mx-auto">
-            <h3 class="text-3xl lg:text-4xl font-bold text-white mb-6">
-              Siap Membuat Undangan Digital Anda?
-            </h3>
-            <p class="text-xl text-white/80 mb-8">
-              Setelah menonton tutorial, saatnya praktik langsung! Mulai buat
-              undangan impian Anda sekarang.
-            </p>
+        <!-- Description -->
+        <p
+          class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+        >
+          Ikuti langkah-langkah mudah berikut untuk menciptakan undangan
+          pernikahan digital yang sempurna dan memukau
+        </p>
+      </div>
 
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-              <NuxtLink
-                to="/login"
-                class="group px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-              >
-                <span class="flex items-center justify-center">
-                  Mulai Buat Undangan
-                  <i
-                    class="bi bi-arrow-right ml-2 group-hover:translate-x-1 transition-transform"
-                  ></i>
-                </span>
-              </NuxtLink>
+      <!-- Tutorial Steps -->
+      <div class="space-y-8 mb-16">
+        <!-- Step 1 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-blue-400/30 to-indigo-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-blue-950/90 to-indigo-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/1.png"
+                  class="h-full object-cover"
+                />
+              </div>
 
-              <button
-                @click="shareVideo"
-                class="group px-8 py-4 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-              >
-                <span class="flex items-center justify-center">
-                  Bagikan Tutorial
-                  <i
-                    class="bi bi-share ml-2 group-hover:scale-110 transition-transform"
-                  ></i>
-                </span>
-              </button>
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">1</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Daftar dan Masuk
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-blue-400 to-indigo-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Buat akun atau login jika sudah memiliki akun, atau langsung
+                  masuk dengan google.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-purple-400/30 to-violet-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-purple-950/90 to-violet-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row-reverse">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/2.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-purple-400 to-violet-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">2</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Buat Undangan
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-purple-400 to-violet-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Setelah masuk anda akan diarahkan ke halaman utama dashboard
+                  EA Invitation, dan setelah itu klik "Buat Undangan Sekarang"
+                  untuk membuat undangan.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/30 to-sky-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-cyan-950/90 to-sky-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/3.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-sky-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">3</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Pilih Paket Undangan
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-cyan-400 to-sky-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Setelah itu anda diarahkan ke halaman pemilihan paket
+                  undangan, dan pilih salah satu dari paket undangan yang
+                  tersedia.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 to-teal-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-emerald-950/90 to-teal-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row-reverse">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/4.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">4</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Checkout
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Setelah memilih paket undangan yang anda butuhkan anda
+                  diarahkan ke halaman checkout untuk melakukan transaksi
+                  pembelian paket uandangan anda dan klik "Bayar Sekarang" untuk
+                  mengkonfirmasi pembelian paket undangan anda.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-pink-400/30 to-rose-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-pink-950/90 to-rose-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/6.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">5</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Nama Pasangan
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-pink-400 to-rose-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Setelah pembeyaran berhasil, selanjutnya anda perlu memasukan
+                  nama pasangagan yang akan dijadikan display utama di undangan
+                  anda.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 to-teal-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-emerald-950/90 to-teal-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row-reverse">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/7.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">6</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Pilih Tema
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Selanjutnya andan perlu memilih tema undangan yang akan
+                  dijadikan sebagai desain dari undangan anda, dan anda dapat
+                  mengubahnya kapan pun.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-pink-400/30 to-rose-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-pink-950/90 to-rose-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/8.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">7</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Isi Data
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-pink-400 to-rose-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Setelah itu anda perlu mengisi data undangan yang dibutuhkan,
+                  seperti tanggal dan waktu acara, data mempelai pria dan
+                  wanita, daftar acara, kisah cinta, gift, foto, video, dll.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 8 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 to-teal-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-emerald-950/90 to-teal-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row-reverse">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/9.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-emerald-400 to-teal-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">8</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Kelola Tamu
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-emerald-400 to-teal-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Selamat undagan anda telah selesai dibuat, dan selanjutnya
+                  adalah anda dapat mengelola, menambahkan, dan memantau daftar
+                  tamu undangan anda.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 9 -->
+        <div class="group relative rounded-2xl transition-all duration-300">
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-pink-400/30 to-rose-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b rounded-2xl border border-white/10 hover:border-white/20 from-pink-950/90 to-rose-900/90 dark:from-black/80 dark:to-black/70 overflow-hidden"
+          >
+            <div class="flex flex-col lg:flex-row">
+              <!-- Image Section -->
+              <div class="max-h-92 aspect-4/3">
+                <NuxtImg
+                  src="/img/tutorial/10.png"
+                  class="h-full object-cover"
+                />
+              </div>
+
+              <!-- Content Section -->
+              <div class="lg:w-3/5 p-8 lg:p-12">
+                <div class="flex items-start gap-6 mb-6">
+                  <!-- Step Number -->
+                  <div class="flex-shrink-0">
+                    <div
+                      class="w-16 h-16 bg-gradient-to-br from-pink-400 to-rose-600 rounded-2xl flex items-center justify-center shadow-lg"
+                    >
+                      <span class="text-3xl font-bold text-white">7</span>
+                    </div>
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-2xl lg:text-3xl font-bold text-white mb-2">
+                      Bagikan Undangan
+                    </h3>
+                    <div
+                      class="w-20 h-1 bg-gradient-to-r from-pink-400 to-rose-600 rounded-full"
+                    ></div>
+                  </div>
+                </div>
+
+                <p class="text-white/70 text-lg mb-6">
+                  Langkah yang terakhir adalah membagikan undangan anda ke
+                  teman, kerabat, atau orang lain yang anda undang untuk acara
+                  anda.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
 
-    <!-- Video Modal -->
-    <div
-      v-if="showVideoModal"
-      class="fixed inset-0 bg-black/80 backdrop-blur-sm flex items-center justify-center z-50 p-4"
-    >
-      <div class="relative max-w-6xl w-full">
-        <!-- Close Button -->
-        <button
-          @click="closeVideo"
-          class="absolute -top-12 right-0 w-10 h-10 bg-white/10 hover:bg-white/20 border border-white/20 rounded-full flex items-center justify-center text-white hover:text-red-400 transition-colors"
-        >
-          <i class="bi bi-x-lg"></i>
-        </button>
-
-        <!-- Video Player -->
-        <div class="relative aspect-video bg-black rounded-2xl overflow-hidden">
-          <!-- Fake Video Player -->
+      <!-- Video Tutorial Section -->
+      <div class="mb-16">
+        <div class="group relative rounded-2xl transition-all duration-300">
           <div
-            class="absolute inset-0 bg-gradient-to-br from-slate-800 to-slate-900 flex items-center justify-center"
+            class="absolute -inset-1 bg-gradient-to-r from-amber-400/30 to-orange-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-50 group-hover:opacity-75"
+          ></div>
+          <div
+            class="relative w-full bg-gradient-to-b p-8 lg:p-12 rounded-2xl border border-white/10 hover:border-white/20 from-amber-950/90 to-orange-900/90 dark:from-black/80 dark:to-black/70"
           >
-            <div class="text-center">
+            <div class="text-center mb-8">
               <div
-                class="w-24 h-24 bg-gradient-to-r from-red-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse"
+                class="inline-flex items-center px-4 py-2 mb-6 backdrop-blur-md bg-white/5 border border-white/10 rounded-full"
               >
-                <i class="bi bi-play-fill text-white text-3xl ml-1"></i>
+                <i class="bi bi-play-circle-fill text-amber-400 mr-2"></i>
+                <span class="text-sm font-medium text-white/80"
+                  >Video Tutorial</span
+                >
               </div>
-              <p class="text-white text-lg">Video sedang dimuat...</p>
-              <p class="text-white/60 text-sm mt-2">
-                Tutorial EA Invitation - {{ videoLength }}
+              <h3 class="text-3xl lg:text-4xl font-bold text-white mb-4">
+                Tonton Panduan Video
+              </h3>
+              <p class="text-white/70 text-lg max-w-2xl mx-auto">
+                Pelajari cara membuat undangan digital dengan menonton video
+                tutorial lengkap kami
               </p>
             </div>
-          </div>
 
-          <!-- Video Controls -->
-          <div
-            class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6"
-          >
-            <div class="flex items-center space-x-4">
-              <button class="text-white hover:text-red-400 transition-colors">
-                <i class="bi bi-play-fill text-2xl"></i>
-              </button>
-
-              <div class="flex-1 bg-white/20 rounded-full h-2 relative">
-                <div
-                  class="absolute left-0 top-0 h-full bg-gradient-to-r from-red-500 to-pink-500 rounded-full"
-                  :style="{ width: currentProgress + '%' }"
-                ></div>
+            <!-- Video Placeholder -->
+            <div
+              class="relative aspect-video rounded-xl overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 border border-white/10"
+            >
+              <div class="absolute inset-0 flex items-center justify-center">
+                <button
+                  class="group/play w-20 h-20 lg:w-24 lg:h-24 bg-gradient-to-br from-amber-400 to-orange-600 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300"
+                >
+                  <i
+                    class="bi bi-play-fill text-white text-4xl lg:text-5xl ml-1"
+                  ></i>
+                </button>
               </div>
 
-              <span class="text-white text-sm"
-                >{{ formatTime(currentTime) }} / {{ videoLength }}</span
-              >
-
-              <button class="text-white hover:text-red-400 transition-colors">
-                <i class="bi bi-volume-up"></i>
-              </button>
-
-              <button class="text-white hover:text-red-400 transition-colors">
-                <i class="bi bi-fullscreen"></i>
-              </button>
+              <!-- Video Thumbnail Overlay -->
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent"
+              ></div>
             </div>
           </div>
         </div>
       </div>
+
+      <!-- CTA Section -->
+      <div class="text-center">
+        <div
+          class="group relative rounded-2xl inline-block hover:scale-105 transition-all duration-300"
+        >
+          <div
+            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/50 to-purple-600/50 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500"
+          ></div>
+          <a
+            :href="dashboardAppUrl"
+            class="relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-2xl text-white font-semibold text-lg shadow-xl hover:shadow-2xl transition-all duration-300"
+          >
+            Mulai Buat Undangan Sekarang
+            <i class="bi bi-arrow-right ml-3"></i>
+          </a>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>
 /* Grid pattern */
 .bg-grid-pattern {
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4) 1px,
+      rgba(255, 255, 255, 0.05) 1px,
       transparent 1px
     ),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.7) 1px, transparent 1px);
-  background-size: 120px 120px;
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 80px 80px;
 }
 
-/* Video hover effects */
-@keyframes pulse-glow {
+/* Animation delays */
+.delay-150 {
+  animation-delay: 0.15s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-1000 {
+  animation-delay: 1s;
+}
+
+@keyframes pulse {
   0%,
   100% {
-    box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+    opacity: 1;
   }
   50% {
-    box-shadow: 0 0 40px rgba(239, 68, 68, 0.8);
+    opacity: 0.5;
   }
 }
 
-.video-play-button {
-  animation: pulse-glow 2s ease-in-out infinite;
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 </style>
