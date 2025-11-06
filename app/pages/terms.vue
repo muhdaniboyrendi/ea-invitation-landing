@@ -1,17 +1,17 @@
 <script setup>
 useSeoMeta({
-  title: "EA Invitation - Platform Undangan Pernikahan Digital",
+  title: "EA Invitation - Syarat dan Ketentuan",
   description:
-    "Buat undangan pernikahan digital yang indah, mudah, dan terjangkau. Pilih dari berbagai tema menarik dan bagikan kepada tamu undangan Anda dengan mudah.",
-  ogTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
+    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
+  ogTitle: "EA Invitation - Syarat dan Ketentuan",
   ogDescription:
-    "Buat undangan pernikahan digital yang indah, mudah, dan terjangkau. Pilih dari berbagai tema menarik dan bagikan kepada tamu undangan Anda dengan mudah.",
+    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
   ogImage: "/og.png",
   ogUrl: "/",
   twitterCard: "summary_large_image",
-  twitterTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
+  twitterTitle: "EA Invitation - Syarat dan Ketentuan",
   twitterDescription:
-    "Buat undangan pernikahan digital yang indah, mudah, dan terjangkau.",
+    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
   twitterImage: "/og.png",
 });
 
@@ -42,10 +42,7 @@ useSchemaOrg([
 <template>
   <div class="bg-off-white dark:bg-dark">
     <NuxtLayout>
-      <Hero />
-      <Features />
-      <Package />
-      <ThemesHome />
+      <TermsAndConditions />
     </NuxtLayout>
   </div>
 </template>

@@ -53,7 +53,7 @@
       </li>
       <li>
         <NuxtLink
-          to="/terms-and-conditions"
+          to="/terms"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >
           <div

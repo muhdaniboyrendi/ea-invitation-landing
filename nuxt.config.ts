@@ -17,6 +17,10 @@ export default defineNuxtConfig({
   },
   app: {
     head: {
+      title: "EA Invitation", // default fallback title
+      htmlAttrs: {
+        lang: "id",
+      },
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
   },
@@ -46,8 +50,6 @@ export default defineNuxtConfig({
   },
   seo: {
     redirectToCanonicalSiteUrl: true,
-
-    // Meta tags default
     meta: {
       themeColor: "#8B5CF6", // Sesuaikan dengan brand color
     },
@@ -60,22 +62,6 @@ export default defineNuxtConfig({
       changefreq: "weekly",
       priority: 0.5,
     },
-    urls: async () => {
-      // Tambahkan URL dinamis dari database/API jika ada
-      // Contoh: event-event yang sudah dibuat users
-      return [
-        {
-          loc: "/templates/wedding",
-          priority: 0.8,
-          changefreq: "monthly",
-        },
-        {
-          loc: "/templates/birthday",
-          priority: 0.8,
-          changefreq: "monthly",
-        },
-      ];
-    },
     exclude: ["/admin/**", "/dashboard/**", "/api/**"],
   },
   robots: {
@@ -83,20 +69,17 @@ export default defineNuxtConfig({
     disallow: [
       "/admin",
       "/dashboard",
-      "/api",
       "/preview/**",
       "/*?token=*", // Block URLs dengan token
     ],
-    allow: ["/", "/themes", "/tutorial"],
+    allow: "/",
   },
   ogImage: {
     enabled: true,
-    componentDirs: ["og-image"],
     defaults: {
-      component: "Default",
       width: 1200,
       height: 630,
-      cacheMaxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
+      component: "OgImage",
     },
   },
   schemaOrg: {
@@ -104,8 +87,8 @@ export default defineNuxtConfig({
     identity: {
       type: "Organization",
       name: "EA Invitation",
-      url: "https://eainvitation.com",
-      logo: "https://eainvitation.com/logo.png",
+      url: process.env.APP_URL || "http://localhost:3000",
+      logo: "/favicon.png",
       sameAs: [
         "https://instagram.com/ea_invitation",
         "https://tiktok.com/ea-invitation",
@@ -115,6 +98,6 @@ export default defineNuxtConfig({
   },
   linkChecker: {
     enabled: true,
-    excludeLinks: ["https://facebook.com/**", "https://twitter.com/**"],
+    excludeLinks: ["https://instagram.com/**"],
   },
 });
