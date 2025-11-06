@@ -138,6 +138,7 @@ onUnmounted(() => {
           ? 'bg-gradient-to-r from-red-500 to-pink-500 hover:from-red-400 hover:to-pink-400'
           : 'bg-gradient-to-r from-green-500 to-emerald-500 hover:from-green-400 hover:to-emerald-400 hover:scale-110',
       ]"
+      aria-label="contact support button"
     >
       <!-- Button Content -->
       <div class="relative z-10 w-full h-full flex items-center justify-center">

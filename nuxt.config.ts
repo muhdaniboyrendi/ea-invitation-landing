@@ -12,10 +12,6 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: "",
   },
-  image: {
-    format: ["webp", "jpg"],
-    quality: 80,
-  },
   nitro: {
     compressPublicAssets: true,
   },
@@ -45,44 +41,80 @@ export default defineNuxtConfig({
     url: "https://ea-invitation-landing.vercel.app", // Ganti dengan domain Anda
     name: "EA Invitation",
     description:
-      "Website undangan pernikahan digital yang elegan dan interaktif. Wujudkan momen bahagia pernikahan Anda dengan undangan digital modern.",
+      "Platform undangan pernikahan digital yang elegan dan interaktif. Wujudkan momen bahagia pernikahan Anda dengan undangan digital modern.",
     defaultLocale: "id",
   },
   seo: {
+    redirectToCanonicalSiteUrl: true,
+
+    // Meta tags default
     meta: {
-      charset: "utf-8",
-      viewport: "width=device-width, initial-scale=1",
-      themeColor: "#ffffff",
+      themeColor: "#8B5CF6", // Sesuaikan dengan brand color
     },
   },
-  robots: {
-    allow: ["/", "/tutorial", "/themes", "/login", "/register"],
-    disallow: ["/admin", "/dashboard"],
-    sitemap: "https://ea-invitation-landing.vercel.app/sitemap.xml",
-  },
   sitemap: {
-    hostname: "https://ea-invitation-landing.vercel.app",
-    gzip: true,
-    routes: ["/", "/tutorial", "/themes", "/login", "/register"],
+    enabled: true,
+    strictNuxtContentPaths: true,
+    autoLastmod: true,
+    defaults: {
+      changefreq: "weekly",
+      priority: 0.5,
+    },
+    urls: async () => {
+      // Tambahkan URL dinamis dari database/API jika ada
+      // Contoh: event-event yang sudah dibuat users
+      return [
+        {
+          loc: "/templates/wedding",
+          priority: 0.8,
+          changefreq: "monthly",
+        },
+        {
+          loc: "/templates/birthday",
+          priority: 0.8,
+          changefreq: "monthly",
+        },
+      ];
+    },
+    exclude: ["/admin/**", "/dashboard/**", "/api/**"],
+  },
+  robots: {
+    enabled: true,
+    disallow: [
+      "/admin",
+      "/dashboard",
+      "/api",
+      "/preview/**",
+      "/*?token=*", // Block URLs dengan token
+    ],
+    allow: ["/", "/themes", "/tutorial"],
   },
   ogImage: {
     enabled: true,
+    componentDirs: ["og-image"],
     defaults: {
-      extension: "png",
+      component: "Default",
       width: 1200,
       height: 630,
+      cacheMaxAgeSeconds: 60 * 60 * 24 * 7, // 7 days
     },
   },
   schemaOrg: {
+    enabled: true,
     identity: {
       type: "Organization",
       name: "EA Invitation",
-      url: "https://ea-invitation-landing.vercel.app",
-      logo: "https://ea-invitation-landing.vercel.app/favicon.png",
+      url: "https://eainvitation.com",
+      logo: "https://eainvitation.com/logo.png",
+      sameAs: [
+        "https://instagram.com/ea_invitation",
+        "https://tiktok.com/ea-invitation",
+        "https://twitter.com/ea_invitation",
+      ],
     },
   },
   linkChecker: {
     enabled: true,
-    excludeLinks: ["mailto:*", "tel:*"],
+    excludeLinks: ["https://facebook.com/**", "https://twitter.com/**"],
   },
 });

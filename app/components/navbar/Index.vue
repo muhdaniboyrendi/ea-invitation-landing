@@ -81,6 +81,8 @@ const closeMobile = () => {
               <button
                 @click="toggleTheme"
                 class="h-10 aspect-square rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10"
+                title="Theme preferences"
+                aria-label="Theme preferences button"
               >
                 <i v-if="isDark" class="bi bi-sun-fill text-yellow-500"></i>
                 <i v-else class="bi bi-moon-fill text-gray-300"></i>

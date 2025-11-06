@@ -19,9 +19,13 @@ const props = defineProps(["theme"]);
             v-if="props.theme?.thumbnail_url"
             :src="props.theme?.thumbnail_url || '/img/hero.jpg'"
             :alt="props.theme?.name || 'Theme Image'"
-            class="w-full aspect-4/3 object-cover object-center rounded-xl border border-white/10"
+            width="400"
+            height="300"
             loading="lazy"
             format="webp"
+            quality="80"
+            placeholder
+            class="w-full aspect-4/3 object-cover object-center rounded-xl border border-white/10"
           />
           <div
             v-else
@@ -35,7 +39,7 @@ const props = defineProps(["theme"]);
         <!-- Theme Type Badge -->
         <div v-if="props.theme?.is_premium" class="absolute top-6 right-6 z-10">
           <span
-            class="px-3 py-1 rounded-full text-xs text-white font-semibold bg-cyan-400"
+            class="px-3 py-1 rounded-full text-xs text-dark font-semibold bg-cyan-400"
           >
             Premium
           </span>

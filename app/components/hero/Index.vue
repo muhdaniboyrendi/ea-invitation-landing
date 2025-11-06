@@ -31,14 +31,9 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         </div>
 
         <h1
-          class="relative max-w-2xl mx-auto lg:mx-0 text-5xl lg:text-7xl font-bold mb-6 text-off-white dark:text-off-white/90"
+          class="relative max-w-2xl mx-auto lg:mx-0 text-5xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
         >
-          Website
-          <span
-            class="bg-linear-to-r/oklab from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent animate-gradient-x"
-            >Undangan Pernikahan</span
-          >
-          Digital
+          Platform Undangan Pernikahan Digital
         </h1>
 
         <p
@@ -70,18 +65,26 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
       <!-- Right Content -->
       <div class="flex justify-center lg:justify-end">
-        <div class="relative group max-w-xl">
+        <div class="relative group max-w-xl w-full">
           <!-- Glow Effect -->
           <div
             class="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 blur-2xl rounded-3xl group-hover:blur-3xl transition-all duration-500"
           ></div>
-          <!-- Card Content -->
-          <NuxtImg
-            src="/img/hero.png"
-            class="relative w-full"
-            width="800"
-            height="450"
-          />
+          <!-- Image Container with fixed aspect ratio -->
+          <div class="relative w-full aspect-video">
+            <NuxtImg
+              src="/img/hero.png"
+              class="min-w-full h-full object-cover"
+              alt="main image"
+              width="960"
+              height="540"
+              format="webp"
+              quality="100"
+              loading="eager"
+              placeholder
+              preload
+            />
+          </div>
         </div>
       </div>
     </section>

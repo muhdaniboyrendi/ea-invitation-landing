@@ -19,6 +19,9 @@
           href="https://www.instagram.com/erlan.azr_"
           target="_blank"
           class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
+          rel="noopener noreferrer"
+          title="Instagram"
+          aria-label="EA Invitation Instagram"
         >
           <i
             class="bi bi-instagram text-white text-lg group-hover:text-[#E1306C] transition-colors duration-300"
@@ -28,6 +31,9 @@
           href="https://www.tiktok.com/@erlan.azr_"
           target="_blank"
           class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
+          rel="noopener noreferrer"
+          title="Tiktok"
+          aria-label="EA Invitation Tiktok"
         >
           <i class="bi bi-tiktok text-white text-lg"></i>
         </a>
@@ -35,6 +41,9 @@
           href="https://wa.me/6282220633024"
           target="_blank"
           class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
+          rel="noopener noreferrer"
+          title="WhatsApp"
+          aria-label="EA Invitation Whatsapp"
         >
           <i
             class="bi bi-whatsapp text-white text-lg group-hover:text-green-400 transition-colors duration-300"

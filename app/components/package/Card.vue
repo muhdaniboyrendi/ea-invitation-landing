@@ -1,4 +1,8 @@
 <script setup>
+const config = useRuntimeConfig();
+
+const dashboardAppUrl = config.public.dashboardAppUrl;
+
 const props = defineProps(["package"]);
 
 // State untuk mengontrol tampilan features
@@ -79,27 +83,28 @@ const toggleFeatures = () => {
         <!-- Price -->
         <div class="relative">
           <div
+            v-if="props.package.discount"
             class="absolute -top-4 right-0 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold px-2 py-1 rounded-full"
           >
-            20% OFF
+            {{ props.package.discount }}% OFF
           </div>
           <div class="flex items-baseline justify-center mb-2">
-            <ClientOnly>
-              <span
-                class="font-bold text-transparent bg-clip-text bg-gradient-to-r"
-                :class="
-                  props.package.id === 2
-                    ? 'from-purple-400 to-pink-400 text-5xl'
-                    : 'from-blue-400 to-cyan-400 text-4xl'
-                "
-              >
-                <span class="text-base">Rp</span>
-                {{ formatRupiah(props.package.price) }}
-              </span>
-            </ClientOnly>
+            <span
+              class="font-bold text-transparent bg-clip-text bg-gradient-to-r"
+              :class="
+                props.package.id === 2
+                  ? 'from-purple-400 to-pink-400 text-5xl'
+                  : 'from-blue-400 to-cyan-400 text-4xl'
+              "
+            >
+              <span class="text-base">Rp</span>
+              {{ formatRupiah(props.package.final_price) }}
+            </span>
           </div>
-          <div class="text-sm text-white/50">
-            <span class="line-through">Rp 120.000</span>
+          <div v-if="props.package.discount" class="text-sm text-white/50">
+            <span class="line-through"
+              >Rp {{ formatRupiah(props.package.price) }}</span
+            >
           </div>
         </div>
       </div>
@@ -145,7 +150,8 @@ const toggleFeatures = () => {
       </div>
 
       <!-- CTA Button -->
-      <button
+      <a
+        :href="`${dashboardAppUrl}/invitation/create/${props.package?.id}`"
         class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
         :class="
           props.package.id === 2
@@ -163,7 +169,7 @@ const toggleFeatures = () => {
               : 'from-blue-400/20 to-cyan-400/20'
           "
         ></div>
-      </button>
+      </a>
     </div>
   </div>
 </template>

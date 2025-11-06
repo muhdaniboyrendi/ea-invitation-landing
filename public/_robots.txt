@@ -2,8 +2,6 @@ User-Agent: *
 Allow: /
 Allow: /tutorial
 Allow: /themes
-Allow: /login
-Allow: /register
 
 Disallow: 
 
