@@ -37,13 +37,14 @@ const closeMobile = () => {
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <NuxtLink to="/" class="block">
+          <NuxtLink to="/" class="block" aria-label="ea invitation">
             <NuxtImg
               src="/logo-text-dark.png"
               width="200"
               height="50"
               loading="eager"
               quality="80"
+              alt="EA Invitation logo"
             />
           </NuxtLink>
 

@@ -64,7 +64,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       </div>
 
       <!-- Right Content -->
-      <div class="flex justify-center lg:justify-end">
+      <div class="flex justify-center lg:justify-end px-4 lg:px-0">
         <div class="relative group max-w-xl w-full">
           <!-- Glow Effect -->
           <div
@@ -81,8 +81,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
               format="webp"
               quality="100"
               loading="eager"
-              placeholder
-              preload
             />
           </div>
         </div>

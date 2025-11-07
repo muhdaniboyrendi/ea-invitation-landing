@@ -14,11 +14,11 @@ const faqs = [
       },
       {
         q: "Berapa lama waktu pembuatan undangan?",
-        a: "Proses pembuatan undangan digital memakan waktu 2-5 hari kerja setelah semua data dan materi (foto, teks, dll) lengkap. Untuk paket premium, kami menyediakan layanan express 1-2 hari kerja.",
+        a: "Undangan langsung jadi tanpa ada proses tunggu dan anda dapat mengeditnya kapan pun.",
       },
       {
         q: "Apakah bisa request custom design?",
-        a: "Tentu saja! Kami menyediakan layanan custom design sesuai tema dan konsep pernikahan Anda. Tim designer kami siap mewujudkan visi undangan impian Anda dengan unlimited revisi hingga Anda puas.",
+        a: "Desain tidak bisa dicustom, anda hanya bisa menggunkan tema desain yang sudah tersedia.",
       },
     ],
   },
@@ -34,7 +34,7 @@ const faqs = [
       },
       {
         q: "Bagaimana cara tracking konfirmasi tamu?",
-        a: "Setiap undangan dilengkapi dengan dashboard admin real-time yang menampilkan statistik RSVP, jumlah tamu yang akan hadir, dan daftar ucapan. Anda bisa mengaksesnya kapan saja melalui panel admin.",
+        a: "Setiap undangan dilengkapi dengan dashboard admin real-time yang menampilkan statistik RSVP dan jumlah tamu yang akan hadir. Anda bisa mengaksesnya kapan saja melalui panel admin.",
       },
       {
         q: "Apakah mendukung musik background?",
@@ -50,15 +50,15 @@ const faqs = [
     questions: [
       {
         q: "Apa saja paket yang tersedia?",
-        a: "Kami menyediakan 3 paket: Basic (fitur standar), Premium (fitur lengkap + custom design), dan Ultimate (semua fitur + video cinematic + unlimited guest). Detail lengkap tersedia di halaman pricing.",
+        a: "Kami menyediakan 3 paket: Basic (fitur standar), Premium (fitur lengkap + custom design), dan Business (semua fitur + video cinematic + unlimited guest). Detail lengkap tersedia di halaman pricing.",
       },
       {
         q: "Bagaimana metode pembayaran?",
-        a: "Kami menerima pembayaran melalui transfer bank (BCA, Mandiri, BNI, BRI), e-wallet (OVO, GoPay, Dana), dan virtual account. Pembayaran dapat dicicil untuk paket Premium dan Ultimate.",
+        a: "Kami menerima pembayaran melalui transfer bank (BCA, Mandiri, BNI, BRI), e-wallet (OVO, GoPay, Dana), dan virtual account.",
       },
       {
         q: "Apakah ada biaya tambahan?",
-        a: "Tidak ada biaya tersembunyi. Semua fitur sesuai paket sudah termasuk hosting 1 tahun, SSL certificate, unlimited bandwidth, dan customer support 24/7. Revisi design juga unlimited untuk semua paket.",
+        a: "Ada biaya admin sebesar Rp 2.500 untuk setiap transaksi, selain itu tidak ada biaya tambahan sama sekali.",
       },
     ],
   },
@@ -70,15 +70,15 @@ const faqs = [
     questions: [
       {
         q: "Bagaimana jika ada masalah teknis?",
-        a: "Tim support kami siap membantu 24/7 melalui WhatsApp, email, dan live chat. Response time maksimal 2 jam untuk issue teknis dan 24 jam untuk pertanyaan umum.",
+        a: "Tim support kami siap membantu 24/7 melalui WhatsApp dan email. Response time maksimal 2 jam untuk issue teknis dan 24 jam untuk pertanyaan umum.",
       },
       {
         q: "Berapa lama undangan bisa diakses?",
-        a: "Undangan akan aktif selama 1 tahun sejak tanggal publish. Jika membutuhkan perpanjangan, Anda bisa melakukan renewal dengan biaya maintenance yang sangat terjangkau.",
+        a: "Undangan akan aktif sesuai dengan paket yang dipilih yang dapat anda lihat di deskripsi fitur paket.",
       },
       {
         q: "Apakah bisa update data setelah publish?",
-        a: "Tentu! Anda dapat melakukan update data seperti tanggal, lokasi, atau informasi lainnya kapan saja melalui dashboard admin atau dengan menghubungi tim support kami.",
+        a: "Tentu! Anda dapat melakukan update data seperti tanggal, lokasi, atau informasi lainnya kapan saja melalui dashboard admin.",
       },
     ],
   },
@@ -142,7 +142,7 @@ const isOpen = (categoryIndex, questionIndex) => {
       </div>
 
       <!-- FAQ Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div
           v-for="(category, categoryIndex) in faqs"
           :key="categoryIndex"
@@ -152,14 +152,8 @@ const isOpen = (categoryIndex, questionIndex) => {
           <div class="group relative">
             <div
               :class="[
-                'absolute -inset-1 blur-lg rounded-2xl opacity-50 group-hover:opacity-75 transition-all duration-500',
-                `bg-gradient-to-r ${category.glowColor}`,
-              ]"
-            ></div>
-            <div
-              :class="[
                 'relative p-6 rounded-2xl border border-white/10',
-                `bg-gradient-to-br ${category.bgGradient} dark:from-black/80 dark:to-black/70`,
+                `bg-gradient-to-br ${category.bgGradient} dark:from-dark/80 dark:to-dark/70`,
               ]"
             >
               <div class="flex items-center gap-3">
@@ -185,13 +179,7 @@ const isOpen = (categoryIndex, questionIndex) => {
             class="group relative"
           >
             <div
-              :class="[
-                'absolute -inset-0.5 blur rounded-xl opacity-0 group-hover:opacity-50 transition-all duration-300',
-                `bg-gradient-to-r ${category.glowColor}`,
-              ]"
-            ></div>
-            <div
-              class="relative backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300"
+              class="relative bg-white/5 dark:bg-black/10 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300"
             >
               <!-- Question Button -->
               <button
@@ -228,41 +216,6 @@ const isOpen = (categoryIndex, questionIndex) => {
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA Section -->
-      <div class="text-center">
-        <div class="group relative inline-block">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/30 to-purple-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-75"
-          ></div>
-          <div
-            class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-8"
-          >
-            <h3 class="text-2xl font-bold text-white mb-3">
-              Masih Ada Pertanyaan?
-            </h3>
-            <p class="text-white/70 mb-6 max-w-2xl mx-auto">
-              Tim support kami siap membantu Anda 24/7. Jangan ragu untuk
-              menghubungi kami!
-            </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-              <button
-                class="group/btn relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <span class="relative z-10">Contact Support</span>
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
-                ></div>
-              </button>
-              <button
-                class="px-8 py-4 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300"
-              >
-                View Pricing
-              </button>
             </div>
           </div>
         </div>

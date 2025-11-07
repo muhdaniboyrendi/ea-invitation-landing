@@ -8,13 +8,14 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
   <div class="lg:col-span-2">
     <div class="mb-8">
       <!-- Logo/Brand -->
-      <NuxtLink to="/" class="block mb-6">
+      <NuxtLink to="/" class="block mb-6" aria-label="ea invitation">
         <NuxtImg
           src="/logo-text-dark.png"
           width="200"
           height="50"
           loading="eager"
           quality="80"
+          alt="EA Invitation logo"
         />
       </NuxtLink>
 

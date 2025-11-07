@@ -155,7 +155,7 @@ const clearActive = () => {
               <div :class="index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'">
                 <div class="flex items-start gap-4 mb-6">
                   <div
-                    class="w-16 h-16 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 bg-gradient-to-br from-cyan-400 to-purple-600"
+                    class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 bg-gradient-to-br from-cyan-400 to-purple-600"
                   >
                     <span class="text-white font-bold text-2xl">{{
                       step.number
@@ -315,12 +315,12 @@ const clearActive = () => {
                   class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
                 ></div>
               </a>
-              <button
+              <!-- <button
                 class="px-8 py-4 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-2"
               >
                 <i class="bi bi-telephone"></i>
                 Hubungi Support
-              </button>
+              </button> -->
             </div>
           </div>
         </div>
