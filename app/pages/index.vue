@@ -6,13 +6,13 @@ useSeoMeta({
   ogTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
   ogDescription:
     "Buat undangan pernikahan digital yang indah, mudah, dan terjangkau. Pilih dari berbagai tema menarik dan bagikan kepada tamu undangan Anda dengan mudah.",
-  ogImage: "/og.png",
+  ogImage: "/og-image.png",
   ogUrl: "/",
   twitterCard: "summary_large_image",
   twitterTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
   twitterDescription:
     "Buat undangan pernikahan digital yang indah, mudah, dan terjangkau.",
-  twitterImage: "/og.png",
+  twitterImage: "/og-image.png",
 });
 
 useSchemaOrg([
@@ -30,7 +30,7 @@ useSchemaOrg([
     "@type": "Organization",
     name: "EA Invitation",
     url: "/",
-    logo: "/favicon.png",
+    logo: "/favicon.ico",
     sameAs: [
       "https://instagram.com/ea.invitation",
       "https://tiktok.com/ea.invitation",
@@ -46,6 +46,7 @@ useSchemaOrg([
       <Features />
       <Package />
       <ThemesHome />
+      <Faq />
     </NuxtLayout>
   </div>
 </template>

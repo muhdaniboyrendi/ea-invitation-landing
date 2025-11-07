@@ -9,17 +9,6 @@
     <ul class="space-y-4">
       <li>
         <NuxtLink
-          to="/faq"
-          class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
-        >
-          <div
-            class="w-1.5 h-1.5 bg-green-400 rounded-full mr-3 group-hover:scale-125 transition-transform duration-300"
-          ></div>
-          FAQ
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
           to="/tutorial"
           class="text-white/70 hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
         >

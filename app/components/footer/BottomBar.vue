@@ -3,9 +3,9 @@
     <div class="max-w-7xl mx-auto px-6 lg:px-12 xl:px-20 py-6">
       <div class="flex flex-col sm:flex-row justify-between items-center gap-4">
         <p class="text-white/60 text-sm">
-          © 2024 EA Invitation. Semua hak dilindungi. Dibuat oleh
+          © 2025 EA Invitation. Semua hak dilindungi. Dibuat oleh
           <a
-            href="https://erlan-azr.vercel.app/"
+            href="https://erlanazhari.my.id/"
             target="_blank"
             class="text-cyan-400 hover:underline"
             >Muhdani Boyrendi Erlan Azhari</a

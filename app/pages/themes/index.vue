@@ -6,13 +6,13 @@ useSeoMeta({
   ogTitle: "EA Invitation - Koleksi Tema Undangan",
   ogDescription:
     "Berbagai macam pilihan tema desain undangan pernikahan dengan desain yang anti mainstream, modern, dan interaktif.",
-  ogImage: "/og.png",
+  ogImage: "/og-image.png",
   ogUrl: "/",
   twitterCard: "summary_large_image",
   twitterTitle: "EA Invitation - Koleksi Tema Undangan",
   twitterDescription:
     "Berbagai macam pilihan tema desain undangan pernikahan dengan desain yang anti mainstream, modern, dan interaktif.",
-  twitterImage: "/og.png",
+  twitterImage: "/og-image.png",
 });
 
 useSchemaOrg([
@@ -30,7 +30,7 @@ useSchemaOrg([
     "@type": "Organization",
     name: "EA Invitation",
     url: "/",
-    logo: "/favicon.png",
+    logo: "/favicon.ico",
     sameAs: [
       "https://instagram.com/ea.invitation",
       "https://tiktok.com/ea.invitation",

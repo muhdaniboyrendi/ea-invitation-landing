@@ -6,13 +6,13 @@ useSeoMeta({
   ogTitle: "EA Invitation - Bantuan",
   ogDescription:
     "Bantuan mengenai platform undangan pernikahan digital EA Invitation.",
-  ogImage: "/og.png",
+  ogImage: "/og-image.png",
   ogUrl: "/",
   twitterCard: "summary_large_image",
   twitterTitle: "EA Invitation - Bantuan",
   twitterDescription:
     "Bantuan mengenai platform undangan pernikahan digital EA Invitation.",
-  twitterImage: "/og.png",
+  twitterImage: "/og-image.png",
 });
 
 useSchemaOrg([
@@ -30,7 +30,7 @@ useSchemaOrg([
     "@type": "Organization",
     name: "EA Invitation",
     url: "/",
-    logo: "/favicon.png",
+    logo: "/favicon.ico",
     sameAs: [
       "https://instagram.com/ea.invitation",
       "https://tiktok.com/ea.invitation",

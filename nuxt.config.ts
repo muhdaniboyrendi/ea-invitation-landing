@@ -21,7 +21,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "id",
       },
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.png" }],
     },
   },
   runtimeConfig: {

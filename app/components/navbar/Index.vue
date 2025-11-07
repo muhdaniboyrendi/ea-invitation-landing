@@ -37,25 +37,15 @@ const closeMobile = () => {
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <div class="flex items-center space-x-3">
-            <div class="relative group">
-              <div
-                class="relative w-10 h-10 bg-gradient-to-br from-cyan-400 to-purple-500 rounded-xl flex items-center justify-center shadow-lg"
-              >
-                <i class="bi bi-cup-hot text-white text-xl"></i>
-              </div>
-            </div>
-            <div class="flex flex-col">
-              <span
-                class="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white to-cyan-200"
-              >
-                EA Invitation
-              </span>
-              <span class="text-xs text-white/60 -mt-1 hidden sm:block"
-                >Digital Wedding Invitation</span
-              >
-            </div>
-          </div>
+          <NuxtLink to="/" class="block">
+            <NuxtImg
+              src="/logo-text-dark.png"
+              width="200"
+              height="50"
+              loading="eager"
+              quality="80"
+            />
+          </NuxtLink>
 
           <!-- Desktop Navigation -->
           <div class="hidden md:block">

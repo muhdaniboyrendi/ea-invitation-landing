@@ -6,13 +6,13 @@ useSeoMeta({
   ogTitle: "EA Invitation - Syarat dan Ketentuan",
   ogDescription:
     "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
-  ogImage: "/og.png",
+  ogImage: "/og-image.png",
   ogUrl: "/",
   twitterCard: "summary_large_image",
   twitterTitle: "EA Invitation - Syarat dan Ketentuan",
   twitterDescription:
     "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
-  twitterImage: "/og.png",
+  twitterImage: "/og-image.png",
 });
 
 useSchemaOrg([
@@ -30,7 +30,7 @@ useSchemaOrg([
     "@type": "Organization",
     name: "EA Invitation",
     url: "/",
-    logo: "/favicon.png",
+    logo: "/favicon.ico",
     sameAs: [
       "https://instagram.com/ea.invitation",
       "https://tiktok.com/ea.invitation",
