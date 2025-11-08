@@ -40,8 +40,8 @@ const closeMobile = () => {
           <NuxtLink to="/" class="block" aria-label="ea invitation">
             <NuxtImg
               src="/logo-text-dark.png"
-              width="200"
-              height="50"
+              width="160"
+              height="40"
               loading="eager"
               quality="80"
               alt="EA Invitation logo"

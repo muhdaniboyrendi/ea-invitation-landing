@@ -50,7 +50,7 @@ export default defineNuxtConfig({
   seo: {
     redirectToCanonicalSiteUrl: true,
     meta: {
-      themeColor: "#8B5CF6", // Sesuaikan dengan brand color
+      themeColor: "#1c98ed", // Sesuaikan dengan brand color
     },
   },
   sitemap: {
@@ -87,7 +87,7 @@ export default defineNuxtConfig({
       type: "Organization",
       name: "EA Invitation",
       url: process.env.APP_URL || "http://localhost:3000",
-      logo: "/favicon.png",
+      logo: "/favicon.ico",
       sameAs: [
         "https://instagram.com/ea_invitation",
         "https://tiktok.com/ea-invitation",

@@ -14,29 +14,6 @@ useSeoMeta({
     "Berbagai macam pilihan tema desain undangan pernikahan dengan desain yang anti mainstream, modern, dan interaktif.",
   twitterImage: "/og-image.png",
 });
-
-useSchemaOrg([
-  {
-    "@type": "WebSite",
-    name: "EA Invitation",
-    url: "/",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "/themes?search={search_term_string}",
-      "query-input": "required name=search_term_string",
-    },
-  },
-  {
-    "@type": "Organization",
-    name: "EA Invitation",
-    url: "/",
-    logo: "/favicon.ico",
-    sameAs: [
-      "https://instagram.com/ea.invitation",
-      "https://tiktok.com/ea.invitation",
-    ],
-  },
-]);
 </script>
 
 <template>
