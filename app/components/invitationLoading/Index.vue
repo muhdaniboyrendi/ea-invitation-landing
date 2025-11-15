@@ -10,7 +10,39 @@ const progress = ref(0);
 const errorState = ref(null);
 const targetUrl = ref(null);
 
-const loadInvitation = async () => {
+/**
+ * Cek apakah slug adalah nama tema (preview mode)
+ */
+const isPreviewMode = () => {
+  const themeMap = config.public.themeMap;
+  return themeMap.hasOwnProperty(slug);
+};
+
+/**
+ * Generate URL untuk preview mode
+ */
+const generatePreviewUrl = () => {
+  const themeMap = config.public.themeMap;
+  const baseUrl = themeMap[slug];
+
+  if (!baseUrl) {
+    throw new Error(`Konfigurasi untuk tema: ${slug} tidak ditemukan.`);
+  }
+
+  // Untuk preview mode, gunakan slug sebagai identifier
+  let finalUrl = `${baseUrl}/${slug}`;
+
+  if (guest) {
+    finalUrl += `?guest=${encodeURIComponent(guest)}`;
+  }
+
+  return finalUrl;
+};
+
+/**
+ * Load invitation data dari API
+ */
+const loadInvitationFromApi = async () => {
   try {
     const response = await checkInvitation(slug);
 
@@ -22,24 +54,48 @@ const loadInvitation = async () => {
 
     const themeSlug = response.theme.slug;
 
-    // 3. Cari URL dasar tema dari themeMap di config
+    // Cari URL dasar tema dari themeMap di config
     const themeMap = config.public.themeMap;
     const baseUrl = themeMap[themeSlug];
 
     if (!baseUrl) {
-      throw new Error(`Konfigurasi untuk tema ID: ${themeSlug} tidak ditemukan.`);
+      throw new Error(
+        `Konfigurasi untuk tema ID: ${themeSlug} tidak ditemukan.`
+      );
     }
 
-    // 4. Bangun URL lengkap (termasuk slug dan guest)
+    // Bangun URL lengkap (termasuk slug dan guest)
     let finalUrl = `${baseUrl}/${slug}`;
     if (guest) {
-      // Gunakan encodeURIComponent untuk keamanan jika nama tamu mengandung spasi/simbol
       finalUrl += `?guest=${encodeURIComponent(guest)}`;
     }
 
-    // 5. Simpan URL target. Ini akan memicu progress bar selesai.
-    targetUrl.value = finalUrl;
+    return finalUrl;
+  } catch (error) {
+    console.error("Gagal memuat undangan:", error);
+    throw error;
+  }
+};
 
+/**
+ * Main function untuk load invitation
+ */
+const loadInvitation = async () => {
+  try {
+    let finalUrl;
+
+    // Cek apakah ini preview mode (slug adalah nama tema)
+    if (isPreviewMode()) {
+      console.log(`Preview mode terdeteksi untuk tema: ${slug}`);
+      finalUrl = generatePreviewUrl();
+    } else {
+      // Mode normal: fetch data dari API
+      console.log(`Loading invitation data untuk: ${slug}`);
+      finalUrl = await loadInvitationFromApi();
+    }
+
+    // Simpan URL target
+    targetUrl.value = finalUrl;
     console.log(`Mengalihkan ke: ${finalUrl}`);
   } catch (error) {
     console.error("Gagal memuat undangan:", error);
@@ -49,20 +105,18 @@ const loadInvitation = async () => {
 };
 
 /**
- * Awasi (watch) perubahan pada progress bar.
+ * Watch progress bar
  * Saat mencapai 100, lakukan pengalihan jika URL target valid.
  */
 watch(progress, (newProgress) => {
   if (newProgress >= 100) {
     // Jika tidak ada error dan URL target sudah siap
     if (targetUrl.value && !errorState.value) {
-      // 6. Lakukan pengalihan EKSTERNAL
+      // Lakukan pengalihan EKSTERNAL
       navigateTo(targetUrl.value, {
         external: true,
       });
     }
-    // Jika ada error, progress bar berhenti di 100 tapi tidak ada pengalihan.
-    // Kita bisa menampilkan pesan errorState di template.
   }
 });
 
@@ -77,9 +131,8 @@ onMounted(() => {
         clearInterval(interval);
       } else {
         // Jika belum, lanjutkan progress palsu TAPI berhenti di 90%
-        // agar terlihat sedang "menyelesaikan"
         let newProgress = progress.value + Math.random() * 15;
-        progress.value = Math.min(newProgress, 90); // Berhenti di 90
+        progress.value = Math.min(newProgress, 90);
       }
     } else {
       clearInterval(interval);
@@ -120,7 +173,9 @@ onMounted(() => {
           <span
             class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-3 animate-pulse"
           ></span>
-          <span class="text-sm font-medium text-white/80">Loading</span>
+          <span class="text-sm font-medium text-white/80">
+            {{ errorState ? "Error" : "Loading" }}
+          </span>
         </div>
 
         <!-- Main Text -->
@@ -139,25 +194,19 @@ onMounted(() => {
           }}
         </p>
 
+        <!-- Error Message -->
         <div
           v-if="errorState"
-          class="my-4 text-red-400 text-lg p-4 bg-red-900/20 border border-red-500/30 rounded-lg"
+          class="my-4 text-red-400 text-lg p-4 bg-red-900/20 border border-red-500/30 rounded-lg max-w-md"
         >
           {{ errorState }}
         </div>
 
+        <!-- Loading Dots -->
         <div
           v-if="!errorState"
           class="flex items-center justify-center space-x-2"
-        ></div>
-
-        <div
-          v-if="!errorState"
-          class="mt-12 w-64 animate-fade-in-up animation-delay-600"
-        ></div>
-
-        <!-- Loading Dots -->
-        <div class="flex items-center justify-center space-x-2">
+        >
           <div
             class="w-3 h-3 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full loader-dot"
           ></div>
@@ -211,6 +260,9 @@ onMounted(() => {
             :style="{ width: progress + '%' }"
           ></div>
         </div>
+        <p class="text-center text-white/50 text-sm mt-2">
+          {{ Math.round(progress) }}%
+        </p>
       </div>
     </div>
 

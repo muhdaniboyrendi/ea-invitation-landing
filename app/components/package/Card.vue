@@ -151,7 +151,7 @@ const toggleFeatures = () => {
 
       <!-- CTA Button -->
       <a
-        :href="`${dashboardAppUrl}/invitation/create/${props.package?.id}`"
+        :href="`${dashboardAppUrl}/invitation/create/checkout/${props.package?.id}`"
         class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
         :class="
           props.package.id === 2
