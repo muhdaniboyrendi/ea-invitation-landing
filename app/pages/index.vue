@@ -1,19 +1,31 @@
 <script setup>
+// Metadata SEO
 useSeoMeta({
-  title: "EA Invitation - Platform Undangan Pernikahan Digital",
+  title: "Buat Undangan Pernikahan Digital dalam Hitungan Menit",
   description:
-    "Wujudkan momen bahagia pernikahan Anda dengan undangan digital yang modern, elegan, dan interaktif.",
-  ogTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
-  ogDescription:
-    "Wujudkan momen bahagia pernikahan Anda dengan undangan digital yang modern, elegan, dan interaktif.",
-  ogImage: "/og-image.png",
-  ogUrl: "/",
-  twitterCard: "summary_large_image",
-  twitterTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
-  twitterDescription:
-    "Wujudkan momen bahagia pernikahan Anda dengan undangan digital yang modern, elegan, dan interaktif.",
-  twitterImage: "/og-image.png",
+    "Platform SaaS terbaik untuk membuat undangan pernikahan digital. Tema premium, fitur lengkap, dan harga terjangkau.",
+  ogTitle: "EA Invitation - Solusi Undangan Digital Anda",
+  ogDescription: "Buat undangan pernikahan impianmu sekarang.",
+  ogImage: "/og-image.png", // Siapkan gambar banner promosi ukuran 1200x630
 });
+
+// Schema Khusus SaaS (SoftwareApplication)
+useSchemaOrg([
+  defineSoftwareApp({
+    name: "EA Invitation",
+    applicationCategory: "DesignApplication",
+    operatingSystem: "Web",
+    offers: {
+      "@type": "Offer",
+      price: "100000", // Contoh harga terendah
+      priceCurrency: "IDR",
+    },
+    aggregateRating: {
+      ratingValue: "4.8",
+      ratingCount: "120", // Bisa diambil dinamis dari database testimoni
+    },
+  }),
+]);
 </script>
 
 <template>

@@ -1,19 +1,9 @@
 <script setup>
 useSeoMeta({
-  title: "EA Invitation - Syarat dan Ketentuan",
-  description:
-    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
-  ogTitle: "EA Invitation - Syarat dan Ketentuan",
-  ogDescription:
-    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
-  ogImage: "/og-image.png",
-  ogUrl: "/",
-  twitterCard: "summary_large_image",
-  twitterTitle: "EA Invitation - Syarat dan Ketentuan",
-  twitterDescription:
-    "Syarat dan ketentuan pembuatan undangan pernikahan digital EA Invitation.",
-  twitterImage: "/og-image.png",
-});
+  title: 'Syarat dan Ketentuan Layanan',
+  description: 'Syarat dan ketentuan penggunaan platform EA Invitation.',
+  robots: 'noindex, follow' // Opsional: Jika tidak ingin halaman ini muncul di hasil pencarian utama, tapi tetap ingin link di dalamnya dicrawl.
+})
 </script>
 
 <template>

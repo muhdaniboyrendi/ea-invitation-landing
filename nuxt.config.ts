@@ -15,19 +15,12 @@ export default defineNuxtConfig({
   nitro: {
     compressPublicAssets: true,
   },
-  app: {
-    head: {
-      title: "EA Invitation", // default fallback title
-      htmlAttrs: {
-        lang: "id",
-      },
-    },
-  },
   runtimeConfig: {
     public: {
       // App
       appUrl: process.env.APP_URL || "http://localhost:3000",
       dashboardAppUrl: process.env.DASHBOARD_APP_URL || "http://localhost:3001",
+      themeUrl: process.env.THEME_URL || "http://localhost:3002",
 
       // API
       apiBaseUrl: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",
@@ -41,62 +34,20 @@ export default defineNuxtConfig({
     },
   },
   site: {
-    url: "https://ea-invitation-landing.vercel.app", // Ganti dengan domain Anda
+    url: "https://eainvitation.com", // Ganti dengan domain production asli Anda (JANGAN localhost)
     name: "EA Invitation",
     description:
-      "Platform undangan pernikahan digital yang elegan dan interaktif. Wujudkan momen bahagia pernikahan Anda dengan undangan digital modern.",
-    defaultLocale: "id",
-  },
-  seo: {
-    redirectToCanonicalSiteUrl: true,
-    meta: {
-      themeColor: "#1c98ed", // Sesuaikan dengan brand color
-    },
+      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan online yang modern, elegan, dan interaktif.",
+    defaultLocale: "id", // Target audiens Indonesia
+    indexable: true, // Ubah ke false hanya saat development
   },
   sitemap: {
-    enabled: true,
-    strictNuxtContentPaths: true,
-    autoLastmod: true,
-    defaults: {
-      changefreq: "weekly",
-      priority: 0.5,
-    },
-    exclude: ["/admin/**", "/dashboard/**", "/api/**"],
+    sources: [
+      //
+    ],
   },
   robots: {
-    enabled: true,
-    disallow: [
-      "/admin",
-      "/dashboard",
-      "/preview/**",
-      "/*?token=*", // Block URLs dengan token
-    ],
-    allow: "/",
-  },
-  ogImage: {
-    enabled: true,
-    defaults: {
-      width: 1200,
-      height: 630,
-      component: "OgImage",
-    },
-  },
-  schemaOrg: {
-    enabled: true,
-    identity: {
-      type: "Organization",
-      name: "EA Invitation",
-      url: process.env.APP_URL || "http://localhost:3000",
-      logo: "/favicon.ico",
-      sameAs: [
-        "https://instagram.com/ea_invitation",
-        "https://tiktok.com/ea-invitation",
-        "https://twitter.com/ea_invitation",
-      ],
-    },
-  },
-  linkChecker: {
-    enabled: true,
-    excludeLinks: ["https://instagram.com/**"],
+    // Mencegah bot meng-crawl halaman admin/login dashboard dari sini jika ada link langsung
+    disallow: ["/admin", "/secret"],
   },
 });
