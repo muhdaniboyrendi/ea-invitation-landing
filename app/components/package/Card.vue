@@ -40,13 +40,13 @@ const toggleFeatures = () => {
     <!-- Best Seller Badge -->
     <div
       v-if="props.package.id === 2"
-      class="absolute -top-4 left-1/2 transform -translate-x-1/2 z-20"
+      class="absolute -top-3 left-1/2 transform -translate-x-1/2 z-20"
     >
-      <div
+      <span
         class="bg-gradient-to-r from-purple-500 to-pink-500 text-white text-sm font-bold px-4 py-2 rounded-full shadow-lg"
       >
         🏆 BEST SELLER
-      </div>
+      </span>
     </div>
 
     <!-- Enhanced Glow for Best Seller -->
@@ -110,9 +110,9 @@ const toggleFeatures = () => {
       </div>
 
       <!-- Features List -->
-      <div class="space-y-4 mb-6">
+      <ul class="space-y-4 mb-6">
         <transition-group name="features" tag="div" class="space-y-4">
-          <div
+          <li
             v-for="(feature, index) in displayedFeatures"
             :key="`feature-${index}`"
             class="flex items-start gap-x-3"
@@ -124,14 +124,15 @@ const toggleFeatures = () => {
               "
             ></i>
             <span class="text-white/80">{{ feature }}</span>
-          </div>
+          </li>
         </transition-group>
-      </div>
+      </ul>
 
       <!-- Show More/Less Button -->
       <div v-if="hasHiddenFeatures" class="text-center mb-6">
         <button
           @click="toggleFeatures"
+          type="button"
           class="inline-flex items-center gap-2 text-sm font-medium hover:underline transition-all duration-300"
           :class="
             props.package.id === 2

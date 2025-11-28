@@ -1,5 +1,4 @@
 <script setup>
-// Metadata SEO
 useSeoMeta({
   title: "Buat Undangan Pernikahan Digital dalam Hitungan Menit",
   description:

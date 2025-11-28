@@ -184,6 +184,7 @@ const isOpen = (categoryIndex, questionIndex) => {
               <!-- Question Button -->
               <button
                 @click="toggleFAQ(categoryIndex, qIndex)"
+                type="button"
                 class="w-full p-6 text-left flex items-start justify-between gap-4 group/btn"
               >
                 <span

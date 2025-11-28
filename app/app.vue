@@ -15,7 +15,7 @@ useSchemaOrg([
     sameAs: [
       "https://instagram.com/erlan.azr_",
       "https://tiktok.com/@erlan.azr_",
-      "https://wa.me/6282220633024", // Link WhatsApp
+      "https://wa.me/6282220633024",
     ],
   }),
   defineWebSite({

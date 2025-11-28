@@ -32,9 +32,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       >
         Buat Undangan
         <i class="bi bi-arrow-right ml-2"></i>
-        <div
-          class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-purple-400/20 blur-xl group-hover:blur-2xl transition duration-300 rounded-xl"
-        ></div>
       </a>
     </div>
   </div>

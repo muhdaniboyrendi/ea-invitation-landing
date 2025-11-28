@@ -58,6 +58,7 @@ onUnmounted(() => {
           <!-- Close Button -->
           <button
             @click="toggleCard"
+            type="button"
             class="absolute top-4 right-4 w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 border border-white/20 flex items-center justify-center transition-all duration-300"
           >
             <i class="bi bi-x text-white text-lg"></i>
@@ -87,22 +88,6 @@ onUnmounted(() => {
             </p>
           </div>
 
-          <!-- Features -->
-          <div class="space-y-2 mb-6">
-            <div class="flex items-center text-white/70 text-sm">
-              <div class="w-1.5 h-1.5 bg-cyan-400 rounded-full mr-3"></div>
-              <span>Konsultasi gratis desain undangan</span>
-            </div>
-            <div class="flex items-center text-white/70 text-sm">
-              <div class="w-1.5 h-1.5 bg-purple-400 rounded-full mr-3"></div>
-              <span>Bantuan teknis 24/7</span>
-            </div>
-            <div class="flex items-center text-white/70 text-sm">
-              <div class="w-1.5 h-1.5 bg-pink-400 rounded-full mr-3"></div>
-              <span>Revisi unlimited sampai puas</span>
-            </div>
-          </div>
-
           <!-- CTA Buttons -->
           <div class="space-y-3">
             <a
@@ -120,6 +105,7 @@ onUnmounted(() => {
 
             <button
               @click="toggleCard"
+              type="button"
               class="w-full px-6 py-3 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-medium rounded-xl transition-all duration-300"
             >
               Nanti saja
@@ -159,12 +145,6 @@ onUnmounted(() => {
           <i v-else key="support" class="bi bi-headset text-white text-xl"></i>
         </Transition>
       </div>
-
-      <!-- Ripple Effect -->
-      <div
-        v-if="!isCardOpen"
-        class="absolute inset-0 rounded-full bg-gradient-to-r from-green-400/20 to-emerald-400/20 animate-ping"
-      ></div>
     </button>
   </div>
 </template>

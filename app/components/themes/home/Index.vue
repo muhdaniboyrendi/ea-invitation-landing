@@ -1,64 +1,8 @@
 <script setup>
 const { themes } = storeToRefs(useThemeStore());
 
-// Sample themes data
-const themesFake = ref([
-  {
-    id: 1,
-    name: "NeonCorp",
-    theme_category_id: "business",
-    is_premium: 0,
-  },
-  {
-    id: 2,
-    name: "GlowFolio",
-    theme_category_id: "portfolio",
-    is_premium: 0,
-  },
-  {
-    id: 3,
-    name: "CyberShop",
-    theme_category_id: "ecommerce",
-    is_premium: 0,
-  },
-  {
-    id: 4,
-    name: "GlowBlog",
-    theme_category_id: "blog",
-    is_premium: 1,
-  },
-  {
-    id: 5,
-    name: "NeonLand",
-    theme_category_id: "landing",
-    is_premium: 0,
-  },
-  {
-    id: 6,
-    name: "TechStart",
-    theme_category_id: "business",
-    is_premium: 0,
-  },
-  {
-    id: 7,
-    name: "ArtistSpace",
-    theme_category_id: "portfolio",
-    is_premium: 0,
-  },
-  {
-    id: 8,
-    name: "LuxeStore",
-    theme_category_id: "ecommerce",
-    is_premium: 0,
-  },
-]);
-
 const filteredThemes = computed(() => {
-  if (themes.value) {
-    return themes.value.slice(0, 6);
-  } else {
-    return themesFake.value.slice(0, 6);
-  }
+  return themes.value.slice(0, 6);
 });
 </script>
 

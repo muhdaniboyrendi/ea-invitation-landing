@@ -5,7 +5,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 </script>
 
 <template>
-  <div
+  <section
     id="home"
     class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
   >
@@ -191,7 +191,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         </div>
       </div>
     </section>
-  </div>
+  </section>
 </template>
 
 <style scoped>

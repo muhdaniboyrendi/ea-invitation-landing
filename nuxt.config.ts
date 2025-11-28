@@ -26,19 +26,14 @@ export default defineNuxtConfig({
       apiBaseUrl: process.env.API_BASE_URL || "http://127.0.0.1:8000/api",
       storageBaseUrl:
         process.env.STORAGE_BASE_URL || "http://127.0.0.1:8000/storage",
-
-      // Themes Base URL
-      themeMap: {
-        instagram: process.env.THEME_INSTAGRAM_URL || "http://localhost:4000",
-      },
     },
   },
   site: {
-    url: "https://eainvitation.com", // Ganti dengan domain production asli Anda (JANGAN localhost)
+    url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
       "Platform Undangan Pernikahan Digital - Buat undangan pernikahan online yang modern, elegan, dan interaktif.",
-    defaultLocale: "id", // Target audiens Indonesia
+    defaultLocale: "id",
     indexable: true, // Ubah ke false hanya saat development
   },
   sitemap: {

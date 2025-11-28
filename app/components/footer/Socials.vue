@@ -1,3 +1,26 @@
+<script setup>
+const socialList = [
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/erlan.azr_",
+    iconClass: "bi-instagram",
+    hoverColor: "#E1306C",
+  },
+  {
+    name: "Tiktok",
+    url: "https://www.tiktok.com/@erlan.azr_",
+    iconClass: "bi-tiktok",
+    hoverColor: "#000000",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.me/6282220633024",
+    iconClass: "bi-whatsapp",
+    hoverColor: "#25D366",
+  },
+];
+</script>
+
 <template>
   <div class="mt-12 pt-8 border-t border-white/10">
     <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
@@ -16,37 +39,18 @@
       <!-- Social Media Links -->
       <div class="flex items-center space-x-4">
         <a
-          href="https://www.instagram.com/erlan.azr_"
+          v-for="(social, index) in socialList"
+          :key="index"
+          :href="social.url"
           target="_blank"
           class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
           rel="noopener noreferrer"
-          title="Instagram"
-          aria-label="EA Invitation Instagram"
+          :title="social.name"
+          :aria-label="`EA Invitation ${social.name}`"
         >
           <i
-            class="bi bi-instagram text-white text-lg group-hover:text-[#E1306C] transition-colors duration-300"
-          ></i>
-        </a>
-        <a
-          href="https://www.tiktok.com/@erlan.azr_"
-          target="_blank"
-          class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
-          rel="noopener noreferrer"
-          title="Tiktok"
-          aria-label="EA Invitation Tiktok"
-        >
-          <i class="bi bi-tiktok text-white text-lg"></i>
-        </a>
-        <a
-          href="https://wa.me/6282220633024"
-          target="_blank"
-          class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
-          rel="noopener noreferrer"
-          title="WhatsApp"
-          aria-label="EA Invitation Whatsapp"
-        >
-          <i
-            class="bi bi-whatsapp text-white text-lg group-hover:text-green-400 transition-colors duration-300"
+            class="bi text-white text-lg transition-colors duration-300"
+            :class="`${social.iconClass} group-hover:text-[${social.hoverColor}]`"
           ></i>
         </a>
       </div>

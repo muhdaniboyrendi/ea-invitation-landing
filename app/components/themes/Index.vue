@@ -156,6 +156,7 @@ const getThemeCount = (categoryId) => {
       <div class="flex flex-wrap justify-center gap-3 mb-16">
         <button
           @click="activeCategory = 'all'"
+          type="button"
           :class="
             activeCategory === 'all'
               ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'
@@ -181,6 +182,7 @@ const getThemeCount = (categoryId) => {
           v-for="category in categories ? categories : categoriesFake"
           :key="category.id"
           @click="activeCategory = category.id"
+          type="button"
           :class="
             activeCategory === category.id
               ? 'bg-gradient-to-r from-cyan-500 to-purple-500 text-white shadow-lg'

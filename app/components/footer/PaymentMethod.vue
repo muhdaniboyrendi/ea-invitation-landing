@@ -1,3 +1,18 @@
+<script setup>
+const paymentMethodList = [
+  { icon: "bca.svg", name: "BCA" },
+  { icon: "bri.svg", name: "BRI" },
+  { icon: "mandiri.svg", name: "Mandiri" },
+  { icon: "bni.svg", name: "BNI" },
+  { icon: "qris.svg", name: "QRIS" },
+  { icon: "alfamidi.svg", name: "Alfamidi" },
+  { icon: "alfamart.png", name: "Alfamart" },
+  { icon: "indomaret.png", name: "Infomaret" },
+  { icon: "visa.png", name: "Visa" },
+  { icon: "mastercard.png", name: "Mastercard" },
+];
+</script>
+
 <template>
   <div class="mt-16 pt-12 border-t border-white/10">
     <div class="text-center mb-12">
@@ -9,16 +24,12 @@
 
       <div class="flex flex-wrap gap-6 justify-center mt-6">
         <!-- Payment Method Icons -->
-        <FooterPaymentIcon icon="bca.svg" name="BCA" />
-        <FooterPaymentIcon icon="bri.svg" name="BRI" />
-        <FooterPaymentIcon icon="mandiri.svg" name="Mandiri" />
-        <FooterPaymentIcon icon="bni.svg" name="BNI" />
-        <FooterPaymentIcon icon="qris.svg" name="QRIS" />
-        <FooterPaymentIcon icon="alfamidi.svg" name="Alfamidi" />
-        <FooterPaymentIcon icon="alfamart.png" name="Alfamart" />
-        <FooterPaymentIcon icon="indomaret.png" name="Infomaret" />
-        <FooterPaymentIcon icon="visa.png" name="Visa" />
-        <FooterPaymentIcon icon="mastercard.png" name="Mastercard" />
+        <FooterPaymentIcon
+          v-for="(paymentMethod, index) in paymentMethodList"
+          :key="index"
+          :icon="paymentMethod.icon"
+          :name="paymentMethod.name"
+        />
       </div>
 
       <!-- Security Badge -->

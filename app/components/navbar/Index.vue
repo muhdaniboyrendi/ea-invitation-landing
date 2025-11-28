@@ -97,6 +97,7 @@ const closeMobile = () => {
             <!-- Mobile menu button -->
             <button
               @click="toggleMobile"
+              type="button"
               class="md:hidden p-2 rounded-xl bg-white/10 transition-all duration-300 border border-white/10"
             >
               <svg
