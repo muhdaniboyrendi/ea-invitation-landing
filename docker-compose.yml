@@ -1,26 +1,31 @@
 services:
-  nuxt-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    container_name: eainvitation-app
+  app:
+    container_name: ea-invitation-app
+    build: .
+    restart: always
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
-      - APP_URL=${APP_URL:-http://localhost:3000}
-      - DASHBOARD_APP_URL=${DASHBOARD_APP_URL:-http://localhost:3001}
-      - THEME_URL=${THEME_URL:-http://localhost:3002}
-      - API_BASE_URL=${API_BASE_URL:-http://127.0.0.1:8000/api}
-      - STORAGE_BASE_URL=${STORAGE_BASE_URL:-http://127.0.0.1:8000/storage}
-    restart: unless-stopped
-    networks:
-      - app-network
-    # Uncomment jika ingin mount volume untuk development
-    volumes:
-      - .:/app
-      - /app/node_modules
+      # Nuxt System
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+      
+      # App Config (Sesuai runtimeConfig Anda)
+      - APP_URL=http://localhost:3000
+      - DASHBOARD_APP_URL=http://localhost:3001
+      - THEME_URL=http://localhost:3002
+      
+      # API Config
+      - API_BASE_URL=http://localhost:8000/api
+      - STORAGE_BASE_URL=http://localhost:8000/storage
+      
+      # Jika backend Anda juga di docker di network yang sama, 
+      # ganti host.docker.internal dengan nama service backendnya.
 
-networks:
-  app-network:
-    driver: bridge
+    # Optional: Healthcheck untuk memastikan app benar-benar jalan
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 3s
+      start_period: 5s
+      retries: 3

@@ -1,10 +1,11 @@
 # Dependencies
 node_modules
-npm-debug.log
-yarn-error.log
-pnpm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
-# Nuxt build
+# Nuxt build artifacts
 .nuxt
 .output
 dist
@@ -12,49 +13,33 @@ dist
 # Environment files
 .env
 .env.*
-.env.local
-.env.production
 !.env.example
-
-# IDE & Editor
-.vscode
-.idea
-*.swp
-*.swo
-*~
-.editorconfig
-
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
 
 # Git
 .git
 .gitignore
 .gitattributes
 
-# Docker files
-Dockerfile
-docker-compose*.yml
-.dockerignore
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
 
 # Logs
-logs
 *.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
+logs
 
 # Testing
 coverage
 .nyc_output
-.cache
 
 # Misc
-*.md
-!README.md
-.prettierrc
-.eslintrc*
-.prettierignore
+.cache
+.temp
+tmp

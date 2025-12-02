@@ -1,8 +1,17 @@
 <script setup>
 const { themes } = storeToRefs(useThemeStore());
 
+const config = useRuntimeConfig()
+const apiBaseUrl = config.public.apiBaseUrl
+
 const filteredThemes = computed(() => {
-  return themes.value.slice(0, 6);
+  // if (themes.value.length > 0) {
+  //   return themes.value.slice(0, 6);
+  // } else {
+  //   return [];
+  // }
+
+  return themes.value
 });
 </script>
 
@@ -49,7 +58,7 @@ const filteredThemes = computed(() => {
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
           Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
-          memukau dan interaktif
+          memukau dan interaktif {{ apiBaseUrl }}
         </p>
       </div>
 
