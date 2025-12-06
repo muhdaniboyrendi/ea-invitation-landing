@@ -2,6 +2,7 @@
 const config = useRuntimeConfig();
 
 const themeUrl = config.public.themeUrl;
+const storage = config.public.storageBaseUrl
 
 const props = defineProps(["theme"]);
 </script>
@@ -53,6 +54,7 @@ const props = defineProps(["theme"]);
             <h3 class="text-lg font-bold text-white">
               {{ props.theme?.name || "Untitled Theme" }}
             </h3>
+            {{ props.theme?.thumbnail_url }}
           </div>
           <span class="py-1 px-2 rounded-lg bg-white/10 text-sm text-white/80">
             {{ props.theme?.theme_category?.name || "Uncategorized" }}

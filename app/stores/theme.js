@@ -1,13 +1,13 @@
 export const useThemeStore = defineStore("theme", () => {
   const config = useRuntimeConfig();
-  const apiBaseUrl = config.public.apiBaseUrl;
+  const apiBaseUrlPublic = config.public.apiBaseUrlPublic;
 
   const {
     data: themes,
     error: themesError,
     pending: themesPending,
     refresh: themesRefresh,
-  } = useFetch(`${apiBaseUrl}/themes`, {
+  } = useFetch(`${apiBaseUrlPublic}/themes`, {
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -22,7 +22,7 @@ export const useThemeStore = defineStore("theme", () => {
     error: categoryError,
     pending: categoriesPending,
     refresh: categoriesRefresh,
-  } = useFetch(`${apiBaseUrl}/categories`, {
+  } = useFetch(`${apiBaseUrlPublic}/categories`, {
     method: "GET",
     headers: {
       Accept: "application/json",

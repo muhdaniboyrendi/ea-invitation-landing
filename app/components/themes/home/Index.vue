@@ -58,7 +58,7 @@ const filteredThemes = computed(() => {
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
           Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
-          memukau dan interaktif {{ apiBaseUrl }}
+          memukau dan interaktif
         </p>
       </div>
 
