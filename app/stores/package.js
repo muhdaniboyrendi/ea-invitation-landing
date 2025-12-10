@@ -1,13 +1,13 @@
 export const usePackageStore = defineStore("package", () => {
   const config = useRuntimeConfig();
-  const apiBaseUrlPublic = config.public.apiBaseUrlPublic;
+  const apiBaseUrl = config.public.apiBaseUrl;
 
   const {
     data: packages,
     error,
     pending,
     refresh,
-  } = useFetch(`${apiBaseUrlPublic}/packages`, {
+  } = useFetch(`${apiBaseUrl}/packages`, {
     method: "GET",
     headers: {
       Accept: "application/json",
