@@ -21,18 +21,18 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    apiBaseUrl: process.env.NUXT_API_BASE_URL,
+    storageBaseUrl: process.env.NUXT_STORAGE_BASE_URL,
+
     public: {
       // App
-      appUrl: process.env.NUXT_PUBLIC_APP_URL || "http://localhost:3000",
-      dashboardAppUrl:
-        process.env.NUXT_PUBLIC_DASHBOARD_APP_URL || "http://localhost:3001",
-      themeUrl: process.env.NUXT_PUBLIC_THEME_URL || "http://localhost:3002",
+      appUrl: process.env.NUXT_PUBLIC_APP_URL,
+      dashboardAppUrl: process.env.NUXT_PUBLIC_DASHBOARD_APP_URL,
+      themeUrl: process.env.NUXT_PUBLIC_THEME_URL,
 
       // API
-      apiBaseUrlPublic: process.env.NUXT_PUBLIC_API_BASE_URL_PUBLIC,
-      storageBaseUrlPublic: process.env.NUXT_PUBLIC_STORAGE_BASE_URL_PUBLIC,
-      apiBaseUrl: process.env.API_BASE_URL,
-      storageBaseUrl: process.env.STORAGE_BASE_URL,
+      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
+      storageBaseUrl: process.env.NUXT_PUBLIC_STORAGE_BASE_URL,
     },
   },
 
