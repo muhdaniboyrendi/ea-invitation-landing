@@ -1,18 +1,5 @@
 <script setup>
-const { themes } = storeToRefs(useThemeStore());
-
-const config = useRuntimeConfig()
-const apiBaseUrl = config.public.apiBaseUrl
-
-const filteredThemes = computed(() => {
-  // if (themes.value.length > 0) {
-  //   return themes.value.slice(0, 6);
-  // } else {
-  //   return [];
-  // }
-
-  return themes.value
-});
+const { themes, themesPending, themesError } = storeToRefs(useThemeStore());
 </script>
 
 <template>
@@ -62,13 +49,13 @@ const filteredThemes = computed(() => {
         </p>
       </div>
 
+      <PackageSkeleton v-if="themesPending" class="mx-auto" />
+
+      <div v-else-if="themesError">{{ themesError }}</div>
+
       <!-- Themes Grid -->
-      <div class="flex flex-wrap justify-center gap-8">
-        <ThemesCard
-          v-for="theme in filteredThemes"
-          :key="theme.id"
-          :theme="theme"
-        />
+      <div v-else class="flex flex-wrap justify-center gap-8">
+        <ThemesCard v-for="theme in themes" :key="theme.id" :theme="theme" />
       </div>
 
       <!-- Load More Button -->

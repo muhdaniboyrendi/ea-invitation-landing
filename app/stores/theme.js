@@ -1,17 +1,11 @@
 export const useThemeStore = defineStore("theme", () => {
-  const config = useRuntimeConfig();
-  const apiBaseUrl = config.public.apiBaseUrl;
-
   const {
     data: themes,
     error: themesError,
     pending: themesPending,
     refresh: themesRefresh,
-  } = useFetch(`${apiBaseUrl}/themes`, {
+  } = useFetch(`/api/themes`, {
     method: "GET",
-    headers: {
-      Accept: "application/json",
-    },
     transform: (response) => {
       return response.data;
     },
@@ -22,11 +16,8 @@ export const useThemeStore = defineStore("theme", () => {
     error: categoryError,
     pending: categoriesPending,
     refresh: categoriesRefresh,
-  } = useFetch(`${apiBaseUrl}/categories`, {
+  } = useFetch(`/api/theme-categories`, {
     method: "GET",
-    headers: {
-      Accept: "application/json",
-    },
     transform: (response) => {
       return response.data;
     },
