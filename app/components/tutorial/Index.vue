@@ -303,8 +303,8 @@ const clearActive = () => {
               hitungan menit!
             </p>
             <div class="flex flex-wrap gap-4 justify-center">
-              <a
-                :href="dashboardAppUrl"
+              <NuxtLink
+                :to="dashboardAppUrl + '/login'"
                 class="group/btn relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
               >
                 <span class="relative z-10 flex items-center gap-2">
@@ -314,7 +314,7 @@ const clearActive = () => {
                 <div
                   class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
                 ></div>
-              </a>
+              </NuxtLink>
               <!-- <button
                 class="px-8 py-4 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-2"
               >

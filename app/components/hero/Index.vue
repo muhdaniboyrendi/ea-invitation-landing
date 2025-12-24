@@ -46,12 +46,12 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         <div
           class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
         >
-          <a
-            :href="dashboardAppUrl"
+          <NuxtLink
+            :to="dashboardAppUrl + '/login'"
             class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             <span class="relative z-10">Buat Undangan</span>
-          </a>
+          </NuxtLink>
 
           <NuxtLink
             to="/tutorial"
@@ -171,23 +171,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
               Ubah konten undangan dan pilih tema kapanpun anda mau.
             </p>
           </div>
-        </div>
-      </div>
-
-      <!-- Bottom CTA -->
-      <div class="text-center mt-16">
-        <div
-          class="flex flex-col sm:flex-row gap-y-4 justify-center items-center w-fit mx-auto px-8 py-4 backdrop-blur-md bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-400/30 rounded-2xl"
-        >
-          <span class="text-white font-medium mr-4 block"
-            >Siap untuk memulai?</span
-          >
-          <a
-            :href="dashboardAppUrl"
-            class="px-6 py-3 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400 text-white font-semibold rounded-xl transform hover:scale-105 transition-all duration-300"
-          >
-            Buat Undangan Sekarang
-          </a>
         </div>
       </div>
     </section>

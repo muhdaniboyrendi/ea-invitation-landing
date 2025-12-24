@@ -87,12 +87,12 @@ const closeMobile = () => {
             </ClientOnly>
 
             <!-- CTA Button -->
-            <a
-              :href="dashboardAppUrl"
+            <NuxtLink
+              :to="dashboardAppUrl + '/login'"
               class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-cyan-500/80 to-purple-500/80 hover:from-cyan-400 hover:to-purple-400 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 border border-white/20"
             >
               Login
-            </a>
+            </NuxtLink>
 
             <!-- Mobile menu button -->
             <button
