@@ -11,63 +11,63 @@ const steps = [
     title: "Daftar dan Masuk",
     description:
       "Buat akun atau login jika sudah memiliki akun, atau langsung masuk dengan google.",
-    image: "/img/tutorial/1.png",
+    image: "/img/tutorial/1.webp",
   },
   {
     number: 2,
     title: "Buat Undangan",
     description:
       'Setelah masuk anda akan diarahkan ke halaman utama dashboard EA Invitation, dan setelah itu klik "Buat Undangan Sekarang" untuk membuat undangan.',
-    image: "/img/tutorial/2.png",
+    image: "/img/tutorial/2.webp",
   },
   {
     number: 3,
     title: "Pilih Paket Undangan",
     description:
       "Setelah itu anda diarahkan ke halaman pemilihan paket undangan, dan pilih salah satu dari paket undangan yang tersedia.",
-    image: "/img/tutorial/3.png",
+    image: "/img/tutorial/3.webp",
   },
   {
     number: 4,
     title: "Checkout",
     description:
       'Setelah memilih paket undangan yang anda butuhkan anda diarahkan ke halaman checkout untuk melakukan transaksi pembelian paket undangan anda dan klik "Bayar Sekarang" untuk mengkonfirmasi pembelian paket undangan anda.',
-    image: "/img/tutorial/4.png",
+    image: "/img/tutorial/4.webp",
   },
   {
     number: 5,
     title: "Nama Pasangan",
     description:
       "Setelah pembayaran berhasil, selanjutnya anda perlu memasukan nama pasangan yang akan dijadikan display utama di undangan anda.",
-    image: "/img/tutorial/6.png",
+    image: "/img/tutorial/6.webp",
   },
   {
     number: 6,
     title: "Pilih Tema",
     description:
       "Selanjutnya anda perlu memilih tema undangan yang akan dijadikan sebagai desain dari undangan anda, dan anda dapat mengubahnya kapan pun.",
-    image: "/img/tutorial/7.png",
+    image: "/img/tutorial/7.webp",
   },
   {
     number: 7,
     title: "Isi Data",
     description:
       "Setelah itu anda perlu mengisi data undangan yang dibutuhkan, seperti tanggal dan waktu acara, data mempelai pria dan wanita, daftar acara, kisah cinta, gift, foto, video, dll.",
-    image: "/img/tutorial/8.png",
+    image: "/img/tutorial/8.webp",
   },
   {
     number: 8,
     title: "Kelola Tamu",
     description:
       "Selamat undangan anda telah selesai dibuat, dan selanjutnya adalah anda dapat mengelola, menambahkan, dan memantau daftar tamu undangan anda.",
-    image: "/img/tutorial/9.png",
+    image: "/img/tutorial/9.webp",
   },
   {
     number: 9,
     title: "Bagikan Undangan",
     description:
       "Langkah yang terakhir adalah membagikan undangan anda ke teman, kerabat, atau orang lain yang anda undang untuk acara anda.",
-    image: "/img/tutorial/10.png",
+    image: "/img/tutorial/10.webp",
   },
 ];
 
@@ -202,10 +202,9 @@ const clearActive = () => {
                       :src="step.image"
                       :alt="step.title"
                       width="800"
-                      height="450"
                       loading="lazy"
                       format="webp"
-                      quality="90"
+                      quality="80"
                       placeholder
                       class="w-full h-full object-cover"
                       @error="(e) => handleImageError(e, step.number)"

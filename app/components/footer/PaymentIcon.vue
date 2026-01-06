@@ -9,7 +9,8 @@ const props = defineProps(["icon", "name"]);
     <NuxtImg
       :src="`/img/payments/${props.icon}`"
       :alt="props.name"
-      quality="70"
+      width="40"
+      quality="30"
       format="webp"
       class="w-full object-contain"
     />

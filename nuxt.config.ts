@@ -16,23 +16,37 @@ export default defineNuxtConfig({
     classSuffix: "",
   },
 
-  nitro: {
-    compressPublicAssets: true,
+  routeRules: {
+    "/**": { prerender: true },
+  },
+
+  // Opsi eksperimental payload extraction (opsional, bagus untuk SSG)
+  experimental: {
+    payloadExtraction: true,
   },
 
   runtimeConfig: {
-    apiBaseUrl: process.env.NUXT_API_BASE_URL,
-    storageBaseUrl: process.env.NUXT_STORAGE_BASE_URL,
-
     public: {
       // App
-      appUrl: process.env.NUXT_PUBLIC_APP_URL,
-      dashboardAppUrl: process.env.NUXT_PUBLIC_DASHBOARD_APP_URL,
-      themeUrl: process.env.NUXT_PUBLIC_THEME_URL,
+      appUrl: "",
+      dashboardAppUrl: "",
+      themeUrl: "",
 
       // API
-      apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL,
-      storageBaseUrl: process.env.NUXT_PUBLIC_STORAGE_BASE_URL,
+      apiBaseUrl: "",
+    },
+  },
+
+  // Validasi build-time
+  hooks: {
+    "build:before": () => {
+      const required = ["NUXT_PUBLIC_APP_URL", "NUXT_PUBLIC_API_BASE_URL"];
+
+      const missing = required.filter((key) => !process.env[key]);
+
+      if (missing.length && process.env.NODE_ENV === "production") {
+        throw new Error(`Missing required env vars: ${missing.join(", ")}`);
+      }
     },
   },
 

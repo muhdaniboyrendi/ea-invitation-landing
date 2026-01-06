@@ -73,13 +73,13 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <!-- Image Container with fixed aspect ratio -->
           <div class="relative w-full aspect-video">
             <NuxtImg
-              src="/img/hero.png"
+              src="/img/hero.webp"
               class="min-w-full h-full object-cover"
               alt="main image"
               width="960"
               height="540"
               format="webp"
-              quality="100"
+              quality="80"
               loading="eager"
             />
           </div>

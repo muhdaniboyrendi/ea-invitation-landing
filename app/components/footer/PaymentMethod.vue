@@ -1,15 +1,15 @@
 <script setup>
 const paymentMethodList = [
-  { icon: "bca.svg", name: "BCA" },
-  { icon: "bri.svg", name: "BRI" },
-  { icon: "mandiri.svg", name: "Mandiri" },
-  { icon: "bni.svg", name: "BNI" },
-  { icon: "qris.svg", name: "QRIS" },
-  { icon: "alfamidi.svg", name: "Alfamidi" },
-  { icon: "alfamart.png", name: "Alfamart" },
-  { icon: "indomaret.png", name: "Infomaret" },
-  { icon: "visa.png", name: "Visa" },
-  { icon: "mastercard.png", name: "Mastercard" },
+  { icon: "bca.webp", name: "BCA" },
+  { icon: "bri.webp", name: "BRI" },
+  { icon: "mandiri.webp", name: "Mandiri" },
+  { icon: "bni.webp", name: "BNI" },
+  { icon: "qris.webp", name: "QRIS" },
+  { icon: "alfamidi.webp", name: "Alfamidi" },
+  { icon: "alfamart.webp", name: "Alfamart" },
+  { icon: "indomaret.webp", name: "Infomaret" },
+  { icon: "visa.webp", name: "Visa" },
+  { icon: "mastercard.webp", name: "Mastercard" },
 ];
 </script>
 

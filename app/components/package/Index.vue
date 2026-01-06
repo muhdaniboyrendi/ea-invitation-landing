@@ -1,5 +1,5 @@
 <script setup>
-const { packages, pending, error } = storeToRefs(usePackageStore());
+const { packages } = storeToRefs(usePackageStore());
 </script>
 
 <template>
@@ -18,13 +18,15 @@ const { packages, pending, error } = storeToRefs(usePackageStore());
       <PackageHeader />
 
       <!-- Pricing Cards -->
-      <PackageSkeleton v-if="pending" class="mx-auto" />
+      <!-- <PackageSkeleton v-if="pending" class="mx-auto" />
 
-      <div v-else-if="error">{{ error }}</div>
+      <div v-else-if="error">{{ error }}</div> -->
 
-      <div v-else class="flex flex-wrap justify-center gap-8 mb-16">
+      <div class="flex flex-wrap justify-center gap-8 mb-16">
         <PackageCard v-for="pkg in packages" :key="pkg.id" :package="pkg" />
       </div>
+
+      <p>{{ packages }}</p>
 
       <!-- Additional Info Section -->
       <PackageAdditionalInfo />
