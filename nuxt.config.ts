@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 import tailwindcss from "@tailwindcss/vite";
 
 export default defineNuxtConfig({
@@ -12,6 +11,7 @@ export default defineNuxtConfig({
   },
 
   modules: ["@nuxtjs/color-mode", "@nuxt/image", "@nuxtjs/seo", "@pinia/nuxt"],
+
   colorMode: {
     classSuffix: "",
   },
@@ -20,30 +20,50 @@ export default defineNuxtConfig({
     "/**": { prerender: true },
   },
 
-  // Opsi eksperimental payload extraction (opsional, bagus untuk SSG)
   experimental: {
     payloadExtraction: true,
   },
 
+  site: {
+    url: "https://eainvitation.com",
+    name: "EA Invitation",
+    description:
+      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan digital yang modern, elegan, dan interaktif.",
+    defaultLocale: "id",
+    indexable: true, // Pastikan indexable true
+  },
+
+  robots: {
+    disallow: ["/admin", "/secret"],
+
+    groups: [
+      {
+        userAgent: "*",
+        allow: "/",
+        disallow: ["/admin", "/secret"],
+      },
+    ],
+
+    sitemap: ["/sitemap.xml"],
+  },
+
+  sitemap: {
+    sources: [],
+  },
+
   runtimeConfig: {
     public: {
-      // App
       appUrl: "",
       dashboardAppUrl: "",
       themeUrl: "",
-
-      // API
       apiBaseUrl: "",
     },
   },
 
-  // Validasi build-time
   hooks: {
     "build:before": () => {
       const required = ["NUXT_PUBLIC_APP_URL", "NUXT_PUBLIC_API_BASE_URL"];
-
       const missing = required.filter((key) => !process.env[key]);
-
       if (missing.length && process.env.NODE_ENV === "production") {
         throw new Error(`Missing required env vars: ${missing.join(", ")}`);
       }
@@ -71,18 +91,5 @@ export default defineNuxtConfig({
       ],
       script: [],
     },
-  },
-
-  site: {
-    url: "https://eainvitation.com",
-    name: "EA Invitation",
-    description:
-      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan digital yang modern, elegan, dan interaktif.",
-    defaultLocale: "id",
-    indexable: true,
-  },
-
-  sitemap: {
-    sources: [],
   },
 });

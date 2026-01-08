@@ -1,7 +1,7 @@
 /* TEAM */
 Developer: EA Invitation Team
-Site: https://ea-invitation-landing.vercel.app
-Contact: info [at] ea-invitation-landing.vercel.app
+Site: https://eainvitation.com
+Contact: info [at] eainvitation.com
 Location: Indonesia
 
 /* SITE */
