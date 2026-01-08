@@ -3,7 +3,7 @@ useSeoMeta({
   title: "Buat Undangan Pernikahan Digital dalam Hitungan Menit",
   description:
     "Platform SaaS terbaik untuk membuat undangan pernikahan digital. Tema premium, fitur lengkap, dan harga terjangkau.",
-  ogTitle: "EA Invitation - Solusi Undangan Digital Anda",
+  ogTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
   ogDescription: "Buat undangan pernikahan impianmu sekarang.",
   ogImage: "/og-image.png", // Siapkan gambar banner promosi ukuran 1200x630
 });

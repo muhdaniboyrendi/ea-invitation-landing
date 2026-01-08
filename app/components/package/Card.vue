@@ -109,24 +109,22 @@ const toggleFeatures = () => {
         </div>
       </div>
 
-      <!-- Features List -->
-      <ul class="space-y-4 mb-6">
-        <transition-group name="features" tag="div" class="space-y-4">
-          <li
-            v-for="(feature, index) in displayedFeatures"
-            :key="`feature-${index}`"
-            class="flex items-start gap-x-3"
-          >
-            <i
-              class="bi bi-check2 text-xl"
-              :class="
-                props.package.id === 2 ? 'text-purple-400' : 'text-blue-400'
-              "
-            ></i>
-            <span class="text-white/80">{{ feature }}</span>
-          </li>
-        </transition-group>
-      </ul>
+      <!-- Features List - DIPERBAIKI -->
+      <transition-group name="features" tag="ul" class="space-y-4 mb-6">
+        <li
+          v-for="(feature, index) in displayedFeatures"
+          :key="`feature-${index}`"
+          class="flex items-start gap-x-3"
+        >
+          <i
+            class="bi bi-check2 text-xl"
+            :class="
+              props.package.id === 2 ? 'text-purple-400' : 'text-blue-400'
+            "
+          ></i>
+          <span class="text-white/80">{{ feature }}</span>
+        </li>
+      </transition-group>
 
       <!-- Show More/Less Button -->
       <div v-if="hasHiddenFeatures" class="text-center mb-6">

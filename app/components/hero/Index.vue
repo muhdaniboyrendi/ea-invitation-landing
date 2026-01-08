@@ -7,7 +7,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 <template>
   <section
     id="home"
-    class="relative min-h-screen overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
+    class="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
   >
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
@@ -15,40 +15,41 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
     <!-- Hero Section Part 1 -->
     <section
-      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 lg:flex-row items-center justify-between min-h-dvh py-30"
+      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 min-h-dvh py-30"
     >
       <!-- Left Content -->
-      <div class="text-center lg:text-left lg:mb-0 px-4 lg:pl-10 lg:pr-0">
+      <div class="text-center lg:mb-0 px-4 lg:pl-10 lg:pr-0">
         <div
           class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 rounded-full shadow-lg"
         >
           <span
             class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"
           ></span>
-          <span class="text-sm font-medium text-white/90"
-            >Developer Beta Version</span
-          >
+          <span class="text-sm font-medium text-white/90">Beta 1.0</span>
         </div>
 
         <h1
-          class="relative max-w-2xl mx-auto lg:mx-0 text-5xl lg:text-7xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+          class="relative max-w-4xl mx-auto text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 lg:mb-10 text-white tracking-tighter text-balance"
         >
-          Platform Undangan Pernikahan Digital
+          Platform
+          <span
+            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
+            >Undangan Pernikahan</span
+          >
+          <span class="italic">Digital</span>
         </h1>
 
         <p
-          class="text-xl lg:text-2xl text-white/80 mb-8 max-w-2xl leading-relaxed"
+          class="text-lg md:text-xl lg:text-xl mx-auto text-white/90 mb-10 max-w-2xl font-medium text-balance"
         >
           Wujudkan momen bahagia pernikahan Anda dengan undangan digital yang
           elegan dan interaktif
         </p>
 
-        <div
-          class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
-        >
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <NuxtLink
             :to="dashboardAppUrl + '/login'"
-            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             <span class="relative z-10">Buat Undangan</span>
           </NuxtLink>
@@ -62,29 +63,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           </NuxtLink>
         </div>
       </div>
-
-      <!-- Right Content -->
-      <div class="flex justify-center lg:justify-end px-4 lg:px-0">
-        <div class="relative group max-w-xl w-full">
-          <!-- Glow Effect -->
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-cyan-400/30 via-purple-400/30 to-pink-400/30 blur-2xl rounded-3xl group-hover:blur-3xl transition-all duration-500"
-          ></div>
-          <!-- Image Container with fixed aspect ratio -->
-          <div class="relative w-full aspect-video">
-            <NuxtImg
-              src="/img/hero.webp"
-              class="min-w-full h-full object-cover"
-              alt="main image"
-              width="960"
-              height="540"
-              format="webp"
-              quality="80"
-              loading="eager"
-            />
-          </div>
-        </div>
-      </div>
     </section>
 
     <!-- Hero Section Part 2 - Features Grid -->
@@ -95,7 +73,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         >
           Fitur Unggulan
         </h2>
-        <p class="text-xl text-white/70 max-w-3xl mx-auto">
+        <p class="text-xl text-white/70 max-w-3xl mx-auto text-balance">
           Discover the tools that will transform your workflow and accelerate
           your success
         </p>

@@ -50,23 +50,53 @@ export default defineNuxtConfig({
     },
   },
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossorigin: "anonymous",
+        },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css2?family=Cantata+One&family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap",
+          media: "print",
+          onload: "this.media='all'",
+        },
+      ],
+      script: [],
+    },
+  },
+
   site: {
     url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
       "Platform Undangan Pernikahan Digital - Buat undangan pernikahan online yang modern, elegan, dan interaktif.",
     defaultLocale: "id",
-    indexable: true, // Ubah ke false hanya saat development
+    indexable: true,
   },
 
   sitemap: {
-    sources: [
-      //
-    ],
+    sources: [],
   },
 
   robots: {
-    // Mencegah bot meng-crawl halaman admin/login dashboard dari sini jika ada link langsung
+    enabled: true,
     disallow: ["/admin", "/secret"],
+    allow: ["/"],
+    sitemap: "https://eainvitation.com/sitemap.xml",
+    groups: [
+      {
+        userAgent: "*",
+        disallow: ["/admin", "/secret"],
+        allow: ["/"],
+      },
+    ],
   },
 });

@@ -11,7 +11,7 @@ useHead({
 useSchemaOrg([
   defineOrganization({
     name: "EA Invitation",
-    logo: "/logo.png", // Pastikan ada file logo di folder public
+    logo: "/logo.webp", // Pastikan ada file logo di folder public
     sameAs: [
       "https://instagram.com/erlan.azr_",
       "https://tiktok.com/@erlan.azr_",

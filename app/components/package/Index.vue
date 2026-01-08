@@ -26,8 +26,6 @@ const { packages } = storeToRefs(usePackageStore());
         <PackageCard v-for="pkg in packages" :key="pkg.id" :package="pkg" />
       </div>
 
-      <p>{{ packages }}</p>
-
       <!-- Additional Info Section -->
       <PackageAdditionalInfo />
     </div>
