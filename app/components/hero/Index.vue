@@ -35,8 +35,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
             >Undangan Pernikahan</span
-          >
-          <span class="italic">Digital</span>
+          > <span class="italic">Digital</span>
         </h1>
 
         <p
