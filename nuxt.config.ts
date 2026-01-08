@@ -77,26 +77,12 @@ export default defineNuxtConfig({
     url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
-      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan online yang modern, elegan, dan interaktif.",
+      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan digital yang modern, elegan, dan interaktif.",
     defaultLocale: "id",
     indexable: true,
   },
 
   sitemap: {
     sources: [],
-  },
-
-  robots: {
-    enabled: true,
-    disallow: ["/admin", "/secret"],
-    allow: ["/"],
-    sitemap: "https://eainvitation.com/sitemap.xml",
-    groups: [
-      {
-        userAgent: "*",
-        disallow: ["/admin", "/secret"],
-        allow: ["/"],
-      },
-    ],
   },
 });
