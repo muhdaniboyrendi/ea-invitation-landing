@@ -80,7 +80,21 @@ export default defineNuxtConfig({
           onload: "this.media='all'",
         },
       ],
-      script: [],
+      script: [
+        {
+          src: "https://www.googletagmanager.com/gtag/js?id=G-H30QSK9F1H",
+          async: true,
+        },
+        {
+          innerHTML: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'G-H30QSK9F1H');
+          `,
+        },
+      ],
     },
   },
 });
