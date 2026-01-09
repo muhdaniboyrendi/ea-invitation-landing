@@ -1,11 +1,12 @@
 <script setup>
 useSeoMeta({
-  title: "Buat Undangan Pernikahan Digital dalam Hitungan Menit",
+  title: "Undangan Pernikahan Digital Modern & Interaktif",
   description:
-    "Platform SaaS terbaik untuk membuat undangan pernikahan digital. Tema premium, fitur lengkap, dan harga terjangkau.",
-  ogTitle: "EA Invitation - Platform Undangan Pernikahan Digital",
-  ogDescription: "Buat undangan pernikahan impianmu sekarang.",
-  ogImage: "/og-image.png", // Siapkan gambar banner promosi ukuran 1200x630
+    "EA Invitation adalah platform undangan pernikahan digital berbasis website dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
+  ogTitle: "EA Invitation - Undangan Pernikahan Digital Modern & Interaktif",
+  ogDescription:
+    "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
+  ogImage: "/og-image.webp",
 });
 
 // Schema Khusus SaaS (SoftwareApplication)
@@ -18,10 +19,6 @@ useSchemaOrg([
       "@type": "Offer",
       price: "100000", // Contoh harga terendah
       priceCurrency: "IDR",
-    },
-    aggregateRating: {
-      ratingValue: "4.8",
-      ratingCount: "120", // Bisa diambil dinamis dari database testimoni
     },
   }),
 ]);

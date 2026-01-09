@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
-      "Platform Undangan Pernikahan Digital - Buat undangan pernikahan digital yang modern, elegan, dan interaktif.",
+      "EA Invitation adalah platform undangan pernikahan digital berbasis website dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
     defaultLocale: "id",
     indexable: true, // Pastikan indexable true
   },

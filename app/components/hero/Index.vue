@@ -41,8 +41,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         <p
           class="text-lg md:text-xl lg:text-xl mx-auto text-white/90 mb-10 max-w-2xl font-medium text-balance"
         >
-          Wujudkan momen bahagia pernikahan Anda dengan undangan digital yang
-          elegan dan interaktif
+          Buat undangan pernikahan digital berbasis website dengan berbagai tema
+          modern dan interaktif serta fitur lengkap
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
