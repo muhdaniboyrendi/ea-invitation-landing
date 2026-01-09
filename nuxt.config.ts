@@ -35,16 +35,7 @@ export default defineNuxtConfig({
 
   robots: {
     disallow: ["/admin", "/secret"],
-
-    groups: [
-      {
-        userAgent: "*",
-        allow: "/",
-        disallow: ["/admin", "/secret"],
-      },
-    ],
-
-    sitemap: ["/sitemap.xml"],
+    sitemap: "/sitemap.xml",
   },
 
   sitemap: {
