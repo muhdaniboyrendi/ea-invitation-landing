@@ -10,7 +10,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       <!-- Logo/Brand -->
       <NuxtLink to="/" class="block mb-6" aria-label="ea invitation">
         <NuxtImg
-          src="/logo-text-dark.png"
+          src="/logo-text-dark.webp"
           width="200"
           height="50"
           loading="eager"

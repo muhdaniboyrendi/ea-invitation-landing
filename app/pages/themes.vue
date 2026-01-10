@@ -1,10 +1,13 @@
 <script setup>
-const { themes } = storeToRefs(useThemeStore());
-
 useSeoMeta({
-  title: "Katalog Tema Undangan Premium",
+  title: "Katalog Tema Undangan Modern & Interaktif",
   description:
-    "Pilih dari tema undangan pernikahan digital estetik. Minimalis, Floral, Adat, dan Modern.",
+    "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
+  ogTitle: "EA Invitation - Katalog Tema Undangan Modern & Interaktif",
+  ogDescription:
+    "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
+  ogImage: "/og-image.webp",
+  twitterCard: "summary_large_image",
 });
 </script>
 

@@ -7,6 +7,7 @@ useSeoMeta({
   ogDescription:
     "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
   ogImage: "/og-image.webp",
+  twitterCard: 'summary_large_image',
 });
 
 // Schema Khusus SaaS (SoftwareApplication)

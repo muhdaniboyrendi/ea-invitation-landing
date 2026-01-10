@@ -3,7 +3,7 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `EA Invitation - ${titleChunk}`
-      : "EA Invitation - Platform Undangan Pernikahan Digital";
+      : "EA Invitation - Platform Undangan Pernikahan Digital Modern & Interaktif";
   },
 });
 
@@ -13,7 +13,7 @@ useSchemaOrg([
     name: "EA Invitation",
     logo: "/logo.webp", // Pastikan ada file logo di folder public
     sameAs: [
-      "https://instagram.com/erlan.azr_",
+      "https://www.instagram.com/ea_invitation?igsh=NHMzdnIxdnZ3Ymlq",
       "https://tiktok.com/@erlan.azr_",
       "https://wa.me/6282220633024",
     ],

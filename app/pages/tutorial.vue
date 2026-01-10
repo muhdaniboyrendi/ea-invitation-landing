@@ -1,8 +1,13 @@
 <script setup>
 useSeoMeta({
-  title: "Panduan & Tutorial Penggunaan",
+  title: "Tutorial Membuat Undangan Pernikahan Digital",
   description:
     "Pelajari cara membuat, mengedit, dan menyebarkan undangan pernikahan digital Anda menggunakan EA Invitation.",
+  ogTitle: "EA Invitation - Tutorial Membuat Undangan Pernikahan Digital",
+  ogDescription:
+    "Pelajari cara membuat, mengedit, dan menyebarkan undangan pernikahan digital Anda menggunakan EA Invitation.",
+  ogImage: "/og-image.webp",
+  twitterCard: "summary_large_image",
 });
 
 // Schema HowTo (Sangat bagus untuk rich snippet di Google)

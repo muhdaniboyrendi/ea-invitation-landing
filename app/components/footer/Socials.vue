@@ -2,7 +2,7 @@
 const socialList = [
   {
     name: "Instagram",
-    url: "https://www.instagram.com/erlan.azr_",
+    url: "https://www.instagram.com/ea_invitation?igsh=NHMzdnIxdnZ3Ymlq",
     iconClass: "bi-instagram",
     hoverColor: "#E1306C",
   },
@@ -28,7 +28,7 @@ const socialList = [
       <div class="flex flex-col sm:flex-row items-center gap-6 text-white/70">
         <div class="flex items-center">
           <i class="bi bi-envelope mr-2 text-cyan-400"></i>
-          <span>support@eainvitation.com</span>
+          <span>erlanazrdev@gmail.com</span>
         </div>
         <div class="flex items-center">
           <i class="bi bi-telephone mr-2 text-purple-400"></i>
