@@ -1,3 +1,4 @@
+<!-- pages/index.vue -->
 <script setup>
 useSeoMeta({
   title: "Undangan Pernikahan Digital Modern & Interaktif",
@@ -7,6 +8,7 @@ useSeoMeta({
   ogDescription:
     "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
   ogImage: "/og-image.webp",
+  ogSiteName: "EA Invitation",
   twitterCard: 'summary_large_image',
 });
 

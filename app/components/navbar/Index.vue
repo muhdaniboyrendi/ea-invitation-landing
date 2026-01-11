@@ -29,7 +29,7 @@ const closeMobile = () => {
 </script>
 
 <template>
-  <nav
+  <header
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
   >
     <div
@@ -37,7 +37,7 @@ const closeMobile = () => {
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
-          <NuxtLink to="/" class="block" aria-label="ea invitation">
+          <NuxtLink to="/" class="block" aria-label="EA Invitation">
             <NuxtImg
               src="/logo-text-dark.webp"
               width="160"
@@ -50,7 +50,7 @@ const closeMobile = () => {
 
           <!-- Desktop Navigation -->
           <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-6">
+            <nav class="ml-10 flex items-baseline space-x-6">
               <NuxtLink
                 v-for="item in navigation"
                 :key="item.name"
@@ -62,7 +62,7 @@ const closeMobile = () => {
                   class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                 ></span>
               </NuxtLink>
-            </div>
+            </nav>
           </div>
 
           <!-- Right Side Actions -->
@@ -140,7 +140,7 @@ const closeMobile = () => {
         v-show="isMobileOpen"
         class="md:hidden backdrop-blur-xl bg-black/10 border-b border-white/10 shadow-2xl"
       >
-        <div class="px-4 pt-4 pb-6 space-y-3 text-center">
+        <nav class="px-4 pt-4 pb-6 space-y-3 text-center">
           <NuxtLink
             v-for="item in navigation"
             :key="item.name"
@@ -159,8 +159,8 @@ const closeMobile = () => {
               Login
             </a>
           </div>
-        </div>
+        </nav>
       </div>
     </Transition>
-  </nav>
+  </header>
 </template>

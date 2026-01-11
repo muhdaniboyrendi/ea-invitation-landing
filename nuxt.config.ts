@@ -28,9 +28,9 @@ export default defineNuxtConfig({
     url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
-      "EA Invitation adalah platform undangan pernikahan digital berbasis website dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
+      "EA Invitation adalah platform undangan pernikahan digital berbasis web dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
     defaultLocale: "id",
-    indexable: true, // Pastikan indexable true
+    indexable: true,
   },
 
   robots: {
@@ -64,6 +64,30 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        // Favicon
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "16x16",
+          href: "/favicon-16x16.png",
+        },
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "32x32",
+          href: "/favicon-32x32.png",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/apple-touch-icon.png",
+        },
+        // Google Fonts
         {
           rel: "preconnect",
           href: "https://fonts.googleapis.com",
@@ -90,7 +114,6 @@ export default defineNuxtConfig({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-
             gtag('config', 'G-H30QSK9F1H');
           `,
         },

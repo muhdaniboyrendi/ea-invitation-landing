@@ -1,3 +1,4 @@
+<!-- app.vue -->
 <script setup>
 useHead({
   titleTemplate: (titleChunk) => {
