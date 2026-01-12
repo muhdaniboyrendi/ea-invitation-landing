@@ -1,3 +1,4 @@
+<!-- pages/terms.vue -->
 <script setup>
 useSeoMeta({
   title: 'Syarat dan Ketentuan Layanan',

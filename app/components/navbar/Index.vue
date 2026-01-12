@@ -1,3 +1,4 @@
+<!-- components/navbar/Index.vue -->
 <script setup>
 const colorMode = useColorMode();
 const config = useRuntimeConfig();

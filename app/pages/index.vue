@@ -1,4 +1,3 @@
-<!-- pages/index.vue -->
 <script setup>
 useSeoMeta({
   title: "Undangan Pernikahan Digital Modern & Interaktif",
@@ -8,11 +7,22 @@ useSeoMeta({
   ogDescription:
     "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
   ogImage: "/og-image.webp",
+  ogUrl: "https://eainvitation.com/", // ✅ TAMBAHKAN ini
   ogSiteName: "EA Invitation",
   twitterCard: 'summary_large_image',
 });
 
-// Schema Khusus SaaS (SoftwareApplication)
+// ✅ Canonical URL spesifik untuk homepage
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://eainvitation.com/'
+    }
+  ]
+})
+
+// Schema Khusus SaaS
 useSchemaOrg([
   defineSoftwareApp({
     name: "EA Invitation",
@@ -20,7 +30,7 @@ useSchemaOrg([
     operatingSystem: "Web",
     offers: {
       "@type": "Offer",
-      price: "100000", // Contoh harga terendah
+      price: "100000",
       priceCurrency: "IDR",
     },
   }),

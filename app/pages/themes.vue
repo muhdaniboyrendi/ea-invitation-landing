@@ -7,8 +7,19 @@ useSeoMeta({
   ogDescription:
     "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
   ogImage: "/og-image.webp",
+  ogUrl: "https://eainvitation.com/themes", // ✅ TAMBAHKAN
   twitterCard: "summary_large_image",
 });
+
+// ✅ Canonical URL
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://eainvitation.com/themes'
+    }
+  ]
+})
 </script>
 
 <template>

@@ -7,17 +7,28 @@ useSeoMeta({
   ogDescription:
     "Pelajari cara membuat, mengedit, dan menyebarkan undangan pernikahan digital Anda menggunakan EA Invitation.",
   ogImage: "/og-image.webp",
+  ogUrl: "https://eainvitation.com/tutorial", // ✅ TAMBAHKAN
   twitterCard: "summary_large_image",
 });
 
-// Schema HowTo (Sangat bagus untuk rich snippet di Google)
+// ✅ Canonical URL
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://eainvitation.com/tutorial'
+    }
+  ]
+})
+
+// Schema HowTo
 useSchemaOrg([
   defineHowTo({
     name: "Cara Membuat Undangan Digital",
     step: [
       {
         text: "Daftar akun di Dashboard EA Invitation.",
-        url: "https://app.eainvitation.com/register", // Link ke port 3001 (Production URL)
+        url: "https://app.eainvitation.com/register",
       },
       {
         text: "Pilih paket undangan sesuai dengan kebutukan.",

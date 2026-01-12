@@ -1,3 +1,4 @@
+<!-- components/hero/Index.vue -->
 <script setup>
 const config = useRuntimeConfig();
 
