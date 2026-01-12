@@ -36,7 +36,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
             >Undangan Pernikahan</span
-          > <span class="italic">Digital</span>
+          >
+          <span class="italic">Digital</span>
         </h1>
 
         <p
@@ -49,14 +50,14 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <NuxtLink
             :to="dashboardAppUrl + '/login'"
-            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
           >
             <span class="relative z-10">Buat Undangan</span>
           </NuxtLink>
 
           <NuxtLink
             to="/tutorial"
-            class="group px-8 py-4 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+            class="group px-8 py-4 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
           >
             Tutorial
             <i class="bi bi-play-circle ml-1"></i>
