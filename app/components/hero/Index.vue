@@ -8,7 +8,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 <template>
   <section
     id="home"
-    class="relative min-h-screen overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
+    class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
   >
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
@@ -36,8 +36,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
             >Undangan Pernikahan</span
-          >
-          <span class="italic">Digital</span>
+          > <span class="italic">Digital</span>
         </h1>
 
         <p
