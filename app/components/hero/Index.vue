@@ -16,7 +16,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
     <!-- Hero Section Part 1 -->
     <section
-      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 min-h-dvh py-30"
+      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 py-30"
     >
       <!-- Left Content -->
       <div class="text-center lg:mb-0 px-4 lg:pl-10 lg:pr-0">

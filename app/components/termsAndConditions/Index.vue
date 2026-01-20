@@ -322,7 +322,7 @@ const lastUpdated = ref("5 November 2025");
       <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <!-- Badge -->
@@ -339,13 +339,13 @@ const lastUpdated = ref("5 November 2025");
         </div>
 
         <!-- Main Title -->
-        <h2
-          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
         >
           Syarat & Ketentuan
           <br />
-          <span class="text-3xl lg:text-5xl text-white/60">Layanan Kami</span>
-        </h2>
+          <span class="text-white/60">Layanan EA Invitation</span>
+        </h1>
 
         <!-- Description -->
         <p
@@ -365,20 +365,9 @@ const lastUpdated = ref("5 November 2025");
       <!-- Terms Content -->
       <div class="max-w-5xl mx-auto space-y-6">
         <div v-for="term in termsData" :key="term.id" class="group relative">
-          <!-- Main Card -->
           <div
             :class="[
-              'absolute -inset-1 blur-lg rounded-2xl transition-all duration-500',
-              activeSection === term.id
-                ? 'opacity-75'
-                : 'opacity-50 group-hover:opacity-75',
-              `bg-gradient-to-r ${term.glowColor}`,
-            ]"
-          ></div>
-
-          <div
-            :class="[
-              'relative rounded-2xl border transition-all duration-300',
+              'relative rounded-3xl md:rounded-4xl lg:rounded-5xl border transition-all duration-300',
               activeSection === term.id
                 ? 'border-white/20'
                 : 'border-white/10 hover:border-white/20',
@@ -388,23 +377,23 @@ const lastUpdated = ref("5 November 2025");
             <!-- Header Button -->
             <button
               @click="toggleSection(term.id)"
-              class="w-full p-8 text-left flex items-center justify-between gap-4 group/btn"
+              class="w-full p-4 md:p-6 lg:p-8 text-left flex items-center justify-between gap-4 group/btn"
             >
               <div class="flex items-center gap-4 flex-1">
                 <div
                   :class="[
-                    'w-14 h-14 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0',
+                    'w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0',
                     `bg-gradient-to-br ${term.color}`,
                   ]"
                 >
                   <i :class="[term.icon, 'text-white text-2xl']"></i>
                 </div>
                 <div>
-                  <h3
-                    class="text-2xl font-bold text-white mb-1 group-hover/btn:text-cyan-200 transition-colors duration-300"
+                  <h2
+                    class="text-lg md:text-xl lg:text-2xl font-bold text-white mb-1 group-hover/btn:text-cyan-200 transition-colors duration-300"
                   >
                     {{ term.title }}
-                  </h3>
+                  </h2>
                   <p class="text-white/60 text-sm">
                     {{ term.sections.length }} bagian
                   </p>
@@ -429,26 +418,26 @@ const lastUpdated = ref("5 November 2025");
                   : 'max-h-0 opacity-0',
               ]"
             >
-              <div class="px-8 pb-8 space-y-6 border-t border-white/5 pt-6">
+              <div class="p-4 md:p-6 lg:p-8 space-y-6 border-t border-white/5">
                 <div
                   v-for="(section, index) in term.sections"
                   :key="index"
                   class="space-y-4"
                 >
                   <!-- Subtitle -->
-                  <h4
+                  <h3
                     class="text-lg font-bold text-white flex items-center gap-2"
                   >
                     <div
                       :class="[
-                        'w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold',
+                        'w-8 h-8 rounded-xl flex items-center justify-center text-xs font-bold',
                         `bg-gradient-to-br ${term.color}`,
                       ]"
                     >
                       {{ index + 1 }}
                     </div>
                     {{ section.subtitle }}
-                  </h4>
+                  </h3>
 
                   <!-- Content List -->
                   <div class="pl-10 space-y-3">
@@ -485,99 +474,33 @@ const lastUpdated = ref("5 November 2025");
       <div class="mt-16 max-w-5xl mx-auto">
         <div class="group relative">
           <div
-            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/30 to-purple-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-75"
-          ></div>
-          <div
-            class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-8"
+            class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-4 md:p-6 lg:p-8"
           >
-            <div class="flex items-start gap-4">
+            <div class="flex items-center gap-4 mb-4">
               <div
                 class="w-12 h-12 bg-gradient-to-br from-amber-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0"
               >
                 <i class="bi bi-info-circle text-white text-xl"></i>
               </div>
-              <div class="flex-1">
-                <h3 class="text-xl font-bold text-white mb-3">
-                  Penerimaan Ketentuan
-                </h3>
-                <p class="text-white/70 leading-relaxed mb-4">
-                  Dengan menggunakan layanan kami, Anda menyatakan bahwa Anda
-                  telah membaca, memahami, dan menyetujui untuk terikat dengan
-                  syarat dan ketentuan ini. Jika Anda tidak menyetujui ketentuan
-                  ini, mohon untuk tidak menggunakan layanan kami.
-                </p>
-                <p class="text-white/70 leading-relaxed">
-                  Untuk pertanyaan lebih lanjut mengenai syarat dan ketentuan
-                  ini, silakan hubungi tim legal kami di
-                  <a
-                    href="mailto:legal@weddingdigital.com"
-                    class="text-cyan-400 hover:text-cyan-300 font-medium"
-                    >legal@weddingdigital.com</a
-                  >
-                </p>
-              </div>
+              <h2 class="text-lg md:text-xl lg:text-2xl font-bold text-white">
+                Penerimaan Ketentuan
+              </h2>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Quick Actions -->
-      <div
-        class="mt-12 max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6"
-      >
-        <div class="group/card relative">
-          <div
-            class="absolute -inset-0.5 bg-gradient-to-r from-blue-400/30 to-indigo-600/30 blur rounded-xl opacity-0 group-hover/card:opacity-50 transition-all duration-300"
-          ></div>
-          <div
-            class="relative backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 hover:border-white/20 rounded-xl p-6 transition-all duration-300 text-center"
-          >
-            <i class="bi bi-envelope text-4xl text-emerald-400 mb-3"></i>
-            <h4 class="text-white font-semibold mb-2">Hubungi Legal</h4>
-            <p class="text-white/70 text-sm mb-4">Ada pertanyaan hukum?</p>
-            <button
-              class="text-emerald-400 text-sm font-medium hover:text-emerald-300 flex items-center gap-1 mx-auto"
-            >
-              <i class="bi bi-send"></i>
-              Contact
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- CTA Bottom -->
-      <div class="mt-16 text-center">
-        <div class="group relative inline-block max-w-4xl">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/30 to-purple-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-75"
-          ></div>
-          <div
-            class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-8"
-          >
-            <h3 class="text-2xl font-bold text-white mb-3">Siap Memulai?</h3>
-            <p class="text-white/70 mb-6 max-w-2xl mx-auto">
-              Dengan menyetujui syarat dan ketentuan ini, Anda dapat langsung
-              membuat undangan pernikahan digital yang indah dan profesional
+            <p class="text-white/70 leading-relaxed mb-4">
+              Dengan menggunakan layanan kami, Anda menyatakan bahwa Anda telah
+              membaca, memahami, dan menyetujui untuk terikat dengan syarat dan
+              ketentuan ini. Jika Anda tidak menyetujui ketentuan ini, mohon
+              untuk tidak menggunakan layanan kami.
             </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-              <button
-                class="group/btn relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
+            <p class="text-white/70 leading-relaxed">
+              Untuk pertanyaan lebih lanjut mengenai syarat dan ketentuan ini,
+              silakan hubungi tim legal kami di
+              <a
+                href="mailto:erlanazrdev@gmail.com"
+                class="text-cyan-400 hover:text-cyan-300 font-medium"
+                >erlanazrdev@gmail.com</a
               >
-                <span class="relative z-10 flex items-center gap-2">
-                  <i class="bi bi-check-circle"></i>
-                  Saya Setuju & Mulai
-                </span>
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
-                ></div>
-              </button>
-              <button
-                class="px-8 py-4 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-2"
-              >
-                <i class="bi bi-headset"></i>
-                Hubungi Support
-              </button>
-            </div>
+            </p>
           </div>
         </div>
       </div>
@@ -588,7 +511,8 @@ const lastUpdated = ref("5 November 2025");
 <style scoped>
 /* Grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 80px 80px;
 }

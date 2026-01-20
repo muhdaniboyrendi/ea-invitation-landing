@@ -53,7 +53,6 @@ export default defineNuxtConfig({
   },
 
   robots: {
-    disallow: ["/admin", "/secret"],
     sitemap: "/sitemap.xml",
   },
 

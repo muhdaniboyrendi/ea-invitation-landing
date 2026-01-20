@@ -2,18 +2,18 @@ export const useThemeStore = defineStore("theme", () => {
   const config = useRuntimeConfig();
   const apiBaseUrl = config.public.apiBaseUrl;
 
-  const {
-    data: themes,
-    error: themesError,
-    pending: themesPending,
-    refresh: themesRefresh,
-  } = useFetch(`${apiBaseUrl}/themes`, {
-    method: "GET",
-    key: "landing-themes-data",
-    transform: (response) => {
-      return response.data;
-    },
-  });
+  // const {
+  //   data: themes,
+  //   error: themesError,
+  //   pending: themesPending,
+  //   refresh: themesRefresh,
+  // } = useFetch(`${apiBaseUrl}/themes`, {
+  //   method: "GET",
+  //   key: "landing-themes-data",
+  //   transform: (response) => {
+  //     return response.data;
+  //   },
+  // });
 
   // const {
   //   data: categories,
@@ -27,6 +27,28 @@ export const useThemeStore = defineStore("theme", () => {
   //     return response.data;
   //   },
   // });
+
+  const themes = ref([
+    {
+      id: 1,
+      theme_category_id: 3,
+      name: "Instagram",
+      slug: "instagram",
+      thumbnail: "themes/thumbnails/EA-inv_1768205013_Ymwf7QF1di.webp",
+      is_premium: true,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url:
+        "http://api.eainvitation.com/storage/themes/thumbnails/EA-inv_1768205013_Ymwf7QF1di.webp",
+      theme_category: {
+        id: 3,
+        name: "Social",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
+  ]);
 
   const categories = ref([
     {
@@ -54,9 +76,9 @@ export const useThemeStore = defineStore("theme", () => {
 
   return {
     themes,
-    themesError,
-    themesPending,
-    themesRefresh,
+    // themesError,
+    // themesPending,
+    // themesRefresh,
     categories,
     // categoryError,
     // categoriesPending,

@@ -95,7 +95,7 @@ const clearActive = () => {
       <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <!-- Badge -->
@@ -110,27 +110,27 @@ const clearActive = () => {
         </div>
 
         <!-- Main Title -->
-        <h2
-          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+        <h1
+          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
         >
           Tutorial Lengkap
           <br />
-          <span class="text-3xl lg:text-5xl text-white/60"
-            >Cara Membuat Undangan Digital</span
+          <span class="text-white/60"
+            >Cara Membuat Undangan Digital EA Invitation</span
           >
-        </h2>
+        </h1>
 
         <!-- Description -->
         <p
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
           Ikuti panduan step-by-step untuk membuat undangan digital impian Anda
-          dengan mudah
+          dalam hitungan menit
         </p>
       </div>
 
       <!-- Steps Grid -->
-      <div class="space-y-8 mb-20">
+      <div class="space-y-6 lg:space-y-8 mb-20">
         <div
           v-for="(step, index) in steps"
           :key="step.number"
@@ -148,12 +148,12 @@ const clearActive = () => {
           ></div>
 
           <div
-            class="relative bg-gradient-to-br from-cyan-950/90 to-purple-900/90 dark:from-black/80 dark:to-black/70 border border-white/10 hover:border-white/20 rounded-2xl p-8 transition-all duration-300"
+            class="relative bg-gradient-to-br from-cyan-950/90 to-purple-900/90 dark:from-black/80 dark:to-black/70 border border-white/10 hover:border-white/20 rounded-3xl lg:rounded-4xl p-4 lg:p-6 transition-all duration-300"
           >
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <!-- Content -->
               <div :class="index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'">
-                <div class="flex items-start gap-4 mb-6">
+                <div class="flex items-center gap-4 mb-6">
                   <div
                     class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 bg-gradient-to-br from-cyan-400 to-purple-600"
                   >
@@ -162,17 +162,18 @@ const clearActive = () => {
                     }}</span>
                   </div>
                   <div class="flex-1">
-                    <h3 class="text-2xl font-bold text-white mb-3">
+                    <h3 class="text-2xl font-bold text-white">
                       {{ step.title }}
                     </h3>
-                    <p class="text-white/70 text-base leading-relaxed">
-                      {{ step.description }}
-                    </p>
                   </div>
                 </div>
 
+                <p class="text-white/70 text-base leading-relaxed mb-6">
+                  {{ step.description }}
+                </p>
+
                 <!-- Progress Indicator -->
-                <div class="flex items-center gap-2 pl-20">
+                <div class="flex items-center gap-2">
                   <div
                     class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden"
                   >
@@ -193,7 +194,7 @@ const clearActive = () => {
               <div :class="index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'">
                 <div class="relative group/img">
                   <div
-                    class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-purple-600/20 blur-xl rounded-2xl opacity-0 group-hover/img:opacity-100 transition-all duration-500"
+                    class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-purple-600/20 blur-xl rounded-2xl opacity-0 transition-all duration-500"
                   ></div>
                   <div
                     class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5"
@@ -209,9 +210,6 @@ const clearActive = () => {
                       class="w-full h-full object-cover"
                       @error="(e) => handleImageError(e, step.number)"
                     />
-                    <div
-                      class="absolute inset-0 bg-gradient-to-t from-slate-900/50 to-transparent opacity-0 group-hover/img:opacity-100 transition-opacity duration-300"
-                    ></div>
                   </div>
                 </div>
               </div>
@@ -244,9 +242,6 @@ const clearActive = () => {
         </div>
 
         <div class="group relative max-w-5xl mx-auto">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-pink-400/30 to-rose-600/30 blur-xl rounded-3xl opacity-75 group-hover:opacity-100 transition-all duration-500"
-          ></div>
           <div
             class="relative backdrop-blur-md bg-gradient-to-br from-pink-950/90 to-rose-900/90 dark:from-black/80 dark:to-black/70 border border-white/10 hover:border-white/20 rounded-3xl p-4 transition-all duration-300"
           >
@@ -281,9 +276,6 @@ const clearActive = () => {
       <!-- CTA Section -->
       <div class="text-center">
         <div class="group relative inline-block max-w-4xl">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-cyan-400/30 to-purple-600/30 blur-lg rounded-2xl group-hover:blur-xl transition-all duration-500 opacity-75"
-          ></div>
           <div
             class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-8"
           >
@@ -331,7 +323,8 @@ const clearActive = () => {
 <style scoped>
 /* Grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 80px 80px;
 }

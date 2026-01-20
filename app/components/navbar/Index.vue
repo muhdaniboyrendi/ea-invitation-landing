@@ -65,10 +65,10 @@ const closeMobile = () => {
                 <li
                   v-for="item in navigation"
                   :key="item.name"
-                  :to="item.href"
                   class="cursor-pointer"
                 >
                   <NuxtLink
+                    :to="item.href"
                     class="relative px-3 py-2 text-sm font-medium text-gray-200 hover:text-cyan-400 transition-all duration-300 group"
                   >
                     {{ item.name }}
@@ -161,11 +161,11 @@ const closeMobile = () => {
             <li
               v-for="item in navigation"
               :key="item.name"
-              :to="item.href"
               class="cursor-pointer"
             >
               <NuxtLink
                 @click="closeMobile"
+                :to="item.href"
                 class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-cyan-400 hover:bg-white/10 rounded-xl transition-all duration-300"
               >
                 {{ item.name }}

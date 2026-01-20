@@ -55,7 +55,11 @@ const { themes, themesPending, themesError } = storeToRefs(useThemeStore());
 
       <!-- Themes Grid -->
       <div v-else class="flex flex-wrap justify-center gap-8">
-        <ThemesCard v-for="theme in themes" :key="theme.id" :theme="theme" />
+        <ThemesHomeCard
+          v-for="theme in themes"
+          :key="theme.id"
+          :theme="theme"
+        />
       </div>
 
       <!-- Load More Button -->
@@ -81,7 +85,8 @@ const { themes, themesPending, themesError } = storeToRefs(useThemeStore());
 <style scoped>
 /* Grid Pattern Background */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 80px 80px;
 }

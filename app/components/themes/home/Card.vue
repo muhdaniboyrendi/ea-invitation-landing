@@ -53,9 +53,9 @@ const imageUrl = getStorageUrl(props.theme?.thumbnail);
       <div class="p-4 pt-0">
         <div class="flex items-start justify-between mb-4">
           <div>
-            <h2 class="text-lg font-bold text-white">
+            <h3 class="text-lg font-bold text-white">
               {{ props.theme?.name || "Untitled Theme" }}
-            </h2>
+            </h3>
           </div>
           <span class="py-1 px-2 rounded-lg bg-white/10 text-sm text-white/80">
             {{ props.theme?.theme_category?.name || "Uncategorized" }}

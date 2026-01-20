@@ -86,14 +86,14 @@ const filteredThemes = computed(() => {
       return themes.value;
     }
     return themes.value.filter(
-      (theme) => theme.theme_category_id === activeCategory.value
+      (theme) => theme.theme_category_id === activeCategory.value,
     );
   } else {
     if (activeCategory.value === "all") {
       return themesFake.value;
     }
     return themesFake.value.filter(
-      (theme) => theme.theme_category_id === activeCategory.value
+      (theme) => theme.theme_category_id === activeCategory.value,
     );
   }
 });
@@ -105,14 +105,14 @@ const getThemeCount = (categoryId) => {
       return themes.value.length;
     }
     return themes.value.filter(
-      (theme) => theme.theme_category_id === categoryId
+      (theme) => theme.theme_category_id === categoryId,
     ).length;
   } else {
     if (categoryId === "all") {
       return themesFake.value.length;
     }
     return themesFake.value.filter(
-      (theme) => theme.theme_category_id === categoryId
+      (theme) => theme.theme_category_id === categoryId,
     ).length;
   }
 };
@@ -133,22 +133,20 @@ const getThemeCount = (categoryId) => {
       <!-- Section Header -->
       <div class="text-center mb-16">
         <!-- Main Title -->
-        <h2
-          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+        <h1
+          class="text-4xl max-w-2xl mx-auto lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
         >
-          Stunning Themes
+          Daftar Tema Undangan Digital
           <br />
-          <span class="text-3xl lg:text-5xl text-white/60"
-            >For Every Style</span
-          >
-        </h2>
+          <span class="text-white/60"> EA Invitation</span>
+        </h1>
 
         <!-- Description -->
         <p
           class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
         >
           Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
-          memukau dan interaktif
+          modern dan interaktif
         </p>
       </div>
 
@@ -220,7 +218,8 @@ const getThemeCount = (categoryId) => {
 <style scoped>
 /* Grid Pattern Background */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 80px 80px;
 }
