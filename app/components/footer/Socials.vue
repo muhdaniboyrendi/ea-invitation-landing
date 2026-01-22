@@ -26,14 +26,22 @@ const socialList = [
     <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
       <!-- Contact Info -->
       <div class="flex flex-col sm:flex-row items-center gap-6 text-white/70">
-        <div class="flex items-center">
+        <a
+          href="mailto:erlanazrdev@gmail.com"
+          target="_blank"
+          class="flex items-center hover:underline hover:text-cyan-500 transition"
+        >
           <i class="bi bi-envelope mr-2 text-cyan-400"></i>
           <span>erlanazrdev@gmail.com</span>
-        </div>
-        <div class="flex items-center">
+        </a>
+        <a
+          href="https://wa.me/6282220633024"
+          target="_blank"
+          class="flex items-center hover:underline hover:text-cyan-500 transition"
+        >
           <i class="bi bi-telephone mr-2 text-purple-400"></i>
           <span>+62 822-2063-3024</span>
-        </div>
+        </a>
       </div>
 
       <!-- Social Media Links -->

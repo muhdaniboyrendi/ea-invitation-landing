@@ -51,6 +51,7 @@ const closeMobile = () => {
             <NuxtImg
               src="/logo.webp"
               width="35"
+              height="35"
               loading="eager"
               quality="80"
               alt="EA Invitation logo"

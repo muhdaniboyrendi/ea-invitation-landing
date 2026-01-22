@@ -2,17 +2,16 @@
 useSeoMeta({
   title: "Undangan Pernikahan Digital Modern & Interaktif",
   description:
-    "EA Invitation adalah platform undangan pernikahan digital berbasis website dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
+    "EA Invitation adalah platform undangan pernikahan digital berbasis web dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
   ogTitle: "EA Invitation - Undangan Pernikahan Digital Modern & Interaktif",
   ogDescription:
     "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
   ogImage: "/og-image.webp",
-  ogUrl: "https://eainvitation.com/", // ✅ TAMBAHKAN ini
+  ogUrl: "https://eainvitation.com/",
   ogSiteName: "EA Invitation",
   twitterCard: 'summary_large_image',
 });
 
-// ✅ Canonical URL spesifik untuk homepage
 useHead({
   link: [
     {
@@ -22,7 +21,6 @@ useHead({
   ]
 })
 
-// Schema Khusus SaaS
 useSchemaOrg([
   defineSoftwareApp({
     name: "EA Invitation",

@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: "https://eainvitation.com", // Pastikan tanpa www
+    url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
       "EA Invitation adalah platform undangan pernikahan digital berbasis web dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
@@ -33,16 +33,13 @@ export default defineNuxtConfig({
     indexable: true,
   },
 
-  // ✅ TAMBAHKAN INI: Konfigurasi SEO Utils
   seo: {
     enabled: true,
-    automaticDefaults: true, // Aktifkan default meta otomatis
+    automaticDefaults: true,
   },
 
-  // ✅ REDIRECT www ke non-www
   nitro: {
     routeRules: {
-      // Redirect www ke non-www dengan 301
       "https://www.eainvitation.com/**": {
         redirect: {
           to: "https://eainvitation.com/**",
@@ -58,12 +55,11 @@ export default defineNuxtConfig({
 
   sitemap: {
     sources: [],
-    // ✅ Pastikan hanya canonical URL di sitemap
     urls: async () => {
       return [
+        { loc: "/", changefreq: "weekly", priority: 1.0 },
         { loc: "/themes", changefreq: "weekly", priority: 0.8 },
         { loc: "/tutorial", changefreq: "monthly", priority: 0.7 },
-        { loc: "/terms", changefreq: "yearly", priority: 0.3 },
       ];
     },
   },
