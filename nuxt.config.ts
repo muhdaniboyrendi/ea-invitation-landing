@@ -59,7 +59,9 @@ export default defineNuxtConfig({
       return [
         { loc: "/", changefreq: "weekly", priority: 1.0 },
         { loc: "/themes", changefreq: "weekly", priority: 0.8 },
-        { loc: "/tutorial", changefreq: "monthly", priority: 0.7 },
+        { loc: "/tutorial", changefreq: "monthly", priority: 0.8 },
+        { loc: "/terms-and-conditions", changefreq: "monthly", priority: 0.5 },
+        { loc: "/privacy-policy", changefreq: "monthly", priority: 0.5 },
       ];
     },
   },
