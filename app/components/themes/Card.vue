@@ -1,12 +1,8 @@
 <script setup>
 const props = defineProps(["theme"]);
 
-const { getStorageUrl } = useStorage();
 const config = useRuntimeConfig();
-
 const themeUrl = config.public.themeUrl;
-
-const imageUrl = getStorageUrl(props.theme?.thumbnail);
 </script>
 
 <template>
@@ -20,7 +16,7 @@ const imageUrl = getStorageUrl(props.theme?.thumbnail);
         <div class="p-4">
           <NuxtImg
             v-if="props.theme?.thumbnail"
-            :src="imageUrl || '/img/hero.jpg'"
+            :src="props.theme?.thumbnail || '/img/hero.jpg'"
             :alt="props.theme?.name || 'Theme Image'"
             width="400"
             height="300"

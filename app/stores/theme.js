@@ -34,12 +34,11 @@ export const useThemeStore = defineStore("theme", () => {
       theme_category_id: 3,
       name: "Instagram",
       slug: "instagram",
-      thumbnail: "themes/thumbnails/EA-inv_1768205013_Ymwf7QF1di.webp",
+      thumbnail: "/img/themes/instagram.webp",
       is_premium: true,
       created_at: "2026-01-12T08:03:33.000000Z",
       updated_at: "2026-01-12T08:03:33.000000Z",
-      thumbnail_url:
-        "http://api.eainvitation.com/storage/themes/thumbnails/EA-inv_1768205013_Ymwf7QF1di.webp",
+      thumbnail_url: "/img/themes/instagram.webp",
       theme_category: {
         id: 3,
         name: "Social",
