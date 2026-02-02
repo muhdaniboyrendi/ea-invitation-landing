@@ -15,8 +15,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
     </div>
 
     <!-- Hero Section Part 1 -->
-    <section
-      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col gap-y-20 py-30"
+    <div
+      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col pt-36 pb-28"
     >
       <!-- Left Content -->
       <div class="text-center lg:mb-0 px-4 lg:pl-10 lg:pr-0">
@@ -26,7 +26,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <span
             class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"
           ></span>
-          <span class="text-sm font-medium text-white/90">Beta 1.0</span>
+          <span class="text-sm font-medium text-white/90">Beta</span>
         </div>
 
         <h1
@@ -36,7 +36,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           <span
             class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
             >Undangan Pernikahan</span
-          > <span class="italic">Digital</span>
+          >
+          <span class="italic">Digital</span>
         </h1>
 
         <p
@@ -63,95 +64,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           </NuxtLink>
         </div>
       </div>
-    </section>
-
-    <!-- Hero Section Part 2 - Features Grid -->
-    <section class="relative z-10 px-6 lg:px-12 xl:px-20 pb-20">
-      <div class="text-center mb-16">
-        <h2
-          class="text-4xl lg:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
-        >
-          Fitur Unggulan
-        </h2>
-        <p class="text-xl text-white/70 max-w-3xl mx-auto text-balance">
-          Discover the tools that will transform your workflow and accelerate
-          your success
-        </p>
-      </div>
-
-      <!-- Features Grid -->
-      <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"
-      >
-        <!-- Feature 1 -->
-        <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-cyan-400 dark:to-blue-600 hover:scale-105 transition-all duration-300"
-        >
-          <div
-            class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-cyan-950/90 to-blue-900/90 dark:from-black/70 dark:to-black/60"
-          >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-lightning-charge text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Instant</h3>
-            <p class="text-white/70">
-              Undangan langsung jadi tanpa menunggu dan langsung bagikan.
-            </p>
-          </div>
-        </div>
-
-        <!-- Feature 2 -->
-        <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-purple-400 dark:to-pink-600 hover:scale-105 transition-all duration-300"
-        >
-          <div
-            class="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-pink-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-purple-950/90 to-pink-900/90 dark:from-black/70 dark:to-black/60"
-          >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-layers text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">
-              Anti-mainstream Design
-            </h3>
-            <p class="text-white/70">
-              Rasakan desain undangan yang unik dan berbeda dari yang lain.
-            </p>
-          </div>
-        </div>
-
-        <!-- Feature 3 -->
-        <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-green-400 dark:to-teal-600 hover:scale-105 transition-all duration-300"
-        >
-          <div
-            class="absolute -inset-2 bg-gradient-to-r from-green-400/20 to-teal-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-green-950/90 to-teal-900/90 dark:from-black/70 dark:to-black/60"
-          >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-sliders2 text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Limitless</h3>
-            <p class="text-white/70">
-              Ubah konten undangan dan pilih tema kapanpun anda mau.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+    </div>
   </section>
 </template>
 
@@ -175,10 +88,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
 /* Grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(
-      rgba(255, 255, 255, 0.4) 1px,
-      transparent 1px
-    ),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
   background-size: 60px 60px;
 }

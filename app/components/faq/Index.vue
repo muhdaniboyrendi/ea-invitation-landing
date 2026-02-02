@@ -99,13 +99,7 @@ const isOpen = (categoryIndex, questionIndex) => {
     id="faq"
     class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
   >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Grid Pattern -->
-      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <!-- Badge -->
@@ -142,7 +136,7 @@ const isOpen = (categoryIndex, questionIndex) => {
       </div>
 
       <!-- FAQ Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div
           v-for="(category, categoryIndex) in faqs"
           :key="categoryIndex"
@@ -152,7 +146,7 @@ const isOpen = (categoryIndex, questionIndex) => {
           <div class="group relative">
             <div
               :class="[
-                'relative p-6 rounded-2xl border border-white/10',
+                'relative p-4 md:p-6 rounded-2xl border border-white/10',
                 `bg-gradient-to-br ${category.bgGradient} dark:from-dark/80 dark:to-dark/70`,
               ]"
             >
@@ -185,7 +179,7 @@ const isOpen = (categoryIndex, questionIndex) => {
               <button
                 @click="toggleFAQ(categoryIndex, qIndex)"
                 type="button"
-                class="w-full p-6 text-left flex items-start justify-between gap-4 group/btn"
+                class="w-full p-4 md:p-6 text-left flex items-start justify-between gap-4 group/btn"
               >
                 <span
                   class="text-white font-medium leading-relaxed group-hover/btn:text-cyan-200 transition-colors duration-300"
@@ -211,8 +205,8 @@ const isOpen = (categoryIndex, questionIndex) => {
                     : 'max-h-0 opacity-0',
                 ]"
               >
-                <div class="px-6 pb-6 border-t border-white/5">
-                  <p class="text-white/70 leading-relaxed pt-4">
+                <div class="px-4 md:px-6 pb-4 md:pb-6 border-t border-white/5">
+                  <p class="text-white/70 leading-relaxed pt-2 md:pt-4">
                     {{ faq.a }}
                   </p>
                 </div>
@@ -228,7 +222,8 @@ const isOpen = (categoryIndex, questionIndex) => {
 <style scoped>
 /* Grid pattern */
 .bg-grid-pattern {
-  background-image: linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
     linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
   background-size: 80px 80px;
 }

@@ -1,15 +1,23 @@
 <script setup>
 const paymentMethodList = [
-  { icon: "bca.webp", name: "BCA" },
+  // { icon: "bca.webp", name: "BCA" },
   { icon: "bri.webp", name: "BRI" },
-  { icon: "mandiri.webp", name: "Mandiri" },
   { icon: "bni.webp", name: "BNI" },
+  { icon: "mandiri.webp", name: "Mandiri" },
+  { icon: "bsi.webp", name: "BSI" },
   { icon: "qris.webp", name: "QRIS" },
-  { icon: "alfamidi.webp", name: "Alfamidi" },
-  { icon: "alfamart.webp", name: "Alfamart" },
-  { icon: "indomaret.webp", name: "Infomaret" },
+  { icon: "seabank.webp", name: "SeaBank" },
+  { icon: "dana.webp", name: "DANA" },
+  { icon: "gopay.webp", name: "GoPay" },
+  { icon: "shopeepay.webp", name: "ShopeePay" },
+  // { icon: "alfamidi.webp", name: "Alfamidi" },
+  // { icon: "alfamart.webp", name: "Alfamart" },
+  // { icon: "indomaret.webp", name: "Infomaret" },
   // { icon: "visa.webp", name: "Visa" },
   // { icon: "mastercard.webp", name: "Mastercard" },
+  // { icon: "danamon.webp", name: "Danamon" },
+  // { icon: "cimb.webp", name: "CIMB Niaga" },
+  // { icon: "permata.webp", name: "Permata" },
 ];
 </script>
 

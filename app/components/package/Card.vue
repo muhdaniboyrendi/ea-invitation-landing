@@ -22,6 +22,15 @@ const hasHiddenFeatures = computed(() => {
   return props.package.features.length > maxFeatures;
 });
 
+const getFinalPrice = computed(() => {
+  if (props.package.discount) {
+    const discountAmount =
+      (parseFloat(props.package.price) * props.package.discount) / 100;
+    return (parseFloat(props.package.price) - discountAmount).toFixed(2);
+  }
+  return parseFloat(props.package.price).toFixed(2);
+});
+
 // Function untuk toggle tampilan features
 const toggleFeatures = () => {
   showAllFeatures.value = !showAllFeatures.value;
@@ -30,7 +39,7 @@ const toggleFeatures = () => {
 
 <template>
   <div
-    class="group relative bg-gradient-to-b rounded-3xl w-full max-w-90 h-fit transition-all duration-500 hover:scale-103"
+    class="group relative bg-gradient-to-b rounded-3xl w-full max-w-90 h-fit transition-all duration-500 hover:scale-102"
     :class="
       props.package.id === 2
         ? 'from-indigo-900 to-indigo-900 dark:from-purple-500 dark:to-pink-500'
@@ -98,7 +107,7 @@ const toggleFeatures = () => {
               "
             >
               <span class="text-base">Rp</span>
-              {{ formatRupiah(props.package.final_price) }}
+              {{ formatRupiah(getFinalPrice) }}
             </span>
           </div>
           <div v-if="props.package.discount" class="text-sm text-white/50">

@@ -39,6 +39,7 @@ useSchemaOrg([
   <div class="bg-off-white dark:bg-dark">
     <NuxtLayout>
       <Hero />
+      <Greeting />
       <Features />
       <Package />
       <ThemesHome />

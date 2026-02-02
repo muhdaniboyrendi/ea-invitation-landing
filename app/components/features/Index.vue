@@ -9,7 +9,7 @@
       <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
     </div>
 
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
       <div class="text-center mb-20">
         <!-- Badge -->
