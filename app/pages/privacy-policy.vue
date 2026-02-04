@@ -13,10 +13,19 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://eainvitation.com/privacy-policy'
+    }
+  ]
+})
+
 useSchemaOrg([
   {
     '@type': 'WebPage',
-    '@id': 'https://eainvitation.com/kebijakan-privasi',
+    '@id': 'https://eainvitation.com/privacy-policy',
     name: 'Kebijakan Privasi',
     description:
       'Kebijakan Privasi eainvitation.com menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda.',

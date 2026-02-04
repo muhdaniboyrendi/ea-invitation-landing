@@ -36,38 +36,52 @@ const steps = [
   },
   {
     number: 5,
-    title: "Nama Pasangan",
+    title: "Metode Pembayaran",
     description:
-      "Setelah pembayaran berhasil, selanjutnya anda perlu memasukan nama pasangan yang akan dijadikan display utama di undangan anda.",
-    image: "/img/tutorial/6.webp",
+      'Setelah memilih paket undangan yang anda butuhkan anda diarahkan ke halaman checkout untuk melakukan transaksi pembelian paket undangan anda dan klik "Bayar Sekarang" untuk mengkonfirmasi pembelian paket undangan anda dan memilih metode pembayaran yang tersedia.',
+    image: "/img/tutorial/5.webp",
   },
   {
     number: 6,
-    title: "Pilih Tema",
+    title: "Pembayaran",
     description:
-      "Selanjutnya anda perlu memilih tema undangan yang akan dijadikan sebagai desain dari undangan anda, dan anda dapat mengubahnya kapan pun.",
-    image: "/img/tutorial/7.webp",
+      'Setelah memilih metode pembayaran yang tersedia, klik "Bayar Sekarang" untuk menyelesaikan proses pembayaran.',
+    image: "/img/tutorial/6.webp",
   },
   {
     number: 7,
-    title: "Isi Data",
+    title: "Nama Pasangan",
     description:
-      "Setelah itu anda perlu mengisi data undangan yang dibutuhkan, seperti tanggal dan waktu acara, data mempelai pria dan wanita, daftar acara, kisah cinta, gift, foto, video, dll.",
-    image: "/img/tutorial/8.webp",
+      "Setelah pembayaran berhasil, selanjutnya anda perlu memasukan nama pasangan yang akan dijadikan display utama di undangan anda.",
+    image: "/img/tutorial/7.webp",
   },
   {
     number: 8,
-    title: "Kelola Tamu",
+    title: "Pilih Tema",
     description:
-      "Selamat undangan anda telah selesai dibuat, dan selanjutnya adalah anda dapat mengelola, menambahkan, dan memantau daftar tamu undangan anda.",
-    image: "/img/tutorial/9.webp",
+      "Selanjutnya anda perlu memilih tema undangan yang akan dijadikan sebagai desain dari undangan anda, dan anda dapat mengubahnya kapan pun.",
+    image: "/img/tutorial/8.webp",
   },
   {
     number: 9,
+    title: "Isi Data",
+    description:
+      "Setelah itu anda perlu mengisi data undangan yang dibutuhkan, seperti tanggal dan waktu acara, data mempelai pria dan wanita, daftar acara, kisah cinta, gift, foto, video, dll.",
+    image: "/img/tutorial/9.webp",
+  },
+  {
+    number: 10,
+    title: "Kelola Tamu",
+    description:
+      "Selamat undangan anda telah selesai dibuat, dan selanjutnya adalah anda dapat mengelola, menambahkan, dan memantau daftar tamu undangan anda.",
+    image: "/img/tutorial/10.webp",
+  },
+  {
+    number: 11,
     title: "Bagikan Undangan",
     description:
       "Langkah yang terakhir adalah membagikan undangan anda ke teman, kerabat, atau orang lain yang anda undang untuk acara anda.",
-    image: "/img/tutorial/10.webp",
+    image: "/img/tutorial/11.webp",
   },
 ];
 
@@ -162,9 +176,9 @@ const clearActive = () => {
                     }}</span>
                   </div>
                   <div class="flex-1">
-                    <h3 class="text-2xl font-bold text-white">
+                    <h2 class="text-2xl font-bold text-white">
                       {{ step.title }}
-                    </h3>
+                    </h2>
                   </div>
                 </div>
 

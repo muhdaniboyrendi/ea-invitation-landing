@@ -13,6 +13,15 @@ useSeoMeta({
   twitterCard: 'summary_large_image',
 });
 
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: 'https://eainvitation.com/terms-and-conditions'
+    }
+  ]
+})
+
 useSchemaOrg([
   {
     '@type': 'WebPage',

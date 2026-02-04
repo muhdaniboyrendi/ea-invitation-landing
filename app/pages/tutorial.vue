@@ -11,7 +11,6 @@ useSeoMeta({
   twitterCard: "summary_large_image",
 });
 
-// ✅ Canonical URL
 useHead({
   link: [
     {
