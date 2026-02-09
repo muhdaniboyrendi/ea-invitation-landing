@@ -1,4 +1,15 @@
 <script setup>
+const props = defineProps({
+  statusCode: {
+    type: Number,
+    required: true,
+  },
+  message: {
+    type: String,
+    required: true,
+  },
+});
+
 const router = useRouter();
 
 const handleBack = () => {
@@ -17,17 +28,18 @@ const handleBack = () => {
     </div>
 
     <div class="relative z-10 mx-auto text-center max-w-2xl w-full mt-6">
-      <h1 class="text-9xl font-semibold text-cyan-500">404</h1>
+      <h1 class="text-9xl font-semibold text-cyan-500">
+        {{ props.statusCode }}
+      </h1>
 
       <div class="mt-6 space-y-2">
         <h2
           class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200 tracking-tight"
         >
-          Halaman Tidak Ditemukan
+          {{ props.message }}
         </h2>
         <p class="text-slate-300 max-w-md mx-auto leading-relaxed">
-          Maaf, halaman yang Anda cari tidak ditemukan. Silakan periksa kembali
-          URL atau kembali ke beranda.
+          Maaf, terjadi kesalahan pada server. Silakan coba lagi nanti.
         </p>
       </div>
 
