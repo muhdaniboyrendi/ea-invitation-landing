@@ -10,7 +10,13 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
 
-  modules: ["@nuxtjs/color-mode", "@nuxt/image", "@nuxtjs/seo", "@pinia/nuxt"],
+  modules: [
+    "@nuxtjs/color-mode",
+    "@nuxt/image",
+    "@nuxtjs/seo",
+    "@pinia/nuxt",
+    "@vueuse/motion/nuxt",
+  ],
 
   colorMode: {
     classSuffix: "",

@@ -1,20 +1,4 @@
 export const usePackageStore = defineStore("package", () => {
-  // const config = useRuntimeConfig();
-  // const apiBaseUrl = config.public.apiBaseUrl;
-
-  // const {
-  //   data: packages,
-  //   error,
-  //   pending,
-  //   refresh,
-  // } = useFetch(`${apiBaseUrl}/packages`, {
-  //   method: "GET",
-  //   key: "landing-packages-data",
-  //   transform: (response) => {
-  //     return response.data;
-  //   },
-  // });
-
   const packages = ref([
     {
       id: 1,
@@ -23,6 +7,7 @@ export const usePackageStore = defineStore("package", () => {
       discount: null,
       features: [
         "50 tamu undangan + grup",
+        "Akses tema standar",
         "4 foto galeri (max)",
         "Informasi acara",
         "Background musik (list)",
@@ -41,7 +26,8 @@ export const usePackageStore = defineStore("package", () => {
       price: "200000.00",
       discount: 25,
       features: [
-        "200 tamu undangan + grup",
+        "250 tamu undangan + grup",
+        "Akses tema premium",
         "10 foto galeri (max)",
         "1 video",
         "Informasi acara",
@@ -62,7 +48,8 @@ export const usePackageStore = defineStore("package", () => {
       price: "300000.00",
       discount: 15,
       features: [
-        "500 tamu undangan + grup",
+        "1000 tamu undangan + grup",
+        "Akses tema premium",
         "20 foto galeri (max)",
         "5 video (max)",
         "Informasi acara",
@@ -81,8 +68,5 @@ export const usePackageStore = defineStore("package", () => {
 
   return {
     packages,
-    // error,
-    // pending,
-    // refresh,
   };
 });
