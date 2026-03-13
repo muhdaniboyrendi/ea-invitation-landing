@@ -6,62 +6,63 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 </script>
 
 <template>
-  <section
-    id="home"
-    class="relative overflow-hidden bg-gradient-to-b from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark"
-  >
+  <section id="home" class="relative overflow-hidden bg-white dark:bg-black">
     <div class="absolute inset-0 overflow-hidden">
       <div class="absolute inset-0 bg-grid-pattern opacity-10"></div>
     </div>
 
     <!-- Hero Section Part 1 -->
     <div
-      class="relative w-full max-w-7xl mx-auto z-10 flex flex-col pt-36 pb-28"
+      class="relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-y-10 pt-30 pb-28"
     >
       <!-- Left Content -->
-      <div class="text-center lg:mb-0 px-4 lg:pl-10 lg:pr-0">
-        <div
-          class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/10 dark:bg-black/20 border border-white/20 rounded-full shadow-lg"
-        >
-          <span
-            class="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"
-          ></span>
-          <span class="text-sm font-medium text-white/90">Beta</span>
-        </div>
-
+      <div class="w-full px-4 lg:pl-6 lg:pr-0">
         <h1
-          class="relative max-w-4xl mx-auto text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-8 lg:mb-10 text-white tracking-tighter text-balance"
+          class="relative max-w-4xl mx-auto text-5xl/14 sm:text-6xl/18 md:text-7xl/20 font-bold mb-4 md:mb-8 text-black dark:text-white text-balance"
         >
-          Platform
           <span
-            class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-500 to-purple-500"
-            >Undangan Pernikahan</span
+            class="bg-linear-to-r from-sky-500 to-blue-500 bg-clip-text text-transparent"
           >
-          <span class="italic"> Digital</span>
+            Undangan
+          </span>
+          Pernikahan Digital
         </h1>
 
         <p
-          class="text-lg md:text-xl lg:text-xl mx-auto text-white/90 mb-10 max-w-2xl font-medium text-balance"
+          class="md:text-xl lg:text-xl text-gray-500 dark:text-gray-400 mb-6 md:mb-8 font-medium text-balance"
         >
-          Buat undangan pernikahan digital berbasis website dengan berbagai tema
+          Buat undangan pernikahan digital berbasis web dengan berbagai tema
           modern dan interaktif serta fitur lengkap
         </p>
 
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <div class="flex flex-row gap-2">
           <NuxtLink
             :to="dashboardAppUrl + '/login'"
-            class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
+            class="py-2 px-6 md:py-3 md:px-8 bg-sky-500 dark:bg-sky-600 hover:bg-sky-400 dark:hover:bg-sky-500 text-white text-sm md:text-base font-semibold rounded-md active:scale-95 transition duration-300"
           >
-            <span class="relative z-10">Buat Undangan</span>
+            Buat Undangan
           </NuxtLink>
 
           <NuxtLink
             to="/tutorial"
-            class="group px-8 py-4 backdrop-blur-md bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300"
+            class="py-2 px-6 md:py-3 md:px-8 border-2 border-sky-500 dark:border-sky-600 text-sky-500 dark:text-sky-600 hover:text-white text-sm md:text-base font-semibold rounded-md hover:bg-sky-500 dark:hover:bg-sky-600 active:scale-95 transition duration-300"
           >
             Tutorial
             <i class="bi bi-play-circle ml-1"></i>
           </NuxtLink>
+        </div>
+      </div>
+
+      <!-- Right Content -->
+      <div
+        class="w-full max-w-110 px-4 lg:pr-6 lg:pl-0 flex justify-end items-center"
+      >
+        <div
+          class="w-full max-w-100 aspect-square rounded-2xl border-2 border-sky-500 dark:border-sky-600 flex justify-center items-center"
+        >
+          <i
+            class="bi bi-card-image text-7xl text-sky-500 dark:text-sky-600"
+          ></i>
         </div>
       </div>
     </div>
@@ -69,28 +70,15 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 </template>
 
 <style scoped>
-@keyframes gradient-x {
-  0%,
-  100% {
-    background-size: 200% 200%;
-    background-position: left center;
-  }
-  50% {
-    background-size: 200% 200%;
-    background-position: right center;
-  }
-}
-
-.animate-gradient-x {
-  background-size: 200% 200%;
-  animation: gradient-x 4s ease infinite;
-}
-
-/* Grid pattern */
 .bg-grid-pattern {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.4) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: 120px 120px;
+  --grid-color: rgba(0, 0, 0, 0.55);
+}
+
+:global(.dark .bg-grid-pattern) {
+  --grid-color: rgba(255, 255, 255, 0.55);
 }
 </style>

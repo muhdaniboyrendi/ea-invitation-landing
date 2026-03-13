@@ -27,6 +27,12 @@ const toggleMobile = () => {
 const closeMobile = () => {
   isMobileOpen.value = false;
 };
+
+const logoText = computed(() => {
+  return colorMode.value === "dark"
+    ? "/logo-text-dark.webp"
+    : "/logo-text-light.webp";
+});
 </script>
 
 <template>
@@ -34,28 +40,18 @@ const closeMobile = () => {
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
   >
     <div
-      class="backdrop-blur-xl bg-black/10 border-b dark:border-white/10 shadow-2xl"
+      class="backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-black/10 dark:border-white/10"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16 lg:h-20">
           <NuxtLink to="/" class="block" aria-label="EA Invitation">
             <NuxtImg
-              src="/logo-text-dark.webp"
+              :src="logoText"
               width="160"
               height="40"
               loading="eager"
               quality="80"
               alt="EA Invitation logo"
-              class="hidden sm:block"
-            />
-            <NuxtImg
-              src="/logo.webp"
-              width="35"
-              height="35"
-              loading="eager"
-              quality="80"
-              alt="EA Invitation logo"
-              class="sm:hidden"
             />
           </NuxtLink>
 
@@ -70,11 +66,11 @@ const closeMobile = () => {
                 >
                   <NuxtLink
                     :to="item.href"
-                    class="relative px-3 py-2 text-sm font-medium text-gray-200 hover:text-cyan-400 transition-all duration-300 group"
+                    class="relative px-3 py-2 text-sm font-semibold text-gray-700 dark:text-gray-200 hover:text-sky-500 transition-all duration-300 group"
                   >
                     {{ item.name }}
                     <span
-                      class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-cyan-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
+                      class="absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-sky-500 to-blue-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
                     ></span>
                   </NuxtLink>
                 </li>
@@ -83,22 +79,25 @@ const closeMobile = () => {
           </div>
 
           <!-- Right Side Actions -->
-          <div class="flex items-center space-x-4">
+          <div class="flex items-center space-x-2">
             <!-- Theme Toggle with ClientOnly -->
             <ClientOnly>
               <button
                 @click="toggleTheme"
-                class="h-10 aspect-square rounded-xl bg-white/10 hover:bg-white/20 transition-all duration-300 hover:scale-105 border border-white/10"
                 title="Theme preferences"
                 aria-label="Theme preferences button"
+                class="h-10 aspect-square cursor-pointer"
               >
                 <i v-if="isDark" class="bi bi-sun-fill text-yellow-500"></i>
-                <i v-else class="bi bi-moon-fill text-gray-300"></i>
+                <i
+                  v-else
+                  class="bi bi-moon-fill text-gray-600 hover:text-black"
+                ></i>
               </button>
               <template #fallback>
                 <!-- Placeholder untuk server-side rendering -->
                 <div
-                  class="h-10 aspect-square rounded-xl bg-white/10 border border-white/10 flex items-center justify-center"
+                  class="h-10 aspect-square rounded-md bg-black/5 border border-white/10 flex items-center justify-center"
                 ></div>
               </template>
             </ClientOnly>
@@ -106,7 +105,7 @@ const closeMobile = () => {
             <!-- CTA Button -->
             <NuxtLink
               :to="dashboardAppUrl + '/login'"
-              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-cyan-500/80 to-purple-500/80 hover:from-cyan-400 hover:to-purple-400 text-white text-sm font-semibold rounded-xl shadow-lg hover:shadow-purple-500/25 transition-all duration-300 hover:scale-105 active:scale-95 border border-white/20"
+              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-gradient-to-r from-sky-500 to-blue-500 hover:from-sky-400 hover:to-blue-400 text-white text-sm font-semibold rounded-md transition duration-300 active:scale-95"
             >
               Login
             </NuxtLink>
@@ -115,10 +114,10 @@ const closeMobile = () => {
             <button
               @click="toggleMobile"
               type="button"
-              class="md:hidden p-2 rounded-xl bg-white/10 transition-all duration-300 border border-white/10"
+              class="md:hidden p-2 rounded-md transition-all duration-300"
             >
               <svg
-                class="w-6 h-6 text-gray-300"
+                class="w-6 h-6 text-gray-600 dark:text-gray-300 hover:text-black"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -155,7 +154,7 @@ const closeMobile = () => {
     >
       <div
         v-show="isMobileOpen"
-        class="md:hidden backdrop-blur-xl bg-black/10 border-b border-white/10 shadow-2xl"
+        class="md:hidden backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-black/10 dark:border-white/10 shadow-md"
       >
         <nav class="px-4 pt-4 pb-6">
           <ul class="space-y-3 text-center">
@@ -167,7 +166,7 @@ const closeMobile = () => {
               <NuxtLink
                 @click="closeMobile"
                 :to="item.href"
-                class="block px-4 py-3 text-base font-medium text-gray-200 hover:text-cyan-400 hover:bg-white/10 rounded-xl transition-all duration-300"
+                class="block px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-200 hover:text-cyan-400 hover:bg-white/10 rounded-xl transition-all duration-300"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -177,7 +176,7 @@ const closeMobile = () => {
           <div class="pt-4 border-t border-white/20 dark:border-white/10">
             <a
               :href="dashboardAppUrl"
-              class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-700 hover:to-purple-700 text-white text-base font-semibold rounded-xl shadow-lg transition-all duration-300"
+              class="w-full flex items-center justify-center px-4 py-3 bg-gradient-to-r from-sky-600 to-blue-600 hover:from-sky-700 hover:to-blue-700 text-white text-base font-semibold rounded-md shadow-lg transition-all duration-300"
             >
               Login
             </a>
