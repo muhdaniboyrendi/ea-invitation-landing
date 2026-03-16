@@ -1,81 +1,91 @@
 <template>
   <section
     id="greeting"
-    class="relative py-12 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
+    class="relative py-10 overflow-hidden bg-light dark:bg-dark"
   >
-    <div class="relative z-10 px-4 md:px-8">
-      <!-- Features Grid -->
+    <div class="relative z-10 px-4 md:px-6">
+      <!-- Bento Grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 max-w-7xl mx-auto"
+        class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-4 max-w-7xl mx-auto mb-20"
       >
-        <!-- Feature 1 -->
+        <!-- Card 1 - Instant (lebar 2 kolom, tinggi normal) -->
         <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-cyan-400 dark:to-blue-600 hover:scale-105 transition-all duration-300"
+          v-motion
+          :initial="{ opacity: 0, x: -100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="md:col-span-2 rounded-2xl bg-primary p-6 md:p-8 border border-dark/20 dark:border-light/20 flex flex-col justify-between"
         >
           <div
-            class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-6 md:p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-cyan-950/90 to-blue-900/90 dark:from-black/70 dark:to-black/60"
+            class="w-12 h-12 bg-light rounded-xl flex items-center justify-center mb-4 md:mb-6"
           >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-lightning-charge text-white text-xl"></i>
-            </div>
+            <i class="bi bi-lightning-charge text-primary text-xl"></i>
+          </div>
+          <div>
             <h3 class="text-xl font-semibold text-white mb-3">Instant</h3>
-            <p class="text-white/70">
+            <p class="text-light/90">
               Undangan langsung jadi, tanpa menunggu, dan langsung bagikan.
             </p>
           </div>
         </div>
 
-        <!-- Feature 2 -->
+        <!-- Card 2 - Anti-mainstream (lebar 4 kolom, highlight utama) -->
         <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-purple-400 dark:to-pink-600 hover:scale-105 transition-all duration-300"
+          v-motion
+          :initial="{ opacity: 0, x: 100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :delay="200"
+          :duration="1000"
+          class="md:col-span-4 rounded-2xl bg-primary p-6 md:p-10 border border-dark/20 dark:border-light/20 flex flex-col justify-between"
         >
           <div
-            class="absolute -inset-2 bg-gradient-to-r from-purple-400/20 to-pink-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-6 md:p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-purple-950/90 to-pink-900/90 dark:from-black/70 dark:to-black/60"
+            class="w-12 h-12 bg-light rounded-xl flex items-center justify-center mb-4 md:mb-6"
           >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-layers text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">
+            <i class="bi bi-layers text-primary text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-white mb-3">
               Anti-mainstream Design
             </h3>
-            <p class="text-white/70">
+            <p class="text-light/90 max-w-lg">
               Rasakan desain undangan yang unik dan berbeda dari yang lain.
             </p>
           </div>
         </div>
 
-        <!-- Feature 3 -->
+        <!-- Card 3 - Limitless (lebar 4 kolom) -->
         <div
-          class="group relative rounded-2xl bg-linear-to-b from-white to-white dark:from-green-400 dark:to-teal-600 hover:scale-105 transition-all duration-300"
+          v-motion
+          :initial="{ opacity: 0, x: -100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="md:col-span-6 rounded-2xl bg-primary p-6 md:p-8 border border-dark/20 dark:border-light/20 flex flex-col justify-between"
         >
           <div
-            class="absolute -inset-2 bg-gradient-to-r from-green-400/20 to-teal-500/20 blur-xl rounded-2xl group-hover:blur-2xl transition-all duration-300"
-          ></div>
-          <div
-            class="relative w-full h-full bg-linear-to-b p-6 md:p-8 rounded-2xl transition-all duration-300 hover:bg-white/10 dark:hover:bg-black/5 border border-white/10 hover:border-white/20 from-green-950/90 to-teal-900/90 dark:from-black/70 dark:to-black/60"
+            class="w-12 h-12 bg-light rounded-xl flex items-center justify-center mb-4 md:mb-6"
           >
-            <div
-              class="w-12 h-12 bg-gradient-to-br from-green-400 to-teal-500 rounded-xl mb-6 flex items-center justify-center"
-            >
-              <i class="bi bi-sliders2 text-white text-xl"></i>
-            </div>
-            <h3 class="text-xl font-semibold text-white mb-3">Limitless</h3>
-            <p class="text-white/70">
+            <i class="bi bi-sliders2 text-primary text-xl"></i>
+          </div>
+          <div>
+            <h3 class="text-2xl font-semibold text-white mb-3">Limitless</h3>
+            <p class="text-light/90 max-w-lg">
               Edit konten undangan dan ubah tema kapanpun anda mau.
             </p>
           </div>
         </div>
+
+        <!-- Card 4 - Bonus dekoratif (lebar 2 kolom, pengisi bento) -->
+        <!-- <div
+          class="md:col-span-2 rounded-2xl bg-primary p-6 md:p-8 border border-dark/20 dark:border-light/20 flex flex-col items-center justify-center"
+        >
+          <i class="bi bi-stars text-white/20 text-6xl mb-4"></i>
+          <p class="text-light/40 text-sm text-center leading-relaxed">
+            Lebih dari 1.000+ pasangan<br />telah mempercayai kami.
+          </p>
+        </div> -->
       </div>
+
+      <div class="w-full min-h-100 rounded-3xl bg-primary/20"></div>
     </div>
   </section>
 </template>

@@ -1,12 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap");
 
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-off-white: #faf9f6;
-  --color-dark: #121212;
+  --color-light: #f2f2f2;
+  --color-dark: #101010;
+  --color-primary: #0887f8;
 
   --font-primary: "Urbanist", sans-serif;
 }
