@@ -16,7 +16,7 @@ const { themes } = useThemeStore();
           :initial="{ opacity: 0, y: 100 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="1000"
-          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-primary tracking-wide max-w-2xl mx-auto"
+          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide max-w-2xl mx-auto"
         >
           Stunning Themes For Every Style
         </h2>
@@ -27,7 +27,7 @@ const { themes } = useThemeStore();
           :initial="{ opacity: 0, y: 100 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="1000"
-          class="text-xl lg:text-2xl text-dark/80 dark:text-light/80 max-w-4xl mx-auto leading-relaxed"
+          class="text-xl lg:text-2xl text-dark/60 dark:text-light/60 max-w-4xl mx-auto leading-relaxed"
         >
           Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
           memukau dan interaktif
@@ -53,7 +53,7 @@ const { themes } = useThemeStore();
       >
         <NuxtLink
           to="/themes"
-          class="group relative inline-flex items-center px-6 py-3 bg-primary text-light font-semibold rounded-lg hover:scale-102 transition duration-300"
+          class="group relative inline-flex items-center px-6 py-3 bg-black/8 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:scale-102 transition duration-300"
         >
           Lihat Semua Tema
           <i

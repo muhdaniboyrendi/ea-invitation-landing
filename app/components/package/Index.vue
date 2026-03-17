@@ -5,7 +5,7 @@ const { packages } = storeToRefs(usePackageStore());
 <template>
   <section
     id="packages"
-    class="relative py-20 overflow-hidden bg-light dark:bg-dark"
+    class="py-20 overflow-hidden bg-light dark:bg-dark"
   >
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <PackageHeader />

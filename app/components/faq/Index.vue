@@ -108,7 +108,7 @@ const isOpen = (categoryIndex, questionIndex) => {
           :initial="{ opacity: 0, y: 100 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="1000"
-          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-primary tracking-wide max-w-2xl mx-auto"
+          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide max-w-2xl mx-auto"
         >
           FAQ
         </h2>
@@ -119,7 +119,7 @@ const isOpen = (categoryIndex, questionIndex) => {
           :initial="{ opacity: 0, y: 100 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="1000"
-          class="text-xl lg:text-2xl text-dark/80 dark:text-light/80 max-w-4xl mx-auto leading-relaxed"
+          class="text-xl lg:text-2xl text-dark/60 dark:text-light/60 max-w-4xl mx-auto leading-relaxed"
         >
           Temukan jawaban untuk pertanyaan yang sering diajukan seputar layanan
           undangan digital kami
@@ -141,14 +141,16 @@ const isOpen = (categoryIndex, questionIndex) => {
             :duration="1000"
             class="group relative"
           >
-            <div class="relative p-4 md:p-6 rounded-xl bg-primary">
+            <div
+              class="relative p-4 md:p-6 rounded-xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl"
+            >
               <div class="flex items-center gap-4">
                 <div
-                  class="w-10 h-10 rounded-md bg-light flex items-center justify-center"
+                  class="w-10 h-10 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center"
                 >
                   <div class="w-2 h-2 bg-primary rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-light">
+                <h3 class="text-xl font-bold text-black dark:text-white">
                   {{ category.category }}
                 </h3>
               </div>
@@ -167,7 +169,7 @@ const isOpen = (categoryIndex, questionIndex) => {
             class="group relative"
           >
             <div
-              class="relative bg-primary/10 rounded-lg border border-dark/10 dark:border-light/10 hover:border-primary transition duration-300"
+              class="relative bg-white/60 dark:bg-dark border border-black/20 dark:border-white/20 rounded-xl transition duration-300"
             >
               <!-- Question Button -->
               <button
@@ -176,7 +178,7 @@ const isOpen = (categoryIndex, questionIndex) => {
                 class="w-full p-4 md:p-6 text-left flex items-start justify-between gap-4 group/btn cursor-pointer"
               >
                 <span
-                  class="text-dark/90 dark:text-light/90 font-medium leading-relaxed"
+                  class="text-dark dark:text-light font-medium leading-relaxed"
                 >
                   {{ faq.q }}
                 </span>
@@ -200,10 +202,10 @@ const isOpen = (categoryIndex, questionIndex) => {
                 ]"
               >
                 <div
-                  class="px-4 md:px-6 pb-4 md:pb-6 border-t border-dark/10 dark:border-light/10"
+                  class="px-4 md:px-6 pb-4 md:pb-6 border-t border-black/20 dark:border-white/20"
                 >
                   <p
-                    class="text-dark/70 dark:text-light/70 leading-relaxed pt-2 md:pt-4"
+                    class="text-black/70 dark:text-white/70 leading-relaxed pt-2 md:pt-4"
                   >
                     {{ faq.a }}
                   </p>

@@ -39,22 +39,22 @@ const toggleFeatures = () => {
 
 <template>
   <div
-    class="group relative rounded-2xl w-full max-w-90 h-fit bg-primary/10 border-2 p-8"
+    class="group relative rounded-2xl w-full max-w-90 h-fit bg-white dark:bg-white/3 border-2 p-8 shadow-xl"
     :class="
       props.package.id === 2
         ? 'border-primary'
-        : 'border-dark/10 dark:border-light/10'
+        : 'border-dark/20 dark:border-light/20'
     "
   >
     <!-- Package Header -->
     <div class="mb-6">
       <div class="flex items-end gap-2 mb-4">
-        <h3 class="text-3xl text-primary font-bold">
+        <h3 class="text-3xl text-dark dark:text-light font-bold">
           {{ props.package.name }}
         </h3>
         <span
           v-if="props.package.id === 2"
-          class="py-0.5 px-2 rounded-md bg-dark/10 dark:bg-light/15 text-dark dark:text-light/80 font-medium text-sm mb-1.5"
+          class="py-0.5 px-2 rounded-md bg-primary text-white font-medium text-sm mb-1.5"
           >Most Popular</span
         >
       </div>
@@ -68,7 +68,7 @@ const toggleFeatures = () => {
           </span>
           <div
             v-if="props.package.discount"
-            class="bg-primary py-0.5 px-2 rounded-md text-light font-semibold"
+            class="bg-black/10 dark:bg-white/10 py-0.5 px-2 rounded-md text-dark dark:text-light font-semibold"
           >
             -{{ props.package.discount }}%
           </div>

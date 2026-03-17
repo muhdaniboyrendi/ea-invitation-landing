@@ -36,9 +36,11 @@ const additionalInfo = [
     class="text-center"
   >
     <div
-      class="bg-white dark:bg-black border border-dark/20 dark:border-light/20 rounded-2xl p-6 lg:p-8 max-w-4xl mx-auto"
+      class="bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 rounded-2xl shadow-xl p-6 lg:p-8 max-w-4xl mx-auto"
     >
-      <h3 class="text-2xl lg:text-3xl font-bold text-dark dark:text-light mb-6 md:mb-8">
+      <h3
+        class="text-2xl lg:text-3xl font-bold text-black dark:text-white mb-6 md:mb-8"
+      >
         Semua Paket Termasuk
       </h3>
 
@@ -50,9 +52,9 @@ const additionalInfo = [
           class="flex items-center text-black/80 dark:text-white/80"
         >
           <div
-            class="w-8 h-8 bg-primary rounded-md flex items-center justify-center mr-3 flex-shrink-0"
+            class="w-8 h-8 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mr-3 flex-shrink-0"
           >
-            <i class="bi text-white" :class="item.icon"></i>
+            <i class="bi text-primary" :class="item.icon"></i>
           </div>
           <span>{{ item.label }}</span>
         </div>

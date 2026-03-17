@@ -51,13 +51,13 @@ const socialList = [
           :key="index"
           :href="social.url"
           target="_blank"
-          class="group h-11 aspect-square flex justify-center items-center bg-primary rounded-lg transition-all duration-300 hover:scale-110"
+          class="group h-11 aspect-square flex justify-center items-center bg-light dark:bg-white/5 border border-black/20 dark:border-white/20 rounded-lg transition-all duration-300 hover:scale-110"
           rel="noopener noreferrer"
           :title="social.name"
           :aria-label="`EA Invitation ${social.name}`"
         >
           <i
-            class="bi text-white text-lg transition-colors duration-300"
+            class="bi text-dark dark:text-light text-lg transition-colors duration-300"
             :class="`${social.iconClass} group-hover:text-[${social.hoverColor}]`"
           ></i>
         </a>

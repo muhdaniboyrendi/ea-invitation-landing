@@ -27,12 +27,6 @@ const toggleMobile = () => {
 const closeMobile = () => {
   isMobileOpen.value = false;
 };
-
-const logoText = computed(() => {
-  return colorMode.value === "dark"
-    ? "/logo-text-dark.webp"
-    : "/logo-text-light.webp";
-});
 </script>
 
 <template>
@@ -40,13 +34,25 @@ const logoText = computed(() => {
     class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out"
   >
     <div
-      class="backdrop-blur-md bg-light/70 dark:bg-dark/70 border-b border-dark/10 dark:border-light/10"
+      class="backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-black/20 dark:border-white/20"
     >
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between h-16 lg:h-20">
+        <div class="flex items-center justify-between h-16">
           <NuxtLink to="/" class="block" aria-label="EA Invitation">
+            <!-- Light mode logo: tampil saat light, sembunyi saat dark -->
             <NuxtImg
-              :src="logoText"
+              src="/logo-text-light.webp"
+              class="block dark:hidden"
+              width="160"
+              height="40"
+              loading="eager"
+              quality="80"
+              alt="EA Invitation logo"
+            />
+            <!-- Dark mode logo: sembunyi saat light, tampil saat dark -->
+            <NuxtImg
+              src="/logo-text-dark.webp"
+              class="hidden dark:block"
               width="160"
               height="40"
               loading="eager"
@@ -66,7 +72,7 @@ const logoText = computed(() => {
                 >
                   <NuxtLink
                     :to="item.href"
-                    class="relative px-3 py-2 text-sm font-semibold text-dark/80 dark:text-light/80 hover:text-primary transition-all duration-300 group"
+                    class="relative px-3 py-2 text-sm font-semibold text-black/60 dark:text-white/60 hover:text-primary transition-all duration-300 group"
                   >
                     {{ item.name }}
                     <span
@@ -91,7 +97,7 @@ const logoText = computed(() => {
                 <i v-if="isDark" class="bi bi-sun-fill text-yellow-500"></i>
                 <i
                   v-else
-                  class="bi bi-moon-fill text-dark/80 hover:text-black"
+                  class="bi bi-moon-fill text-black/60 hover:text-black"
                 ></i>
               </button>
               <template #fallback>
@@ -105,7 +111,7 @@ const logoText = computed(() => {
             <!-- CTA Button -->
             <NuxtLink
               :to="dashboardAppUrl + '/login'"
-              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-primary hover:scale-102 text-light text-sm font-semibold rounded-md transition duration-300 active:scale-95"
+              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-primary hover:scale-102 text-light text-sm font-semibold rounded-lg transition duration-300 active:scale-95"
             >
               Login
             </NuxtLink>
@@ -117,7 +123,7 @@ const logoText = computed(() => {
               class="md:hidden p-2 rounded-md transition-all duration-300"
             >
               <svg
-                class="w-6 h-6 text-dark/80 dark:text-light/80 hover:text-dark dark:hover:text-light"
+                class="w-6 h-6 text-black/60 dark:text-white/60 hover:text-dark dark:hover:text-light"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -154,7 +160,7 @@ const logoText = computed(() => {
     >
       <div
         v-show="isMobileOpen"
-        class="md:hidden backdrop-blur-md bg-light/70 dark:bg-dark/70 border-b border-dark/10 dark:border-light/10 shadow-md shadow-dark/10 dark:shadow-light/10"
+        class="md:hidden backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-dark/10 dark:border-light/10 shadow-xl"
       >
         <nav class="px-4 pt-4 pb-6">
           <ul class="space-y-3 text-center">
@@ -166,7 +172,7 @@ const logoText = computed(() => {
               <NuxtLink
                 @click="closeMobile"
                 :to="item.href"
-                class="block px-4 py-3 text-base font-medium text-dark/80 dark:text-light/80 hover:text-primary hover:bg-dark/5 dark:hover:bg-light/5 rounded-xl transition-all duration-300"
+                class="block px-4 py-3 text-base font-medium text-black/60 dark:text-white/60 hover:text-primary hover:bg-dark/5 dark:hover:bg-light/5 rounded-xl transition-all duration-300"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -176,7 +182,7 @@ const logoText = computed(() => {
           <div class="pt-4 border-t border-light/20 dark:border-light/10">
             <a
               :href="dashboardAppUrl"
-              class="w-full flex items-center justify-center px-4 py-3 bg-primary hover:scale-102 active:scale-95 text-light text-base font-semibold rounded-md shadow-lg transition-all duration-300"
+              class="w-full flex items-center justify-center px-4 py-3 bg-primary hover:scale-102 active:scale-95 text-light text-base font-semibold rounded-lg transition-all duration-300"
             >
               Login
             </a>

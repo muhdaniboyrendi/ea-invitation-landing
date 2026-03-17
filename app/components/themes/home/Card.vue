@@ -15,7 +15,7 @@ const themeUrl = config.public.themeUrl;
   >
     <!-- Theme Card -->
     <div
-      class="relative bg-primary/10 rounded-2xl border border-dark/10 dark:border-light/10 overflow-hidden hover:-translate-y-1 transition duration-500"
+      class="relative bg-white dark:bg-white/3 rounded-2xl border border-dark/20 dark:border-light/20 shadow-xl overflow-hidden hover:-translate-y-1 transition duration-500"
     >
       <!-- Theme Preview Image -->
       <div class="relative h-fit overflow-hidden">
@@ -30,7 +30,7 @@ const themeUrl = config.public.themeUrl;
             format="webp"
             quality="80"
             placeholder
-            class="w-full aspect-4/3 object-cover object-center rounded-lg border border-dark/10 dark:border-light/10"
+            class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/20 dark:border-white/20"
           />
           <div
             v-else
@@ -55,7 +55,7 @@ const themeUrl = config.public.themeUrl;
       <div class="p-4 pt-0">
         <div class="flex items-start justify-between mb-2">
           <div>
-            <h3 class="text-lg font-bold text-dark dark:text-light">
+            <h3 class="text-lg font-semibold text-black dark:text-white">
               {{ props.theme?.name || "Untitled Theme" }}
             </h3>
           </div>

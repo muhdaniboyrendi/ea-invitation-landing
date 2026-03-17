@@ -72,22 +72,22 @@ const features3 = [
       v-motion
       :initial="{ opacity: 0, y: 100 }"
       :visible-once="{ opacity: 1, y: 0 }"
-      :delay="index * 100"
+      :delay="index * 200"
       :duration="1000"
       class="group relative"
     >
       <div
-        class="h-full rounded-2xl bg-primary p-6 md:p-8 border border-dark/10 dark:border-light/10 hover:scale-102 transition-all duration-300"
+        class="h-full rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl hover:scale-102 transition-all duration-300"
       >
         <div
-          class="w-12 h-12 bg-light rounded-xl mb-4 flex items-center justify-center shadow-lg"
+          class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 mb-4 flex items-center justify-center"
         >
           <i class="bi text-primary text-xl" :class="feature.icon"></i>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
           {{ feature.title }}
         </h3>
-        <p class="text-light/90 text-sm">
+        <p class="text-dark/70 dark:text-light/50 text-sm">
           {{ feature.description }}
         </p>
       </div>
@@ -105,17 +105,17 @@ const features3 = [
       class="group relative"
     >
       <div
-        class="h-full rounded-2xl bg-primary p-6 md:p-8 border border-dark/10 dark:border-light/10 hover:scale-102 transition-all duration-300"
+        class="h-full rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl hover:scale-102 transition-all duration-300"
       >
         <div
-          class="w-12 h-12 bg-light rounded-xl mb-4 flex items-center justify-center shadow-lg"
+          class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 mb-4 flex items-center justify-center"
         >
           <i class="bi text-primary text-xl" :class="feature.icon"></i>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
           {{ feature.title }}
         </h3>
-        <p class="text-light/90 text-sm">
+        <p class="text-dark/70 dark:text-light/50 text-sm">
           {{ feature.description }}
         </p>
       </div>
@@ -133,17 +133,17 @@ const features3 = [
       class="group relative"
     >
       <div
-        class="h-full rounded-2xl bg-primary p-6 md:p-8 border border-dark/10 dark:border-light/10 hover:scale-102 transition-all duration-300"
+        class="h-full rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl hover:scale-102 transition-all duration-300"
       >
         <div
-          class="w-12 h-12 bg-light rounded-xl mb-4 flex items-center justify-center shadow-lg"
+          class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 mb-4 flex items-center justify-center"
         >
           <i class="bi text-primary text-xl" :class="feature.icon"></i>
         </div>
-        <h3 class="text-lg font-semibold text-white mb-2">
+        <h3 class="text-lg font-semibold text-black dark:text-white mb-2">
           {{ feature.title }}
         </h3>
-        <p class="text-light/90 text-sm">
+        <p class="text-dark/70 dark:text-light/50 text-sm">
           {{ feature.description }}
         </p>
       </div>

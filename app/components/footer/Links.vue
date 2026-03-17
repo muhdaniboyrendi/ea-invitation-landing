@@ -10,7 +10,7 @@
       <li>
         <NuxtLink
           to="/#home"
-          class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
+          class="text-black/60 dark:text-white/60 hover:text-primary duration-300 flex items-center group"
         >
           Beranda
         </NuxtLink>
@@ -18,7 +18,7 @@
       <li>
         <NuxtLink
           to="/#features"
-          class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
+          class="text-black/60 dark:text-white/60 hover:text-primary duration-300 flex items-center group"
         >
           Fitur
         </NuxtLink>
@@ -26,7 +26,7 @@
       <li>
         <NuxtLink
           to="/#packages"
-          class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
+          class="text-black/60 dark:text-white/60 hover:text-primary duration-300 flex items-center group"
         >
           Harga
         </NuxtLink>
@@ -34,7 +34,7 @@
       <li>
         <NuxtLink
           to="/#themes"
-          class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
+          class="text-black/60 dark:text-white/60 hover:text-primary duration-300 flex items-center group"
         >
           Tema Undangan
         </NuxtLink>
@@ -42,7 +42,7 @@
       <li>
         <NuxtLink
           to="/tutorial"
-          class="text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:translate-x-1 transition-all duration-300 flex items-center group"
+          class="text-black/60 dark:text-white/60 hover:text-primary duration-300 flex items-center group"
         >
           Tutorial
         </NuxtLink>

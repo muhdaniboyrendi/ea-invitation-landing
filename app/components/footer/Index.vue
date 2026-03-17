@@ -1,7 +1,7 @@
 <template>
   <footer
     id="footer"
-    class="relative bg-white dark:bg-black border-t border-dark/20 dark:border-light/20 overflow-hidden"
+    class="relative bg-white dark:bg-white/3 border-t border-dark/20 dark:border-light/20 overflow-hidden"
   >
     <div class="relative">
       <!-- Main Footer Content -->
