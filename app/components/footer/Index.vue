@@ -1,11 +1,11 @@
 <template>
   <footer
     id="footer"
-    class="relative bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 dark:from-black dark:via-purple-950 dark:to-dark overflow-hidden"
+    class="relative bg-white dark:bg-black border-t border-dark/20 dark:border-light/20 overflow-hidden"
   >
-    <div class="relative z-10">
+    <div class="relative">
       <!-- Main Footer Content -->
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 pt-20 pb-12">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           <!-- Brand Section -->
           <FooterBrand />

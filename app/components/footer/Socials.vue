@@ -22,24 +22,24 @@ const socialList = [
 </script>
 
 <template>
-  <div class="mt-12 pt-8 border-t border-white/10">
+  <div class="mt-10 pt-10 border-t border-black/20 dark:border-white/20">
     <div class="flex flex-col lg:flex-row justify-between items-center gap-8">
       <!-- Contact Info -->
       <div class="flex flex-col sm:flex-row items-center gap-6 text-white/70">
         <a
           href="mailto:erlanazrdev@gmail.com"
           target="_blank"
-          class="flex items-center hover:underline hover:text-cyan-500 transition"
+          class="flex items-center text-black/70 dark:text-white/70 hover:underline"
         >
-          <i class="bi bi-envelope mr-2 text-cyan-400"></i>
+          <i class="bi bi-envelope mr-2 text-primary"></i>
           <span>erlanazrdev@gmail.com</span>
         </a>
         <a
           href="https://wa.me/6282220633024"
           target="_blank"
-          class="flex items-center hover:underline hover:text-cyan-500 transition"
+          class="flex items-center text-black/70 dark:text-white/70 hover:underline"
         >
-          <i class="bi bi-telephone mr-2 text-purple-400"></i>
+          <i class="bi bi-telephone mr-2 text-primary"></i>
           <span>+62 822-2063-3024</span>
         </a>
       </div>
@@ -51,7 +51,7 @@ const socialList = [
           :key="index"
           :href="social.url"
           target="_blank"
-          class="group h-11 aspect-square backdrop-blur-md flex justify-center items-center bg-white/10 hover:bg-white/20 border border-white/20 hover:border-white/30 rounded-xl transition-all duration-300 hover:scale-110"
+          class="group h-11 aspect-square flex justify-center items-center bg-primary rounded-lg transition-all duration-300 hover:scale-110"
           rel="noopener noreferrer"
           :title="social.name"
           :aria-label="`EA Invitation ${social.name}`"

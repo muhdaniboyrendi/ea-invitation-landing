@@ -20,7 +20,9 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       </NuxtLink>
 
       <!-- Description -->
-      <p class="text-white/70 text-lg leading-relaxed mb-6 max-w-md">
+      <p
+        class="text-black/70 dark:text-white/70 text-lg leading-relaxed mb-6 max-w-md"
+      >
         Buat undangan pernikahan digital berbasis website dengan berbagai tema
         modern dan interaktif serta fitur lengkap.
       </p>
@@ -28,7 +30,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       <!-- CTA Button -->
       <NuxtLink
         :to="dashboardAppUrl + '/login'"
-        class="group relative px-6 py-3 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition duration-300"
+        class="px-6 py-3 bg-primary text-white font-semibold rounded-md hover:scale-102 active:scale-95 transition duration-300"
       >
         Buat Undangan
         <i class="bi bi-arrow-right ml-2"></i>

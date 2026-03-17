@@ -39,37 +39,44 @@ const toggleFeatures = () => {
 
 <template>
   <div
-    class="group relative rounded-2xl w-full max-w-90 h-fit border border-dark/10 dark:border-light/10 p-8"
-    :class="props.package.id === 2 ? 'bg-primary' : 'bg-primary/20'"
+    class="group relative rounded-2xl w-full max-w-90 h-fit bg-primary/10 border-2 p-8"
+    :class="
+      props.package.id === 2
+        ? 'border-primary'
+        : 'border-dark/10 dark:border-light/10'
+    "
   >
     <!-- Package Header -->
-    <div class="mb-8">
-      <h3 class="text-2xl font-bold mb-8">
-        {{ props.package.name }}
-      </h3>
+    <div class="mb-6">
+      <div class="flex items-end gap-2 mb-4">
+        <h3 class="text-3xl text-primary font-bold">
+          {{ props.package.name }}
+        </h3>
+        <span
+          v-if="props.package.id === 2"
+          class="py-0.5 px-2 rounded-md bg-dark/10 dark:bg-light/15 text-dark dark:text-light/80 font-medium text-sm mb-1.5"
+          >Most Popular</span
+        >
+      </div>
 
       <!-- Price -->
       <div class="relative">
-        <div
-          v-if="props.package.discount"
-          class="absolute -top-4 right-0 bg-gradient-to-r from-green-400 to-emerald-500 text-black text-xs font-bold px-2 py-1 rounded-full"
-        >
-          {{ props.package.discount }}% OFF
-        </div>
-        <div class="flex items-baseline justify-center mb-2">
-          <span
-            class="font-bold text-transparent bg-clip-text bg-gradient-to-r"
-            :class="
-              props.package.id === 2
-                ? 'from-purple-400 to-pink-400 text-5xl'
-                : 'from-blue-400 to-cyan-400 text-4xl'
-            "
-          >
-            <span class="text-base">Rp</span>
+        <div class="flex items-center gap-2 mb-2">
+          <span class="font-bold text-5xl text-black dark:text-white">
+            <span class="text-sm">Rp</span>
             {{ formatRupiah(getFinalPrice) }}
           </span>
+          <div
+            v-if="props.package.discount"
+            class="bg-primary py-0.5 px-2 rounded-md text-light font-semibold"
+          >
+            -{{ props.package.discount }}%
+          </div>
         </div>
-        <div v-if="props.package.discount" class="text-sm text-white/50">
+        <div
+          v-if="props.package.discount"
+          class="text-dark/60 dark:text-light/60 font-semibold"
+        >
           <span class="line-through"
             >Rp {{ formatRupiah(props.package.price) }}</span
           >
@@ -77,32 +84,33 @@ const toggleFeatures = () => {
       </div>
     </div>
 
+    <!-- CTA Button -->
+    <a
+      :href="`${dashboardAppUrl}/invitation/create/checkout/${props.package?.id}`"
+      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-semibold rounded-lg hover:scale-102 transition duration-300 mb-6"
+    >
+      <span class="relative z-10">Pilih Paket</span>
+      <i class="bi bi-arrow-right ml-2"></i>
+    </a>
+
     <!-- Features List - DIPERBAIKI -->
-    <transition-group name="features" tag="ul" class="space-y-4 mb-6">
+    <transition-group name="features" tag="ul" class="space-y-2 mb-6">
       <li
         v-for="(feature, index) in displayedFeatures"
         :key="`feature-${index}`"
         class="flex items-start gap-x-3"
       >
-        <i
-          class="bi bi-check2 text-xl"
-          :class="props.package.id === 2 ? 'text-purple-400' : 'text-blue-400'"
-        ></i>
-        <span class="text-white/80">{{ feature }}</span>
+        <i class="bi bi-check2 text-xl text-primary"></i>
+        <span class="text-dark/80 dark:text-light/80">{{ feature }}</span>
       </li>
     </transition-group>
 
     <!-- Show More/Less Button -->
-    <div v-if="hasHiddenFeatures" class="text-center mb-6">
+    <div v-if="hasHiddenFeatures" class="text-center">
       <button
         @click="toggleFeatures"
         type="button"
-        class="inline-flex items-center gap-2 text-sm font-medium hover:underline transition-all duration-300"
-        :class="
-          props.package.id === 2
-            ? 'text-purple-400 hover:text-purple-300'
-            : 'text-blue-400 hover:text-blue-300'
-        "
+        class="inline-flex items-center gap-2 text-sm text-primary font-medium hover:underline transition-all duration-300"
       >
         <span>{{
           showAllFeatures ? "Lihat lebih sedikit" : "Lihat lebih banyak"
@@ -113,28 +121,6 @@ const toggleFeatures = () => {
         ></i>
       </button>
     </div>
-
-    <!-- CTA Button -->
-    <a
-      :href="`${dashboardAppUrl}/invitation/create/checkout/${props.package?.id}`"
-      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-gradient-to-r text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
-      :class="
-        props.package.id === 2
-          ? 'from-purple-500 to-pink-500 hover:from-purple-400 hover:to-pink-400'
-          : 'from-blue-500/80 to-cyan-500/80 hover:from-blue-400 hover:to-cyan-400'
-      "
-    >
-      <span class="relative z-10">Pilih Paket</span>
-      <i class="bi bi-arrow-right ml-2"></i>
-      <div
-        class="absolute inset-0 bg-gradient-to-r blur-xl group-hover/btn:blur-2xl transition-all duration-300 rounded-xl"
-        :class="
-          props.package.id === 2
-            ? 'from-purple-400/20 to-pink-400/20'
-            : 'from-blue-400/20 to-cyan-400/20'
-        "
-      ></div>
-    </a>
   </div>
 </template>
 

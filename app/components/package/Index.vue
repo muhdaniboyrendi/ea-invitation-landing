@@ -5,26 +5,25 @@ const { packages } = storeToRefs(usePackageStore());
 <template>
   <section
     id="packages"
-    class="relative py-10 overflow-hidden bg-light dark:bg-dark"
+    class="relative py-20 overflow-hidden bg-light dark:bg-dark"
   >
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <PackageHeader />
 
-      <div class="flex flex-wrap justify-center gap-8 mb-16">
-        <PackageCard v-for="pkg in packages" :key="pkg.id" :package="pkg" />
+      <div class="flex flex-wrap justify-center gap-4 mb-10">
+        <PackageCard
+          v-for="pkg in packages"
+          :key="pkg.id"
+          :package="pkg"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :delay="pkg.id * 200"
+          :duration="1000"
+        />
       </div>
 
       <PackageAdditionalInfo />
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Grid pattern */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
-  background-size: 120px 120px;
-}
-</style>

@@ -1,33 +1,4 @@
 export const useThemeStore = defineStore("theme", () => {
-  const config = useRuntimeConfig();
-  const apiBaseUrl = config.public.apiBaseUrl;
-
-  // const {
-  //   data: themes,
-  //   error: themesError,
-  //   pending: themesPending,
-  //   refresh: themesRefresh,
-  // } = useFetch(`${apiBaseUrl}/themes`, {
-  //   method: "GET",
-  //   key: "landing-themes-data",
-  //   transform: (response) => {
-  //     return response.data;
-  //   },
-  // });
-
-  // const {
-  //   data: categories,
-  //   error: categoryError,
-  //   pending: categoriesPending,
-  //   refresh: categoriesRefresh,
-  // } = useFetch(`${apiBaseUrl}/theme-categories`, {
-  //   method: "GET",
-  //   key: "landing-theme-categories-data",
-  //   transform: (response) => {
-  //     return response.data;
-  //   },
-  // });
-
   const themes = ref([
     {
       id: 1,
@@ -42,6 +13,60 @@ export const useThemeStore = defineStore("theme", () => {
       theme_category: {
         id: 3,
         name: "Social",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
+    {
+      id: 2,
+      theme_category_id: 4,
+      name: "Japanese",
+      slug: "japanese",
+      thumbnail: "/img/themes/instagram.webp",
+      is_premium: false,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url: "/img/themes/instagram.webp",
+      theme_category: {
+        id: 4,
+        name: "Cultural",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
+    {
+      id: 3,
+      theme_category_id: 4,
+      name: "Javanese",
+      slug: "javanese",
+      thumbnail: "/img/themes/instagram.webp",
+      is_premium: false,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url: "/img/themes/instagram.webp",
+      theme_category: {
+        id: 4,
+        name: "Cultural",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
+    {
+      id: 2,
+      theme_category_id: 2,
+      name: "Windows 11",
+      slug: "windows-11",
+      thumbnail: "/img/themes/instagram.webp",
+      is_premium: true,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url: "/img/themes/instagram.webp",
+      theme_category: {
+        id: 2,
+        name: "Modern",
         description: null,
         created_at: "2026-01-06T03:45:06.000000Z",
         updated_at: "2026-01-06T03:45:06.000000Z",
@@ -71,16 +96,17 @@ export const useThemeStore = defineStore("theme", () => {
       created_at: "2026-01-06T03:45:06.000000Z",
       updated_at: "2026-01-06T03:45:06.000000Z",
     },
+    {
+      id: 4,
+      name: "Cultural",
+      description: null,
+      created_at: "2026-01-06T03:45:06.000000Z",
+      updated_at: "2026-01-06T03:45:06.000000Z",
+    },
   ]);
 
   return {
     themes,
-    // themesError,
-    // themesPending,
-    // themesRefresh,
     categories,
-    // categoryError,
-    // categoriesPending,
-    // categoriesRefresh,
   };
 });

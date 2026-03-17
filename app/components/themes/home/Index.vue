@@ -1,60 +1,41 @@
 <script setup>
-const { themes, themesPending, themesError } = storeToRefs(useThemeStore());
+const { themes } = useThemeStore();
 </script>
 
 <template>
   <section
     id="themes"
-    class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-violet-900/90 to-slate-900 dark:from-black dark:via-violet-950/20 dark:to-dark"
+    class="relative py-20 overflow-hidden bg-light dark:bg-dark"
   >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Grid Pattern -->
-      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <div class="relative max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-16">
-        <!-- Badge -->
-        <div
-          class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-full shadow-lg"
-        >
-          <span
-            class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-3 animate-pulse"
-          ></span>
-          <span class="text-sm font-medium text-white/80"
-            >Beautiful Themes</span
-          >
-          <i class="bi bi-palette2 ml-2 text-sm text-white/60"></i>
-        </div>
-
+      <div class="text-center mb-10">
         <!-- Main Title -->
         <h2
-          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-primary tracking-wide max-w-2xl mx-auto"
         >
-          Stunning Themes
-          <br />
-          <span class="text-3xl lg:text-5xl text-white/60"
-            >For Every Style</span
-          >
+          Stunning Themes For Every Style
         </h2>
 
         <!-- Description -->
         <p
-          class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-xl lg:text-2xl text-dark/80 dark:text-light/80 max-w-4xl mx-auto leading-relaxed"
         >
           Pilihan tema eksklusif untuk momen spesial Anda dengan desain yang
           memukau dan interaktif
         </p>
       </div>
 
-      <PackageSkeleton v-if="themesPending" class="mx-auto" />
-
-      <div v-else-if="themesError">{{ themesError }}</div>
-
       <!-- Themes Grid -->
-      <div v-else class="flex flex-wrap justify-center gap-8">
+      <div class="flex flex-wrap justify-center gap-4 md:gap-6">
         <ThemesHomeCard
           v-for="theme in themes"
           :key="theme.id"
@@ -63,31 +44,23 @@ const { themes, themesPending, themesError } = storeToRefs(useThemeStore());
       </div>
 
       <!-- Load More Button -->
-      <div class="text-center mt-16">
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="1000"
+        class="text-center mt-10"
+      >
         <NuxtLink
           to="/themes"
-          class="group relative inline-flex items-center px-8 py-4 backdrop-blur-md bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-white font-semibold rounded-2xl shadow-lg transform hover:scale-105 transition-all duration-300"
+          class="group relative inline-flex items-center px-6 py-3 bg-primary text-light font-semibold rounded-lg hover:scale-102 transition duration-300"
         >
-          <span class="relative z-10">Lihat Semua Tema</span>
+          Lihat Semua Tema
           <i
             class="bi bi-arrow-down ml-2 text-xl group-hover:translate-y-1 transition-transform duration-300"
           ></i>
-          <!-- Hover Glow -->
-          <div
-            class="absolute inset-0 bg-gradient-to-r from-violet-400/10 to-pink-400/10 blur-xl group-hover:blur-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 rounded-2xl"
-          ></div>
         </NuxtLink>
       </div>
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Grid Pattern Background */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-</style>

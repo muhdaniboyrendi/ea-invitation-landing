@@ -9,17 +9,17 @@ useSeoMeta({
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/",
   ogSiteName: "EA Invitation",
-  twitterCard: 'summary_large_image',
+  twitterCard: "summary_large_image",
 });
 
 useHead({
   link: [
     {
-      rel: 'canonical',
-      href: 'https://eainvitation.com/'
-    }
-  ]
-})
+      rel: "canonical",
+      href: "https://eainvitation.com/",
+    },
+  ],
+});
 
 useSchemaOrg([
   defineSoftwareApp({
@@ -36,14 +36,12 @@ useSchemaOrg([
 </script>
 
 <template>
-  <div class="bg-off-white dark:bg-dark">
-    <NuxtLayout>
-      <Hero />
-      <Greeting />
-      <Features />
-      <Package />
-      <ThemesHome />
-      <Faq />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <Hero />
+    <Greeting />
+    <Features />
+    <Package />
+    <ThemesHome />
+    <Faq />
+  </NuxtLayout>
 </template>

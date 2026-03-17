@@ -97,38 +97,29 @@ const isOpen = (categoryIndex, questionIndex) => {
 <template>
   <section
     id="faq"
-    class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
+    class="relative py-20 overflow-hidden bg-light dark:bg-dark"
   >
-    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+    <div class="relative max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <!-- Badge -->
-        <div
-          class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-full shadow-lg"
-        >
-          <span
-            class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-3 animate-pulse"
-          ></span>
-          <span class="text-sm font-medium text-white/80"
-            >Frequently Asked Questions</span
-          >
-          <i class="bi bi-arrow-down ml-2 text-white/60 text-sm"></i>
-        </div>
-
+      <div class="text-center mb-10">
         <!-- Main Title -->
         <h2
-          class="text-4xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-primary tracking-wide max-w-2xl mx-auto"
         >
-          Got Questions?
-          <br />
-          <span class="text-3xl lg:text-5xl text-white/60"
-            >We've Got Answers</span
-          >
+          FAQ
         </h2>
 
         <!-- Description -->
         <p
-          class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-xl lg:text-2xl text-dark/80 dark:text-light/80 max-w-4xl mx-auto leading-relaxed"
         >
           Temukan jawaban untuk pertanyaan yang sering diajukan seputar layanan
           undangan digital kami
@@ -136,30 +127,28 @@ const isOpen = (categoryIndex, questionIndex) => {
       </div>
 
       <!-- FAQ Grid -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         <div
           v-for="(category, categoryIndex) in faqs"
           :key="categoryIndex"
-          class="space-y-4"
+          class="space-y-2"
         >
           <!-- Category Header -->
-          <div class="group relative">
-            <div
-              :class="[
-                'relative p-4 md:p-6 rounded-2xl border border-white/10',
-                `bg-gradient-to-br ${category.bgGradient} dark:from-dark/80 dark:to-dark/70`,
-              ]"
-            >
-              <div class="flex items-center gap-3">
+          <div
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :duration="1000"
+            class="group relative"
+          >
+            <div class="relative p-4 md:p-6 rounded-xl bg-primary">
+              <div class="flex items-center gap-4">
                 <div
-                  :class="[
-                    'w-10 h-10 rounded-xl flex items-center justify-center shadow-lg',
-                    `bg-gradient-to-br ${category.color}`,
-                  ]"
+                  class="w-10 h-10 rounded-md bg-light flex items-center justify-center"
                 >
-                  <div class="w-2 h-2 bg-white rounded-full"></div>
+                  <div class="w-2 h-2 bg-primary rounded-full"></div>
                 </div>
-                <h3 class="text-xl font-bold text-white">
+                <h3 class="text-xl font-bold text-light">
                   {{ category.category }}
                 </h3>
               </div>
@@ -170,19 +159,24 @@ const isOpen = (categoryIndex, questionIndex) => {
           <div
             v-for="(faq, qIndex) in category.questions"
             :key="qIndex"
+            v-motion
+            :initial="{ opacity: 0, x: 100 }"
+            :visible-once="{ opacity: 1, x: 0 }"
+            :delay="qIndex * 100"
+            :duration="1000"
             class="group relative"
           >
             <div
-              class="relative bg-white/5 dark:bg-black/10 border border-white/10 rounded-xl overflow-hidden hover:border-white/20 transition-all duration-300"
+              class="relative bg-primary/10 rounded-lg border border-dark/10 dark:border-light/10 hover:border-primary transition duration-300"
             >
               <!-- Question Button -->
               <button
                 @click="toggleFAQ(categoryIndex, qIndex)"
                 type="button"
-                class="w-full p-4 md:p-6 text-left flex items-start justify-between gap-4 group/btn"
+                class="w-full p-4 md:p-6 text-left flex items-start justify-between gap-4 group/btn cursor-pointer"
               >
                 <span
-                  class="text-white font-medium leading-relaxed group-hover/btn:text-cyan-200 transition-colors duration-300"
+                  class="text-dark/90 dark:text-light/90 font-medium leading-relaxed"
                 >
                   {{ faq.q }}
                 </span>
@@ -190,8 +184,8 @@ const isOpen = (categoryIndex, questionIndex) => {
                   :class="[
                     'bi bi-chevron-down flex-shrink-0 transition-all duration-300',
                     isOpen(categoryIndex, qIndex)
-                      ? 'rotate-180 text-cyan-400'
-                      : 'text-white/60 group-hover/btn:text-white',
+                      ? 'rotate-180 text-primary'
+                      : 'text-dark/60 dark:text-light/60 group-hover/btn:text-primary',
                   ]"
                 ></i>
               </button>
@@ -205,8 +199,12 @@ const isOpen = (categoryIndex, questionIndex) => {
                     : 'max-h-0 opacity-0',
                 ]"
               >
-                <div class="px-4 md:px-6 pb-4 md:pb-6 border-t border-white/5">
-                  <p class="text-white/70 leading-relaxed pt-2 md:pt-4">
+                <div
+                  class="px-4 md:px-6 pb-4 md:pb-6 border-t border-dark/10 dark:border-light/10"
+                >
+                  <p
+                    class="text-dark/70 dark:text-light/70 leading-relaxed pt-2 md:pt-4"
+                  >
                     {{ faq.a }}
                   </p>
                 </div>
@@ -218,13 +216,3 @@ const isOpen = (categoryIndex, questionIndex) => {
     </div>
   </section>
 </template>
-
-<style scoped>
-/* Grid pattern */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 1) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-</style>
