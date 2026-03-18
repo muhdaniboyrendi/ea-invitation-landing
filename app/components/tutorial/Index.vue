@@ -101,42 +101,30 @@ const clearActive = () => {
 <template>
   <section
     id="tutorial"
-    class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
+    class="pt-24 md:pt-40 pb-20 bg-light dark:bg-dark"
   >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Grid Pattern -->
-      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    </div>
-
-    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-20">
-        <!-- Badge -->
-        <div
-          class="inline-flex items-center px-4 py-2 mb-8 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-full shadow-lg"
-        >
-          <span
-            class="w-2 h-2 bg-gradient-to-r from-cyan-400 to-purple-400 rounded-full mr-3 animate-pulse"
-          ></span>
-          <span class="text-sm font-medium text-white/80">Tutorial</span>
-          <i class="bi bi-question-circle ml-2 text-white/60 text-sm"></i>
-        </div>
-
+      <div class="text-center mb-30">
         <!-- Main Title -->
         <h1
-          class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide"
         >
-          Tutorial Lengkap
-          <br />
-          <span class="text-white/60"
-            >Cara Membuat Undangan Digital EA Invitation</span
-          >
+          <span class="text-primary"> Tutorial Lengkap </span>
+          <br />Membuat Undangan Digital EA Invitation
         </h1>
 
         <!-- Description -->
         <p
-          class="text-xl lg:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="text-xl lg:text-2xl text-black/60 dark:text-white/60 max-w-4xl mx-auto leading-relaxed"
         >
           Ikuti panduan step-by-step untuk membuat undangan digital impian Anda
           dalam hitungan menit
@@ -144,89 +132,82 @@ const clearActive = () => {
       </div>
 
       <!-- Steps Grid -->
-      <div class="space-y-6 lg:space-y-8 mb-20">
+      <div class="relative space-y-4 md:space-y-6 mb-40">
+        <!-- Timeline line (hanya tampil md ke atas, di belakang semua card) -->
+        <div
+          class="hidden md:block absolute left-6 top-8 bottom-8 w-px bg-gradient-to-b from-primary/40 via-primary/20 to-transparent -z-0"
+        />
+
         <div
           v-for="(step, index) in steps"
-          :key="step.number"
-          class="group relative"
+          :key="index"
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="group relative flex gap-5 md:gap-8"
           @mouseenter="setActive(step.number)"
           @mouseleave="clearActive"
         >
-          <div
-            :class="[
-              'absolute -inset-1 blur-lg rounded-2xl transition-all duration-500',
-              activeStep === step.number
-                ? 'opacity-75 bg-gradient-to-r from-cyan-400/30 to-purple-600/30'
-                : 'opacity-50 bg-gradient-to-r from-cyan-400/20 to-purple-600/20',
-            ]"
-          ></div>
+          <!-- Timeline dot -->
+          <div class="hidden md:flex flex-col items-center z-10 pt-6">
+            <div
+              class="w-12 h-12 rounded-full flex items-center justify-center shrink-0 bg-white dark:bg-white/10 border-2 border-primary/60 group-hover:border-primary shadow-lg group-hover:shadow-primary/30 transition-all duration-300"
+            >
+              <span class="text-primary text-base font-bold leading-none">
+                {{ step.number }}
+              </span>
+            </div>
+          </div>
 
+          <!-- Card -->
           <div
-            class="relative bg-gradient-to-br from-cyan-950/90 to-purple-900/90 dark:from-black/80 dark:to-black/70 border border-white/10 hover:border-white/20 rounded-3xl lg:rounded-4xl p-4 lg:p-6 transition-all duration-300"
+            class="flex-1 rounded-2xl bg-white dark:bg-white/3 border border-dark/20 dark:border-light/20 shadow-xl overflow-hidden transition-all duration-300"
           >
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-              <!-- Content -->
-              <div :class="index % 2 === 0 ? 'order-1' : 'order-1 lg:order-2'">
-                <div class="flex items-center gap-4 mb-6">
-                  <div
-                    class="w-12 h-12 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0 bg-gradient-to-br from-cyan-400 to-purple-600"
-                  >
-                    <span class="text-white font-bold text-2xl">{{
-                      step.number
-                    }}</span>
-                  </div>
-                  <div class="flex-1">
-                    <h2 class="text-2xl font-bold text-white">
-                      {{ step.title }}
-                    </h2>
-                  </div>
-                </div>
-
-                <p class="text-white/70 text-base leading-relaxed mb-6">
-                  {{ step.description }}
-                </p>
-
-                <!-- Progress Indicator -->
-                <div class="flex items-center gap-2">
-                  <div
-                    class="flex-1 h-2 bg-white/10 rounded-full overflow-hidden"
-                  >
-                    <div
-                      class="h-full bg-gradient-to-r from-cyan-400 to-purple-600 transition-all duration-500"
-                      :style="{
-                        width: `${(step.number / steps.length) * 100}%`,
-                      }"
-                    ></div>
-                  </div>
-                  <span class="text-sm text-white/60 font-medium">
-                    {{ step.number }}/{{ steps.length }}
-                  </span>
-                </div>
+            <!-- Mobile: step badge (hanya mobile, karena dot disembunyikan) -->
+            <div class="flex md:hidden items-center gap-3 px-5 pt-5 pb-0">
+              <div
+                class="w-9 h-9 rounded-full flex items-center justify-center shrink-0 bg-primary/10 border border-primary/30"
+              >
+                <span class="text-primary text-sm font-bold">{{
+                  step.number
+                }}</span>
               </div>
+              <div class="h-px flex-1 bg-dark/10 dark:bg-light/10" />
+            </div>
 
-              <!-- Image -->
-              <div :class="index % 2 === 0 ? 'order-2' : 'order-2 lg:order-1'">
-                <div class="relative group/img">
-                  <div
-                    class="absolute -inset-2 bg-gradient-to-r from-cyan-400/20 to-purple-600/20 blur-xl rounded-2xl opacity-0 transition-all duration-500"
-                  ></div>
-                  <div
-                    class="relative aspect-video rounded-xl overflow-hidden border border-white/10 bg-white/5"
-                  >
-                    <NuxtImg
-                      :src="step.image"
-                      :alt="step.title"
-                      width="800"
-                      loading="lazy"
-                      format="webp"
-                      quality="80"
-                      placeholder
-                      class="w-full h-full object-cover"
-                      @error="(e) => handleImageError(e, step.number)"
-                    />
-                  </div>
-                </div>
-              </div>
+            <!-- Text section -->
+            <div class="px-5 pt-5 pb-4 md:px-6 md:pt-6 md:pb-5">
+              <h3
+                class="text-lg md:text-xl font-semibold text-black dark:text-white mb-2"
+              >
+                {{ step.title }}
+              </h3>
+              <p
+                class="text-sm md:text-base text-dark/70 dark:text-light/50 leading-relaxed"
+              >
+                {{ step.description }}
+              </p>
+            </div>
+
+            <!-- Divider -->
+            <div class="mx-5 md:mx-6 h-px bg-dark/8 dark:bg-light/8" />
+
+            <!-- Image section (landscape) -->
+            <div
+              class="w-full aspect-2/1 overflow-hidden bg-white/20 dark:bg-white/5"
+            >
+              <NuxtImg
+                :src="step.image"
+                :alt="step.title"
+                width="1200"
+                loading="lazy"
+                format="webp"
+                quality="80"
+                placeholder
+                class="w-full h-full object-cover"
+                @error="(e) => handleImageError(e, step.number)"
+              />
             </div>
           </div>
         </div>
@@ -234,100 +215,58 @@ const clearActive = () => {
 
       <!-- Video Tutorial Section -->
       <div class="mb-20">
-        <div class="text-center mb-12">
-          <div
-            class="inline-flex items-center px-4 py-2 mb-6 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/10 rounded-full shadow-lg"
-          >
-            <span
-              class="w-2 h-2 bg-gradient-to-r from-pink-400 to-rose-400 rounded-full mr-3 animate-pulse"
-            ></span>
-            <span class="text-sm font-medium text-white/80"
-              >Video Tutorial</span
-            >
-          </div>
+        <div class="text-center mb-10">
           <h2
-            class="text-3xl lg:text-5xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-pink-200 to-rose-200"
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :duration="1000"
+            class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide"
           >
             Tonton Video Tutorial
           </h2>
-          <p class="text-lg text-white/70 max-w-2xl mx-auto">
+          <p
+            v-motion
+            :initial="{ opacity: 0, y: 100 }"
+            :visible-once="{ opacity: 1, y: 0 }"
+            :duration="1000"
+            class="text-xl lg:text-2xl text-black/60 dark:text-white/60 max-w-4xl mx-auto leading-relaxed"
+          >
             Pelajari lebih detail dengan menonton video tutorial lengkap kami
           </p>
         </div>
 
-        <div class="group relative max-w-5xl mx-auto">
-          <div
-            class="relative backdrop-blur-md bg-gradient-to-br from-pink-950/90 to-rose-900/90 dark:from-black/80 dark:to-black/70 border border-white/10 hover:border-white/20 rounded-3xl p-4 transition-all duration-300"
-          >
-            <div
-              class="relative aspect-video rounded-2xl overflow-hidden bg-slate-900/50"
-            >
-              <div
-                class="absolute inset-0 flex items-center justify-center z-10"
-              >
-                <button class="group/play relative">
-                  <div
-                    class="absolute -inset-8 bg-gradient-to-r from-pink-400/30 to-rose-600/30 blur-2xl rounded-full opacity-75 group-hover/play:opacity-100 transition-all duration-500"
-                  ></div>
-                  <div
-                    class="relative w-24 h-24 bg-gradient-to-br from-pink-500 to-rose-600 rounded-full flex items-center justify-center shadow-2xl group-hover/play:scale-110 transition-transform duration-300"
-                  >
-                    <i class="bi bi-play-fill text-white text-4xl ml-1"></i>
-                  </div>
-                </button>
-              </div>
-              <!-- Placeholder for video -->
-              <img
-                src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1920 1080'%3E%3Crect fill='%231e293b' width='1920' height='1080'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23cbd5e1' font-size='48' font-family='sans-serif'%3EVideo Tutorial Preview%3C/text%3E%3C/svg%3E"
-                alt="Video Tutorial"
-                class="w-full h-full object-cover opacity-50"
-              />
-            </div>
-          </div>
-        </div>
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 100 }"
+          :visible-once="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="w-full max-w-5xl aspect-video mx-auto p-6 md:p-8 rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl"
+        ></div>
       </div>
 
       <!-- CTA Section -->
-      <div class="text-center">
-        <div class="group relative inline-block max-w-4xl">
-          <div
-            class="relative backdrop-blur-md bg-white/10 dark:bg-black/10 border border-white/20 rounded-2xl p-8"
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="1000"
+        class="max-w-2xl mx-auto text-center p-6 md:p-8 rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl"
+      >
+        <h3 class="text-2xl font-bold text-black dark:text-white mb-3">
+          Siap Membuat Undangan Digital Anda?
+        </h3>
+        <p class="text-black/70 dark:text-white/70 mb-6 max-w-2xl mx-auto">
+          Ikuti tutorial di atas dan buat undangan digital impian Anda dalam
+          hitungan menit!
+        </p>
+        <div class="flex flex-wrap gap-4 justify-center">
+          <NuxtLink
+            :to="dashboardAppUrl + '/login'"
+            class="group/btn px-8 py-4 bg-primary rounded-xl font-semibold text-white transition duration-300 hover:scale-102 active:scale-90"
           >
-            <div class="flex items-center justify-center gap-4 mb-4">
-              <div
-                class="w-16 h-16 bg-gradient-to-br from-cyan-400 to-purple-600 rounded-2xl flex items-center justify-center shadow-xl"
-              >
-                <i class="bi bi-check-circle text-white text-3xl"></i>
-              </div>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-3">
-              Siap Membuat Undangan Digital Anda?
-            </h3>
-            <p class="text-white/70 mb-6 max-w-2xl mx-auto">
-              Ikuti tutorial di atas dan buat undangan digital impian Anda dalam
-              hitungan menit!
-            </p>
-            <div class="flex flex-wrap gap-4 justify-center">
-              <NuxtLink
-                :to="dashboardAppUrl + '/login'"
-                class="group/btn relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl font-semibold text-white shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:scale-105"
-              >
-                <span class="relative z-10 flex items-center gap-2">
-                  <i class="bi bi-plus-circle"></i>
-                  Buat Undangan Sekarang
-                </span>
-                <div
-                  class="absolute inset-0 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-xl opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"
-                ></div>
-              </NuxtLink>
-              <!-- <button
-                class="px-8 py-4 backdrop-blur-md bg-white/5 dark:bg-black/10 border border-white/20 rounded-xl font-semibold text-white hover:bg-white/10 hover:border-white/30 transition-all duration-300 flex items-center gap-2"
-              >
-                <i class="bi bi-telephone"></i>
-                Hubungi Support
-              </button> -->
-            </div>
-          </div>
+            Buat Undangan Sekarang
+          </NuxtLink>
         </div>
       </div>
     </div>

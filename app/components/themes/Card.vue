@@ -6,14 +6,20 @@ const themeUrl = config.public.themeUrl;
 </script>
 
 <template>
-  <div class="group relative w-full max-w-xs">
+  <div
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :visible-once="{ opacity: 1, y: 0 }"
+    :duration="1000"
+    class="group relative w-full max-w-xs"
+  >
     <!-- Theme Card -->
     <div
-      class="relative bg-violet-950 dark:bg-dark border border-white/10 hover:border-white/20 rounded-3xl overflow-hidden transition-all duration-500 hover:scale-105"
+      class="relative bg-white dark:bg-white/3 rounded-2xl border border-dark/20 dark:border-light/20 shadow-xl overflow-hidden hover:-translate-y-1 transition duration-500"
     >
       <!-- Theme Preview Image -->
       <div class="relative h-fit overflow-hidden">
-        <div class="p-4">
+        <div class="p-4 pb-2">
           <NuxtImg
             v-if="props.theme?.thumbnail"
             :src="props.theme?.thumbnail || '/img/hero.jpg'"
@@ -24,11 +30,11 @@ const themeUrl = config.public.themeUrl;
             format="webp"
             quality="80"
             placeholder
-            class="w-full aspect-4/3 object-cover object-center rounded-xl border border-white/10"
+            class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/20 dark:border-white/20"
           />
           <div
             v-else
-            class="w-full aspect-4/3 rounded-xl border border-white/10 flex flex-col justify-center items-center bg-zinc-400 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-600"
+            class="w-full aspect-4/3 rounded-lg border border-white/10 flex flex-col justify-center items-center bg-zinc-400 dark:bg-zinc-800 text-zinc-500 dark:text-zinc-600"
           >
             <i class="bi bi-image text-6xl"></i>
             <span class="text-sm font-medium">No Image</span>
@@ -38,7 +44,7 @@ const themeUrl = config.public.themeUrl;
         <!-- Theme Type Badge -->
         <div v-if="props.theme?.is_premium" class="absolute top-6 right-6 z-10">
           <span
-            class="px-3 py-1 rounded-full text-xs text-dark font-semibold bg-cyan-400"
+            class="px-3 py-1 rounded-full text-xs text-light font-semibold bg-primary"
           >
             Premium
           </span>
@@ -47,13 +53,15 @@ const themeUrl = config.public.themeUrl;
 
       <!-- Theme Info -->
       <div class="p-4 pt-0">
-        <div class="flex items-start justify-between mb-4">
+        <div class="flex items-start justify-between mb-2">
           <div>
-            <h2 class="text-lg font-bold text-white">
+            <h3 class="text-lg font-semibold text-black dark:text-white">
               {{ props.theme?.name || "Untitled Theme" }}
-            </h2>
+            </h3>
           </div>
-          <span class="py-1 px-2 rounded-lg bg-white/10 text-sm text-white/80">
+          <span
+            class="py-0.5 px-2 rounded-md bg-dark/5 dark:bg-light/5 text-sm text-dark dark:text-light/80"
+          >
             {{ props.theme?.theme_category?.name || "Uncategorized" }}
           </span>
         </div>
@@ -62,9 +70,9 @@ const themeUrl = config.public.themeUrl;
           :href="`${themeUrl}/${props.theme?.slug}` || '#'"
           target="_blank"
           :rel="props.theme?.name || 'null'"
-          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 backdrop-blur-md bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-semibold rounded-xl shadow-lg transform hover:scale-105 transition-all duration-300"
+          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-dark dark:text-light font-semibold rounded-lg hover:scale-102 transition duration-300"
         >
-          <span class="relative z-10">Lihat Tema</span>
+          Lihat Tema
           <i class="bi bi-arrow-right ml-2"></i>
         </a>
       </div>

@@ -5,6 +5,6 @@
       <slot />
     </main>
     <Footer />
-    <WhatsApp />
+    <Chat />
   </div>
 </template>

@@ -36,7 +36,7 @@ const { themes } = useThemeStore();
 
       <!-- Themes Grid -->
       <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-        <ThemesHomeCard
+        <ThemesCard
           v-for="theme in themes"
           :key="theme.id"
           :theme="theme"
@@ -53,7 +53,7 @@ const { themes } = useThemeStore();
       >
         <NuxtLink
           to="/themes"
-          class="group relative inline-flex items-center px-6 py-3 bg-black/8 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:scale-102 transition duration-300"
+          class="group relative inline-flex items-center px-6 py-3 bg-white/80 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:scale-102 transition duration-300"
         >
           Lihat Semua Tema
           <i
