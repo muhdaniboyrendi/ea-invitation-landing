@@ -22,10 +22,10 @@ const getThemeCount = (categoryId) => {
 </script>
 
 <template>
-  <section id="themes" class="pt-24 md:pt-40 pb-20 bg-light dark:bg-dark">
+  <section id="themes" class="pt-28 md:pt-40 pb-20 bg-light dark:bg-dark">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-30">
+      <div class="text-center mb-10 md:mb-30">
         <!-- Main Title -->
         <h1
           v-motion
@@ -57,16 +57,7 @@ const getThemeCount = (categoryId) => {
         Desktop : flex-wrap justify-center seperti semula
       -->
       <div
-        class="
-          flex gap-2 mb-10
-          overflow-x-auto md:overflow-x-visible
-          flex-nowrap md:flex-wrap
-          md:justify-center
-          px-4 md:px-0
-          -mx-4 md:mx-0
-          scrollbar-none
-          pb-1 md:pb-0
-        "
+        class="flex gap-2 mb-10 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap md:justify-center px-4 md:px-0 -mx-4 md:mx-0 scrollbar-none pb-1 md:pb-0"
       >
         <!-- Semua Tema — key unik dengan prefix string agar tidak bentrok dengan category.id -->
         <button

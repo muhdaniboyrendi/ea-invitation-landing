@@ -18,27 +18,21 @@ const handleBack = () => {
 </script>
 
 <template>
-  <div
-    class="relative py-20 lg:py-32 overflow-hidden bg-gradient-to-b from-slate-900 via-purple-950/90 to-slate-900 dark:from-dark dark:via-purple-950/30 dark:to-dark"
-  >
-    <!-- Background Elements -->
-    <div class="absolute inset-0 overflow-hidden">
-      <!-- Grid Pattern -->
-      <div class="absolute inset-0 bg-grid-pattern opacity-5"></div>
-    </div>
-
-    <div class="relative z-10 mx-auto text-center max-w-2xl w-full mt-6">
-      <h1 class="text-9xl font-semibold text-cyan-500">
+  <div class="py-20 lg:py-32 bg-light dark:bg-dark">
+    <div class="mx-auto text-center max-w-2xl w-full mt-6">
+      <h1 class="text-9xl font-semibold text-primary">
         {{ props.statusCode }}
       </h1>
 
       <div class="mt-6 space-y-2">
         <h2
-          class="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-cyan-200 to-purple-200 tracking-tight"
+          class="text-2xl font-bold text-black dark:text-white tracking-tight"
         >
           {{ props.message }}
         </h2>
-        <p class="text-slate-300 max-w-md mx-auto leading-relaxed">
+        <p
+          class="text-black/60 dark:text-white/60 max-w-md mx-auto leading-relaxed"
+        >
           Maaf, terjadi kesalahan pada server. Silakan coba lagi nanti.
         </p>
       </div>
@@ -47,7 +41,7 @@ const handleBack = () => {
         <button
           @click="handleBack"
           type="button"
-          class="group relative px-8 py-4 bg-gradient-to-r from-cyan-500 to-purple-500 hover:from-cyan-400 hover:to-purple-400 text-white font-bold rounded-xl shadow-lg transform hover:scale-105 active:scale-95 transition-all duration-300 flex gap-2 items-center mx-auto"
+          class="group inline-flex items-center gap-2 px-6 py-3 bg-white/80 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:scale-102 transition duration-300"
         >
           <i
             class="bi bi-arrow-left transition-transform group-hover:-translate-x-1"

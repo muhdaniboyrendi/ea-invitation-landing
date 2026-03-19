@@ -99,13 +99,10 @@ const clearActive = () => {
 </script>
 
 <template>
-  <section
-    id="tutorial"
-    class="pt-24 md:pt-40 pb-20 bg-light dark:bg-dark"
-  >
+  <section id="tutorial" class="pt-28 md:pt-40 pb-20 bg-light dark:bg-dark">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
-      <div class="text-center mb-30">
+      <div class="text-center mb-10 md:mb-30">
         <!-- Main Title -->
         <h1
           v-motion

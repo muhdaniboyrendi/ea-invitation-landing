@@ -8,22 +8,22 @@ defineProps({
 </script>
 
 <template>
-  <div class="group relative rounded-2xl">
-    <!-- Card Content -->
-    <div
-      :class="[
-        'relative bg-dark/50 p-4 lg:p-6 rounded-3xl border border-white/10 hover:border-white/20 transition-all duration-300',
-      ]"
-    >
-      <!-- Header -->
-      <div class="flex items-start gap-4 mb-4 md:mb-6">
-        <h3 class="text-2xl font-bold text-white">{{ title }}</h3>
-      </div>
+  <!-- Card Content -->
+  <div
+    v-motion
+    :initial="{ opacity: 0, y: 100 }"
+    :visible-once="{ opacity: 1, y: 0 }"
+    :duration="1000"
+    class="bg-white dark:bg-white/3 p-4 md:p-6 rounded-2xl border border-black/20 dark:border-white/20 shadow-xl"
+  >
+    <!-- Header -->
+    <div class="flex items-start gap-4 mb-4 md:mb-6">
+      <h3 class="text-2xl font-bold text-black dark:text-white">{{ title }}</h3>
+    </div>
 
-      <!-- Content Slot -->
-      <div class="prose prose-invert max-w-none">
-        <slot />
-      </div>
+    <!-- Content Slot -->
+    <div class="prose prose-invert max-w-none">
+      <slot />
     </div>
   </div>
 </template>

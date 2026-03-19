@@ -1,6 +1,5 @@
 <script setup>
 const route = useRoute()
-const config = useRuntimeConfig()
 
 // Generate canonical URL dinamis
 const canonicalUrl = computed(() => {
