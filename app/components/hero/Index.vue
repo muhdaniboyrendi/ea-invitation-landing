@@ -46,14 +46,14 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         >
           <NuxtLink
             :to="dashboardAppUrl + '/login'"
-            class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:scale-102 text-light text-sm md:text-base font-semibold rounded-lg active:scale-95 transition duration-300"
+            class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light text-sm md:text-base font-semibold rounded-lg active:scale-95 transition duration-300"
           >
             Buat Undangan
           </NuxtLink>
 
           <NuxtLink
             to="/tutorial"
-            class="py-3 px-8 bg-white/80 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white text-sm md:text-base font-semibold rounded-lg hover:scale-102 active:scale-95 transition duration-300"
+            class="py-3 px-8 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white text-sm md:text-base font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
           >
             Tutorial
             <i class="bi bi-play-circle ml-1"></i>

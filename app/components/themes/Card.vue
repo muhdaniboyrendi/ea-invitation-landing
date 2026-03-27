@@ -70,7 +70,7 @@ const themeUrl = config.public.themeUrl;
           :href="`${themeUrl}/${props.theme?.slug}` || '#'"
           target="_blank"
           :rel="props.theme?.name || 'null'"
-          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-dark dark:text-light font-semibold rounded-lg hover:scale-102 transition duration-300"
+          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-dark dark:text-light font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition duration-300"
         >
           Lihat Tema
           <i class="bi bi-arrow-right ml-2"></i>

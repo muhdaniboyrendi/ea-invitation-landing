@@ -30,7 +30,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       <!-- CTA Button -->
       <NuxtLink
         :to="dashboardAppUrl + '/login'"
-        class="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:scale-102 active:scale-95 transition duration-300"
+        class="px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 active:scale-95 transition duration-300"
       >
         Buat Undangan
         <i class="bi bi-arrow-right ml-2"></i>

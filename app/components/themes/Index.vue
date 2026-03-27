@@ -52,10 +52,6 @@ const getThemeCount = (categoryId) => {
       </div>
 
       <!-- Category Filter Buttons -->
-      <!-- 
-        Mobile  : overflow-x scroll, nowrap, sembunyikan scrollbar
-        Desktop : flex-wrap justify-center seperti semula
-      -->
       <div
         class="flex gap-2 mb-10 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap md:justify-center px-4 md:px-0 -mx-4 md:mx-0 scrollbar-none pb-1 md:pb-0"
       >
@@ -118,12 +114,11 @@ const getThemeCount = (categoryId) => {
 </template>
 
 <style scoped>
-/* Sembunyikan scrollbar di semua browser tanpa plugin Tailwind tambahan */
 .scrollbar-none {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
 .scrollbar-none::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 </style>

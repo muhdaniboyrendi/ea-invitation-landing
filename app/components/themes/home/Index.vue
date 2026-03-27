@@ -53,7 +53,7 @@ const { themes } = useThemeStore();
       >
         <NuxtLink
           to="/themes"
-          class="group inline-flex items-center px-6 py-3 bg-white/80 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:scale-102 transition duration-300"
+          class="group inline-flex items-center px-6 py-3 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition duration-300"
         >
           Lihat Semua Tema
           <i

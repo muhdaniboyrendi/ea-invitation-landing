@@ -29,7 +29,7 @@ const whatsappUrl =
           <div
             class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center"
           >
-            <i class="bi bi-lightning-charge text-primary text-xl"></i>
+            <i class="bi bi-headset text-primary text-xl"></i>
           </div>
           <h3 class="text-lg text-dark dark:text-light font-semibold">
             Butuh Bantuan?
@@ -48,7 +48,7 @@ const whatsappUrl =
           <a
             :href="whatsappUrl"
             target="_blank"
-            class="relative block py-3 px-6 bg-primary rounded-lg text-center text-white font-medium hover:scale-102 active:scale-90 transition"
+            class="relative block py-3 px-6 bg-primary rounded-lg text-center text-white font-medium hover:bg-primary/80 active:scale-90 transition"
           >
             <i class="bi bi-whatsapp absolute left-4 top-3 text-xl"></i>
             Chat WhatsApp
@@ -56,7 +56,7 @@ const whatsappUrl =
           <button
             @click="emit('close')"
             type="button"
-            class="w-full py-3 px-6 bg-white/80 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white text-sm md:text-base font-semibold rounded-lg hover:scale-102 active:scale-90 transition duration-300 cursor-pointer"
+            class="w-full py-3 px-6 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white text-sm md:text-base font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 active:scale-90 transition duration-300 cursor-pointer"
           >
             Nanti Saja
           </button>

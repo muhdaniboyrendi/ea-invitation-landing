@@ -87,13 +87,13 @@ const toggleFeatures = () => {
     <!-- CTA Button -->
     <a
       :href="`${dashboardAppUrl}/invitation/create/checkout/${props.package?.id}`"
-      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-semibold rounded-lg hover:scale-102 transition duration-300 mb-6"
+      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 transition duration-300 mb-6"
     >
       <span class="relative z-10">Pilih Paket</span>
       <i class="bi bi-arrow-right ml-2"></i>
     </a>
 
-    <!-- Features List - DIPERBAIKI -->
+    <!-- Features List -->
     <transition-group name="features" tag="ul" class="space-y-2 mb-6">
       <li
         v-for="(feature, index) in displayedFeatures"
