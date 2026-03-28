@@ -71,11 +71,15 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         class="w-full max-w-110 px-4 lg:pr-6 lg:pl-0 flex justify-end items-center"
       >
         <div
-          class="w-full max-w-100 aspect-square rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl flex justify-center items-center"
+          class="w-full max-w-150 aspect-square rounded-2xl shadow-xl flex justify-center items-center overflow-hidden"
         >
-          <i
-            class="bi bi-card-image text-7xl text-black/20 dark:text-white/20"
-          ></i>
+          <NuxtImg
+            src="/img/hero.webp"
+            loading="lazy"
+            width="1000"
+            height="1000"
+            class="w-full"
+          />
         </div>
       </div>
     </div>

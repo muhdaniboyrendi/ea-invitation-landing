@@ -37,7 +37,7 @@ const { themes } = useThemeStore();
       <!-- Themes Grid -->
       <div class="flex flex-wrap justify-center gap-4 md:gap-6">
         <ThemesCard
-          v-for="theme in themes"
+          v-for="theme in themes.slice(0, 6)"
           :key="theme.id"
           :theme="theme"
         />

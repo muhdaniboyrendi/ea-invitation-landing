@@ -87,8 +87,16 @@
       </div>
 
       <div
-        class="w-full min-h-100 rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl"
-      ></div>
+        class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl overflow-hidden"
+      >
+        <NuxtImg
+          src="/img/dashboard.webp"
+          loading="lazy"
+          width="1000"
+          height="1000"
+          class="w-full"
+        />
+      </div>
     </div>
   </section>
 </template>
