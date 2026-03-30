@@ -6,7 +6,7 @@
         <a
           href="https://erlanazhari.my.id/"
           target="_blank"
-          class="text-black dark:text-white hover:underline"
+          class="text-black dark:text-white underline hover:text-primary transition"
           >Muhdani Boyrendi Erlan Azhari</a
         >. All rights reserved.
       </p>

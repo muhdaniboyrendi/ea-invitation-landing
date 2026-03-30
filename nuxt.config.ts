@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
   devtools: { enabled: true },
 
-  css: ["~/assets/css/main.css", "bootstrap-icons/font/bootstrap-icons.css"],
+  css: ["bootstrap-icons/font/bootstrap-icons.css", "~/assets/css/main.css"],
 
   vite: {
     plugins: [tailwindcss()],
@@ -65,6 +65,7 @@ export default defineNuxtConfig({
       return [
         { loc: "/", changefreq: "weekly", priority: 1.0 },
         { loc: "/themes", changefreq: "weekly", priority: 0.8 },
+        { loc: "/pricing", changefreq: "monthly", priority: 0.8 },
         { loc: "/tutorial", changefreq: "monthly", priority: 0.8 },
         { loc: "/terms-and-conditions", changefreq: "monthly", priority: 0.5 },
         { loc: "/privacy-policy", changefreq: "monthly", priority: 0.5 },
@@ -129,7 +130,7 @@ export default defineNuxtConfig({
         },
         {
           rel: "stylesheet",
-          href: "https://fonts.googleapis.com/css2?family=Cantata+One&family=Fredoka:wght@300..700&family=Quicksand:wght@300..700&display=swap",
+          href: "https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap",
           media: "print",
           onload: "this.media='all'",
         },

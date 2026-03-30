@@ -15,3 +15,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+@font-face {
+  font-family: "bootstrap-icons";
+  font-display: swap;
+}

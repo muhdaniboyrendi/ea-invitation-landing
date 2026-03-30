@@ -19,9 +19,9 @@
             <i class="bi bi-lightning-charge text-primary text-xl"></i>
           </div>
           <div>
-            <h3 class="text-xl font-semibold text-black dark:text-white mb-3">
+            <h2 class="text-xl font-semibold text-black dark:text-white mb-3">
               Instant
-            </h3>
+            </h2>
             <p class="text-dark/70 dark:text-light/50">
               Undangan langsung jadi, tanpa menunggu, dan langsung bagikan.
             </p>
@@ -43,9 +43,9 @@
             <i class="bi bi-layers text-primary text-xl"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-semibold text-black dark:text-white mb-3">
+            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
               Anti-mainstream Design
-            </h3>
+            </h2>
             <p class="text-dark/70 dark:text-light/50 max-w-lg">
               Rasakan desain undangan yang unik dan berbeda dari yang lain.
             </p>
@@ -66,9 +66,9 @@
             <i class="bi bi-sliders2 text-primary text-xl"></i>
           </div>
           <div>
-            <h3 class="text-2xl font-semibold text-black dark:text-white mb-3">
+            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
               Limitless
-            </h3>
+            </h2>
             <p class="text-dark/70 dark:text-light/50 max-w-lg">
               Edit konten undangan dan ubah tema kapanpun anda mau.
             </p>
@@ -92,9 +92,12 @@
         <NuxtImg
           src="/img/dashboard.webp"
           loading="lazy"
-          width="1000"
-          height="1000"
+          width="800"
+          height="800"
+          sizes="800px"
+          quality="80"
           class="w-full"
+          alt="Dashboard Image"
         />
       </div>
     </div>
