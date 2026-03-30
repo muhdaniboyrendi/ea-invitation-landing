@@ -8,80 +8,98 @@ const activeStep = ref(null);
 const steps = [
   {
     number: 1,
-    title: "Daftar dan Masuk",
-    description:
-      "Buat akun atau login jika sudah memiliki akun, atau langsung masuk dengan google.",
-    image: "/img/tutorial/1.webp",
+    title: "EA Invitation",
+    description: `Cari dan buka eainvitation.com di browser kemudian klik "Buat Undangan".`,
+    image: "/img/tutorial/1.png",
   },
   {
     number: 2,
-    title: "Buat Undangan",
+    title: "Masuk Dashboard",
     description:
-      'Setelah masuk anda akan diarahkan ke halaman utama dashboard EA Invitation, dan setelah itu klik "Buat Undangan Sekarang" untuk membuat undangan.',
-    image: "/img/tutorial/2.webp",
+      "Daftar atau masuk jika sudah memiliki akun, atau langsung masuk dengan google.",
+    image: "/img/tutorial/2.png",
   },
   {
     number: 3,
-    title: "Pilih Paket Undangan",
+    title: "Buat Undangan",
     description:
-      "Setelah itu anda diarahkan ke halaman pemilihan paket undangan, dan pilih salah satu dari paket undangan yang tersedia.",
-    image: "/img/tutorial/3.webp",
+      "Setelah masuk, klik 'Buat Undangan' untuk memulai proses pembuatan undangan.",
+    image: "/img/tutorial/3.png",
   },
   {
     number: 4,
-    title: "Checkout",
+    title: "Pilih Paket Undangan",
     description:
-      'Setelah memilih paket undangan yang anda butuhkan anda diarahkan ke halaman checkout untuk melakukan transaksi pembelian paket undangan anda dan klik "Bayar Sekarang" untuk mengkonfirmasi pembelian paket undangan anda.',
-    image: "/img/tutorial/4.webp",
+      "Pilih salah satu dari paket undangan yang tersedia sesuai dengan kebutuhan anda.",
+    image: "/img/tutorial/4.png",
   },
   {
     number: 5,
-    title: "Metode Pembayaran",
+    title: "Checkout",
     description:
-      'Setelah memilih paket undangan yang anda butuhkan anda diarahkan ke halaman checkout untuk melakukan transaksi pembelian paket undangan anda dan klik "Bayar Sekarang" untuk mengkonfirmasi pembelian paket undangan anda dan memilih metode pembayaran yang tersedia.',
-    image: "/img/tutorial/5.webp",
+      'Setelah memilih paket undangan yang anda butuhkan anda diarahkan ke halaman checkout untuk melakukan transaksi pembelian paket undangan anda dan klik "Bayar Sekarang" untuk mengkonfirmasi pembelian paket undangan anda.',
+    image: "/img/tutorial/5.png",
   },
   {
     number: 6,
-    title: "Pembayaran",
-    description:
-      'Setelah memilih metode pembayaran yang tersedia, klik "Bayar Sekarang" untuk menyelesaikan proses pembayaran.',
-    image: "/img/tutorial/6.webp",
+    title: "Metode Pembayaran",
+    description: "Pilih salah satu metode pembayaran yang tersedia.",
+    image: "/img/tutorial/6.png",
   },
   {
     number: 7,
-    title: "Nama Pasangan",
-    description:
-      "Setelah pembayaran berhasil, selanjutnya anda perlu memasukan nama pasangan yang akan dijadikan display utama di undangan anda.",
-    image: "/img/tutorial/7.webp",
+    title: "Pembayaran",
+    description: "Lakukan pembayaran sesuai metode yang telah dipilih.",
+    image: "/img/tutorial/7.png",
   },
   {
     number: 8,
-    title: "Pilih Tema",
+    title: "Nama Pasangan",
     description:
-      "Selanjutnya anda perlu memilih tema undangan yang akan dijadikan sebagai desain dari undangan anda, dan anda dapat mengubahnya kapan pun.",
-    image: "/img/tutorial/8.webp",
+      "Setelah pembayaran berhasil, selanjutnya anda perlu memasukan nama pasangan yang akan dijadikan display utama di undangan anda.",
+    image: "/img/tutorial/8.png",
   },
   {
     number: 9,
-    title: "Isi Data",
+    title: "Tema Undangan",
     description:
-      "Setelah itu anda perlu mengisi data undangan yang dibutuhkan, seperti tanggal dan waktu acara, data mempelai pria dan wanita, daftar acara, kisah cinta, gift, foto, video, dll.",
-    image: "/img/tutorial/9.webp",
+      "Pilih tema undangan yang akan dijadikan sebagai desain dari undangan anda, dan anda dapat mengubahnya kapan pun.",
+    image: "/img/tutorial/9.png",
   },
   {
     number: 10,
-    title: "Kelola Tamu",
+    title: "Konfirmasi",
     description:
-      "Selamat undangan anda telah selesai dibuat, dan selanjutnya adalah anda dapat mengelola, menambahkan, dan memantau daftar tamu undangan anda.",
-    image: "/img/tutorial/10.webp",
+      "Konfirmasi nama pasangan dan tema undangan sebelum mengisi data undangan dengan klik 'Buat Undangan'.",
+    image: "/img/tutorial/10.png",
   },
   {
     number: 11,
+    title: "Isi Undangan",
+    description:
+      "Isi semua informasi yang diperlukan dalam undangan anda seperti tanggal dan waktu acara, data mempelai pria dan wanita, daftar acara, kisah cinta, gift, foto, video, dll.",
+    image: "/img/tutorial/11.png",
+  },
+  {
+    number: 12,
+    title: "Selesai Pengisian",
+    description:
+      "Anda telah berhasil mengisi semua informasi yang diperlukan dalam undangan anda dan undangan sudah bisa diakses.",
+    image: "/img/tutorial/12.png",
+  },
+  {
+    number: 13,
+    title: "Tambah Tamu",
+    description:
+      "Setelah undangan anda selesai, anda dapat menambahkan tamu yang akan hadir dalam acara anda.",
+    image: "/img/tutorial/13.png",
+  },
+  {
+    number: 14,
     title: "Bagikan Undangan",
     description:
-      "Langkah yang terakhir adalah membagikan undangan anda ke teman, kerabat, atau orang lain yang anda undang untuk acara anda.",
-    image: "/img/tutorial/11.webp",
+      "Bagikan undangan anda dengan mudah ke semua teman, kerabat, atau orang lain yang anda undang untuk acara anda.",
+    image: "/img/tutorial/14.png",
   },
 ];
 
@@ -198,6 +216,7 @@ const clearActive = () => {
                 :src="step.image"
                 :alt="step.title"
                 width="1200"
+                height="600"
                 loading="lazy"
                 format="webp"
                 quality="80"
@@ -238,8 +257,12 @@ const clearActive = () => {
           :initial="{ opacity: 0, y: 100 }"
           :visible-once="{ opacity: 1, y: 0 }"
           :duration="1000"
-          class="w-full max-w-5xl aspect-video mx-auto p-6 md:p-8 rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl"
-        ></div>
+          class="w-full max-w-5xl aspect-video mx-auto p-6 md:p-8 rounded-2xl bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 shadow-xl flex justify-center items-center"
+        >
+          <p class="text-black/30 dark:text-white/30">
+            Video Tutorial Segera Tersedia
+          </p>
+        </div>
       </div>
 
       <!-- CTA Section -->
