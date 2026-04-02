@@ -44,12 +44,13 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :duration="1000"
           class="flex flex-row gap-2"
         >
-          <NuxtLink
-            :to="dashboardAppUrl + '/login'"
+          <a
+            :href="dashboardAppUrl + '/login'"
+            rel="external"
             class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light font-bold rounded-lg active:scale-95 transition duration-300"
           >
             Buat Undangan
-          </NuxtLink>
+          </a>
 
           <NuxtLink
             to="/tutorial"

@@ -281,12 +281,13 @@ const clearActive = () => {
           hitungan menit!
         </p>
         <div class="flex flex-wrap gap-4 justify-center">
-          <NuxtLink
-            :to="dashboardAppUrl + '/login'"
-            class="group/btn px-8 py-4 bg-primary rounded-xl font-semibold text-white transition duration-300 hover:scale-102 active:scale-90"
+          <a
+            :href="dashboardAppUrl + '/login'"
+            rel="external"
+            class="group/btn px-8 py-4 bg-primary rounded-lg font-semibold text-white transition duration-300 hover:bg-primary/80 active:scale-90"
           >
             Buat Undangan Sekarang
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </div>

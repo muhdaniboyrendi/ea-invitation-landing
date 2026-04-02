@@ -28,12 +28,13 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       </p>
 
       <!-- CTA Button -->
-      <NuxtLink
-        :to="dashboardAppUrl + '/login'"
+      <a
+        :href="dashboardAppUrl + '/login'"
+        rel="external"
         class="px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/80 active:scale-95 transition duration-300"
       >
         Buat Undangan
-      </NuxtLink>
+      </a>
     </div>
   </div>
 </template>
