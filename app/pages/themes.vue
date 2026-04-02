@@ -1,13 +1,13 @@
 <script setup>
 useSeoMeta({
-  title: "Katalog Tema Undangan Modern & Interaktif",
+  title: "Katalog Tema Undangan",
   description:
     "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
-  ogTitle: "EA Invitation - Katalog Tema Undangan Modern & Interaktif",
+  ogTitle: "EA Invitation - Katalog Tema Undangan",
   ogDescription:
     "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
   ogImage: "/og-image.webp",
-  ogUrl: "https://eainvitation.com/themes", // ✅ TAMBAHKAN
+  ogUrl: "https://eainvitation.com/themes",
   twitterCard: "summary_large_image",
 });
 

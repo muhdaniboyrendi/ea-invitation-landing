@@ -6,7 +6,7 @@ export const usePackageStore = defineStore("package", () => {
       price: "100000.00",
       discount: null,
       features: [
-        "50 tamu undangan + grup",
+        "100 tamu undangan + grup",
         "Akses tema standar",
         "4 foto galeri (max)",
         "Informasi acara",
@@ -26,7 +26,7 @@ export const usePackageStore = defineStore("package", () => {
       price: "200000.00",
       discount: 25,
       features: [
-        "250 tamu undangan + grup",
+        "500 tamu undangan + grup",
         "Akses tema premium",
         "10 foto galeri (max)",
         "1 video",
@@ -48,7 +48,7 @@ export const usePackageStore = defineStore("package", () => {
       price: "300000.00",
       discount: 15,
       features: [
-        "1000 tamu undangan + grup",
+        "2000 tamu undangan + grup",
         "Akses tema premium",
         "20 foto galeri (max)",
         "5 video (max)",

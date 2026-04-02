@@ -1,8 +1,12 @@
 <script setup>
 const additionalInfo = [
   {
+    icon: "bi-hdd-stack",
+    label: "Akses Dashboard",
+  },
+  {
     icon: "bi-people",
-    label: "Tamu Personal dan Grup",
+    label: "Import Kontak",
   },
   {
     icon: "bi-hourglass-split",
@@ -11,10 +15,6 @@ const additionalInfo = [
   {
     icon: "bi-person-check",
     label: "RSVP",
-  },
-  {
-    icon: "bi-hdd-stack",
-    label: "Akses Dashboard",
   },
   {
     icon: "bi-pencil-square",

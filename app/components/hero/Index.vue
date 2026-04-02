@@ -71,7 +71,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         class="w-full max-w-110 px-4 lg:pr-6 lg:pl-0 flex justify-end items-center"
       >
         <div
-          class="w-full max-w-150 aspect-square rounded-2xl shadow-xl flex justify-center items-center overflow-hidden"
+          class="w-full max-w-200 aspect-square rounded-2xl flex justify-center items-center overflow-hidden"
         >
           <NuxtImg
             src="/img/hero.webp"
@@ -82,7 +82,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
             height="612"
             sizes="612px"
             quality="80"
-            class="w-full"
+            class="w-full mask-t-from-50% mask-t-to-100% md:mask-t-from-100% md:mask-t-to-100% md:mask-l-from-50% md:mask-l-to-100%"
             alt="Hero Image"
           />
         </div>

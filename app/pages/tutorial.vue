@@ -1,24 +1,24 @@
 <script setup>
 useSeoMeta({
-  title: "Tutorial Membuat Undangan Pernikahan Digital",
+  title: "Tutorial",
   description:
     "Pelajari cara membuat, mengedit, dan menyebarkan undangan pernikahan digital Anda menggunakan EA Invitation.",
-  ogTitle: "EA Invitation - Tutorial Membuat Undangan Pernikahan Digital",
+  ogTitle: "EA Invitation - Tutorial",
   ogDescription:
     "Pelajari cara membuat, mengedit, dan menyebarkan undangan pernikahan digital Anda menggunakan EA Invitation.",
   ogImage: "/og-image.webp",
-  ogUrl: "https://eainvitation.com/tutorial", // ✅ TAMBAHKAN
+  ogUrl: "https://eainvitation.com/tutorial",
   twitterCard: "summary_large_image",
 });
 
 useHead({
   link: [
     {
-      rel: 'canonical',
-      href: 'https://eainvitation.com/tutorial'
-    }
-  ]
-})
+      rel: "canonical",
+      href: "https://eainvitation.com/tutorial",
+    },
+  ],
+});
 
 // Schema HowTo
 useSchemaOrg([

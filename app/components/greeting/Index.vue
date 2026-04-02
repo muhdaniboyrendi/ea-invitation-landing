@@ -3,7 +3,7 @@
     <div class="px-4 md:px-6">
       <!-- Bento Grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-4 max-w-7xl mx-auto mb-20"
+        class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-4 max-w-7xl mx-auto mb-10"
       >
         <!-- Card 1 - Instant (lebar 2 kolom, tinggi normal) -->
         <div
@@ -87,16 +87,39 @@
       </div>
 
       <div
-        class="w-full max-w-4xl mx-auto rounded-2xl shadow-xl overflow-hidden"
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="1000"
+        class="md:hidden w-full max-w-70 mx-auto perspective-[800px]"
       >
         <NuxtImg
-          src="/img/dashboard.webp"
+          src="/img/dashboard-mobile.webp"
           loading="lazy"
-          width="800"
-          height="800"
+          width="900"
+          height="1950"
           sizes="800px"
           quality="80"
-          class="w-full"
+          class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
+          alt="Dashboard Image"
+        />
+      </div>
+
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 100 }"
+        :visible-once="{ opacity: 1, y: 0 }"
+        :duration="1000"
+        class="hidden md:block w-full max-w-4xl mx-auto perspective-[800px]"
+      >
+        <NuxtImg
+          src="/img/dashboard-desktop.webp"
+          loading="lazy"
+          width="1600"
+          height="900"
+          sizes="800px"
+          quality="80"
+          class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
           alt="Dashboard Image"
         />
       </div>

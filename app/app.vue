@@ -29,7 +29,7 @@ useSchemaOrg([
     logo: "/logo.webp",
     sameAs: [
       "https://www.instagram.com/ea_invitation?igsh=NHMzdnIxdnZ3Ymlq",
-      "https://tiktok.com/@erlan.azr_",
+      "https://www.tiktok.com/@ea_invitation?_r=1&_t=ZS-95BtHMlCBca",
       "https://wa.me/6282220633024",
     ],
   }),
