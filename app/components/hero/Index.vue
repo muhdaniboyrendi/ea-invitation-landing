@@ -15,7 +15,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       <div class="w-full px-4 lg:pl-6 lg:pr-0">
         <h1
           v-motion
-          :initial="{ opacity: 0, x: -100 }"
+          :initial="{ opacity: 0, x: -200 }"
           :enter="{ opacity: 1, x: 0 }"
           :duration="1000"
           class="relative max-w-4xl mx-auto text-5xl/14 sm:text-6xl/18 md:text-7xl/20 font-bold mb-4 md:mb-8 text-black dark:text-white text-balance tracking-wide"
@@ -26,7 +26,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
         <p
           v-motion
-          :initial="{ opacity: 0, x: -100 }"
+          :initial="{ opacity: 0, x: -200 }"
           :enter="{ opacity: 1, x: 0 }"
           :delay="200"
           :duration="1000"
@@ -38,7 +38,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
         <div
           v-motion
-          :initial="{ opacity: 0, x: -100 }"
+          :initial="{ opacity: 0, x: -200 }"
           :enter="{ opacity: 1, x: 0 }"
           :delay="400"
           :duration="1000"
@@ -65,7 +65,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       <!-- Right Content -->
       <div
         v-motion
-        :initial="{ opacity: 0, x: 100 }"
+        :initial="{ opacity: 0, x: 200 }"
         :enter="{ opacity: 1, x: 0 }"
         :delay="600"
         :duration="1000"

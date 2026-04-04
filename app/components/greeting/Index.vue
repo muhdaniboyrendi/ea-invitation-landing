@@ -1,3 +1,8 @@
+<script setup>
+const colorMode = useColorMode();
+const isDark = computed(() => colorMode.value === "dark");
+</script>
+
 <template>
   <section id="greeting" class="py-20 overflow-hidden bg-light dark:bg-dark">
     <div class="px-4 md:px-6">
@@ -74,54 +79,82 @@
             </p>
           </div>
         </div>
-
-        <!-- Card 4 - Bonus dekoratif (lebar 2 kolom, pengisi bento) -->
-        <!-- <div
-          class="md:col-span-2 rounded-2xl bg-light dark:bg-light/15 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col items-center justify-center"
-        >
-          <i class="bi bi-stars text-white/20 text-6xl mb-4"></i>
-          <p class="text-light/40 text-sm text-center leading-relaxed">
-            Lebih dari 1.000+ pasangan<br />telah mempercayai kami.
-          </p>
-        </div> -->
       </div>
 
+      <!-- Mobile Dashboard Image -->
       <div
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
+        :initial="{ opacity: 0, y: 300 }"
         :visible-once="{ opacity: 1, y: 0 }"
         :duration="1000"
         class="md:hidden w-full max-w-70 mx-auto perspective-[800px]"
       >
-        <NuxtImg
-          src="/img/dashboard-mobile.webp"
-          loading="lazy"
-          width="900"
-          height="1950"
-          sizes="800px"
-          quality="80"
-          class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
-          alt="Dashboard Image"
-        />
+        <ClientOnly>
+          <NuxtImg
+            :src="
+              isDark
+                ? '/img/dashboard-mobile-dark.webp'
+                : '/img/dashboard-mobile-light.webp'
+            "
+            loading="lazy"
+            width="900"
+            height="1950"
+            sizes="800px"
+            quality="80"
+            class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
+            alt="Dashboard Image"
+          />
+          <template #fallback>
+            <NuxtImg
+              src="/img/dashboard-mobile-light.webp"
+              loading="lazy"
+              width="900"
+              height="1950"
+              sizes="800px"
+              quality="80"
+              class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
+              alt="Dashboard Image"
+            />
+          </template>
+        </ClientOnly>
       </div>
 
+      <!-- Desktop Dashboard Image -->
       <div
         v-motion
-        :initial="{ opacity: 0, y: 100 }"
+        :initial="{ opacity: 0, y: 300 }"
         :visible-once="{ opacity: 1, y: 0 }"
         :duration="1000"
         class="hidden md:block w-full max-w-4xl mx-auto perspective-[800px]"
       >
-        <NuxtImg
-          src="/img/dashboard-desktop.webp"
-          loading="lazy"
-          width="1600"
-          height="900"
-          sizes="800px"
-          quality="80"
-          class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
-          alt="Dashboard Image"
-        />
+        <ClientOnly>
+          <NuxtImg
+            :src="
+              isDark
+                ? '/img/dashboard-desktop-dark.webp'
+                : '/img/dashboard-desktop-light.webp'
+            "
+            loading="lazy"
+            width="1600"
+            height="900"
+            sizes="800px"
+            quality="80"
+            class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
+            alt="Dashboard Image"
+          />
+          <template #fallback>
+            <NuxtImg
+              src="/img/dashboard-desktop-light.webp"
+              loading="lazy"
+              width="1600"
+              height="900"
+              sizes="800px"
+              quality="80"
+              class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
+              alt="Dashboard Image"
+            />
+          </template>
+        </ClientOnly>
       </div>
     </div>
   </section>
