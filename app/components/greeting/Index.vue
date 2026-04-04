@@ -1,8 +1,3 @@
-<script setup>
-const colorMode = useColorMode();
-const isDark = computed(() => colorMode.value === "dark");
-</script>
-
 <template>
   <section id="greeting" class="py-20 overflow-hidden bg-light dark:bg-dark">
     <div class="px-4 md:px-6">
@@ -89,34 +84,26 @@ const isDark = computed(() => colorMode.value === "dark");
         :duration="1000"
         class="md:hidden w-full max-w-70 mx-auto perspective-[800px]"
       >
-        <ClientOnly>
-          <NuxtImg
-            :src="
-              isDark
-                ? '/img/dashboard-mobile-dark.webp'
-                : '/img/dashboard-mobile-light.webp'
-            "
-            loading="lazy"
-            width="900"
-            height="1950"
-            sizes="800px"
-            quality="80"
-            class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
-            alt="Dashboard Image"
-          />
-          <template #fallback>
-            <NuxtImg
-              src="/img/dashboard-mobile-light.webp"
-              loading="lazy"
-              width="900"
-              height="1950"
-              sizes="800px"
-              quality="80"
-              class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
-              alt="Dashboard Image"
-            />
-          </template>
-        </ClientOnly>
+        <NuxtImg
+          src="/img/dashboard-mobile-light.webp"
+          loading="lazy"
+          width="900"
+          height="1950"
+          sizes="800px"
+          quality="80"
+          class="block dark:hidden w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
+          alt="Dashboard Image"
+        />
+        <NuxtImg
+          src="/img/dashboard-mobile-dark.webp"
+          loading="lazy"
+          width="900"
+          height="1950"
+          sizes="800px"
+          quality="80"
+          class="hidden dark:block w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-90%"
+          alt="Dashboard Image"
+        />
       </div>
 
       <!-- Desktop Dashboard Image -->
@@ -127,34 +114,26 @@ const isDark = computed(() => colorMode.value === "dark");
         :duration="1000"
         class="hidden md:block w-full max-w-4xl mx-auto perspective-[800px]"
       >
-        <ClientOnly>
-          <NuxtImg
-            :src="
-              isDark
-                ? '/img/dashboard-desktop-dark.webp'
-                : '/img/dashboard-desktop-light.webp'
-            "
-            loading="lazy"
-            width="1600"
-            height="900"
-            sizes="800px"
-            quality="80"
-            class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
-            alt="Dashboard Image"
-          />
-          <template #fallback>
-            <NuxtImg
-              src="/img/dashboard-desktop-light.webp"
-              loading="lazy"
-              width="1600"
-              height="900"
-              sizes="800px"
-              quality="80"
-              class="w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
-              alt="Dashboard Image"
-            />
-          </template>
-        </ClientOnly>
+        <NuxtImg
+          src="/img/dashboard-desktop-light.webp"
+          loading="lazy"
+          width="1600"
+          height="900"
+          sizes="800px"
+          quality="80"
+          class="block dark:hidden w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
+          alt="Dashboard Image"
+        />
+        <NuxtImg
+          src="/img/dashboard-desktop-dark.webp"
+          loading="lazy"
+          width="1600"
+          height="900"
+          sizes="800px"
+          quality="80"
+          class="hidden dark:block w-full rotate-x-[45deg] rotate-y-[0deg] shadow-xl rounded-xl mask-b-from-50% mask-b-to-95%"
+          alt="Dashboard Image"
+        />
       </div>
     </div>
   </section>
