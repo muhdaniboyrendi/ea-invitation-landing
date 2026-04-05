@@ -39,26 +39,24 @@ const closeMobile = () => {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <NuxtLink to="/" class="block w-40 h-10" aria-label="EA Invitation">
-            <ClientOnly>
-              <NuxtImg
-                :src="isDark ? '/logo-text-dark.webp' : '/logo-text-light.webp'"
-                width="160"
-                height="40"
-                loading="eager"
-                quality="80"
-                alt="EA Invitation logo"
-              />
-              <template #fallback>
-                <NuxtImg
-                  src="/logo-text-light.webp"
-                  width="160"
-                  height="40"
-                  loading="eager"
-                  quality="80"
-                  alt="EA Invitation logo"
-                />
-              </template>
-            </ClientOnly>
+            <NuxtImg
+              src="/logo-text-light.webp"
+              width="160"
+              height="40"
+              loading="eager"
+              quality="80"
+              alt="EA Invitation logo"
+              class="block dark:hidden"
+            />
+            <NuxtImg
+              src="/logo-text-dark.webp"
+              width="160"
+              height="40"
+              loading="eager"
+              quality="80"
+              alt="EA Invitation logo"
+              class="hidden dark:block"
+            />
           </NuxtLink>
 
           <!-- Desktop Navigation -->
