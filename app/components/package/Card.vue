@@ -71,7 +71,7 @@ const toggleFeatures = () => {
         </div>
         <div
           v-if="props.package.discount"
-          class="text-dark/60 dark:text-light/60 font-semibold text-sm"
+          class="text-dark/60 dark:text-light/60 font-semibold"
         >
           <span class="line-through"
             >Rp {{ formatRupiah(props.package.price) }}</span
@@ -97,7 +97,7 @@ const toggleFeatures = () => {
         class="flex items-start gap-x-3"
       >
         <i class="bi bi-check2 text-xl text-primary"></i>
-        <span class="text-dark/80 dark:text-light/80 text-sm">{{ feature }}</span>
+        <span class="text-dark/80 dark:text-light/80">{{ feature }}</span>
       </li>
     </transition-group>
 
