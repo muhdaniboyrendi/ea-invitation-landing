@@ -2,6 +2,25 @@ export const usePackageStore = defineStore("package", () => {
   const packages = ref([
     {
       id: 1,
+      name: "Free",
+      price: "0.00",
+      discount: null,
+      features: [
+        "10 tamu undangan",
+        "Akses tema standar",
+        "4 foto galeri (max)",
+        "Informasi acara",
+        "Timer countdown",
+        "Maps lokasi",
+        "Tambah ke kalender",
+        "Story",
+        "RSVP",
+        "Ucapan tamu",
+        "3 hari masa aktif",
+      ],
+    },
+    {
+      id: 2,
       name: "Economy",
       price: "100000.00",
       discount: null,
@@ -21,7 +40,7 @@ export const usePackageStore = defineStore("package", () => {
       ],
     },
     {
-      id: 2,
+      id: 3,
       name: "Premium",
       price: "200000.00",
       discount: 25,
@@ -43,7 +62,7 @@ export const usePackageStore = defineStore("package", () => {
       ],
     },
     {
-      id: 3,
+      id: 4,
       name: "Business",
       price: "300000.00",
       discount: 15,

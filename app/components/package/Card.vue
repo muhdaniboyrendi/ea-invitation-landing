@@ -5,11 +5,9 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
 const props = defineProps(["package"]);
 
-// State untuk mengontrol tampilan features
 const showAllFeatures = ref(false);
 const maxFeatures = 5;
 
-// Computed untuk features yang ditampilkan
 const displayedFeatures = computed(() => {
   if (showAllFeatures.value || props.package.features.length <= maxFeatures) {
     return props.package.features;
@@ -17,7 +15,6 @@ const displayedFeatures = computed(() => {
   return props.package.features.slice(0, maxFeatures);
 });
 
-// Computed untuk mengecek apakah ada features yang disembunyikan
 const hasHiddenFeatures = computed(() => {
   return props.package.features.length > maxFeatures;
 });
@@ -31,7 +28,6 @@ const getFinalPrice = computed(() => {
   return parseFloat(props.package.price).toFixed(2);
 });
 
-// Function untuk toggle tampilan features
 const toggleFeatures = () => {
   showAllFeatures.value = !showAllFeatures.value;
 };
@@ -39,9 +35,9 @@ const toggleFeatures = () => {
 
 <template>
   <div
-    class="group relative rounded-2xl w-full max-w-90 h-fit bg-white dark:bg-white/3 border-2 p-8 shadow-xl"
+    class="group relative rounded-2xl w-full h-fit bg-white dark:bg-white/3 border-2 p-6 shadow-xl"
     :class="
-      props.package.id === 2
+      props.package.id === 3
         ? 'border-primary'
         : 'border-dark/20 dark:border-light/20'
     "
@@ -49,12 +45,12 @@ const toggleFeatures = () => {
     <!-- Package Header -->
     <div class="mb-6">
       <div class="flex items-end gap-2 mb-4">
-        <h3 class="text-3xl text-dark dark:text-light font-bold">
+        <h3 class="text-2xl text-dark dark:text-light font-bold">
           {{ props.package.name }}
         </h3>
         <span
-          v-if="props.package.id === 2"
-          class="py-0.5 px-2 rounded-md bg-primary text-white font-medium text-sm mb-1.5"
+          v-if="props.package.id === 3"
+          class="py-0.5 px-2 rounded-md bg-primary text-white font-medium text-xs mb-1.5"
           >Most Popular</span
         >
       </div>
@@ -62,20 +58,20 @@ const toggleFeatures = () => {
       <!-- Price -->
       <div class="relative">
         <div class="flex items-center gap-2 mb-2">
-          <span class="font-bold text-5xl text-black dark:text-white">
+          <span class="font-bold text-4xl text-black dark:text-white">
             <span class="text-sm">Rp</span>
             {{ formatRupiah(getFinalPrice) }}
           </span>
           <div
             v-if="props.package.discount"
-            class="bg-black/10 dark:bg-white/10 py-0.5 px-2 rounded-md text-dark dark:text-light font-semibold"
+            class="bg-black/10 dark:bg-white/10 py-0.5 px-2 rounded-md text-sm text-dark dark:text-light font-semibold"
           >
-            -{{ props.package.discount }}%
+            {{ props.package.discount }}% Off
           </div>
         </div>
         <div
           v-if="props.package.discount"
-          class="text-dark/60 dark:text-light/60 font-semibold"
+          class="text-dark/60 dark:text-light/60 font-semibold text-sm"
         >
           <span class="line-through"
             >Rp {{ formatRupiah(props.package.price) }}</span
@@ -87,21 +83,21 @@ const toggleFeatures = () => {
     <!-- CTA Button -->
     <a
       :href="`${dashboardAppUrl}/invitation/create/checkout/${props.package?.id}`"
-      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-4 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 transition duration-300 mb-6"
+      class="w-full group/btn relative inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-lg hover:bg-primary/80 transition duration-300 mb-6"
     >
-      <span class="relative z-10">Pilih Paket</span>
+      Pilih Paket
       <i class="bi bi-arrow-right ml-2"></i>
     </a>
 
     <!-- Features List -->
-    <transition-group name="features" tag="ul" class="space-y-2 mb-6">
+    <transition-group name="features" tag="ul" class="space-y-2 mb-4">
       <li
         v-for="(feature, index) in displayedFeatures"
         :key="`feature-${index}`"
         class="flex items-start gap-x-3"
       >
         <i class="bi bi-check2 text-xl text-primary"></i>
-        <span class="text-dark/80 dark:text-light/80">{{ feature }}</span>
+        <span class="text-dark/80 dark:text-light/80 text-sm">{{ feature }}</span>
       </li>
     </transition-group>
 

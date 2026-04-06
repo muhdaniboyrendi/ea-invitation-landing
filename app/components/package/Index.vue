@@ -3,14 +3,13 @@ const { packages } = storeToRefs(usePackageStore());
 </script>
 
 <template>
-  <section
-    id="packages"
-    class="py-20 overflow-hidden bg-light dark:bg-dark"
-  >
+  <section id="packages" class="py-20 overflow-hidden bg-light dark:bg-dark">
     <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <PackageHeader />
 
-      <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+      >
         <PackageCard
           v-for="pkg in packages"
           :key="pkg.id"
@@ -22,8 +21,6 @@ const { packages } = storeToRefs(usePackageStore());
           :duration="1000"
         />
       </div>
-
-      <PackageAdditionalInfo />
     </div>
   </section>
 </template>

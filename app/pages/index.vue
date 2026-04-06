@@ -28,7 +28,7 @@ useSchemaOrg([
     operatingSystem: "Web",
     offers: {
       "@type": "Offer",
-      price: "100000",
+      price: "0",
       priceCurrency: "IDR",
     },
   }),

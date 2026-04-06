@@ -32,7 +32,7 @@ const { packages } = storeToRefs(usePackageStore());
         </p>
       </div>
 
-      <div class="flex flex-wrap justify-center gap-4 mb-10">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2">
         <PackageCard
           v-for="pkg in packages"
           :key="pkg.id"
@@ -44,8 +44,6 @@ const { packages } = storeToRefs(usePackageStore());
           :duration="1000"
         />
       </div>
-
-      <PackageAdditionalInfo />
     </div>
   </section>
 </template>

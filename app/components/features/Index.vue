@@ -3,7 +3,7 @@
     id="features"
     class="relative py-20 overflow-hidden bg-light dark:bg-dark"
   >
-    <div class="relative z-10 max-w-7xl mx-auto px-4 lg:px-6">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
       <!-- Section Header -->
       <div class="text-center mb-10">
         <!-- Main Title -->
