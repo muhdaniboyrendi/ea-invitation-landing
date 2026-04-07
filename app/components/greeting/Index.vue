@@ -11,7 +11,7 @@
           :initial="{ opacity: 0, x: -100 }"
           :visible-once="{ opacity: 1, x: 0 }"
           :duration="1000"
-          class="md:col-span-2 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col justify-between"
+          class="md:col-span-2 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
         >
           <div
             class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -35,7 +35,7 @@
           :visible-once="{ opacity: 1, x: 0 }"
           :delay="200"
           :duration="1000"
-          class="md:col-span-4 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col justify-between"
+          class="md:col-span-4 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
         >
           <div
             class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -46,19 +46,44 @@
             <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
               Anti-mainstream Design
             </h2>
-            <p class="text-dark/70 dark:text-light/50 max-w-lg">
+            <p class="text-dark/70 dark:text-light/50 max-w-xl">
               Rasakan desain undangan yang unik dan berbeda dari yang lain.
             </p>
           </div>
         </div>
 
-        <!-- Card 3 - Limitless (lebar 4 kolom) -->
+        <!-- Card 3 - Dashboard Analytics -->
         <div
           v-motion
           :initial="{ opacity: 0, x: -100 }"
           :visible-once="{ opacity: 1, x: 0 }"
+          :delay="200"
           :duration="1000"
-          class="md:col-span-6 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col justify-between"
+          class="md:col-span-4 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+        >
+          <div
+            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+          >
+            <i class="bi bi-graph-up-arrow text-primary text-xl"></i>
+          </div>
+          <div>
+            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
+              Dashboard Analtylics
+            </h2>
+            <p class="text-dark/70 dark:text-light/50 max-w-xl">
+              Pantau performa undangan Anda dengan dashboard analytics yang
+              lengkap.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 - Limitless (lebar 4 kolom) -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: 100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :duration="1000"
+          class="md:col-span-2 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
         >
           <div
             class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -69,7 +94,7 @@
             <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
               Limitless
             </h2>
-            <p class="text-dark/70 dark:text-light/50 max-w-lg">
+            <p class="text-dark/70 dark:text-light/50 max-w-xl">
               Edit konten undangan dan ubah tema kapanpun anda mau.
             </p>
           </div>

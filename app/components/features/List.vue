@@ -56,10 +56,10 @@ const features3 = [
     icon: "bi-chat-heart-fill",
   },
   {
-    title: "Dashboard Analytics",
+    title: "Import Kontak",
     description:
-      "Fitur analitik yang memberikan wawasan mendalam tentang perilaku tamu, statistik undangan, dan metrik kinerja acara secara real-time.",
-    icon: "bi-graph-up-arrow",
+      "Fitur untuk mengimpor kontak tamu dari perangkat anda secara massal, tanpa perlu memasukkan satu per satu.",
+    icon: "bi-journal-arrow-up",
   },
 ];
 </script>
