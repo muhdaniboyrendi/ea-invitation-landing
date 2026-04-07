@@ -8,7 +8,7 @@ export const usePackageStore = defineStore("package", () => {
       features: [
         "10 tamu undangan",
         "Akses tema standar",
-        "4 foto galeri (max)",
+        "2 foto galeri (max)",
         "Import kontak",
         "Informasi acara",
         "Timer countdown",
@@ -17,16 +17,16 @@ export const usePackageStore = defineStore("package", () => {
         "Story",
         "RSVP",
         "Ucapan tamu",
-        "3 hari masa aktif",
+        "7 hari masa aktif",
       ],
     },
     {
       id: 2,
       name: "Economy",
       price: "100000.00",
-      discount: null,
+      discount: 10,
       features: [
-        "100 tamu undangan + grup",
+        "250 tamu undangan + grup",
         "Akses tema standar",
         "4 foto galeri (max)",
         "Background musik (list)",
@@ -47,7 +47,7 @@ export const usePackageStore = defineStore("package", () => {
       price: "200000.00",
       discount: 25,
       features: [
-        "500 tamu undangan + grup",
+        "1000 tamu undangan + grup",
         "Akses tema premium",
         "10 foto galeri (max)",
         "1 video",
@@ -70,7 +70,7 @@ export const usePackageStore = defineStore("package", () => {
       price: "300000.00",
       discount: 15,
       features: [
-        "2000 tamu undangan + grup",
+        "Unlimited tamu undangan + grup",
         "Akses tema premium",
         "20 foto galeri (max)",
         "5 video (max)",
@@ -84,7 +84,7 @@ export const usePackageStore = defineStore("package", () => {
         "Story",
         "RSVP",
         "Ucapan tamu",
-        "6 bulan masa aktif",
+        "1 tahun masa aktif",
       ],
     },
   ]);

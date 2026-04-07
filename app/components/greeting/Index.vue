@@ -10,21 +10,26 @@
           v-motion
           :initial="{ opacity: 0, x: -100 }"
           :visible-once="{ opacity: 1, x: 0 }"
+          :delay="200"
           :duration="1000"
-          class="md:col-span-2 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+          class="md:col-span-2"
         >
           <div
-            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
           >
-            <i class="bi bi-lightning-charge text-primary text-xl"></i>
-          </div>
-          <div>
-            <h2 class="text-xl font-semibold text-black dark:text-white mb-3">
-              Instant
-            </h2>
-            <p class="text-dark/70 dark:text-light/50">
-              Undangan langsung jadi, tanpa menunggu, dan langsung bagikan.
-            </p>
+            <div
+              class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            >
+              <i class="bi bi-lightning-charge text-primary text-xl"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-semibold text-black dark:text-white mb-3">
+                Instant
+              </h2>
+              <p class="text-dark/70 dark:text-light/50">
+                Undangan langsung jadi, tanpa menunggu, dan langsung bagikan.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -35,20 +40,26 @@
           :visible-once="{ opacity: 1, x: 0 }"
           :delay="200"
           :duration="1000"
-          class="md:col-span-4 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+          class="md:col-span-4"
         >
           <div
-            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
           >
-            <i class="bi bi-layers text-primary text-xl"></i>
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
-              Anti-mainstream Design
-            </h2>
-            <p class="text-dark/70 dark:text-light/50 max-w-xl">
-              Rasakan desain undangan yang unik dan berbeda dari yang lain.
-            </p>
+            <div
+              class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            >
+              <i class="bi bi-layers text-primary text-xl"></i>
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-semibold text-black dark:text-white mb-3"
+              >
+                Anti-mainstream Design
+              </h2>
+              <p class="text-dark/70 dark:text-light/50 max-w-xl">
+                Rasakan desain undangan yang unik dan berbeda dari yang lain.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -59,21 +70,27 @@
           :visible-once="{ opacity: 1, x: 0 }"
           :delay="200"
           :duration="1000"
-          class="md:col-span-4 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+          class="md:col-span-4"
         >
           <div
-            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
           >
-            <i class="bi bi-graph-up-arrow text-primary text-xl"></i>
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
-              Dashboard Analtylics
-            </h2>
-            <p class="text-dark/70 dark:text-light/50 max-w-xl">
-              Pantau performa undangan Anda dengan dashboard analytics yang
-              lengkap.
-            </p>
+            <div
+              class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            >
+              <i class="bi bi-graph-up-arrow text-primary text-xl"></i>
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-semibold text-black dark:text-white mb-3"
+              >
+                Dashboard Analytics
+              </h2>
+              <p class="text-dark/70 dark:text-light/50 max-w-xl">
+                Pantau performa undangan Anda dengan dashboard analytics yang
+                lengkap.
+              </p>
+            </div>
           </div>
         </div>
 
@@ -82,21 +99,28 @@
           v-motion
           :initial="{ opacity: 0, x: 100 }"
           :visible-once="{ opacity: 1, x: 0 }"
+          :delay="200"
           :duration="1000"
-          class="md:col-span-2 rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+          class="md:col-span-2"
         >
           <div
-            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
           >
-            <i class="bi bi-sliders2 text-primary text-xl"></i>
-          </div>
-          <div>
-            <h2 class="text-2xl font-semibold text-black dark:text-white mb-3">
-              Limitless
-            </h2>
-            <p class="text-dark/70 dark:text-light/50 max-w-xl">
-              Edit konten undangan dan ubah tema kapanpun anda mau.
-            </p>
+            <div
+              class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
+            >
+              <i class="bi bi-sliders2 text-primary text-xl"></i>
+            </div>
+            <div>
+              <h2
+                class="text-2xl font-semibold text-black dark:text-white mb-3"
+              >
+                Limitless
+              </h2>
+              <p class="text-dark/70 dark:text-light/50 max-w-xl">
+                Edit konten undangan dan ubah tema kapanpun anda mau.
+              </p>
+            </div>
           </div>
         </div>
       </div>

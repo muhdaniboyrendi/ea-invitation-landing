@@ -11,7 +11,7 @@ const themeUrl = config.public.themeUrl;
     :initial="{ opacity: 0, y: 100 }"
     :visible-once="{ opacity: 1, y: 0 }"
     :duration="1000"
-    class="group relative w-full max-w-xs"
+    class="group relative w-full"
   >
     <!-- Theme Card -->
     <div

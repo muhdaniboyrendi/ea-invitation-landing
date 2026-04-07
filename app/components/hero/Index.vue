@@ -30,7 +30,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :enter="{ opacity: 1, x: 0 }"
           :delay="200"
           :duration="1000"
-          class="md:text-xl lg:text-xl text-black/80 dark:text-white/60 mb-6 md:mb-8 font-medium text-balance"
+          class="md:text-xl lg:text-xl text-black/70 dark:text-white/60 mb-6 md:mb-8 font-medium text-balance"
         >
           Buat undangan pernikahan digital berbasis web dengan berbagai tema
           modern dan interaktif serta fitur lengkap
@@ -42,7 +42,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :enter="{ opacity: 1, x: 0 }"
           :delay="400"
           :duration="1000"
-          class="flex flex-row gap-2"
+          class="flex flex-row gap-2 mb-4"
         >
           <a
             :href="dashboardAppUrl + '/login'"
@@ -60,6 +60,12 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
             <i class="bi bi-play-circle ml-1"></i>
           </NuxtLink>
         </div>
+
+        <span
+          class="py-1 px-4 rounded-full bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black/60 dark:text-white/60 text-xs"
+        >
+          Coba sekarang, Gratis!
+        </span>
       </div>
 
       <!-- Right Content -->

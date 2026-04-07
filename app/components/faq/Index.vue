@@ -4,9 +4,6 @@ const openIndex = ref(null);
 const faqs = [
   {
     category: "Umum",
-    color: "from-cyan-400 to-blue-600",
-    glowColor: "from-cyan-400/30 to-blue-600/30",
-    bgGradient: "from-cyan-950/90 to-blue-900/90",
     questions: [
       {
         q: "Apa itu undangan pernikahan digital?",
@@ -24,9 +21,6 @@ const faqs = [
   },
   {
     category: "Fitur & Teknis",
-    color: "from-purple-400 to-pink-600",
-    glowColor: "from-purple-400/30 to-pink-600/30",
-    bgGradient: "from-purple-950/90 to-pink-900/90",
     questions: [
       {
         q: "Apakah undangan bisa diakses tanpa internet?",
@@ -44,13 +38,10 @@ const faqs = [
   },
   {
     category: "Pembayaran & Paket",
-    color: "from-amber-400 to-orange-600",
-    glowColor: "from-amber-400/30 to-orange-600/30",
-    bgGradient: "from-amber-950/90 to-orange-900/90",
     questions: [
       {
         q: "Apa saja paket yang tersedia?",
-        a: "Kami menyediakan 3 paket: Basic (fitur standar), Premium (fitur lengkap + custom design), dan Business (semua fitur + video cinematic + unlimited guest). Detail lengkap tersedia di halaman pricing.",
+        a: "Kami menyediakan 4 paket: Free (fitur dasar), Basic (fitur standar), Premium (fitur lengkap + tema premium), dan Business (semua fitur + unlimited guest). Detail lengkap tersedia di halaman pricing.",
       },
       {
         q: "Bagaimana metode pembayaran?",
@@ -58,15 +49,12 @@ const faqs = [
       },
       {
         q: "Apakah ada biaya tambahan?",
-        a: "Ada biaya admin sebesar Rp 2.500 untuk setiap transaksi, selain itu tidak ada biaya tambahan sama sekali.",
+        a: "Ada biaya admin untuk setiap transaksi dengan besaran yang berbeda tergantung metode pembayaran yang dipilih, selain itu tidak ada biaya tambahan sama sekali.",
       },
     ],
   },
   {
     category: "Support & Maintenance",
-    color: "from-emerald-400 to-teal-600",
-    glowColor: "from-emerald-400/30 to-teal-600/30",
-    bgGradient: "from-emerald-950/90 to-teal-900/90",
     questions: [
       {
         q: "Bagaimana jika ada masalah teknis?",

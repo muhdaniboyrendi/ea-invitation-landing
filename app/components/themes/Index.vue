@@ -56,53 +56,71 @@ const getThemeCount = (categoryId) => {
         class="flex gap-2 mb-10 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap md:justify-center px-4 md:px-0 -mx-4 md:mx-0 scrollbar-none pb-1 md:pb-0"
       >
         <!-- Semua Tema — key unik dengan prefix string agar tidak bentrok dengan category.id -->
-        <button
-          key="cat-all"
-          @click="activeCategory = 'all'"
-          type="button"
-          class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-lg font-medium cursor-pointer hover:-translate-y-0.5 transition-all duration-300"
-          :class="
-            activeCategory === 'all'
-              ? 'bg-primary text-white'
-              : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
-          "
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :enter="{ opacity: 1, y: 0 }"
+          :duration="1000"
+          class="shrink-0"
         >
-          <span class="flex items-center text-sm">
-            Semua Tema
-            <span
-              class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
-            >
-              {{ getThemeCount("all") }}
+          <button
+            key="cat-all"
+            @click="activeCategory = 'all'"
+            type="button"
+            class="px-4 py-2 border border-black/20 dark:border-white/20 rounded-lg font-medium shadow-lg cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+            :class="
+              activeCategory === 'all'
+                ? 'bg-primary text-white'
+                : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
+            "
+          >
+            <span class="flex items-center text-sm">
+              Semua Tema
+              <span
+                class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
+              >
+                {{ getThemeCount("all") }}
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
+        </div>
 
         <!-- Gunakan category.id sebagai key, bukan index, agar tidak ada duplikat -->
-        <button
-          v-for="category in categories"
+        <div
+          v-for="(category, index) in categories"
           :key="`cat-${category.id}`"
-          @click="activeCategory = category.id"
-          type="button"
-          class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-lg font-medium cursor-pointer hover:-translate-y-0.5 transition-all duration-300"
-          :class="
-            activeCategory === category.id
-              ? 'bg-primary text-white'
-              : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
-          "
+          v-motion
+          :initial="{ opacity: 0, y: 50 }"
+          :enter="{ opacity: 1, y: 0 }"
+          :delay="index * 200"
+          :duration="1000"
         >
-          <span class="flex items-center text-sm">
-            {{ category.name }}
-            <span
-              class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
-            >
-              {{ getThemeCount(category.id) }}
+          <button
+            @click="activeCategory = category.id"
+            type="button"
+            class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-lg font-medium shadow-lg cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+            :class="
+              activeCategory === category.id
+                ? 'bg-primary text-white'
+                : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
+            "
+          >
+            <span class="flex items-center text-sm">
+              {{ category.name }}
+              <span
+                class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
+              >
+                {{ getThemeCount(category.id) }}
+              </span>
             </span>
-          </span>
-        </button>
+          </button>
+        </div>
       </div>
 
       <!-- Themes Grid -->
-      <div class="flex flex-wrap justify-center gap-8">
+      <div
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
+      >
         <ThemesCard
           v-for="theme in filteredThemes"
           :key="theme.id"
