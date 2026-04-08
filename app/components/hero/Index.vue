@@ -42,19 +42,19 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :enter="{ opacity: 1, x: 0 }"
           :delay="400"
           :duration="1000"
-          class="flex flex-row gap-2 mb-4"
+          class="flex flex-wrap gap-2 mb-4"
         >
           <a
             :href="dashboardAppUrl + '/login'"
             rel="external"
-            class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light font-bold rounded-lg active:scale-95 transition duration-300"
+            class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light font-bold rounded-lg shrink-0 active:scale-95 transition duration-300"
           >
             Buat Sekarang Gratis
           </a>
 
           <NuxtLink
             to="/tutorial"
-            class="py-3 px-8 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
+            class="py-3 px-8 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
           >
             Tutorial
             <i class="bi bi-play-circle ml-1"></i>

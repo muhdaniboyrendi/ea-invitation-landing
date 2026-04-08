@@ -1,40 +1,15 @@
 <script setup>
 const stats = [
-  { value: "500+", label: "Undangan Dibuat" },
-  { value: "97%", label: "Kepuasan Pengguna" },
+  { value: "100+", label: "Undangan Dibuat" },
+  { value: "96%", label: "Kepuasan Pengguna" },
   { value: "4.9", label: "Rating Rata-rata", star: true },
-  { value: "7.000+", label: "Tamu Diundang" },
+  { value: "700+", label: "Tamu Diundang" },
 ];
 </script>
 
 <template>
   <section class="py-20 bg-light dark:bg-dark">
     <div class="mx-auto max-w-7xl px-4 lg:px-6">
-      <!-- Section Header -->
-      <div class="text-center mb-10">
-        <!-- Main Title -->
-        <h2
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide"
-        >
-          Mengapa EA Invitation?
-        </h2>
-
-        <!-- Description -->
-        <p
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="text-xl lg:text-2xl text-black/60 dark:text-white/60 max-w-4xl mx-auto leading-relaxed"
-        >
-          EA Invitation telah dipercaya oleh ribuan pasangan untuk membuat
-          undangan pernikahan digital yang indah dan berkesan.
-        </p>
-      </div>
 
       <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-10">
         <div
