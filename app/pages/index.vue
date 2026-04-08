@@ -39,9 +39,10 @@ useSchemaOrg([
   <NuxtLayout>
     <Hero />
     <Greeting />
+    <SocialProof />
     <Features />
-    <Package />
     <ThemesHome />
+    <Package />
     <Faq />
   </NuxtLayout>
 </template>
