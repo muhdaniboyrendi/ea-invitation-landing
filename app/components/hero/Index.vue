@@ -9,7 +9,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
   <section id="home" class="relative overflow-hidden bg-light dark:bg-dark">
     <!-- Hero Section Part 1 -->
     <div
-      class="relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-y-10 pt-30 md:pt-40 pb-20"
+      class="relative w-full max-w-7xl mx-auto flex flex-col md:flex-row items-center pt-30 md:pt-40 pb-5 lg:pb-20"
     >
       <!-- Left Content -->
       <div class="w-full px-4 lg:pl-6 lg:pr-0">
@@ -69,7 +69,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         :enter="{ opacity: 1, x: 0 }"
         :delay="600"
         :duration="1000"
-        class="w-full max-w-110 px-4 lg:pr-6 lg:pl-0 flex justify-end items-center"
+        class="hidden lg:block w-full max-w-110 px-4 lg:pr-6 lg:pl-0 flex justify-end items-center"
       >
         <div
           class="w-full max-w-200 aspect-square rounded-2xl flex justify-center items-center overflow-hidden"

@@ -11,8 +11,8 @@ const isDark = computed(() => colorMode.value === "dark");
 const navigation = [
   { name: "Beranda", href: "/#home" },
   { name: "Fitur", href: "/#features" },
-  { name: "Harga", href: "/#packages" },
   { name: "Tema", href: "/#themes" },
+  { name: "Harga", href: "/#packages" },
   { name: "Tutorial", href: "/tutorial" },
 ];
 
