@@ -20,8 +20,8 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :duration="1000"
           class="relative max-w-4xl mx-auto text-5xl/14 sm:text-6xl/18 md:text-7xl/20 font-bold mb-4 md:mb-8 text-black dark:text-white text-balance tracking-wide"
         >
-          <span class="text-primary"> Undangan </span>
-          Pernikahan Digital
+          Undangan Pernikahan
+          <span class="text-primary"> Anti-Mainstream </span>
         </h1>
 
         <p
@@ -32,8 +32,9 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :duration="1000"
           class="md:text-xl lg:text-xl text-black/70 dark:text-white/60 mb-6 md:mb-8 font-medium text-balance"
         >
-          Buat undangan pernikahan digital berbasis web dalam hitungan menit
-          dengan berbagai tema modern dan interaktif.
+          Pilih dari tema unik yang tidak ada di tempat lain — dari Instagram
+          vibes sampai estetika Jawa modern. Dibuat dalam menit, dibagikan lewat
+          satu link.
         </p>
 
         <div
@@ -42,22 +43,22 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :enter="{ opacity: 1, x: 0 }"
           :delay="400"
           :duration="1000"
-          class="flex flex-wrap gap-2 mb-4"
+          class="flex flex-wrap gap-2 mb-5"
         >
           <a
             :href="dashboardAppUrl + '/login'"
             rel="external"
             class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light font-bold rounded-lg shrink-0 active:scale-95 transition duration-300"
           >
-            Buat Sekarang Gratis
+            Coba Gratis Sekarang
           </a>
 
           <NuxtLink
-            to="/tutorial"
+            to="/#themes"
             class="py-3 px-8 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-black dark:text-white font-semibold rounded-lg shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
           >
-            Tutorial
-            <i class="bi bi-play-circle ml-1"></i>
+            Lihat Semua Tema
+            <i class="bi bi-arrow-right ml-1"></i>
           </NuxtLink>
         </div>
       </div>
