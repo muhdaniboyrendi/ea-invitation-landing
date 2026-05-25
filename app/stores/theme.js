@@ -55,7 +55,7 @@ export const useThemeStore = defineStore("theme", () => {
       },
     },
     {
-      id: 2,
+      id: 4,
       theme_category_id: 2,
       name: "Windows 11",
       slug: "windows-11",
@@ -67,6 +67,24 @@ export const useThemeStore = defineStore("theme", () => {
       theme_category: {
         id: 2,
         name: "Modern",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
+    {
+      id: 5,
+      theme_category_id: 1,
+      name: "Newspaper",
+      slug: "newspaper",
+      thumbnail: "/img/themes/newspaper.webp",
+      is_premium: false,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url: "/img/themes/newspaper.webp",
+      theme_category: {
+        id: 1,
+        name: "Basic",
         description: null,
         created_at: "2026-01-06T03:45:06.000000Z",
         updated_at: "2026-01-06T03:45:06.000000Z",
