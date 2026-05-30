@@ -70,7 +70,7 @@ const closeMobile = () => {
                 >
                   <NuxtLink
                     :to="item.href"
-                    class="relative px-3 py-2 text-sm font-semibold text-black/60 dark:text-white/60 hover:text-primary transition-all duration-300 group"
+                    class="relative px-3 py-2 text-sm font-semibold text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-all duration-300 group"
                   >
                     {{ item.name }}
                     <span
@@ -171,7 +171,7 @@ const closeMobile = () => {
               <NuxtLink
                 @click="closeMobile"
                 :to="item.href"
-                class="block px-4 py-3 text-base font-medium text-black/60 dark:text-white/60 hover:text-primary hover:bg-dark/5 dark:hover:bg-light/5 rounded-xl transition-all duration-300"
+                class="block px-4 py-3 text-base font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-dark/5 dark:hover:bg-light/5 rounded-xl transition-all duration-300"
               >
                 {{ item.name }}
               </NuxtLink>

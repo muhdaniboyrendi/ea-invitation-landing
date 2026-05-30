@@ -29,7 +29,7 @@ const socialList = [
         <a
           href="mailto:erlanazrdev@gmail.com"
           target="_blank"
-          class="flex items-center text-black/70 dark:text-white/70 hover:underline"
+          class="flex items-center text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:underline"
         >
           <i class="bi bi-envelope mr-2 text-primary"></i>
           <span>erlanazrdev@gmail.com</span>
@@ -37,7 +37,7 @@ const socialList = [
         <a
           href="https://wa.me/6282220633024"
           target="_blank"
-          class="flex items-center text-black/70 dark:text-white/70 hover:underline"
+          class="flex items-center text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:underline"
         >
           <i class="bi bi-telephone mr-2 text-primary"></i>
           <span>+62 822-2063-3024</span>
