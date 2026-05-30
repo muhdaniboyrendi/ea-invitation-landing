@@ -20,7 +20,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
           :duration="1000"
           class="relative max-w-4xl mx-auto text-5xl/14 sm:text-6xl/18 md:text-7xl/20 font-bold mb-4 md:mb-8 text-black dark:text-white text-balance tracking-wide"
         >
-          Undangan Pernikahan
+          Undangan Digtal
           <span class="text-primary"> Anti-Mainstream </span>
         </h1>
 
