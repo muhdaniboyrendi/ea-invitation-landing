@@ -1,10 +1,79 @@
 <template>
-  <section id="greeting" class="py-20 overflow-hidden bg-light dark:bg-dark">
-    <div class="px-4 md:px-6">
+  <section id="greeting" class="py-16 overflow-hidden bg-light dark:bg-dark">
+    <div class="px-4">
+      <p class="text-primary text-sm font-bold uppercase tracking-wide mb-4">
+        Mengapa EA Invitation?
+      </p>
+
+      <h2
+        class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
+      >
+        Dibuat untuk pasangan masa kini.
+      </h2>
+
+      <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14">
+        EA Invitation merupakan sebuah platform undangan digital modern yang
+        membawa desain undangan yang berbeda yang belum pernah ada sebelumnya.
+      </p>
+    </div>
+
+    <div class="md:px-4">
       <!-- Bento Grid -->
       <div
-        class="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-4 max-w-7xl mx-auto mb-10"
+        class="bg-black/10 dark:bg-white/10 p-2 grid grid-cols-1 md:grid-cols-6 gap-2 max-w-7xl mx-auto mb-10"
       >
+        <!-- Card 1 - Instant (lebar 2 kolom, tinggi normal) -->
+        <div
+          v-motion
+          :initial="{ opacity: 0, x: -100 }"
+          :visible-once="{ opacity: 1, x: 0 }"
+          :delay="200"
+          :duration="1000"
+          class="md:col-span-6"
+        >
+          <div
+            class="rounded-2xl bg-off-white dark:bg-dark p-2 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col h transition-all duration-300"
+          >
+            <div
+              class="p-6 md:p-12 mb-4 flex flex-col md:flex-row md:items-center gap-8"
+            >
+              <i class="bi bi-layers text-black dark:text-white text-7xl"></i>
+
+              <div>
+                <h3
+                  class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
+                >
+                  Anti-mainstream design
+                </h3>
+
+                <p class="max-w-2xl text-black/60 dark:text-white/60">
+                  Rasakan tema undangan dengan desain yang unik dan belum pernah
+                  terbayangkan sebelumnya
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="rounded-lg border border-black/10 dark:border-white/10 bg-black/3 dark:bg-white/3"
+            >
+              <div
+                class="bg-off-white dark:bg-dark mt-3 mx-3 md:mt-6 md:mx-6 rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10"
+              >
+                <div class="p-2">
+                  <NuxtImg
+                    src="/img/themes/instagram.webp"
+                    width="400"
+                    quality="80"
+                    loading="lazy"
+                    placeholder
+                    class="w-full max-w-md rounded-lg border border--black/10 dark:border-white/10 mask-b-from-60% mask-b-to-100%"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Card 1 - Instant (lebar 2 kolom, tinggi normal) -->
         <div
           v-motion
@@ -15,7 +84,7 @@
           class="md:col-span-2"
         >
           <div
-            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+            class="rounded-2xl bg-off-white dark:bg-dark p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col h transition-all duration-300"
           >
             <div
               class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -43,7 +112,7 @@
           class="md:col-span-4"
         >
           <div
-            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+            class="rounded-2xl bg-off-white dark:bg-dark p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col h transition-all duration-300"
           >
             <div
               class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -73,7 +142,7 @@
           class="md:col-span-4"
         >
           <div
-            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+            class="rounded-2xl bg-off-white dark:bg-dark p-6 md:p-10 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col h transition-all duration-300"
           >
             <div
               class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"
@@ -104,7 +173,7 @@
           class="md:col-span-2"
         >
           <div
-            class="rounded-2xl bg-white dark:bg-white/3 p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col hover:scale-102 transition-all duration-300"
+            class="rounded-2xl bg-off-white dark:bg-dark p-6 md:p-8 border border-dark/20 dark:border-light/20 shadow-xl flex flex-col h transition-all duration-300"
           >
             <div
               class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center mb-4 md:mb-6"

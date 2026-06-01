@@ -36,7 +36,7 @@ const closeMobile = () => {
     <div
       class="backdrop-blur-md bg-white/70 dark:bg-black/70 border-b border-black/20 dark:border-white/20"
     >
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto px-4 md:px-6">
         <div class="flex items-center justify-between h-16">
           <NuxtLink to="/" class="block w-40 h-10" aria-label="EA Invitation">
             <NuxtImg
@@ -60,9 +60,9 @@ const closeMobile = () => {
           </NuxtLink>
 
           <!-- Desktop Navigation -->
-          <div class="hidden md:block">
-            <nav>
-              <ul class="ml-10 flex items-baseline space-x-6">
+          <div class="flex items-center gap-6">
+            <nav class="hidden md:block">
+              <ul class="flex items-baseline space-x-6">
                 <li
                   v-for="item in navigation"
                   :key="item.name"
@@ -70,47 +70,19 @@ const closeMobile = () => {
                 >
                   <NuxtLink
                     :to="item.href"
-                    class="relative px-3 py-2 text-sm font-semibold text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white transition-all duration-300 group"
+                    class="relative text-sm font-semibold text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white transition-all duration-300 group"
                   >
                     {{ item.name }}
-                    <span
-                      class="absolute inset-x-0 bottom-0 h-0.5 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"
-                    ></span>
                   </NuxtLink>
                 </li>
               </ul>
             </nav>
-          </div>
-
-          <!-- Right Side Actions -->
-          <div class="flex items-center space-x-2">
-            <!-- Theme Toggle with ClientOnly -->
-            <ClientOnly>
-              <button
-                @click="toggleTheme"
-                title="Theme preferences"
-                aria-label="Theme preferences button"
-                class="h-10 aspect-square cursor-pointer"
-              >
-                <i v-if="isDark" class="bi bi-sun-fill text-yellow-500"></i>
-                <i
-                  v-else
-                  class="bi bi-moon-fill text-black/60 hover:text-black"
-                ></i>
-              </button>
-              <template #fallback>
-                <!-- Placeholder untuk server-side rendering -->
-                <div
-                  class="h-10 aspect-square rounded-md bg-dark/5 border border-light/10 flex items-center justify-center"
-                ></div>
-              </template>
-            </ClientOnly>
 
             <!-- CTA Button -->
             <a
               :href="dashboardAppUrl + '/login'"
               rel="external"
-              class="hidden lg:inline-flex items-center px-6 py-2.5 bg-primary hover:bg-primary/80 text-light text-sm font-semibold rounded-lg transition duration-300 active:scale-95"
+              class="hidden md:block px-5 py-1.5 bg-primary hover:bg-primary/80 text-light text-sm font-semibold rounded-full transition duration-300 active:scale-95"
             >
               Login
             </a>
@@ -119,10 +91,12 @@ const closeMobile = () => {
             <button
               @click="toggleMobile"
               type="button"
-              class="md:hidden p-2 rounded-md transition-all duration-300"
+              aria-label="Open menu"
+              title="Open menu"
+              class="md:hidden p-2 rounded-md transition-all duration-300 cursor-pointer group"
             >
               <svg
-                class="w-6 h-6 text-black/60 dark:text-white/60 hover:text-dark dark:hover:text-light"
+                class="w-6 h-6 text-black/60 dark:text-white/60 group-hover:text-dark dark:group-hover:text-light"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -171,7 +145,7 @@ const closeMobile = () => {
               <NuxtLink
                 @click="closeMobile"
                 :to="item.href"
-                class="block px-4 py-3 text-base font-medium text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white hover:bg-dark/5 dark:hover:bg-light/5 rounded-xl transition-all duration-300"
+                class="block px-4 py-3 text-base font-medium text-black/70 dark:text-white/70 hover:text-black dark:hover:text-white hover:bg-dark/5 dark:hover:bg-light/5 transition-all duration-300"
               >
                 {{ item.name }}
               </NuxtLink>
@@ -182,7 +156,7 @@ const closeMobile = () => {
             <a
               :href="dashboardAppUrl + '/login'"
               rel="external"
-              class="w-full flex items-center justify-center px-4 py-3 bg-primary hover:bg-primary/80 active:scale-95 text-light text-base font-semibold rounded-lg transition-all duration-300"
+              class="w-full flex items-center justify-center px-4 py-3 bg-primary hover:bg-primary/80 active:scale-95 text-light text-base font-semibold rounded-full transition-all duration-300"
             >
               Login
             </a>
