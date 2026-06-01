@@ -1,14 +1,70 @@
 <script setup>
+import { ref, computed } from "vue";
+import {
+  useIntersectionObserver,
+  useTransition,
+  TransitionPresets,
+} from "@vueuse/core";
+
+// Parse stat value into numeric + suffix
+function parseStatValue(raw) {
+  const match = String(raw).match(/^([\d.]+)(\D*)$/);
+  if (!match) return { numeric: 0, suffix: raw };
+  return { numeric: parseFloat(match[1]), suffix: match[2] };
+}
+
 const stats = [
-  { value: "100+", label: "Undangan Eksklusif Dibuat" },
+  { value: "1000+", label: "Undangan Eksklusif Dibuat" },
   { value: "96%", label: "Tingkat Kepuasan Pasangan" },
   { value: "4.9", label: "Rating Rata-rata Platform", star: true },
-  { value: "700+", label: "Tamu Undangan Terhubung" }, // Diubah ke 'k' agar skala marketing terasa lebih masif & premium
+  { value: "15000+", label: "Tamu Undangan Terhubung" },
 ];
+
+// Setup per-stat animation state
+const sectionRef = ref(null);
+const hasAnimated = ref(false);
+
+const animatedStats = stats.map((stat) => {
+  const parsed = parseStatValue(stat.value);
+  const source = ref(0);
+  const output = useTransition(source, {
+    duration: 2400,
+    transition: [0.05, 0.9, 0.1, 1.0],
+  });
+
+  const display = computed(() => {
+    const val = output.value;
+    // Preserve decimal for values like 4.9
+    const formatted =
+      parsed.numeric % 1 !== 0
+        ? val.toFixed(1)
+        : Math.floor(val).toLocaleString("id-ID");
+    return formatted + parsed.suffix;
+  });
+
+  return { ...stat, source, display, target: parsed.numeric };
+});
+
+// Trigger semua animasi sekaligus saat section masuk viewport
+useIntersectionObserver(
+  sectionRef,
+  ([entry]) => {
+    if (entry.isIntersecting && !hasAnimated.value) {
+      hasAnimated.value = true;
+      animatedStats.forEach((stat) => {
+        stat.source.value = stat.target;
+      });
+    }
+  },
+  { threshold: 0.3 },
+);
 </script>
 
 <template>
-  <section class="py-20 bg-light dark:bg-dark relative overflow-hidden">
+  <section
+    ref="sectionRef"
+    class="py-16 bg-light dark:bg-dark relative overflow-hidden"
+  >
     <!-- Subtle Background Line Divider to anchor the premium design -->
     <div
       class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-black/[0.06] to-transparent dark:via-white/[0.06]"
@@ -18,7 +74,7 @@ const stats = [
       <!-- Premium Frameless Stats Layout -->
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 md:gap-x-8">
         <div
-          v-for="(stat, index) in stats"
+          v-for="(stat, index) in animatedStats"
           :key="stat.label"
           v-motion
           :initial="{ opacity: 0, y: 20 }"
@@ -38,7 +94,7 @@ const stats = [
             <span
               class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-black dark:text-white transition-all duration-300 group-hover:text-primary"
             >
-              {{ stat.value }}
+              {{ stat.display }}
             </span>
 
             <!-- Premium Minimalist Star Icon -->

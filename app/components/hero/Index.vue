@@ -11,10 +11,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       class="relative w-full max-w-7xl mx-auto pt-30 px-4 md:pt-32 pb-5 lg:pb-20"
     >
       <h1
-        v-motion
-        :initial="{ opacity: 0, x: -200 }"
-        :enter="{ opacity: 1, x: 0 }"
-        :duration="1000"
         class="max-w-4xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold md:font-medium tracking-tighter text-black dark:text-white text-balance"
       >
         Ciptakan Kesan Abadi Lewat Undangan Digital
@@ -22,11 +18,6 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       </h1>
 
       <p
-        v-motion
-        :initial="{ opacity: 0, x: -200 }"
-        :enter="{ opacity: 1, x: 0 }"
-        :delay="200"
-        :duration="1000"
         class="mt-4 md:mt-8 max-w-4xl text-base sm:text-lg md:text-xl text-black/60 dark:text-white/60 font-normal text-balance"
       >
         Sistem tema premium terkurasi untuk pasangan modern. Menghadirkan
@@ -34,14 +25,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         hitungan menit.
       </p>
 
-      <div
-        v-motion
-        :initial="{ opacity: 0, x: -200 }"
-        :enter="{ opacity: 1, x: 0 }"
-        :delay="400"
-        :duration="1000"
-        class="flex flex-col sm:flex-row text-center gap-2 mt-10"
-      >
+      <div class="flex flex-col sm:flex-row text-center gap-2 mt-10">
         <a
           :href="dashboardAppUrl + '/login'"
           rel="external"
