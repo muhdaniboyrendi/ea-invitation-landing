@@ -11,7 +11,7 @@
         Dibuat untuk pasangan masa kini.
       </h2>
 
-      <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14">
+      <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium mb-14">
         EA Invitation merupakan sebuah platform undangan digital modern yang
         membawa desain undangan yang berbeda yang belum pernah ada sebelumnya.
       </p>

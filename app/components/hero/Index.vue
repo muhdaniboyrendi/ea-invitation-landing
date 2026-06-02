@@ -18,7 +18,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
       </h1>
 
       <p
-        class="mt-4 md:mt-8 max-w-4xl text-base sm:text-lg md:text-xl text-black/60 dark:text-white/60 font-normal text-balance"
+        class="mt-4 md:mt-8 max-w-4xl text-lg md:text-xl text-black/60 dark:text-white/60 font-semibold text-balance"
       >
         Sistem tema premium terkurasi untuk pasangan modern. Menghadirkan
         atmosfer sinematik, minimalis, dan teknologi mutakhir yang selesai dalam
@@ -36,7 +36,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
         <NuxtLink
           to="/#themes"
-          class="py-3 px-8 text-black dark:text-white font-semibold rounded-full shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
+          class="py-3 px-8 text-black dark:text-white font-bold rounded-full shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
         >
           Lihat Tema Eksklusif
           <i class="bi bi-arrow-right ml-1"></i>

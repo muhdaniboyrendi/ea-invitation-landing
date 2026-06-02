@@ -28,7 +28,7 @@ const animatedStats = stats.map((stat) => {
   const parsed = parseStatValue(stat.value);
   const source = ref(0);
   const output = useTransition(source, {
-    duration: 2400,
+    duration: 3000,
     transition: [0.05, 0.9, 0.1, 1.0],
   });
 
@@ -65,64 +65,47 @@ useIntersectionObserver(
     ref="sectionRef"
     class="py-16 bg-light dark:bg-dark relative overflow-hidden"
   >
-    <!-- Subtle Background Line Divider to anchor the premium design -->
-    <div
-      class="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-black/[0.06] to-transparent dark:via-white/[0.06]"
-    ></div>
+    <div class="px-4">
+      <p class="text-primary text-sm font-bold uppercase tracking-wide mb-4">
+        Pengguna
+      </p>
 
-    <div class="mx-auto max-w-7xl px-6 relative z-10">
-      <!-- Premium Frameless Stats Layout -->
-      <div class="grid grid-cols-2 lg:grid-cols-4 gap-y-12 gap-x-4 md:gap-x-8">
-        <div
-          v-for="(stat, index) in animatedStats"
-          :key="stat.label"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :delay="index * 150"
-          :duration="800"
-          class="relative flex flex-col items-center text-center group"
-        >
-          <!-- Elegant Vertical Divider for Desktop (Except Last Item) -->
-          <div
-            v-if="index !== stats.length - 1"
-            class="hidden lg:block absolute right-[-10%] top-1/4 h-1/2 w-[1px] bg-black/[0.08] dark:bg-white/[0.08]"
-          ></div>
+      <h2
+        class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
+      >
+        Dipercaya oleh ribuan pasangan.
+      </h2>
 
-          <!-- High-End Typography Value Display -->
-          <div class="flex items-baseline justify-center gap-1.5">
-            <span
-              class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-black dark:text-white transition-all duration-300 group-hover:text-primary"
-            >
-              {{ stat.display }}
-            </span>
-
-            <!-- Premium Minimalist Star Icon -->
-            <svg
-              v-if="stat.star"
-              class="w-5 h-5 sm:w-6 sm:h-6 text-amber-400 shrink-0 transform translate-y-[-4px] sm:translate-y-[-8px]"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path
-                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
-              />
-            </svg>
-          </div>
-
-          <!-- Refined Minimalist Label -->
-          <p
-            class="mt-3 text-xs sm:text-sm font-medium tracking-wide text-black/50 dark:text-white/40 max-w-[160px] sm:max-w-none text-balance"
-          >
-            {{ stat.label }}
-          </p>
-        </div>
-      </div>
+      <p
+        class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium mb-14"
+      >
+        EA Invitation telah dipercaya oleh ribuah pasangan untuk mengundang tamu
+        untuk hari istimewa mereka.
+      </p>
     </div>
 
-    <!-- Bottom Border Line -->
-    <div
-      class="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-black/[0.06] to-transparent dark:via-white/[0.06]"
-    ></div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 md:px-4">
+      <div
+        v-for="(stat, index) in animatedStats"
+        :key="index"
+        class="relative flex flex-col items-center text-center p-2 hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+      >
+        <!-- High-End Typography Value Display -->
+        <div class="flex items-baseline justify-center gap-1.5">
+          <span
+            class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-black dark:text-white"
+          >
+            {{ stat.display }}
+          </span>
+        </div>
+
+        <!-- Refined Minimalist Label -->
+        <p
+          class="mt-3 text-xs sm:text-sm font-medium tracking-wide text-black/60 dark:text-white/60 max-w-[160px] sm:max-w-none text-balance"
+        >
+          {{ stat.label }}
+        </p>
+      </div>
+    </div>
   </section>
 </template>
