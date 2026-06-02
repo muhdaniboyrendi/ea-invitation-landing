@@ -1,10 +1,6 @@
 <script setup>
 import { ref, computed } from "vue";
-import {
-  useIntersectionObserver,
-  useTransition,
-  TransitionPresets,
-} from "@vueuse/core";
+import { useIntersectionObserver, useTransition } from "@vueuse/core";
 
 // Parse stat value into numeric + suffix
 function parseStatValue(raw) {
@@ -14,10 +10,10 @@ function parseStatValue(raw) {
 }
 
 const stats = [
-  { value: "1000+", label: "Undangan Eksklusif Dibuat" },
-  { value: "96%", label: "Tingkat Kepuasan Pasangan" },
-  { value: "4.9", label: "Rating Rata-rata Platform", star: true },
-  { value: "15000+", label: "Tamu Undangan Terhubung" },
+  { value: "1000+", label: "Kisah Cinta yang Diabadikan" },
+  { value: "96%", label: "Apresiasi Kebahagiaan Pasangan" },
+  { value: "4.9", label: "Rating Keandalan Platform", star: true },
+  { value: "15000+", label: "Tamu Kehormatan Terhubung" },
 ];
 
 // Setup per-stat animation state
@@ -34,7 +30,6 @@ const animatedStats = stats.map((stat) => {
 
   const display = computed(() => {
     const val = output.value;
-    // Preserve decimal for values like 4.9
     const formatted =
       parsed.numeric % 1 !== 0
         ? val.toFixed(1)
@@ -66,21 +61,22 @@ useIntersectionObserver(
     class="py-16 bg-light dark:bg-dark relative overflow-hidden"
   >
     <div class="px-4">
-      <p class="text-primary text-sm font-bold uppercase tracking-wide mb-4">
-        Pengguna
+      <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
+        Jejak Langkah Kami
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Dipercaya oleh ribuan pasangan.
+        Dipercaya Merayakan Momen Terindah
       </h2>
 
       <p
-        class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium mb-14"
+        class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        EA Invitation telah dipercaya oleh ribuah pasangan untuk mengundang tamu
-        untuk hari istimewa mereka.
+        EA Invitation telah menjadi bagian dari perjalanan sakral ribuan
+        pasangan, menghantarkan setiap undangan kehormatan dengan penuh
+        kemuliaan dan keanggunan.
       </p>
     </div>
 
@@ -88,7 +84,7 @@ useIntersectionObserver(
       <div
         v-for="(stat, index) in animatedStats"
         :key="index"
-        class="relative flex flex-col items-center text-center p-2 hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+        class="relative flex flex-col items-center text-center p-4 rounded-xl hover:bg-black/3 dark:hover:bg-white/3 transition duration-300"
       >
         <!-- High-End Typography Value Display -->
         <div class="flex items-baseline justify-center gap-1.5">
@@ -101,7 +97,7 @@ useIntersectionObserver(
 
         <!-- Refined Minimalist Label -->
         <p
-          class="mt-3 text-xs sm:text-sm font-medium tracking-wide text-black/60 dark:text-white/60 max-w-[160px] sm:max-w-none text-balance"
+          class="mt-3 text-xs sm:text-sm font-medium tracking-wide text-black/60 dark:text-white/60 max-w-[160px] sm:max-w-none text-balance leading-snug"
         >
           {{ stat.label }}
         </p>

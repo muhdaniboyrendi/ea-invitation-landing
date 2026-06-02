@@ -1,12 +1,10 @@
 <!-- components/navbar/Index.vue -->
 <script setup>
-const colorMode = useColorMode();
 const config = useRuntimeConfig();
 
 const dashboardAppUrl = config.public.dashboardAppUrl;
 
 const isMobileOpen = ref(false);
-const isDark = computed(() => colorMode.value === "dark");
 
 const navigation = [
   { name: "Beranda", href: "/#home" },
@@ -15,10 +13,6 @@ const navigation = [
   { name: "Harga", href: "/#packages" },
   { name: "Tutorial", href: "/tutorial" },
 ];
-
-const toggleTheme = () => {
-  colorMode.preference = colorMode.value === "dark" ? "light" : "dark";
-};
 
 const toggleMobile = () => {
   isMobileOpen.value = !isMobileOpen.value;

@@ -5,9 +5,9 @@ const features = [
     icon: "bi-person-standing",
     label: "profil",
     content: {
-      title: "Profil mempelai",
+      title: "Profil Mempelai yang Elegan",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, foto (opsional), dan instagram (opsional).",
+        "Presentasi sinematik profil kedua mempelai. Menampilkan nama, garis keturunan, kisah latar belakang, serta integrasi media sosial dalam tata letak yang anggun.",
       image: "/logo.webp",
     },
   },
@@ -16,9 +16,9 @@ const features = [
     icon: "bi-calendar-event",
     label: "acara",
     content: {
-      title: "Daftar acara",
+      title: "Detail Agenda & Navigasi Presisi",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Informasi sakral seluruh rangkaian acara yang tertata rapi, dilengkapi dengan integrasi peta digital presisi untuk memandu langkah para tamu kehormatan.",
       image: "/logo.webp",
     },
   },
@@ -27,9 +27,9 @@ const features = [
     icon: "bi-heart",
     label: "kisah",
     content: {
-      title: "Kisah cinta",
+      title: "Timeline Kisah Cinta (Love Journey)",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Abadikan perjalanan romantis hubungan Anda melalui linimasa interaktif yang dikurasi indah, merayakan setiap momen penting yang penuh makna.",
       image: "/logo.webp",
     },
   },
@@ -38,9 +38,9 @@ const features = [
     icon: "bi-stopwatch",
     label: "countdown",
     content: {
-      title: "Timer countdown",
+      title: "Hitung Mundur Momen Sakral",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Pewaktu hitung mundur eksklusif yang dinamis dan adaptif terhadap zona waktu, membangun antusiasme menuju hari bahagia Anda.",
       image: "/logo.webp",
     },
   },
@@ -49,9 +49,9 @@ const features = [
     icon: "bi-camera",
     label: "galeri",
     content: {
-      title: "Galeri foto & video",
+      title: "Galeri Multimedia Imersif",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Ruang pameran digital untuk momen pra-pernikahan Anda. Dilengkapi dengan transisi visual yang halus, slideshow otomatis, dan dukungan video berkualitas tinggi.",
       image: "/logo.webp",
     },
   },
@@ -60,9 +60,9 @@ const features = [
     icon: "bi-person-check",
     label: "rsvp",
     content: {
-      title: "Konfirmasi RSVP",
+      title: "Konfirmasi Kehadiran Eksklusif",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Sistem manajemen RSVP yang seamless untuk kenyamanan tamu Anda, dilengkapi dengan pelacakan kapasitas otomatis dan notifikasi konfirmasi langsung.",
       image: "/logo.webp",
     },
   },
@@ -71,9 +71,9 @@ const features = [
     icon: "bi-gift",
     label: "gift",
     content: {
-      title: "Amplop digital",
+      title: "Hadiah Digital & Amplop Eksklusif",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Fasilitasi tanda kasih dari para tamu secara elegan dan aman melalui integrasi gerbang pembayaran digital, transfer bank, maupun dompet digital langsung.",
       image: "/logo.webp",
     },
   },
@@ -82,9 +82,9 @@ const features = [
     icon: "bi-journal-arrow-up",
     label: "kontak",
     content: {
-      title: "Import tamu",
+      title: "Manajemen Tamu Instan",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Sistem manajemen basis data yang efisien. Impor ratusan kontak tamu kehormatan Anda secara massal dalam hitungan detik tanpa proses manual yang rumit.",
       image: "/logo.webp",
     },
   },
@@ -93,9 +93,9 @@ const features = [
     icon: "bi-patch-check",
     label: "check-in",
     content: {
-      title: "Check-in tamu",
+      title: "Sistem Meja Tamu & QR Check-In",
       description:
-        "Menampilkan data mempelai pria dan wanita seperti nama, orang tua, dan instagram (opsional).",
+        "Hadirkan impresi mewah di lokasi acara. Proses verifikasi kehadiran tamu di venue menjadi lebih profesional dan cepat menggunakan pemindaian kode QR eksklusif.",
       image: "/logo.webp",
     },
   },
@@ -124,85 +124,90 @@ const featureDetail = computed(() => {
     class="relative py-16 overflow-hidden bg-light dark:bg-dark"
   >
     <div class="px-4">
-      <p class="text-primary text-sm font-bold uppercase tracking-wide mb-4">
-        Fitur eksklusif
+      <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
+        Pengalaman Eksklusif
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Fitur lengkap untuk kebutuhan anda.
+        Dirancang Sempurna untuk Hari Bahagia Anda
       </h2>
 
       <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14">
-        EA Invitation menyediakan berbagai fitur undangan digital modern lengkap
-        untuk kebutuhan pernikahan anda.
+        EA Invitation mengombinasikan estetika premium dengan teknologi
+        mutakhir, memastikan setiap detail undangan digital Anda memancarkan
+        kesan mewah dan berkelas.
       </p>
     </div>
 
-    <div
-      class="grid grid-cols-3 md:grid-cols-6 border-t border-b border-black/10 dark:border-white/10 divide-x divide-y divide-black/10 dark:divide-white/10 mb-4"
-    >
-      <button
-        v-for="feature in features"
-        :key="feature.label"
-        @click="changeActiveFeature(feature.label)"
-        type="button"
-        class="px-2 py-3 aspect-square flex flex-col justify-center items-center gap-3 hover:bg-black/3 dark:hover:bg-white/3 transition duration.300 cursor-pointer"
+    <div class="grid md:grid-cols-6 gap-4 sm:px-4">
+      <div
+        class="md:col-span-3 grid grid-cols-3 content-between mb-4 md:mb-0 border border-black/10 dark:border-white/10"
       >
-        <i
-          class="bi text-6xl"
-          :class="[
-            feature.icon,
-            activeFeature === feature.label
-              ? 'text-primary'
-              : 'text-black dark:text-white',
-          ]"
-        ></i>
-        <span
-          class="font-mono font-semibold uppercase tracking-wider"
-          :class="
-            activeFeature === feature.label
-              ? 'text-primary'
-              : 'text-black dark:text-white'
-          "
-          >{{ feature.title }}</span
+        <button
+          v-for="feature in features"
+          :key="feature.label"
+          @click="changeActiveFeature(feature.label)"
+          type="button"
+          class="px-2 py-3 aspect-square flex flex-col justify-center items-center gap-3 border border-black/10 dark:border-white/10 hover:bg-black/3 dark:hover:bg-white/3 transition duration-300 cursor-pointer"
         >
-      </button>
-    </div>
-
-    <div class="bg-black/5 dark:bg-white/5 p-2">
-      <div class="bg-off-white dark:bg-dark rounded-2xl p-2">
-        <div class="p-6">
-          <h3
-            class="text-black dark:text-white text-2xl font-semibold tracking-tighter mb-4"
+          <i
+            class="bi text-6xl"
+            :class="[
+              feature.icon,
+              activeFeature === feature.label
+                ? 'text-primary'
+                : 'text-black dark:text-white',
+            ]"
+          ></i>
+          <span
+            class="font-mono font-semibold uppercase tracking-wider text-xs"
+            :class="
+              activeFeature === feature.label
+                ? 'text-primary'
+                : 'text-black dark:text-white'
+            "
+            >{{ feature.title }}</span
           >
-            {{ featureDetail.title }}
-          </h3>
+        </button>
+      </div>
 
-          <p class="text-black/60 dark:text-white/60 font-semibold">
-            {{ featureDetail.description }}
-          </p>
-        </div>
-
+      <div class="md:col-span-3 bg-black/10 dark:bg-white/10 p-2">
         <div
-          class="bg-black/2 dark:bg-white/2 rounded-lg border border-black/10 dark:border-white/10"
+          class="bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 p-2"
         >
+          <div class="p-6 xl:p-8">
+            <h3
+              class="text-black dark:text-white text-2xl font-semibold tracking-tighter mb-4"
+            >
+              {{ featureDetail.title }}
+            </h3>
+
+            <p
+              class="text-black/60 dark:text-white/60 font-medium leading-relaxed"
+            >
+              {{ featureDetail.description }}
+            </p>
+          </div>
+
           <div
-            class="mt-4 mx-4 bg-off-white dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
+            class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10"
           >
-            <NuxtImg
-              src="/logo.webp"
-              class="rounded-lg border border-black/10 dark:border-white/10"
-            />
+            <div
+              class="mt-4 mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
+            >
+              <NuxtImg
+                src="/logo.webp"
+                width="600"
+                loading="lazy"
+                placeholder
+                class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="max-w-7xl mx-auto px-4 lg:px-6">
-      <!-- Features Grid -->
-      <FeaturesList />
     </div>
   </section>
 </template>

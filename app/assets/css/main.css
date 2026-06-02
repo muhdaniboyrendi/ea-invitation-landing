@@ -5,8 +5,8 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-light: #f2f2f2;
-  --color-dark: #101010;
+  --color-light: #fafafa;
+  --color-dark: #0f0f0f;
   --color-primary: #0887f8;
 
   --font-primary: "Urbanist", sans-serif;
