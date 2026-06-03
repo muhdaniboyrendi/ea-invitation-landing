@@ -12,12 +12,6 @@ const socialList = [
     iconClass: "bi-tiktok",
     hoverColor: "#000000",
   },
-  {
-    name: "WhatsApp",
-    url: "https://wa.me/6282220633024",
-    iconClass: "bi-whatsapp",
-    hoverColor: "#25D366",
-  },
 ];
 </script>
 
@@ -51,7 +45,7 @@ const socialList = [
           :key="index"
           :href="social.url"
           target="_blank"
-          class="group h-11 aspect-square flex justify-center items-center bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 rounded-lg transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10"
+          class="group h-11 aspect-square flex justify-center items-center bg-white dark:bg-white/5 border border-black/20 dark:border-white/20 rounded-lg transition-all duration-300 hover:bg-black/10 dark:hover:bg-white/10"
           rel="noopener noreferrer"
           :title="social.name"
           :aria-label="`EA Invitation ${social.name}`"

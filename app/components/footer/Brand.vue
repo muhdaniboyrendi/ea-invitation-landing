@@ -21,20 +21,12 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 
       <!-- Description -->
       <p
-        class="text-black dark:text-white text-lg leading-relaxed mb-6 max-w-md"
+        class="text-black/80 dark:text-white/80 text-base leading-relaxed font-medium mb-6 max-w-md opacity-80"
       >
-        Buat undangan pernikahan digital berbasis website dengan berbagai tema
-        modern dan interaktif serta fitur lengkap.
+        Platform representasi digital untuk hari bahagia Anda. Menghadirkan
+        pengalaman mengundang yang luhur melalui kurasi desain modern dan
+        teknologi imersif.
       </p>
-
-      <!-- CTA Button -->
-      <a
-        :href="dashboardAppUrl + '/login'"
-        rel="external"
-        class="px-6 py-3 bg-primary text-white font-bold rounded-lg hover:bg-primary/80 active:scale-95 transition duration-300"
-      >
-        Buat Undangan
-      </a>
     </div>
   </div>
 </template>

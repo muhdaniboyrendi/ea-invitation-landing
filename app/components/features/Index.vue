@@ -141,16 +141,16 @@ const featureDetail = computed(() => {
       </p>
     </div>
 
-    <div class="grid md:grid-cols-6 gap-4 sm:px-4">
-      <div
-        class="md:col-span-3 grid grid-cols-3 content-between mb-4 md:mb-0 border border-black/10 dark:border-white/10"
-      >
+    <div
+      class="bg-black/10 dark:bg-white/10 p-2 md:p-4 grid md:grid-cols-6 gap-x-4 gap-y-2"
+    >
+      <div class="md:col-span-3 grid grid-cols-3 content-between">
         <button
           v-for="feature in features"
           :key="feature.label"
           @click="changeActiveFeature(feature.label)"
           type="button"
-          class="px-2 py-3 aspect-square flex flex-col justify-center items-center gap-3 border border-black/10 dark:border-white/10 hover:bg-black/3 dark:hover:bg-white/3 transition duration-300 cursor-pointer"
+          class="px-2 py-3 aspect-square bg-light dark:bg-dark flex flex-col justify-center items-center gap-3 border border-black/10 dark:border-white/10 hover:bg-light/80 dark:hover:bg-dark/80 transition duration-300 cursor-pointer"
         >
           <i
             class="bi text-6xl"
@@ -173,7 +173,7 @@ const featureDetail = computed(() => {
         </button>
       </div>
 
-      <div class="md:col-span-3 bg-black/10 dark:bg-white/10 p-2">
+      <div class="md:col-span-3">
         <div
           class="bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 p-2"
         >
@@ -195,7 +195,7 @@ const featureDetail = computed(() => {
             class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10"
           >
             <div
-              class="mt-4 mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
+              class="mt-3 mx-3 md:mt-4 md:mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
             >
               <NuxtImg
                 src="/logo.webp"

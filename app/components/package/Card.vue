@@ -1,3 +1,4 @@
+<!-- PackageCard -->
 <script setup>
 const config = useRuntimeConfig();
 
@@ -35,7 +36,7 @@ const toggleFeatures = () => {
 
 <template>
   <div
-    class="group relative rounded-2xl w-full h-fit bg-white dark:bg-white/3 border-2 p-6 shadow-xl"
+    class="group relative rounded-2xl w-full h-fit bg-light dark:bg-dark border p-6"
     :class="
       props.package.id === 3
         ? 'border-primary'

@@ -6,20 +6,14 @@ const themeUrl = config.public.themeUrl;
 </script>
 
 <template>
-  <div
-    v-motion
-    :initial="{ opacity: 0, y: 100 }"
-    :visible-once="{ opacity: 1, y: 0 }"
-    :duration="1000"
-    class="group relative w-full"
-  >
+  <div class="group relative w-full">
     <!-- Theme Card -->
     <div
-      class="relative bg-white dark:bg-white/3 rounded-2xl border border-dark/20 dark:border-light/20 shadow-xl overflow-hidden hover:-translate-y-1 transition duration-500"
+      class="relative bg-light dark:bg-dark rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10 overflow-hidden hover:-translate-y-1 transition duration-500"
     >
       <!-- Theme Preview Image -->
       <div class="relative h-fit overflow-hidden">
-        <div class="p-4 pb-2">
+        <div class="p-2 pb-0">
           <NuxtImg
             v-if="props.theme?.thumbnail"
             :src="props.theme?.thumbnail || '/img/hero.jpg'"
@@ -52,16 +46,14 @@ const themeUrl = config.public.themeUrl;
       </div>
 
       <!-- Theme Info -->
-      <div class="p-4 pt-0">
-        <div class="flex items-start justify-between mb-2">
+      <div class="p-6">
+        <div class="flex items-center justify-between mb-4">
           <div>
             <h3 class="text-lg font-semibold text-black dark:text-white">
               {{ props.theme?.name || "Untitled Theme" }}
             </h3>
           </div>
-          <span
-            class="py-0.5 px-2 rounded-md bg-dark/5 dark:bg-light/5 text-sm text-dark dark:text-light/80"
-          >
+          <span class="text-sm text-primary font-mono font-semibold uppercase">
             {{ props.theme?.theme_category?.name || "Uncategorized" }}
           </span>
         </div>
@@ -70,7 +62,7 @@ const themeUrl = config.public.themeUrl;
           :href="`${themeUrl}/${props.theme?.slug}` || '#'"
           target="_blank"
           rel="noopener"
-          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-black/5 dark:bg-white/5 border border-black/20 dark:border-white/20 text-dark dark:text-light font-semibold rounded-lg hover:bg-black/10 dark:hover:bg-white/10 transition duration-300"
+          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/80 transition duration-300"
         >
           Lihat Tema
           <i class="bi bi-arrow-right ml-2"></i>

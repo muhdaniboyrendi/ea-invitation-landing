@@ -41,6 +41,7 @@ useSchemaOrg([
     <Greeting />
     <SocialProof />
     <Features />
+    <HowTo />
     <ThemesHome />
     <Package />
     <Faq />

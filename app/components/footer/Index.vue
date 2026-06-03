@@ -5,7 +5,7 @@
   >
     <div class="relative">
       <!-- Main Footer Content -->
-      <div class="max-w-7xl mx-auto px-6 lg:px-8 py-10">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8 xl:px-10 py-10">
         <div class="grid grid-cols-1 lg:grid-cols-4 gap-12 lg:gap-8">
           <!-- Brand Section -->
           <FooterBrand />
