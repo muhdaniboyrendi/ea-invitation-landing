@@ -52,23 +52,15 @@ const isOpen = (index) => {
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Pelajari teknis penggunaan fitur, sistem pembaruan data, dan mekanisme operasional platform EA Invitation secara komprehensif.
+        Pelajari teknis penggunaan fitur, sistem pembaruan data, dan mekanisme
+        operasional platform EA Invitation secara komprehensif.
       </p>
     </div>
 
     <div class="relative max-w-7xl mx-auto px-4">
       <!-- FAQ Stack (Tanpa Kategori) -->
       <div class="space-y-3">
-        <div
-          v-for="(faq, index) in faqs"
-          :key="index"
-          v-motion
-          :initial="{ opacity: 0, y: 20 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :delay="index * 100"
-          :duration="800"
-          class="group relative"
-        >
+        <div v-for="(faq, index) in faqs" :key="index" class="group relative">
           <div
             class="relative bg-white/60 dark:bg-dark border border-black/10 dark:border-white/10 rounded-xl transition duration-300"
           >
@@ -97,16 +89,14 @@ const isOpen = (index) => {
             <div
               :class="[
                 'overflow-hidden transition-all duration-300 ease-in-out',
-                isOpen(index)
-                  ? 'max-h-96 opacity-100'
-                  : 'max-h-0 opacity-0',
+                isOpen(index) ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0',
               ]"
             >
               <div
                 class="px-5 md:px-6 pb-5 md:pb-6 border-t border-black/5 dark:border-white/5"
               >
                 <p
-                  class="text-black/70 dark:text-white/70 leading-relaxed pt-3 md:pt-4 text-sm md:text-base font-medium"
+                  class="text-black/70 dark:text-white/70 leading-relaxed pt-3 md:pt-4 font-medium"
                 >
                   {{ faq.a }}
                 </p>

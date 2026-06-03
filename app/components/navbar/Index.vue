@@ -7,11 +7,11 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 const isMobileOpen = ref(false);
 
 const navigation = [
-  { name: "Beranda", href: "/#home" },
+  { name: "Beranda", href: "/" },
   { name: "Fitur", href: "/#features" },
+  { name: "Tutorial", href: "/#tutorial" },
   { name: "Tema", href: "/#themes" },
   { name: "Harga", href: "/#packages" },
-  { name: "Tutorial", href: "/tutorial" },
 ];
 
 const toggleMobile = () => {

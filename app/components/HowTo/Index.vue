@@ -29,7 +29,7 @@ const steps = [
 
 <template>
   <section
-    id="how-it-works"
+    id="tutorial"
     class="relative py-16 overflow-hidden bg-light dark:bg-dark"
   >
     <!-- Header Section -->
@@ -62,11 +62,6 @@ const steps = [
         <div
           v-for="(step, index) in steps"
           :key="index"
-          v-motion
-          :initial="{ opacity: 0, y: 50 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :delay="index * 150"
-          :duration="800"
           class="group relative overflow-hidden"
         >
           <!-- Card Container -->
@@ -99,7 +94,7 @@ const steps = [
       >
         <div class="w-full">
           <h3
-            class="text-2xl text-black dark:text-white font-semibold tracking-tighter mb-2"
+            class="text-lg text-black dark:text-white font-bold tracking-tighter mb-2"
           >
             Video Tutorial
           </h3>

@@ -25,6 +25,14 @@
       </li>
       <li>
         <NuxtLink
+          to="/#tutorial"
+          class="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white duration-300 flex items-center group"
+        >
+          Tutorial
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink
           to="/#themes"
           class="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white duration-300 flex items-center group"
         >
@@ -37,14 +45,6 @@
           class="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white duration-300 flex items-center group"
         >
           Harga
-        </NuxtLink>
-      </li>
-      <li>
-        <NuxtLink
-          to="/tutorial"
-          class="text-black/60 dark:text-white/60 hover:text-black dark:hover:text-white duration-300 flex items-center group"
-        >
-          Tutorial
         </NuxtLink>
       </li>
     </ul>

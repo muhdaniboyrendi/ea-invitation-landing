@@ -26,7 +26,7 @@ const { packages } = storeToRefs(usePackageStore());
 
     <div class="bg-black/10 dark:bg-white/10 py-2 md:p-4">
       <div
-        class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-4 px-6 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:gap-2 sm:px-0"
+        class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:px-0"
       >
         <PackageCard
           v-for="pkg in packages"

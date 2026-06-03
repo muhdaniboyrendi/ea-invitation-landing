@@ -79,7 +79,7 @@ onUnmounted(() => {
             ref="sliderRef"
             @touchstart="stopAutoplay"
             @touchend="startAutoplay"
-            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 p-4 pb-0 px-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:p-4"
+            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 pt-4 pb-0 sm:px-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
           >
             <ThemesCard
               v-for="theme in limitedThemes"
