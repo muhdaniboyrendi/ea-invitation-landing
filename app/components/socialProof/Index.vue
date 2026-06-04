@@ -10,10 +10,10 @@ function parseStatValue(raw) {
 }
 
 const stats = [
-  { value: "1000+", label: "Kisah Cinta yang Diabadikan" },
-  { value: "96%", label: "Apresiasi Kebahagiaan Pasangan" },
-  { value: "4.9", label: "Rating Keandalan Platform", star: true },
-  { value: "15000+", label: "Tamu Kehormatan Terhubung" },
+  { value: "1000+", label: "Pasangan Bahagia yang Sudah Rilis" },
+  { value: "96%", label: "Tingkat Kepuasan & Rekomendasi" },
+  { value: "4.9", label: "Rating Kepuasan di Google Review", star: true },
+  { value: "15000+", label: "Undangan Sukses Terkirim & Diakses" },
 ];
 
 // Setup per-stat animation state
@@ -62,21 +62,21 @@ useIntersectionObserver(
   >
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        Jejak Langkah Kami
+        Bukti Nyata Kami
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Dipercaya Merayakan Momen Terindah
+        Dipercaya untuk Menjaga Momen Paling Berharga
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        EA Invitation telah menjadi bagian dari perjalanan sakral ribuan
-        pasangan, menghantarkan setiap undangan kehormatan dengan penuh
-        kemuliaan dan keanggunan.
+        EA Invitation bukan cuma sekadar platform pembuat undangan. Kami bangga
+        bisa membantu ribuan pasangan membagikan kabar bahagia mereka dengan
+        cara yang modern, aman, dan bebas ribet.
       </p>
     </div>
 

@@ -1,26 +1,28 @@
 <script setup>
+import { ref } from "vue";
+
 const openIndex = ref(null);
 
 const faqs = [
   {
-    q: "Bagaimana cara kerja platform EA Invitation?",
-    a: "Sistem kami mengonversi data acara Anda menjadi sebuah tautan (link) website responsif yang siap diakses secara online dan didistribusikan ke daftar penerima tanpa batasan kuota.",
+    q: "Gimana sih cara kerja EA Invitation?",
+    a: "Gampang banget! Setelah kamu isi data acara, sistem kami bakal otomatis bikin website undangan yang responsif dan estetik. Kamu bakal dapat satu link khusus yang siap disebar ke semua orang tanpa ada batasan kuota tamu.",
   },
   {
-    q: "Berapa lama estimasi proses pembuatan undangan?",
-    a: "Instan. Undangan digital Anda langsung aktif dan dapat diakses publik segera setelah Anda menyelesaikan pengisian data dan konfigurasi pada dashboard.",
+    q: "Berapa lama proses pembuatan undangannya?",
+    a: "Instan kok! Undangan digitalmu langsung aktif dan bisa langsung diakses publik begitu kamu selesai mengisi data dan klik simpan di dasbor.",
   },
   {
-    q: "Bagaimana cara memantau konfirmasi rsvp dari tamu?",
-    a: "Semua konfirmasi kehadiran (RSVP), jumlah riil tamu, serta pesan ucapan dari penerima akan otomatis terekam dan ditampilkan secara real-time di panel kontrol Anda.",
+    q: "Cara tahu kalau tamu bakal datang atau enggak gimana?",
+    a: "Semua konfirmasi kehadiran (RSVP), jumlah rombongan yang mau datang, sampai ucapan selamat dari para tamu bakal langsung masuk dan tercatat rapi secara real-time di dasbormu.",
   },
   {
-    q: "Apakah data informasi bisa diubah setelah tautan disebarkan?",
-    a: "Ya. Anda memiliki akses penuh untuk memperbarui detail tanggal, lokasi maps, susunan acara, maupun galeri foto kapan saja melalui dashboard tanpa mengubah tautan undangan.",
+    q: "Bisa gak datanya diubah kalau link-nya sudah terlanjur disebar?",
+    a: "Bisa banget! Kamu punya akses penuh buat ganti tanggal, revisi lokasi maps, susunan acara, atau nambah foto galeri kapan saja lewat dasbor. Link undangannya gak bakal berubah kok.",
   },
   {
-    q: "Apakah platform mendukung fitur musik latar (backsound)?",
-    a: "Ya. Tersedia modul audio otomatis yang dilengkapi dengan tombol kontrol play/pause, di mana Anda dapat mengunggah atau memilih lagu yang relevan dengan konsep acara.",
+    q: "Bisa pakai musik latar (backsound) sesuai request kita?",
+    a: "Tentu bisa! Sudah ada fitur pemutar musik otomatis yang dilengkapi tombol play/pause. Kamu bebas pilih dari daftar lagu yang tersedia atau pakai lagu pilihanmu sendiri biar makin syahdu.",
   },
 ];
 
@@ -40,20 +42,21 @@ const isOpen = (index) => {
   >
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        FAQ
+        Tanya-Jawab
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Pertanyaan yang Sering Diajukan
+        Punya Pertanyaan? Kami Punya Jawabannya
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Pelajari teknis penggunaan fitur, sistem pembaruan data, dan mekanisme
-        operasional platform EA Invitation secara komprehensif.
+        Ada hal yang masih bikin kamu penasaran? Tenang, berikut beberapa hal
+        penting yang paling sering ditanyakan seputar fitur dan cara mengelola
+        undangan digitalmu.
       </p>
     </div>
 

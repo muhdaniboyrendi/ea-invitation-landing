@@ -8,13 +8,8 @@ defineProps({
 </script>
 
 <template>
-  <!-- Card Content -->
   <div
-    v-motion
-    :initial="{ opacity: 0, y: 100 }"
-    :visible-once="{ opacity: 1, y: 0 }"
-    :duration="1000"
-    class="bg-white dark:bg-white/3 p-4 md:p-6 rounded-2xl border border-black/20 dark:border-white/20 shadow-xl"
+    class="bg-white dark:bg-white/3 p-4 md:p-6 rounded-2xl border border-black/20 dark:border-white/20"
   >
     <!-- Header -->
     <div class="flex items-start gap-4 mb-4 md:mb-6">

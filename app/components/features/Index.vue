@@ -5,9 +5,9 @@ const features = [
     icon: "bi-person-standing",
     label: "profil",
     content: {
-      title: "Profil Mempelai yang Elegan",
+      title: "Desain Profil yang Hidup & Estetik",
       description:
-        "Presentasi sinematik profil kedua mempelai. Menampilkan nama, garis keturunan, kisah latar belakang, serta integrasi media sosial dalam tata letak yang anggun.",
+        "Bukan sekadar teks kaku yang membosankan. Tampilkan profil kamu dan pasangan dengan transisi visual yang halus, layout ala editorial majalah, serta link media sosial yang dikemas super bersih dan elegan.",
       image: "/logo.webp",
     },
   },
@@ -18,7 +18,7 @@ const features = [
     content: {
       title: "Detail Agenda & Navigasi Presisi",
       description:
-        "Informasi sakral seluruh rangkaian acara yang tertata rapi, dilengkapi dengan integrasi peta digital presisi untuk memandu langkah para tamu kehormatan.",
+        "Susun seluruh rangkaian acara bahagiamu dengan rapi. Dilengkapi hitung mundur otomatis dan integrasi peta digital yang presisi, memastikan para tamu undangan bisa sampai ke lokasi tanpa drama tersesat.",
       image: "/logo.webp",
     },
   },
@@ -27,9 +27,9 @@ const features = [
     icon: "bi-heart",
     label: "kisah",
     content: {
-      title: "Timeline Kisah Cinta (Love Journey)",
+      title: "Garis Waktu Cerita Cinta (Love Journey)",
       description:
-        "Abadikan perjalanan romantis hubungan Anda melalui linimasa interaktif yang dikurasi indah, merayakan setiap momen penting yang penuh makna.",
+        "Bagikan perjalanan cinta unik kalian berdua lewat linimasa interaktif yang seru dan menyentuh. Sampaikan momen-momen berharga dari awal bertemu hingga akhirnya mantap melangkah ke pelaminan.",
       image: "/logo.webp",
     },
   },
@@ -38,9 +38,9 @@ const features = [
     icon: "bi-stopwatch",
     label: "countdown",
     content: {
-      title: "Hitung Mundur Momen Sakral",
+      title: "Pewaktu Mundur yang Cerdas",
       description:
-        "Pewaktu hitung mundur eksklusif yang dinamis dan adaptif terhadap zona waktu, membangun antusiasme menuju hari bahagia Anda.",
+        "Membangun antusiasme para tamu menuju hari bahagiamu dengan widget countdown dinamis yang otomatis menyesuaikan zona waktu secara akurat.",
       image: "/logo.webp",
     },
   },
@@ -49,9 +49,9 @@ const features = [
     icon: "bi-camera",
     label: "galeri",
     content: {
-      title: "Galeri Multimedia Imersif",
+      title: "Galeri Foto & Video Imersif",
       description:
-        "Ruang pameran digital untuk momen pra-pernikahan Anda. Dilengkapi dengan transisi visual yang halus, slideshow otomatis, dan dukungan video berkualitas tinggi.",
+        "Pamerkan dokumentasi prewedding kalian dalam ruang digital bergaya galeri seni. Mendukung slideshow otomatis yang halus serta pemutaran video berkualitas tinggi tanpa mengurangi ketajaman visualnya.",
       image: "/logo.webp",
     },
   },
@@ -60,9 +60,9 @@ const features = [
     icon: "bi-person-check",
     label: "rsvp",
     content: {
-      title: "Konfirmasi Kehadiran Eksklusif",
+      title: "Sistem RSVP Praktis & Seamless",
       description:
-        "Sistem manajemen RSVP yang seamless untuk kenyamanan tamu Anda, dilengkapi dengan pelacakan kapasitas otomatis dan notifikasi konfirmasi langsung.",
+        "Kasih kenyamanan maksimal buat tamu undangan. Sistem RSVP kami mendeteksi kehadiran secara instan, mencatat jumlah rombongan, dan merangkum datanya langsung ke akun dasbormu.",
       image: "/logo.webp",
     },
   },
@@ -71,9 +71,9 @@ const features = [
     icon: "bi-gift",
     label: "gift",
     content: {
-      title: "Hadiah Digital & Amplop Eksklusif",
+      title: "Fitur Hadiah & Angpao Digital Aman",
       description:
-        "Fasilitasi tanda kasih dari para tamu secara elegan dan aman melalui integrasi gerbang pembayaran digital, transfer bank, maupun dompet digital langsung.",
+        "Sediakan jalur tanda kasih yang sopan dan elegan lewat integrasi transfer bank langsung, dompet digital (e-wallet), hingga kado fisik. Semuanya berjalan transparan, aman, dan menjaga privasi.",
       image: "/logo.webp",
     },
   },
@@ -82,9 +82,9 @@ const features = [
     icon: "bi-journal-arrow-up",
     label: "kontak",
     content: {
-      title: "Manajemen Tamu Instan",
+      title: "Kelola Ribuan Data Tamu Tanpa Pusing",
       description:
-        "Sistem manajemen basis data yang efisien. Impor ratusan kontak tamu kehormatan Anda secara massal dalam hitungan detik tanpa proses manual yang rumit.",
+        "Urusan sebar undangan jadi jauh lebih efisien. Kamu bisa impor ratusan hingga ribuan nama kontak tamu sekaligus hanya dalam hitungan detik, bebas dari capeknya ketik manual satu per satu.",
       image: "/logo.webp",
     },
   },
@@ -93,9 +93,9 @@ const features = [
     icon: "bi-patch-check",
     label: "check-in",
     content: {
-      title: "Sistem Meja Tamu & QR Check-In",
+      title: "QR Code Check-In & Buku Tamu Digital",
       description:
-        "Hadirkan impresi mewah di lokasi acara. Proses verifikasi kehadiran tamu di venue menjadi lebih profesional dan cepat menggunakan pemindaian kode QR eksklusif.",
+        "Bawa atmosfer resepsi modern yang profesional ke meja penerima tamu. Proses absensi kehadiran di lokasi acara berlangsung instan cukup dengan sekali scan kode QR unik pada undangan.",
       image: "/logo.webp",
     },
   },
@@ -125,22 +125,23 @@ const featureDetail = computed(() => {
   >
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        Pengalaman Eksklusif
+        Fitur Lengkap & Interaktif
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Dirancang Sempurna untuk Hari Bahagia Anda
+        Kendali Penuh di Tanganmu, Hasil Tetap Mewah
       </h2>
 
       <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14">
-        EA Invitation mengombinasikan estetika premium dengan teknologi
-        mutakhir, memastikan setiap detail undangan digital Anda memancarkan
-        kesan mewah dan berkelas.
+        Setiap fitur di EA Invitation dirancang untuk memberikan pengalaman yang
+        berbeda, fleksibel, dan jauh dari kesan pasaran. Bikin undangan digital
+        impianmu dengan konfigurasi super gampang.
       </p>
     </div>
 
+    <!-- Sisa kode template Anda tetap sama di bawah ini -->
     <div
       class="bg-black/10 dark:bg-white/10 p-2 md:p-4 grid md:grid-cols-6 gap-x-4 gap-y-2"
     >
@@ -202,6 +203,7 @@ const featureDetail = computed(() => {
                 width="600"
                 loading="lazy"
                 placeholder
+                alt="Feature image"
                 class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
               />
             </div>

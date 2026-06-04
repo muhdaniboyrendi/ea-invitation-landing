@@ -48,7 +48,7 @@ const getThemeCount = (categoryId) => {
       <!-- Category Filter Buttons -->
       <div class="px-4">
         <div
-          class="flex gap-2 mb-10 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap md:justify-center px-4 md:px-0 -mx-4 md:mx-0 scrollbar-none pb-1 md:pb-0"
+          class="flex gap-2 mb-4 overflow-x-auto md:overflow-x-visible flex-nowrap md:flex-wrap md:justify-center px-4 md:px-0 -mx-4 md:mx-0 scrollbar-none pb-1 md:pb-0"
         >
           <!-- Semua Tema — key unik dengan prefix string agar tidak bentrok dengan category.id -->
           <div class="shrink-0">

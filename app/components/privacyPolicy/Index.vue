@@ -4,61 +4,28 @@ const appUrl = config.public.appUrl;
 </script>
 
 <template>
-  <div class="pt-28 md:pt-40 pb-20 bg-light dark:bg-dark">
-    <div class="max-w-7xl mx-auto px-4 lg:px-6">
-      <!-- Header Section -->
-      <div class="text-center mb-10 md:mb-20">
-        <!-- Main Title -->
-        <h1
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="text-4xl/12 sm:text-5xl/15 lg:text-6xl/19 font-bold mb-6 text-black dark:text-white tracking-wide"
-        >
-          <span class="text-primary"> Kebijakan </span>
-          Privasi
-        </h1>
+  <div class="pt-28 pb-16 bg-light dark:bg-dark">
+    <div class="px-4">
+      <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
+        Ppersetujuan
+      </p>
 
-        <!-- Subtitle -->
-        <p
-          v-motion
-          :initial="{ opacity: 0, y: 100 }"
-          :visible-once="{ opacity: 1, y: 0 }"
-          :duration="1000"
-          class="text-xl lg:text-2xl text-black/60 dark:text-white/60 max-w-4xl mx-auto leading-relaxed"
-        >
-          EA Invitation
-        </p>
-      </div>
-
-      <!-- Privacy Notice -->
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 100 }"
-        :visible-once="{ opacity: 1, y: 0 }"
-        :duration="1000"
-        class="rounded-2xl mb-6 md:mb-8 bg-white dark:bg-white/3 border-2 border-primary p-4 md:p-8 shadow-xl"
+      <h2
+        class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        <div class="flex items-center gap-4 mb-4 md:mb-6">
-          <div
-            class="w-12 h-12 bg-light dark:bg-light/15 rounded-lg border border-black/5 dark:border-white/5 flex items-center justify-center"
-          >
-            <i class="bi bi-shield-check text-primary text-xl"></i>
-          </div>
-          <h3 class="text-xl font-semibold text-black dark:text-white">
-            Persetujuan
-          </h3>
-        </div>
-        <div>
-          <p class="text-black/60 dark:text-white/60 leading-relaxed">
-            Dengan menggunakan eainvitation.com, Anda menyatakan telah membaca
-            dan memahami Kebijakan Privasi ini dan menyetujui pengumpulan serta
-            penggunaan informasi Anda sebagaimana dijelaskan di sini.
-          </p>
-        </div>
-      </div>
+        Kebijakan Privasi EA Invitation
+      </h2>
 
+      <p
+        class="max-w-3xl text-black/60 dark:text-white/60 text-lg font-medium leading-relaxed mb-14"
+      >
+        Dengan menggunakan EA Invitation, Anda menyatakan telah membaca dan
+        memahami Kebijakan Privasi ini dan menyetujui pengumpulan serta
+        penggunaan informasi Anda sebagaimana dijelaskan di sini.
+      </p>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4">
       <!-- Privacy Content Grid -->
       <div class="grid grid-cols-1 gap-3 md:gap-4">
         <!-- Section 1: Pendahuluan -->
@@ -825,29 +792,14 @@ const appUrl = config.public.appUrl;
       <!-- Footer Notice -->
       <div class="mt-11 text-center">
         <div
-          class="inline-flex items-center px-6 py-3 backdrop-blur-md bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 rounded-full"
+          class="inline-flex items-center px-6 py-3 bg-white dark:bg-white/3 border border-black/20 dark:border-white/20 rounded-full"
         >
           <i class="bi bi-calendar-check text-primary mr-3"></i>
-          <span class="text-sm text-black/70 dark:text-white/70"
-            >Dokumen terakhir diperbarui: 27 Januari 2026</span
+          <span class="text-sm text-black dark:text-white"
+            >Diperbarui: 27 Januari 2026</span
           >
         </div>
       </div>
     </div>
   </div>
 </template>
-
-<style scoped>
-/* Grid pattern */
-.bg-grid-pattern {
-  background-image:
-    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  background-size: 80px 80px;
-}
-
-/* Animation delays */
-.delay-1000 {
-  animation-delay: 1s;
-}
-</style>

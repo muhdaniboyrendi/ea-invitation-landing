@@ -6,21 +6,21 @@ const { packages } = storeToRefs(usePackageStore());
   <section id="packages" class="py-16 overflow-hidden bg-light dark:bg-dark">
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        Investasi Kebahagiaan
+        Pilihan Paket Harga
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Pilih Tingkatan Layanan Sesuai Refleksi Pernikahan Anda
+        Pilih Paket yang Paling Pas untuk Hari Bahagiamu
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Temukan keselarasan fitur yang tepat untuk menyambut hari istimewa Anda.
-        Nikmati kebebasan penuh untuk meningkatkan eskalasi layanan kapan pun
-        Anda butuhkan.
+        Temukan kombinasi fitur terbaik yang sesuai dengan kebutuhan acaramu.
+        Tenang saja, kamu punya kebebasan penuh buat upgrade paket kapan saja
+        kamu butuhkan tanpa ribet.
       </p>
     </div>
 

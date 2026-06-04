@@ -8,7 +8,7 @@ const socialList = [
   },
   {
     name: "Tiktok",
-    url: "https://www.tiktok.com/@erlan.azr_",
+    url: "https://www.tiktok.com/@ea_invitation?_r=1&_t=ZS-96uzuWLeHLh",
     iconClass: "bi-tiktok",
     hoverColor: "#000000",
   },
@@ -52,7 +52,7 @@ const socialList = [
         >
           <i
             class="bi text-dark dark:text-light text-lg transition-colors duration-300"
-            :class="`${social.iconClass} group-hover:text-[${social.hoverColor}]`"
+            :class="`${social.iconClass}`"
           ></i>
         </a>
       </div>

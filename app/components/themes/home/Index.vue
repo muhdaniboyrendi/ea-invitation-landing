@@ -50,21 +50,22 @@ onUnmounted(() => {
   >
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        Galeri Tema Eksklusif
+        Koleksi Tema Pilihan
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Temukan Palet Estetika Pernikahan Impian Anda
+        Intip Pilihan Desain Unik & Gak Pasaran
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        EA Invitation mengurasi antologi desain premium dengan tingkat presisi
-        tinggi. Setiap tata letak dikerjakan secara eksklusif untuk menciptakan
-        kesan pertama yang tak terlupakan.
+        Kami mengurasi deretan desain undangan digital modern yang penuh
+        karakter khusus untuk kamu yang bosan dengan template sejuta umat.
+        Setiap layout dibuat presisi agar undanganmu sukses bikin tamu berkesan
+        sejak pandangan pertama.
       </p>
     </div>
 
@@ -98,7 +99,7 @@ onUnmounted(() => {
         rel="external"
         class="py-3 px-6 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400/70 dark:hover:bg-zinc-600 text-black dark:text-white font-bold rounded-full shrink-0 active:scale-95 transition duration-300"
       >
-        Jelajahi Semua Tema
+        Jelajahi Semua Desain
         <i class="bi bi-arrow-up-right ml-2"></i>
       </NuxtLink>
     </div>

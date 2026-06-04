@@ -1,11 +1,5 @@
 <template>
   <div>
-    <h4 class="text-lg font-semibold text-black dark:text-white mb-6 relative">
-      Dukungan
-      <div
-        class="absolute bottom-0 left-0 w-8 h-0.5 bg-primary rounded-full"
-      ></div>
-    </h4>
     <ul class="space-y-4">
       <li>
         <NuxtLink
