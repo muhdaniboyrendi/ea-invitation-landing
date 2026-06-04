@@ -54,39 +54,25 @@
             class="rounded-lg border border-black/10 dark:border-white/10 bg-black/3 dark:bg-white/3"
           >
             <div
-              class="bg-light dark:bg-dark mt-3 mx-3 md:mt-6 md:mx-6 xl:p-8 xl:px-16 rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10 grid xl:grid-cols-2 gap-x-4"
+              class="bg-light dark:bg-dark mt-3 mx-3 md:mt-6 md:mx-6 xl:p-8 xl:px-16 rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10 grid lg:grid-cols-2 gap-x-4"
             >
-              <div class="xl:order-2 p-2 grid md:grid-cols-4 gap-2">
-                <NuxtImg
-                  src="/img/themes/instagram.webp"
-                  width="600"
-                  quality="80"
-                  loading="lazy"
-                  placeholder
-                  alt="anti-mainstream design theme image"
-                  class="md:col-span-2 xl:col-span-4 w-full h-full max-h-40 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
-                />
-                <NuxtImg
-                  src="/img/themes/javanese.webp"
-                  width="600"
-                  quality="80"
-                  loading="lazy"
-                  placeholder
-                  alt="anti-mainstream design theme image"
-                  class="hidden md:block xl:col-span-2 w-full h-full max-h-40 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
-                />
-                <NuxtImg
-                  src="/img/themes/windows-11.webp"
-                  width="600"
-                  quality="80"
-                  loading="lazy"
-                  placeholder
-                  alt="anti-mainstream design theme image"
-                  class="hidden md:block xl:col-span-2 w-full h-full max-h-40 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
-                />
+              <div class="lg:order-2 p-2">
+                <div
+                  class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden"
+                >
+                  <NuxtImg
+                    src="/img/greeting/themes.webp"
+                    width="1000"
+                    quality="80"
+                    loading="lazy"
+                    placeholder
+                    alt="anti-mainstream design theme image"
+                    class="rotate-x-60 -rotate-z-45 scale-240"
+                  />
+                </div>
               </div>
 
-              <div class="xl:order-1 p-6">
+              <div class="lg:order-1 p-6">
                 <span
                   class="text-black/40 dark:text-white/40 font-medium uppercase text-xs tracking-wider"
                   >Pilihan Tema</span
@@ -95,14 +81,14 @@
                   class="flex flex-col md:flex-row md:justify-between md:items-center gap-y-4 mb-4 mt-1"
                 >
                   <h4
-                    class="text-black dark:text-white text-xl md:text-2xl xl:text-3xl font-bold"
+                    class="text-black dark:text-white text-xl md:text-2xl md:text-3xl font-bold"
                   >
                     Koleksi Unik & Berkelas
                   </h4>
 
                   <NuxtLink
                     to="#themes"
-                    class="block xl:hidden py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg hover:bg-primary/80 transition"
+                    class="block lg:hidden py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg hover:bg-primary/80 transition"
                   >
                     Lihat Desain Unik Kami
                     <i class="bi bi-arrow-right ml-1"></i>
@@ -117,7 +103,7 @@
 
                 <NuxtLink
                   to="#themes"
-                  class="hidden xl:block py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg mt-6 hover:bg-primary/80 transition"
+                  class="hidden lg:block py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg mt-6 hover:bg-primary/80 transition"
                 >
                   Lihat Desain Unik Kami
                   <i class="bi bi-arrow-right ml-1"></i>
@@ -210,6 +196,68 @@
               </p>
             </div>
           </div>
+
+          <!-- <div
+            class="rounded-lg border border-black/10 dark:border-white/10 bg-black/3 dark:bg-white/3"
+          >
+            <div
+              class="bg-light dark:bg-dark mt-3 mx-3 md:mt-6 md:mx-6 xl:p-8 xl:px-16 rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10 grid lg:grid-cols-2 gap-x-4"
+            >
+              <div class="lg:order-2 p-2">
+                <div
+                  class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden"
+                >
+                  <NuxtImg
+                    src="/img/greeting/themes.webp"
+                    width="1000"
+                    quality="80"
+                    loading="lazy"
+                    placeholder
+                    alt="anti-mainstream design theme image"
+                    class="rotate-x-60 -rotate-z-45 scale-240"
+                  />
+                </div>
+              </div>
+
+              <div class="lg:order-1 p-6">
+                <span
+                  class="text-black/40 dark:text-white/40 font-medium uppercase text-xs tracking-wider"
+                  >Pilihan Tema</span
+                >
+                <div
+                  class="flex flex-col md:flex-row md:justify-between md:items-center gap-y-4 mb-4 mt-1"
+                >
+                  <h4
+                    class="text-black dark:text-white text-xl md:text-2xl md:text-3xl font-bold"
+                  >
+                    Koleksi Unik & Berkelas
+                  </h4>
+
+                  <NuxtLink
+                    to="#themes"
+                    class="block lg:hidden py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg hover:bg-primary/80 transition"
+                  >
+                    Lihat Desain Unik Kami
+                    <i class="bi bi-arrow-right ml-1"></i>
+                  </NuxtLink>
+                </div>
+
+                <p class="text-black/60 dark:text-white/60">
+                  Temukan tema idamanmu, mulai dari minimalis modern yang clean,
+                  gaya interaktif yang seru, hingga adaptasi budaya klasik yang
+                  dikemas secara kekinian.
+                </p>
+
+                <NuxtLink
+                  to="#themes"
+                  class="hidden lg:block py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg mt-6 hover:bg-primary/80 transition"
+                >
+                  Lihat Desain Unik Kami
+                  <i class="bi bi-arrow-right ml-1"></i>
+                </NuxtLink>
+              </div>
+            </div>
+          </div> -->
         </div>
       </div>
     </div>

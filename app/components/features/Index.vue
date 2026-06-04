@@ -8,7 +8,7 @@ const features = [
       title: "Desain Profil yang Hidup & Estetik",
       description:
         "Bukan sekadar teks kaku yang membosankan. Tampilkan profil kamu dan pasangan dengan transisi visual yang halus, layout ala editorial majalah, serta link media sosial yang dikemas super bersih dan elegan.",
-      image: "/logo.webp",
+      image: "/img/features/profile.webp",
     },
   },
   {
@@ -19,7 +19,7 @@ const features = [
       title: "Detail Agenda & Navigasi Presisi",
       description:
         "Susun seluruh rangkaian acara bahagiamu dengan rapi. Dilengkapi hitung mundur otomatis dan integrasi peta digital yang presisi, memastikan para tamu undangan bisa sampai ke lokasi tanpa drama tersesat.",
-      image: "/logo.webp",
+      image: "/img/features/event.webp",
     },
   },
   {
@@ -30,7 +30,7 @@ const features = [
       title: "Garis Waktu Cerita Cinta (Love Journey)",
       description:
         "Bagikan perjalanan cinta unik kalian berdua lewat linimasa interaktif yang seru dan menyentuh. Sampaikan momen-momen berharga dari awal bertemu hingga akhirnya mantap melangkah ke pelaminan.",
-      image: "/logo.webp",
+      image: "/img/features/story.webp",
     },
   },
   {
@@ -41,7 +41,7 @@ const features = [
       title: "Pewaktu Mundur yang Cerdas",
       description:
         "Membangun antusiasme para tamu menuju hari bahagiamu dengan widget countdown dinamis yang otomatis menyesuaikan zona waktu secara akurat.",
-      image: "/logo.webp",
+      image: "/img/features/countdown.webp",
     },
   },
   {
@@ -52,7 +52,7 @@ const features = [
       title: "Galeri Foto & Video Imersif",
       description:
         "Pamerkan dokumentasi prewedding kalian dalam ruang digital bergaya galeri seni. Mendukung slideshow otomatis yang halus serta pemutaran video berkualitas tinggi tanpa mengurangi ketajaman visualnya.",
-      image: "/logo.webp",
+      image: "/img/features/gallery.webp",
     },
   },
   {
@@ -63,7 +63,7 @@ const features = [
       title: "Sistem RSVP Praktis & Seamless",
       description:
         "Kasih kenyamanan maksimal buat tamu undangan. Sistem RSVP kami mendeteksi kehadiran secara instan, mencatat jumlah rombongan, dan merangkum datanya langsung ke akun dasbormu.",
-      image: "/logo.webp",
+      image: "/img/features/rsvp.webp",
     },
   },
   {
@@ -74,7 +74,7 @@ const features = [
       title: "Fitur Hadiah & Angpao Digital Aman",
       description:
         "Sediakan jalur tanda kasih yang sopan dan elegan lewat integrasi transfer bank langsung, dompet digital (e-wallet), hingga kado fisik. Semuanya berjalan transparan, aman, dan menjaga privasi.",
-      image: "/logo.webp",
+      image: "/img/features/gift.webp",
     },
   },
   {
@@ -85,7 +85,7 @@ const features = [
       title: "Kelola Ribuan Data Tamu Tanpa Pusing",
       description:
         "Urusan sebar undangan jadi jauh lebih efisien. Kamu bisa impor ratusan hingga ribuan nama kontak tamu sekaligus hanya dalam hitungan detik, bebas dari capeknya ketik manual satu per satu.",
-      image: "/logo.webp",
+      image: "/img/features/import.webp",
     },
   },
   {
@@ -96,7 +96,7 @@ const features = [
       title: "QR Code Check-In & Buku Tamu Digital",
       description:
         "Bawa atmosfer resepsi modern yang profesional ke meja penerima tamu. Proses absensi kehadiran di lokasi acara berlangsung instan cukup dengan sekali scan kode QR unik pada undangan.",
-      image: "/logo.webp",
+      image: "/img/features/checkin.webp",
     },
   },
 ];
@@ -198,14 +198,18 @@ const featureDetail = computed(() => {
             <div
               class="mt-3 mx-3 md:mt-4 md:mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
             >
-              <NuxtImg
-                src="/logo.webp"
-                width="600"
-                loading="lazy"
-                placeholder
-                alt="Feature image"
-                class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
-              />
+              <div
+                class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden flex justify-center items-end"
+              >
+                <NuxtImg
+                  :src="featureDetail.image"
+                  width="600"
+                  loading="lazy"
+                  placeholder
+                  alt="Feature image"
+                  class="w-2/5 rounded-t-2xl border border-b-0 border-black/10 dark:border-white/10"
+                />
+              </div>
             </div>
           </div>
         </div>
