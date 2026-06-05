@@ -24,25 +24,16 @@ useHead({
 });
 
 useSchemaOrg([
-  defineWebApplication({
+  defineSoftwareApp({
     name: "EA Invitation",
     description:
       "Software-as-a-Service (SaaS) untuk pembuatan undangan pernikahan digital berbasis web dengan desain modern dan fitur interaktif.",
     applicationCategory: "BusinessApplication",
-    operatingSystem: "All",
-    browserRequirements: "Requires HTML5 compatible browser",
+    operatingSystem: "Web",
     offers: {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
+      price: "0",
       priceCurrency: "IDR",
-      lowPrice: "0",
-      offers: [
-        {
-          "@type": "Offer",
-          name: "Free",
-          price: "0",
-          priceCurrency: "IDR",
-        },
-      ],
     },
   }),
 ]);
