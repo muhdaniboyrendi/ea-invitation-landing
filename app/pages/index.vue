@@ -1,11 +1,13 @@
 <script setup>
 useSeoMeta({
-  title: "Undangan Pernikahan Digital Modern & Interaktif",
+  title: "Platform Undangan Pernikahan Digital Unik & Premium",
   description:
-    "EA Invitation adalah platform undangan pernikahan digital berbasis web dengan berbagai tema yang modern dan interaktif. Berbagai fitur lengkap untuk membuat undangan pernikahan impianmu.",
-  ogTitle: "EA Invitation - Undangan Pernikahan Digital Modern & Interaktif",
+    "Bosan dengan template undangan digital sejuta umat? Bikin undangan pernikahan web kamu sendiri di EA Invitation. Banyak pilihan desain anti-mainstream, gampang, instan, dan bebas kuota tamu!",
+
+  ogTitle: "EA Invitation - Undangan Pernikahan Digital Unik & Premium",
   ogDescription:
-    "Buat undangan pernikahan digital berbasis website dengan berbagai tema modern dan interaktif serta fitur lengkap.",
+    "Bikin undangan pernikahan digital web yang estetik dan anti-mainstream dengan mudah. Fitur premium terlengkap: RSVP otomatis, gift digital, hingga QR code check-in.",
+
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/",
   ogSiteName: "EA Invitation",
@@ -22,14 +24,25 @@ useHead({
 });
 
 useSchemaOrg([
-  defineSoftwareApp({
+  defineWebApplication({
     name: "EA Invitation",
-    applicationCategory: "DesignApplication",
-    operatingSystem: "Web",
+    description:
+      "Software-as-a-Service (SaaS) untuk pembuatan undangan pernikahan digital berbasis web dengan desain modern dan fitur interaktif.",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "All",
+    browserRequirements: "Requires HTML5 compatible browser",
     offers: {
-      "@type": "Offer",
-      price: "0",
+      "@type": "AggregateOffer",
       priceCurrency: "IDR",
+      lowPrice: "0",
+      offers: [
+        {
+          "@type": "Offer",
+          name: "Free",
+          price: "0",
+          priceCurrency: "IDR",
+        },
+      ],
     },
   }),
 ]);

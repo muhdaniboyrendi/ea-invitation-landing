@@ -1,43 +1,37 @@
-<!-- pages/privacy-policy.vue -->
 <script setup>
 useSeoMeta({
   title: "Kebijakan Privasi",
   description:
-    "Kebijakan Privasi eainvitation.com menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat menggunakan layanan undangan digital kami.",
-  ogTitle: "Kebijakan Privasi - EA Invitation",
+    "Kebijakan Privasi EA Invitation menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda secara aman saat menggunakan layanan undangan digital kami.",
+
+  ogTitle: "EA Invitation - Kebijakan Privasi",
   ogDescription:
-    "Kebijakan Privasi eainvitation.com menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda saat menggunakan layanan undangan digital kami.",
+    "Kebijakan Privasi EA Invitation menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda secara aman saat menggunakan layanan undangan digital kami.",
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/privacy-policy",
   ogSiteName: "EA Invitation",
-  twitterCard: 'summary_large_image',
+  twitterCard: "summary_large_image",
 });
 
 useHead({
   link: [
     {
-      rel: 'canonical',
-      href: 'https://eainvitation.com/privacy-policy'
-    }
-  ]
-})
+      rel: "canonical",
+      href: "https://eainvitation.com/privacy-policy",
+    },
+  ],
+});
 
 useSchemaOrg([
-  {
-    '@type': 'WebPage',
-    '@id': 'https://eainvitation.com/privacy-policy',
-    name: 'Kebijakan Privasi',
+  defineWebPage({
+    "@id": "https://eainvitation.com/privacy-policy",
+    name: "Kebijakan Privasi - EA Invitation",
     description:
-      'Kebijakan Privasi eainvitation.com menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda.',
-    dateModified: '2026-01-27',
-    inLanguage: 'id-ID',
-    isPartOf: {
-      '@type': 'WebSite',
-      name: 'eainvitation.com',
-      url: 'https://eainvitation.com',
-    },
-  },
-])
+      "Kebijakan Privasi EA Invitation menjelaskan bagaimana kami mengumpulkan, menggunakan, menyimpan, dan melindungi informasi pribadi Anda secara aman.",
+    inLanguage: "id-ID",
+    dateModified: "2026-01-27",
+  }),
+]);
 </script>
 
 <template>

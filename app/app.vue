@@ -1,28 +1,26 @@
 <script setup>
-const route = useRoute()
+const route = useRoute();
 
-// Generate canonical URL dinamis
 const canonicalUrl = computed(() => {
-  const baseUrl = 'https://eainvitation.com'
-  const path = route.path
-  return `${baseUrl}${path}`
-})
+  const baseUrl = "https://eainvitation.com";
+  const path = route.path === "/" ? "" : route.path;
+  return `${baseUrl}${path}`;
+});
 
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `EA Invitation - ${titleChunk}`
-      : "EA Invitation - Platform Undangan Pernikahan Digital Modern & Interaktif";
+      : "EA Invitation - Platform Undangan Pernikahan Digital Unik & Premium";
   },
   link: [
     {
-      rel: 'canonical',
-      href: canonicalUrl
-    }
-  ]
+      rel: "canonical",
+      href: () => canonicalUrl.value,
+    },
+  ],
 });
 
-// Schema Global
 useSchemaOrg([
   defineOrganization({
     name: "EA Invitation",

@@ -1,11 +1,13 @@
 <script setup>
 useSeoMeta({
-  title: "Katalog Tema Undangan",
+  title: "Pilihan Desain Undangan Unik & Gak Pasaran",
   description:
-    "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
-  ogTitle: "EA Invitation - Katalog Tema Undangan",
+    "Intip koleksi tema undangan pernikahan digital premium dari EA Invitation. Temukan deretan layout estetik, modern, dan penuh karakter yang siap bikin undangan pernikahanmu berkesan!",
+
+  ogTitle: "EA Invitation - Pilihan Desain Undangan Unik & Gak Pasaran",
   ogDescription:
-    "Koleksi tema undangan pernikahan digital modern dan interaktif yang bisa Anda pilih.",
+    "Cari template undangan web yang beda dari yang lain? Jelajahi galeri tema premium EA Invitation yang responsif, interaktif, dan mudah dimodifikasi sesuai konsep acaramu.",
+
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/themes",
   twitterCard: "summary_large_image",
@@ -14,15 +16,15 @@ useSeoMeta({
 useHead({
   link: [
     {
-      rel: 'canonical',
-      href: 'https://eainvitation.com/themes'
-    }
-  ]
-})
+      rel: "canonical",
+      href: "https://eainvitation.com/themes",
+    },
+  ],
+});
 </script>
 
 <template>
-  <div class="bg-off-white dark:bg-dark">
+  <div class="bg-light dark:bg-dark">
     <NuxtLayout>
       <Themes />
     </NuxtLayout>
