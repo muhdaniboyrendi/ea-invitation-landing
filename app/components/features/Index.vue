@@ -1,3 +1,4 @@
+<!-- components/features/InteractiveFeatures.vue -->
 <script setup>
 const features = [
   {
@@ -116,6 +117,13 @@ const featureDetail = computed(() => {
     image: item?.image ?? "",
   };
 });
+
+// Kurva pegas premium (stabil, peredaman tinggi)
+const premiumSpring = {
+  type: "spring",
+  stiffness: 60,
+  damping: 20,
+};
 </script>
 
 <template>
@@ -123,62 +131,110 @@ const featureDetail = computed(() => {
     id="features"
     class="relative py-16 overflow-hidden bg-light dark:bg-dark"
   >
-    <div class="px-4">
-      <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
+    <!-- Header Section -->
+    <div class="px-4 max-w-7xl mx-auto">
+      <p
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
+        class="text-primary text-sm font-bold uppercase tracking-widest mb-4"
+      >
         Fitur Lengkap & Interaktif
       </p>
 
       <h2
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 800, delay: 100 },
+        }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
         Kendali Penuh di Tanganmu, Hasil Tetap Mewah
       </h2>
 
-      <p class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14">
+      <p
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 800, delay: 200 },
+        }"
+        class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14"
+      >
         Setiap fitur di EA Invitation dirancang untuk memberikan pengalaman yang
         berbeda, fleksibel, dan jauh dari kesan pasaran. Bikin undangan digital
         impianmu dengan konfigurasi super gampang.
       </p>
     </div>
 
-    <!-- Sisa kode template Anda tetap sama di bawah ini -->
+    <!-- Main Container Grid -->
     <div
-      class="bg-black/10 dark:bg-white/10 p-2 md:p-4 grid md:grid-cols-6 gap-x-4 gap-y-2"
+      class="bg-black/10 dark:bg-white/10 p-2 md:p-4 grid md:grid-cols-6 gap-x-4 gap-y-2 max-w-7xl mx-auto"
     >
+      <!-- Left Side: Interactive Buttons Grid -->
       <div class="md:col-span-3 grid grid-cols-3 content-between">
-        <button
-          v-for="feature in features"
+        <div
+          v-for="(feature, index) in features"
           :key="feature.label"
-          @click="changeActiveFeature(feature.label)"
-          type="button"
-          class="px-2 py-3 aspect-square bg-light dark:bg-dark flex flex-col justify-center items-center gap-3 border border-black/10 dark:border-white/10 hover:bg-light/80 dark:hover:bg-dark/80 transition duration-300 cursor-pointer"
+          v-motion
+          :initial="{ opacity: 0, scale: 0.9 }"
+          :visible-once="{
+            opacity: 1,
+            scale: 1,
+            transition: {
+              type: 'spring',
+              stiffness: 60,
+              damping: 15,
+              delay: index * 60,
+            },
+          }"
+          class="aspect-square"
         >
-          <i
-            class="bi text-6xl"
-            :class="[
-              feature.icon,
-              activeFeature === feature.label
-                ? 'text-primary'
-                : 'text-black dark:text-white',
-            ]"
-          ></i>
-          <span
-            class="font-mono font-semibold uppercase tracking-wider text-xs"
-            :class="
-              activeFeature === feature.label
-                ? 'text-primary'
-                : 'text-black dark:text-white'
-            "
-            >{{ feature.title }}</span
+          <button
+            @click="changeActiveFeature(feature.label)"
+            type="button"
+            class="w-full px-2 py-3 aspect-square bg-light dark:bg-dark flex flex-col justify-center items-center gap-3 border border-black/10 dark:border-white/10 hover:bg-light/80 dark:hover:bg-dark/80 transition-all duration-300 cursor-pointer relative group overflow-hidden"
           >
-        </button>
+            <i
+              class="bi text-5xl md:text-6xl transition-transform duration-500 group-hover:scale-110"
+              :class="[
+                feature.icon,
+                activeFeature === feature.label
+                  ? 'text-primary'
+                  : 'text-black dark:text-white/80',
+              ]"
+            ></i>
+            <span
+              class="font-mono font-semibold uppercase tracking-wider text-[10px] md:text-xs text-center"
+              :class="
+                activeFeature === feature.label
+                  ? 'text-primary'
+                  : 'text-black/70 dark:text-white/70'
+              "
+            >
+              {{ feature.title }}
+            </span>
+          </button>
+        </div>
       </div>
 
-      <div class="md:col-span-3">
+      <!-- Right Side: Showcase Content Wrapper (Animate on Load) -->
+      <div
+        v-motion
+        :initial="{ opacity: 0, x: 30 }"
+        :visible-once="{ opacity: 1, x: 0, transition: premiumSpring }"
+        class="md:col-span-3"
+      >
+        <!-- Isi Container Detail -->
         <div
-          class="bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 p-2"
+          class="bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 p-2 h-full flex flex-col justify-between"
         >
-          <div class="p-6 xl:p-8">
+          <!-- Element Dynamic Key to Trigger Content Animation on Change -->
+          <div :key="activeFeature" v-motion-fade class="p-6 xl:p-8">
             <h3
               class="text-black dark:text-white text-2xl font-semibold tracking-tighter mb-4"
             >
@@ -193,21 +249,31 @@ const featureDetail = computed(() => {
           </div>
 
           <div
-            class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10"
+            class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10 mt-auto"
           >
             <div
-              class="mt-3 mx-3 md:mt-4 md:mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2"
+              class="mt-3 mx-3 md:mt-4 md:mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2 overflow-hidden"
             >
               <div
-                class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden flex justify-center items-end"
+                class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden flex justify-center items-end bg-black/5 dark:bg-white/5 relative"
               >
+                <!-- Image Smooth Scale-In Animation based on Active Key -->
                 <NuxtImg
+                  :key="activeFeature"
+                  v-motion
+                  :initial="{ opacity: 0, y: 40, scale: 0.95 }"
+                  :enter="{
+                    opacity: 1,
+                    y: 0,
+                    scale: 1,
+                    transition: { type: 'spring', stiffness: 50, damping: 15 },
+                  }"
                   :src="featureDetail.image"
                   width="600"
                   loading="lazy"
                   placeholder
                   alt="Feature image"
-                  class="w-2/5 rounded-t-2xl border border-b-0 border-black/10 dark:border-white/10"
+                  class="w-2/5 rounded-t-2xl border border-b-0 border-black/10 dark:border-white/10 object-cover origin-bottom"
                 />
               </div>
             </div>

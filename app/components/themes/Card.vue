@@ -6,12 +6,15 @@ const themeUrl = config.public.themeUrl;
 </script>
 
 <template>
-  <div class="group relative w-full">
-    <!-- Theme Card -->
+  <a
+    :href="`${themeUrl}/${props.theme?.slug}` || '#'"
+    target="_blank"
+    rel="noopener"
+    class="group relative block w-full text-left no-underline"
+  >
     <div
-      class="relative bg-light dark:bg-dark rounded-2xl rounded-b-none border border-b-0 border-black/10 dark:border-white/10 overflow-hidden hover:-translate-y-1 transition duration-500"
+      class="relative bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 overflow-hidden hover:-translate-y-1 transition duration-500"
     >
-      <!-- Theme Preview Image -->
       <div class="relative h-fit overflow-hidden">
         <div class="p-2 pb-0">
           <NuxtImg
@@ -24,7 +27,7 @@ const themeUrl = config.public.themeUrl;
             format="webp"
             quality="80"
             placeholder
-            class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/20 dark:border-white/20"
+            class="w-full aspect-4/3 object-cover object-center rounded-lg border border-black/10 dark:border-white/10"
           />
           <div
             v-else
@@ -35,7 +38,6 @@ const themeUrl = config.public.themeUrl;
           </div>
         </div>
 
-        <!-- Theme Type Badge -->
         <div v-if="props.theme?.is_premium" class="absolute top-6 right-6 z-10">
           <span
             class="px-3 py-1 rounded-full text-xs text-light font-semibold bg-primary"
@@ -45,11 +47,12 @@ const themeUrl = config.public.themeUrl;
         </div>
       </div>
 
-      <!-- Theme Info -->
-      <div class="p-6">
-        <div class="flex items-center justify-between mb-4">
+      <div class="p-4">
+        <div class="flex items-center justify-between">
           <div>
-            <h3 class="text-lg font-semibold text-black dark:text-white">
+            <h3
+              class="text-lg font-semibold text-black dark:text-white"
+            >
               {{ props.theme?.name || "Untitled Theme" }}
             </h3>
           </div>
@@ -57,17 +60,7 @@ const themeUrl = config.public.themeUrl;
             {{ props.theme?.theme_category?.name || "Uncategorized" }}
           </span>
         </div>
-
-        <a
-          :href="`${themeUrl}/${props.theme?.slug}` || '#'"
-          target="_blank"
-          rel="noopener"
-          class="group/btn relative w-full inline-flex justify-center items-center px-4 py-2 bg-primary text-white font-bold rounded-lg hover:bg-primary/80 transition duration-300"
-        >
-          Lihat Tema
-          <i class="bi bi-arrow-right ml-2"></i>
-        </a>
       </div>
     </div>
-  </div>
+  </a>
 </template>

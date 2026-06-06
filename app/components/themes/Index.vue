@@ -32,7 +32,7 @@ const getThemeCount = (categoryId) => {
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Temukan Palet Estetika Pernikahan Impian Anda
+        Pilihan Desain Unik & Gak Pasaran
       </h2>
 
       <p
@@ -57,17 +57,22 @@ const getThemeCount = (categoryId) => {
               key="cat-all"
               @click="activeCategory = 'all'"
               type="button"
-              class="px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium shadow-lg cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+              class="px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium cursor-pointer transition duration-300"
               :class="
                 activeCategory === 'all'
-                  ? 'bg-primary text-white'
-                  : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
+                  ? 'bg-primary text-white hover:bg-primary/80'
+                  : 'bg-white/80 dark:bg-white/3 text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5'
               "
             >
               <span class="flex items-center text-sm">
                 Semua Tema
                 <span
-                  class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
+                  class="ml-2 text-xs px-2 py-1 rounded-full"
+                  :class="
+                    activeCategory === 'all'
+                      ? 'text-black dark:text-white bg-white dark:bg-dark'
+                      : 'text-black dark:text-white bg-black/10 dark:bg-white/10'
+                  "
                 >
                   {{ getThemeCount("all") }}
                 </span>
@@ -80,17 +85,22 @@ const getThemeCount = (categoryId) => {
             <button
               @click="activeCategory = category.id"
               type="button"
-              class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium shadow-lg cursor-pointer hover:bg-black/5 dark:hover:bg-white/5 transition duration-300"
+              class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium cursor-pointer transition duration-300"
               :class="
                 activeCategory === category.id
-                  ? 'bg-primary text-white'
-                  : 'bg-white/80 dark:bg-white/3 text-black dark:text-white'
+                  ? 'bg-primary text-white hover:bg-primary/80'
+                  : 'bg-white/80 dark:bg-white/3 text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5'
               "
             >
               <span class="flex items-center text-sm">
                 {{ category.name }}
                 <span
-                  class="ml-2 text-xs text-dark dark:text-light bg-black/5 dark:bg-white/5 px-2 py-1 rounded-full"
+                  class="ml-2 text-xs px-2 py-1 rounded-full"
+                  :class="
+                    activeCategory === category.id
+                      ? 'text-black dark:text-white bg-white dark:bg-dark'
+                      : 'text-black dark:text-white bg-black/10 dark:bg-white/10'
+                  "
                 >
                   {{ getThemeCount(category.id) }}
                 </span>

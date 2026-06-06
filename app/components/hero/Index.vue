@@ -3,6 +3,14 @@
 const config = useRuntimeConfig();
 
 const dashboardAppUrl = config.public.dashboardAppUrl;
+
+// Kita definisikan kurva transpirasi premium agar reusable dan konsisten
+const premiumTransition = {
+  type: "spring",
+  stiffness: 45, // Membuat gerakan meluncur lebih santai/lambat
+  damping: 18, // Meredam pantulan agar tidak terkesan memantul seperti mainan
+  mass: 0.8,
+};
 </script>
 
 <template>
@@ -10,14 +18,30 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
     <div
       class="relative w-full max-w-7xl mx-auto pt-30 px-4 md:pt-32 pb-5 lg:pb-20"
     >
+      <!-- 1. HEADLINE: Meluncur halus dari bawah dengan opacity -->
       <h1
+        v-motion
+        :initial="{ opacity: 0, y: 50 }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: premiumTransition,
+        }"
         class="max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold md:font-medium tracking-tighter text-black dark:text-white text-balance"
       >
         Kisah Cinta Anda Unik. Kenapa Harus Pakai Undangan yang
         <span class="text-primary"> Pasaran? </span>
       </h1>
 
+      <!-- 2. SUB-TEXT: Muncul sedikit lebih lambat (staggered delay) -->
       <p
+        v-motion
+        :initial="{ opacity: 0, y: 30 }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: { ...premiumTransition, delay: 200 },
+        }"
         class="mt-4 md:mt-8 max-w-3xl text-lg md:text-xl text-black/60 dark:text-white/60 font-semibold text-balance-dashboard"
       >
         Lupakan template monoton yang itu-itu saja. EA Invitation menghadirkan
@@ -26,7 +50,17 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
         terkesan.
       </p>
 
-      <div class="flex flex-col sm:flex-row text-center gap-2 mt-10">
+      <!-- 3. BUTTONS CTA: Muncul paling akhir dengan transisi halus -->
+      <div
+        v-motion
+        :initial="{ opacity: 0, y: 20 }"
+        :enter="{
+          opacity: 1,
+          y: 0,
+          transition: { ...premiumTransition, delay: 400 },
+        }"
+        class="flex flex-col sm:flex-row text-center gap-2 mt-10"
+      >
         <a
           :href="dashboardAppUrl + '/login'"
           rel="external"
