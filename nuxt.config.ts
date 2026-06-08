@@ -24,6 +24,10 @@ export default defineNuxtConfig({
     fallback: "light",
   },
 
+  image: {
+    provider: "none",
+  },
+
   routeRules: {
     "/**": { prerender: true },
   },
