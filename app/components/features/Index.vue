@@ -249,34 +249,24 @@ const premiumSpring = {
           </div>
 
           <div
-            class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10 mt-auto"
+            class="bg-black/3 dark:bg-white/3 rounded-lg border border-black/10 dark:border-white/10 mt-auto overflow-hidden aspect-4/3 flex justify-center items-end"
           >
-            <div
-              class="mt-3 mx-3 md:mt-4 md:mx-4 xl:mt-8 xl:mx-8 bg-light dark:bg-dark rounded-2xl rounded-b-none border border-black/10 dark:border-white/10 p-2 overflow-hidden"
-            >
-              <div
-                class="w-full aspect-4/3 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden flex justify-center items-end bg-black/5 dark:bg-white/5 relative"
-              >
-                <!-- Image Smooth Scale-In Animation based on Active Key -->
-                <NuxtImg
-                  :key="activeFeature"
-                  v-motion
-                  :initial="{ opacity: 0, y: 40, scale: 0.95 }"
-                  :enter="{
-                    opacity: 1,
-                    y: 0,
-                    scale: 1,
-                    transition: { type: 'spring', stiffness: 50, damping: 15 },
-                  }"
-                  :src="featureDetail.image"
-                  width="600"
-                  loading="lazy"
-                  placeholder
-                  alt="Feature image"
-                  class="w-2/5 rounded-t-2xl border border-b-0 border-black/10 dark:border-white/10 object-cover origin-bottom"
-                />
-              </div>
-            </div>
+            <!-- Image Smooth Scale-In Animation based on Active Key -->
+            <NuxtImg
+              :key="activeFeature"
+              v-motion
+              :initial="{ opacity: 0, y: 40, scale: 0.95 }"
+              :visible-once="{
+                opacity: 1,
+                y: 0,
+                scale: 1,
+                transition: { type: 'spring', stiffness: 50, damping: 15 },
+              }"
+              :src="featureDetail.image"
+              width="600"
+              :alt="`${featureDetail.title} image`"
+              class="w-2/5 rounded-t-2xl border border-b-0 border-black/10 dark:border-white/10 object-cover origin-bottom"
+            />
           </div>
         </div>
       </div>

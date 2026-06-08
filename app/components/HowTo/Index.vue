@@ -62,7 +62,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        4 Langkah Gampang Bikin Undangan Unikmu
+        4 Langkah Mudah Bikin Undangan Unikmu
       </h2>
 
       <p
