@@ -1,8 +1,10 @@
 <!-- components/themes/ShowcaseSlider.vue -->
 <script setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { useMediaQuery } from "@vueuse/core";
 
 const { themes } = useThemeStore();
+
+const isDesktop = useMediaQuery("(min-width: 640px)");
 const sliderRef = ref(null);
 let autoplayInterval = null;
 
@@ -34,6 +36,30 @@ const startAutoplay = () => {
 const stopAutoplay = () => {
   if (autoplayInterval) clearInterval(autoplayInterval);
 };
+
+const getCardAnimation = (index) =>
+  computed(() => {
+    if (!isDesktop.value) {
+      return {
+        initial: { opacity: 1, y: 0, scale: 1 },
+        visibleOnce: { opacity: 1, y: 0, scale: 1 },
+      };
+    }
+    return {
+      initial: { opacity: 0, y: 40, scale: 0.98 },
+      visibleOnce: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+          type: "spring",
+          stiffness: 40,
+          damping: 16,
+          delay: (index % 4) * 100,
+        },
+      },
+    };
+  });
 
 onMounted(() => {
   startAutoplay();
@@ -97,49 +123,29 @@ const premiumSpring = {
     </div>
 
     <!-- Themes Catalog Wrapper -->
-    <div
-      class="bg-black/10 dark:bg-white/10 p-2 md:p-4 max-w-7xl mx-auto"
-    >
+    <div class="bg-black/10 dark:bg-white/10 max-w-7xl mx-auto">
       <div
-        class="bg-light dark:bg-dark rounded-2xl border border-black/20 dark:border-white/20 p-2"
+        ref="sliderRef"
+        @touchstart="stopAutoplay"
+        @touchend="startAutoplay"
+        class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 pt-4 pb-4 sm:px-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
       >
-        <div
-          class="bg-black/5 dark:bg-white/5 rounded-lg border border-black/10 dark:border-white/10 overflow-hidden"
-        >
-          <div
-            ref="sliderRef"
-            @touchstart="stopAutoplay"
-            @touchend="startAutoplay"
-            class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 pt-4 pb-4 sm:px-4 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-          >
-            <!-- Themes Cards with Staggered Slide-Up -->
-            <ThemesCard
-              v-for="(theme, index) in limitedThemes"
-              :key="theme.id"
-              v-motion
-              :initial="{ opacity: 0, y: 40, scale: 0.98 }"
-              :visible-once="{
-                opacity: 1,
-                y: 0,
-                scale: 1,
-                transition: {
-                  type: 'spring',
-                  stiffness: 40,
-                  damping: 16,
-                  delay: (index % 4) * 100,
-                },
-              }"
-              :theme="theme"
-              class="snap-center shrink-0 w-[76vw] sm:w-auto"
-            />
-          </div>
-        </div>
+        <!-- Themes Cards with Staggered Slide-Up -->
+        <ThemesCard
+          v-for="(theme, index) in limitedThemes"
+          :key="theme.id"
+          v-motion
+          :initial="getCardAnimation(index).value.initial"
+          :visible-once="getCardAnimation(index).value.visibleOnce"
+          :theme="theme"
+          class="snap-center shrink-0 w-[76vw] sm:w-auto"
+        />
       </div>
     </div>
 
     <!-- Call to Action Button Section -->
     <div class="mt-14 px-4 text-center max-w-7xl mx-auto md:text-left">
-      <NuxtLink
+      <div
         v-motion
         :initial="{ opacity: 0, scale: 0.9 }"
         :visible-once="{
@@ -147,15 +153,18 @@ const premiumSpring = {
           scale: 1,
           transition: { ...premiumSpring, delay: 500 },
         }"
-        to="/themes"
-        rel="external"
-        class="inline-block py-3 px-6 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400/70 dark:hover:bg-zinc-600 text-black dark:text-white font-bold rounded-full shrink-0 active:scale-95 transition-all duration-300 shadow-md shadow-black/5 hover:shadow-lg"
       >
-        Jelajahi Semua Desain
-        <i
-          class="bi bi-arrow-up-right ml-2 transition-transform duration-300 inline-block group-hover:translate-x-1 group-hover:-translate-y-1"
-        ></i>
-      </NuxtLink>
+        <NuxtLink
+          to="/themes"
+          rel="external"
+          class="inline-block py-3 px-6 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400/70 dark:hover:bg-zinc-600 text-black dark:text-white font-bold rounded-full shrink-0 active:scale-95 transition-all duration-300 shadow-md shadow-black/5 hover:shadow-lg"
+        >
+          Jelajahi Semua Tema
+          <i
+            class="bi bi-arrow-up-right ml-2 transition-transform duration-300 inline-block group-hover:translate-x-1 group-hover:-translate-y-1"
+          ></i>
+        </NuxtLink>
+      </div>
     </div>
   </section>
 </template>

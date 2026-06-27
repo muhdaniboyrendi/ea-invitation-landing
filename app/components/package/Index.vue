@@ -1,6 +1,10 @@
 <!-- components/packages/PricingSection.vue -->
 <script setup>
+import { useMediaQuery } from "@vueuse/core";
+
 const { packages } = storeToRefs(usePackageStore());
+
+const isDesktop = useMediaQuery("(min-width: 640px)");
 
 const premiumSpring = {
   type: "spring",
@@ -8,6 +12,28 @@ const premiumSpring = {
   damping: 18,
   mass: 1,
 };
+
+const getCardAnimation = (index) =>
+  computed(() => {
+    if (!isDesktop.value) {
+      return {
+        initial: { opacity: 1, y: 0, scale: 1 },
+        visibleOnce: { opacity: 1, y: 0, scale: 1 },
+      };
+    }
+    return {
+      initial: { opacity: 0, y: 40, scale: 0.95 },
+      visibleOnce: {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        transition: {
+          ...premiumSpring,
+          delay: (index % 4) * 120,
+        },
+      },
+    };
+  });
 </script>
 
 <template>
@@ -62,16 +88,8 @@ const premiumSpring = {
           v-for="(pkg, index) in packages"
           :key="pkg.id"
           v-motion
-          :initial="{ opacity: 0, y: 40, scale: 0.95 }"
-          :visible-once="{
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            transition: {
-              ...premiumSpring,
-              delay: (index % 4) * 120,
-            },
-          }"
+          :initial="getCardAnimation(index).value.initial"
+          :visible-once="getCardAnimation(index).value.visibleOnce"
           :package="pkg"
           class="snap-center shrink-0 w-[78vw] sm:w-auto transition-transform duration-300"
         />

@@ -98,7 +98,7 @@ const premiumSpring = {
             y: 0,
             transition: { ...premiumSpring, delay: index * 100 },
           }"
-          class="relative overflow-hidden h-full p-6 bg-light dark:bg-dark border border-black/20 dark:border-white/20 rounded-2xl group hover:border-primary/40 transition-colors duration-300"
+          class="relative overflow-hidden h-full p-6 bg-light dark:bg-dark border border-black/20 dark:border-white/20 rounded-2xl group"
         >
           <!-- Step Badge Number with Interactive Scale & Subtle Delay Reveal -->
           <span
@@ -115,20 +115,15 @@ const premiumSpring = {
                 delay: index * 100 + 200,
               },
             }"
-            class="absolute -top-15 right-0 text-9xl font-extrabold text-black/10 dark:text-white/10 tracking-tight select-none group-hover:text-primary/10 transition-colors duration-500"
+            class="absolute -top-15 right-0 text-9xl font-extrabold text-black/10 dark:text-white/10 tracking-tight select-none"
           >
             {{ step.stepNumber }}
           </span>
 
           <!-- Content -->
           <h3
-            class="text-lg font-bold text-black dark:text-white mb-2 tracking-tight flex items-center gap-2 group-hover:text-primary transition-colors duration-300"
+            class="text-lg font-bold text-black dark:text-white mb-2 tracking-tight flex items-center gap-2"
           >
-            <span
-              class="text-xs font-mono px-2 py-0.5 rounded bg-primary/10 text-primary md:hidden"
-            >
-              {{ step.stepNumber }}
-            </span>
             {{ step.title }}
           </h3>
 

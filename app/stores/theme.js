@@ -90,6 +90,24 @@ export const useThemeStore = defineStore("theme", () => {
         updated_at: "2026-01-06T03:45:06.000000Z",
       },
     },
+    {
+      id: 6,
+      theme_category_id: 2,
+      name: "Neubrutalism",
+      slug: "neubrutalism",
+      thumbnail: "/img/themes/neubrutalism.webp",
+      is_premium: false,
+      created_at: "2026-01-12T08:03:33.000000Z",
+      updated_at: "2026-01-12T08:03:33.000000Z",
+      thumbnail_url: "/img/themes/neubrutalism.webp",
+      theme_category: {
+        id: 2,
+        name: "Modern",
+        description: null,
+        created_at: "2026-01-06T03:45:06.000000Z",
+        updated_at: "2026-01-06T03:45:06.000000Z",
+      },
+    },
   ]);
 
   const categories = ref([
