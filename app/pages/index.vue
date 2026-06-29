@@ -35,6 +35,26 @@ useSchemaOrg([
       price: "0",
       priceCurrency: "IDR",
     },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: "150",
+    },
+    review: [
+      {
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: "Muhdani Boyrendi",
+        },
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+        },
+        reviewBody:
+          "Platform undangan digital yang sangat mudah digunakan, fiturnya lengkap, dan desainnya sangat modern dan unik.",
+      },
+    ],
   }),
 ]);
 </script>
