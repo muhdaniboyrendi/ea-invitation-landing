@@ -30,11 +30,52 @@ useSchemaOrg([
       "Software-as-a-Service (SaaS) untuk pembuatan undangan pernikahan digital berbasis web dengan desain modern dan fitur interaktif.",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
+    brand: {
+      "@type": "Brand",
+      name: "EA Invitation",
+    },
     offers: {
       "@type": "Offer",
       price: "0",
       priceCurrency: "IDR",
+      priceValidUntil: "2026-06-29",
+      availability: "https://schema.org/InStock",
+
+      shippingDetails: {
+        "@type": "OfferShippingDetails",
+        shippingRate: {
+          "@type": "MonetaryAmount",
+          value: "0",
+          currency: "IDR",
+        },
+        shippingDestination: {
+          "@type": "DefinedRegion",
+          addressCountry: "ID",
+        },
+        deliveryTime: {
+          "@type": "ShippingDeliveryTime",
+          handlingTime: {
+            "@type": "QuantitativeValue",
+            maxValue: 0,
+            unitCode: "DAY",
+          },
+          transitTime: {
+            "@type": "QuantitativeValue",
+            maxValue: 0,
+            unitCode: "DAY",
+          },
+        },
+      },
+
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        applicableCountry: "ID",
+        returnPolicyCategory: "https://schema.org/UnsupportedReturnPolicy",
+        merchantReturnDays: 0,
+        returnFees: "https://schema.org/FreeReturn",
+      },
     },
+
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
@@ -43,16 +84,10 @@ useSchemaOrg([
     review: [
       {
         "@type": "Review",
-        author: {
-          "@type": "Person",
-          name: "Muhdani Boyrendi",
-        },
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-        },
+        author: { "@type": "Person", name: "Erlan Azhari" },
+        reviewRating: { "@type": "Rating", ratingValue: "5" },
         reviewBody:
-          "Platform undangan digital yang sangat mudah digunakan, fiturnya lengkap, dan desainnya sangat modern dan unik.",
+          "Platform undangan digital yang sangat mudah digunakan, fiturnya lengkap, dan desainnya sangat modern.",
       },
     ],
   }),
