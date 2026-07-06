@@ -84,15 +84,18 @@ const getCardAnimation = (index) =>
         class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:px-0"
       >
         <!-- PackageCard with Staggered Entrance and Micro-Lift -->
-        <PackageCard
+        <div
           v-for="(pkg, index) in packages"
           :key="pkg.id"
           v-motion
           :initial="getCardAnimation(index).value.initial"
           :visible-once="getCardAnimation(index).value.visibleOnce"
-          :package="pkg"
-          class="snap-center shrink-0 w-[78vw] sm:w-auto transition-transform duration-300"
-        />
+        >
+          <PackageCard
+            :package="pkg"
+            class="snap-center shrink-0 w-[78vw] sm:w-auto transition-transform duration-300"
+          />
+        </div>
       </div>
     </div>
   </section>
