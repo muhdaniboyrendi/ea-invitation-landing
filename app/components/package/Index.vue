@@ -6,13 +6,6 @@ const { packages } = storeToRefs(usePackageStore());
 
 const isDesktop = useMediaQuery("(min-width: 640px)");
 
-const premiumSpring = {
-  type: "spring",
-  stiffness: 55,
-  damping: 18,
-  mass: 1,
-};
-
 const getCardAnimation = (index) =>
   computed(() => {
     if (!isDesktop.value) {
@@ -22,18 +15,26 @@ const getCardAnimation = (index) =>
       };
     }
     return {
-      initial: { opacity: 0, y: 40, scale: 0.95 },
+      initial: { opacity: 0, y: 40, scale: 0.98 },
       visibleOnce: {
         opacity: 1,
         y: 0,
         scale: 1,
         transition: {
-          ...premiumSpring,
-          delay: (index % 4) * 120,
+          type: "spring",
+          stiffness: 40,
+          damping: 16,
+          delay: (index % 4) * 100,
         },
       },
     };
   });
+
+const premiumSpring = {
+  type: "spring",
+  stiffness: 45,
+  damping: 20,
+};
 </script>
 
 <template>
@@ -84,18 +85,15 @@ const getCardAnimation = (index) =>
         class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth no-scrollbar gap-2 px-6 sm:grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 sm:px-0"
       >
         <!-- PackageCard with Staggered Entrance and Micro-Lift -->
-        <div
+        <PackageCard
           v-for="(pkg, index) in packages"
           :key="pkg.id"
           v-motion
           :initial="getCardAnimation(index).value.initial"
           :visible-once="getCardAnimation(index).value.visibleOnce"
-        >
-          <PackageCard
-            :package="pkg"
-            class="snap-center shrink-0 w-[78vw] sm:w-auto transition-transform duration-300"
-          />
-        </div>
+          :package="pkg"
+          class="snap-center shrink-0 w-[78vw] sm:w-auto"
+        />
       </div>
     </div>
   </section>
