@@ -17,17 +17,14 @@ const startAutoplay = () => {
 
     const maxScrollLeft = el.scrollWidth - el.clientWidth;
 
-    // Jika scroll mendekati atau sudah mentok di kanan, reset ke awal (paling kiri)
     if (el.scrollLeft >= maxScrollLeft - 10) {
       el.scrollTo({ left: 0, behavior: "smooth" });
     } else {
-      // Mengambil lebar elemen anak pertama (kartu) untuk kalkulasi jarak geser yang presisi
       const firstChild = el.firstElementChild;
       const cardWidth = firstChild
         ? firstChild.getBoundingClientRect().width
         : 300;
 
-      // Karena menggunakan snap-center, kita geser sejauh lebar kartu + gap (16px)
       el.scrollBy({ left: cardWidth + 16, behavior: "smooth" });
     }
   }, 3000);

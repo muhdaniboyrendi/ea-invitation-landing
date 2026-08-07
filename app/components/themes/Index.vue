@@ -1,5 +1,7 @@
 <script setup>
-const { categories, themes } = storeToRefs(useThemeStore());
+const { themes } = storeToRefs(useThemeStore());
+
+const categories = ["basic", "premium", "luxury"];
 
 const activeCategory = ref("all");
 
@@ -8,16 +10,15 @@ const filteredThemes = computed(() => {
     return themes.value;
   }
   return themes.value.filter(
-    (theme) => theme.theme_category_id === activeCategory.value,
+    (theme) => theme.category === activeCategory.value,
   );
 });
 
-const getThemeCount = (categoryId) => {
-  if (categoryId === "all") {
+const getThemeCount = (category) => {
+  if (category === "all") {
     return themes.value.length;
   }
-  return themes.value.filter((theme) => theme.theme_category_id === categoryId)
-    .length;
+  return themes.value.filter((theme) => theme.category === category).length;
 };
 </script>
 
@@ -57,7 +58,7 @@ const getThemeCount = (categoryId) => {
               key="cat-all"
               @click="activeCategory = 'all'"
               type="button"
-              class="px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium cursor-pointer transition duration-300"
+              class="px-4 py-2 border border-black/10 dark:border-white/10 rounded-full font-medium cursor-pointer transition duration-300"
               :class="
                 activeCategory === 'all'
                   ? 'bg-primary text-white hover:bg-primary/80'
@@ -80,29 +81,28 @@ const getThemeCount = (categoryId) => {
             </button>
           </div>
 
-          <!-- Gunakan category.id sebagai key, bukan index, agar tidak ada duplikat -->
           <div v-for="(category, index) in categories" :key="index">
             <button
-              @click="activeCategory = category.id"
+              @click="activeCategory = category"
               type="button"
-              class="shrink-0 px-4 py-2 border border-black/20 dark:border-white/20 rounded-full font-medium cursor-pointer transition duration-300"
+              class="shrink-0 px-4 py-2 border border-black/10 dark:border-white/10 rounded-full font-medium cursor-pointer transition duration-300"
               :class="
-                activeCategory === category.id
+                activeCategory === category
                   ? 'bg-primary text-white hover:bg-primary/80'
                   : 'bg-white/80 dark:bg-white/3 text-black dark:text-white hover:bg-black/5 dark:hover:bg-white/5'
               "
             >
-              <span class="flex items-center text-sm">
-                {{ category.name }}
+              <span class="flex items-center text-sm capitalize">
+                {{ category }}
                 <span
                   class="ml-2 text-xs px-2 py-1 rounded-full"
                   :class="
-                    activeCategory === category.id
+                    activeCategory === category
                       ? 'text-black dark:text-white bg-white dark:bg-dark'
                       : 'text-black dark:text-white bg-black/10 dark:bg-white/10'
                   "
                 >
-                  {{ getThemeCount(category.id) }}
+                  {{ getThemeCount(category) }}
                 </span>
               </span>
             </button>
@@ -112,6 +112,7 @@ const getThemeCount = (categoryId) => {
 
       <!-- Themes Grid -->
       <div
+        v-if="filteredThemes.length > 0"
         class="bg-black/10 dark:bg-white/10 p-2 md:p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2"
       >
         <ThemesCard
@@ -119,6 +120,12 @@ const getThemeCount = (categoryId) => {
           :key="theme.id"
           :theme="theme"
         />
+      </div>
+
+      <div v-else class="bg-black/10 dark:bg-white/10 px-4 py-8">
+        <p class="text-sm text-center text-black/60 dark:text-white/60">
+          Belum ada tema tersedia
+        </p>
       </div>
     </div>
   </section>
