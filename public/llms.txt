@@ -1,0 +1,12 @@
+# EA Invitation
+
+> EA Invitation adalah platform undangan pernikahan digital (digital wedding invitation) yang menyediakan berbagai tema custom, RSVP online, dan fitur interaktif untuk pasangan yang akan menikah di Indonesia.
+
+## Produk
+- [Beranda](https://eainvitation.com): Landing page utama, penjelasan produk dan value proposition
+- [Harga](https://eainvitation.com#pricing): Paket dan harga layanan undangan digital
+- [Tema](https://eainvitation.com/themes): Katalog tema undangan (Hanami, Keraton, Newspaper, Instagram, dan lainnya)
+
+## Aplikasi
+- [Portal Pengguna](https://app.eainvitation.com): Dashboard untuk membuat dan mengelola undangan
+- [Preview Tema](https://invite.eainvitation.com): Live preview tema-tema undangan yang tersedia
