@@ -11,7 +11,7 @@ const navigation = [
   { name: "Fitur", href: "/#features" },
   { name: "Tutorial", href: "/#tutorial" },
   { name: "Tema", href: "/#themes" },
-  { name: "Harga", href: "/#packages" },
+  { name: "Harga", href: "/#pricing" },
 ];
 
 const toggleMobile = () => {

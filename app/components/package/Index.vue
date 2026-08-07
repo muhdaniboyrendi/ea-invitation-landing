@@ -38,7 +38,7 @@ const premiumSpring = {
 </script>
 
 <template>
-  <section id="packages" class="py-16 overflow-hidden bg-light dark:bg-dark">
+  <section id="pricing" class="py-16 overflow-hidden bg-light dark:bg-dark">
     <!-- Header Section -->
     <div class="px-4 max-w-7xl mx-auto">
       <p
