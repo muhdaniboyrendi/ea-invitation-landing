@@ -17,7 +17,7 @@ const colorMode = useColorMode();
               'w-10 h-10 md:w-7 md:h-7 rounded-full flex items-center justify-center transition duration-300 cursor-pointer',
               colorMode.preference === 'system'
                 ? 'bg-black/20 dark:bg-white/20 shadow-sm'
-                : 'hover:bg-black/10 dark:hover:bg-white/10',
+                : 'hover:bg-black/5 dark:hover:bg-white/5',
             ]"
             title="System Mode"
           >
@@ -30,7 +30,7 @@ const colorMode = useColorMode();
               'w-10 h-10 md:w-7 md:h-7 rounded-full flex items-center justify-center transition duration-300 cursor-pointer',
               colorMode.preference === 'light'
                 ? 'bg-white dark:bg-black/40 shadow-sm'
-                : 'hover:bg-black/10 dark:hover:bg-white/10',
+                : 'hover:bg-black/5 dark:hover:bg-white/5',
             ]"
             title="Light Mode"
           >
@@ -43,7 +43,7 @@ const colorMode = useColorMode();
               'w-10 h-10 md:w-7 md:h-7 rounded-full flex items-center justify-center transition duration-300 cursor-pointer',
               colorMode.preference === 'dark'
                 ? 'bg-black/30 bg-white/20 shadow-sm'
-                : 'hover:bg-black/10 dark:hover:bg-white/10',
+                : 'hover:bg-black/5 dark:hover:bg-white/5',
             ]"
             title="Dark Mode"
           >

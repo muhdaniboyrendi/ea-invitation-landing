@@ -29,8 +29,8 @@ const premiumTransition = {
         }"
         class="max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold md:font-medium tracking-tighter text-black dark:text-white text-balance"
       >
-        Kisah Cinta Anda Unik. Kenapa Harus Pakai Undangan yang
-        <span class="text-primary"> Pasaran? </span>
+        Undangan Pernikahan dengan Desain yang
+        <span class="text-primary"> Anti-mainstream </span>
       </h1>
 
       <!-- 2. SUB-TEXT: Muncul sedikit lebih lambat (staggered delay) -->
@@ -42,12 +42,12 @@ const premiumTransition = {
           y: 0,
           transition: { ...premiumTransition, delay: 200 },
         }"
-        class="mt-4 md:mt-8 max-w-3xl text-lg md:text-xl text-black/60 dark:text-white/60 font-semibold text-balance-dashboard"
+        class="mt-4 md:mt-8 max-w-3xl text-lg md:text-xl text-black/60 dark:text-white/60 font-medium text-balance-dashboard"
       >
-        Lupakan template monoton yang itu-itu saja. EA Invitation menghadirkan
-        koleksi desain anti-mainstream yang modern, estetik, dan penuh karakter.
-        Simpel cara bikinnya, premium hasilnya, dan siap bikin tamu undanganmu
-        terkesan.
+        Kebanyakan undangan digital pakai template yang sama. EA Invitation
+        punya koleksi tema dengan gaya berbeda — dari Instagram, budaya
+        tradisional, sampai Windows 11. Pilih tema, isi data, undanganmu
+        langsung siap dibagikan.
       </p>
 
       <!-- 3. BUTTONS CTA: Muncul paling akhir dengan transisi halus -->
@@ -73,7 +73,7 @@ const premiumTransition = {
           to="/#themes"
           class="py-3 px-8 text-black dark:text-white font-bold rounded-full shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
         >
-          Lihat Desain Anti-Mainstream
+          Lihat Koleksi Tema
           <i class="bi bi-arrow-right ml-1"></i>
         </NuxtLink>
       </div>

@@ -1,12 +1,13 @@
 <script setup>
 useSeoMeta({
-  title: "Platform Undangan Pernikahan Digital Unik & Premium",
+  title: "Undangan Pernikahan Digital Modern dengan Desain Anti-mainstream",
   description:
-    "Bosan dengan template undangan digital sejuta umat? Bikin undangan pernikahan web kamu sendiri di EA Invitation. Banyak pilihan desain anti-mainstream, gampang, instan, dan bebas kuota tamu!",
+    "Bikin undangan pernikahan digital sendiri di EA Invitation. Tema dengan desain berbeda dari kebanyakan dan mudah diedit.",
 
-  ogTitle: "EA Invitation - Undangan Pernikahan Digital Unik & Premium",
+  ogTitle:
+    "EA Invitation - Undangan Pernikahan Digital Modern dengan Desain Anti-mainstream",
   ogDescription:
-    "Bikin undangan pernikahan digital web yang estetik dan anti-mainstream dengan mudah. Fitur premium terlengkap: RSVP otomatis, gift digital, hingga QR code check-in.",
+    "Buat undangan pernikahan digital dengan tema yang berbeda dari biasanya. Lengkap dengan RSVP otomatis, kado digital, dan QR code check-in.",
 
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/",
@@ -27,7 +28,7 @@ useSchemaOrg([
   defineSoftwareApp({
     name: "EA Invitation",
     description:
-      "Software-as-a-Service (SaaS) untuk pembuatan undangan pernikahan digital berbasis web dengan desain modern dan fitur interaktif.",
+      "Layanan untuk membuat undangan pernikahan digital berbasis web, dengan tema desain yang berbeda dari kebanyakan dan fitur interaktif seperti RSVP dan check-in.",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     brand: {
@@ -76,20 +77,20 @@ useSchemaOrg([
       },
     },
 
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: "150",
-    },
-    review: [
-      {
-        "@type": "Review",
-        author: { "@type": "Person", name: "Erlan Azhari" },
-        reviewRating: { "@type": "Rating", ratingValue: "5" },
-        reviewBody:
-          "Platform undangan digital yang sangat mudah digunakan, fiturnya lengkap, dan desainnya sangat modern.",
-      },
-    ],
+    // aggregateRating: {
+    //   "@type": "AggregateRating",
+    //   ratingValue: "4.9",
+    //   reviewCount: "150",
+    // },
+    // review: [
+    //   {
+    //     "@type": "Review",
+    //     author: { "@type": "Person", name: "Erlan Azhari" },
+    //     reviewRating: { "@type": "Rating", ratingValue: "5" },
+    //     reviewBody:
+    //       "Fiturnya lengkap dan gampang digunakan. Desainnya juga beda dari undangan digital kebanyakan.",
+    //   },
+    // ],
   }),
 ]);
 </script>

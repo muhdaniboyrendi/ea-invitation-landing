@@ -86,7 +86,7 @@ const premiumSpring = {
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         class="text-primary text-sm font-bold uppercase tracking-widest mb-4"
       >
-        Koleksi Tema Pilihan
+        Koleksi Tema
       </p>
 
       <h2
@@ -99,7 +99,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Pilihan Desain Unik & Gak Pasaran
+        Koleksi Tema Anti-maintsream
       </h2>
 
       <p
@@ -112,10 +112,10 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Kami mengurasi deretan desain undangan digital modern yang penuh
-        karakter khusus untuk kamu yang bosan dengan template sejuta umat.
-        Setiap layout dibuat presisi agar undanganmu sukses bikin tamu berkesan
-        sejak pandangan pertama.
+        Tema yang kami buat gak ikut format undangan pada umumnya. Ada yang
+        terinspirasi dari tampilan Instagram, budaya Jawa dan Jepang, sampai
+        antarmuka Windows 11 — dirancang detail supaya tamu ingat undanganmu,
+        bukan cuma buka lalu tutup.
       </p>
     </div>
 
@@ -156,7 +156,7 @@ const premiumSpring = {
           rel="external"
           class="inline-block py-3 px-6 bg-zinc-300 dark:bg-zinc-700 hover:bg-zinc-400/70 dark:hover:bg-zinc-600 text-black dark:text-white font-bold rounded-full shrink-0 active:scale-95 transition-all duration-300 shadow-md shadow-black/5 hover:shadow-lg"
         >
-          Jelajahi Semua Tema
+          Lihat Semua Tema
           <i
             class="bi bi-arrow-up-right ml-2 transition-transform duration-300 inline-block group-hover:translate-x-1 group-hover:-translate-y-1"
           ></i>

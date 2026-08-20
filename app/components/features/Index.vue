@@ -6,9 +6,9 @@ const features = [
     icon: "bi-person-standing",
     label: "profil",
     content: {
-      title: "Desain Profil yang Hidup & Estetik",
+      title: "Profil Kedua Mempelai",
       description:
-        "Bukan sekadar teks kaku yang membosankan. Tampilkan profil kamu dan pasangan dengan transisi visual yang halus, layout ala editorial majalah, serta link media sosial yang dikemas super bersih dan elegan.",
+        "Tampilkan profil kamu dan pasangan dengan layout yang rapi, lengkap dengan link ke media sosial masing-masing.",
       image: "/img/features/profile.webp",
     },
   },
@@ -17,9 +17,9 @@ const features = [
     icon: "bi-calendar-event",
     label: "acara",
     content: {
-      title: "Detail Agenda & Navigasi Presisi",
+      title: "Detail Acara dan Lokasi",
       description:
-        "Susun seluruh rangkaian acara bahagiamu dengan rapi. Dilengkapi hitung mundur otomatis dan integrasi peta digital yang presisi, memastikan para tamu undangan bisa sampai ke lokasi tanpa drama tersesat.",
+        "Susun rangkaian acara lengkap dengan hitung mundur dan peta lokasi, supaya tamu gak kesulitan mencari tempatnya.",
       image: "/img/features/event.webp",
     },
   },
@@ -28,9 +28,9 @@ const features = [
     icon: "bi-heart",
     label: "kisah",
     content: {
-      title: "Garis Waktu Cerita Cinta (Love Journey)",
+      title: "Cerita Perjalanan Mempelai",
       description:
-        "Bagikan perjalanan cinta unik kalian berdua lewat linimasa interaktif yang seru dan menyentuh. Sampaikan momen-momen berharga dari awal bertemu hingga akhirnya mantap melangkah ke pelaminan.",
+        "Bagikan cerita kalian lewat linimasa, dari awal bertemu sampai akhirnya memutuskan menikah.",
       image: "/img/features/story.webp",
     },
   },
@@ -39,9 +39,9 @@ const features = [
     icon: "bi-stopwatch",
     label: "countdown",
     content: {
-      title: "Pewaktu Mundur yang Cerdas",
+      title: "Hitung Mundur Hari Pernikahan",
       description:
-        "Membangun antusiasme para tamu menuju hari bahagiamu dengan widget countdown dinamis yang otomatis menyesuaikan zona waktu secara akurat.",
+        "Widget hitung mundur yang otomatis menyesuaikan zona waktu tamu, di mana pun mereka berada.",
       image: "/img/features/countdown.webp",
     },
   },
@@ -50,9 +50,9 @@ const features = [
     icon: "bi-camera",
     label: "galeri",
     content: {
-      title: "Galeri Foto & Video Imersif",
+      title: "Galeri Foto dan Video",
       description:
-        "Pamerkan dokumentasi prewedding kalian dalam ruang digital bergaya galeri seni. Mendukung slideshow otomatis yang halus serta pemutaran video berkualitas tinggi tanpa mengurangi ketajaman visualnya.",
+        "Tampilkan foto prewedding dalam galeri dengan slideshow otomatis, lengkap dengan video berkualitas tinggi.",
       image: "/img/features/gallery.webp",
     },
   },
@@ -61,9 +61,9 @@ const features = [
     icon: "bi-person-check",
     label: "rsvp",
     content: {
-      title: "Sistem RSVP Praktis & Seamless",
+      title: "Konfirmasi Kehadiran Tamu",
       description:
-        "Kasih kenyamanan maksimal buat tamu undangan. Sistem RSVP kami mendeteksi kehadiran secara instan, mencatat jumlah rombongan, dan merangkum datanya langsung ke akun dasbormu.",
+        "Tamu bisa konfirmasi kehadiran langsung dari undangan. Jumlah rombongan otomatis tercatat di dasbormu.",
       image: "/img/features/rsvp.webp",
     },
   },
@@ -72,9 +72,9 @@ const features = [
     icon: "bi-gift",
     label: "gift",
     content: {
-      title: "Fitur Hadiah & Angpao Digital Aman",
+      title: "Kado dan Angpao Digital",
       description:
-        "Sediakan jalur tanda kasih yang sopan dan elegan lewat integrasi transfer bank langsung, dompet digital (e-wallet), hingga kado fisik. Semuanya berjalan transparan, aman, dan menjaga privasi.",
+        "Tamu bisa kirim kado lewat transfer bank, e-wallet, atau alamat pengiriman kado fisik — datanya tetap privat.",
       image: "/img/features/gift.webp",
     },
   },
@@ -83,9 +83,9 @@ const features = [
     icon: "bi-journal-arrow-up",
     label: "kontak",
     content: {
-      title: "Kelola Ribuan Data Tamu Tanpa Pusing",
+      title: "Impor Data Tamu Sekaligus",
       description:
-        "Urusan sebar undangan jadi jauh lebih efisien. Kamu bisa impor ratusan hingga ribuan nama kontak tamu sekaligus hanya dalam hitungan detik, bebas dari capeknya ketik manual satu per satu.",
+        "Impor ratusan nama tamu sekaligus tanpa perlu mengetik satu per satu.",
       image: "/img/features/import.webp",
     },
   },
@@ -94,9 +94,9 @@ const features = [
     icon: "bi-patch-check",
     label: "check-in",
     content: {
-      title: "QR Code Check-In & Buku Tamu Digital",
+      title: "Check-in dengan QR Code",
       description:
-        "Bawa atmosfer resepsi modern yang profesional ke meja penerima tamu. Proses absensi kehadiran di lokasi acara berlangsung instan cukup dengan sekali scan kode QR unik pada undangan.",
+        "Tamu tinggal scan QR code di undangan untuk absen kehadiran di lokasi acara.",
       image: "/img/features/checkin.webp",
     },
   },
@@ -139,7 +139,7 @@ const premiumSpring = {
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         class="text-primary text-sm font-bold uppercase tracking-widest mb-4"
       >
-        Fitur Lengkap & Interaktif
+        Semua Fitur dalam Satu Dasbor
       </p>
 
       <h2
@@ -152,7 +152,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Kendali Penuh di Tanganmu, Hasil Tetap Mewah
+        Atur Semuanya Sendiri, dari Dasbor yang Sama
       </h2>
 
       <p
@@ -165,9 +165,8 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg mb-14"
       >
-        Setiap fitur di EA Invitation dirancang untuk memberikan pengalaman yang
-        berbeda, fleksibel, dan jauh dari kesan pasaran. Bikin undangan digital
-        impianmu dengan konfigurasi super gampang.
+        Semua kebutuhan undangan pernikahanmu ada di satu dasbor — dari profil,
+        galeri, RSVP, sampai kado digital.
       </p>
     </div>
 

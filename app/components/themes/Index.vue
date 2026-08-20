@@ -27,22 +27,22 @@ const getThemeCount = (category) => {
     <!-- Section Header -->
     <div class="px-4">
       <p class="text-primary text-sm font-bold uppercase tracking-widest mb-4">
-        Koleksi Tema Pilihan
+        Koleksi Tema
       </p>
 
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Pilihan Desain Unik & Gak Pasaran
+        Koleksi Tema Anti-maintsream
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Kami mengurasi deretan desain undangan digital modern yang penuh
-        karakter khusus untuk kamu yang bosan dengan template sejuta umat.
-        Setiap layout dibuat presisi agar undanganmu sukses bikin tamu berkesan
-        sejak pandangan pertama.
+        Tema yang kami buat gak ikut format undangan pada umumnya. Ada yang
+        terinspirasi dari tampilan Instagram, budaya Jawa dan Jepang, sampai
+        antarmuka Windows 11 — dirancang detail supaya tamu ingat undanganmu,
+        bukan cuma buka lalu tutup.
       </p>
     </div>
 

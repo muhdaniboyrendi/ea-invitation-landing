@@ -6,24 +6,24 @@ const openIndex = ref(null);
 
 const faqs = [
   {
-    q: "Gimana sih cara kerja EA Invitation?",
-    a: "Gampang banget! Setelah kamu isi data acara, sistem kami bakal otomatis bikin website undangan yang responsif dan estetik. Kamu bakal dapat satu link khusus yang siap disebar ke semua orang tanpa ada batasan kuota tamu.",
+    q: "Gimana cara kerja EA Invitation?",
+    a: "Setelah data acara diisi, sistem langsung membuat website undangan yang responsif. Kamu dapat satu link yang bisa disebar ke semua tamu.",
   },
   {
     q: "Berapa lama proses pembuatan undangannya?",
-    a: "Instan kok! Undangan digitalmu langsung aktif dan bisa langsung diakses publik begitu kamu selesai mengisi data dan klik simpan di dasbor.",
+    a: "Undanganmu langsung aktif begitu kamu selesai mengisi data dan klik simpan di dasbor.",
   },
   {
-    q: "Cara tahu kalau tamu bakal datang atau enggak gimana?",
-    a: "Semua konfirmasi kehadiran (RSVP), jumlah rombongan yang mau datang, sampai ucapan selamat dari para tamu bakal langsung masuk dan tercatat rapi secara real-time di dasbormu.",
+    q: "Gimana cara tahu tamu yang akan hadir?",
+    a: "Konfirmasi kehadiran dan ucapan dari tamu langsung tercatat di dasbormu.",
   },
   {
-    q: "Bisa gak datanya diubah kalau link-nya sudah terlanjur disebar?",
-    a: "Bisa banget! Kamu punya akses penuh buat ganti tanggal, revisi lokasi maps, susunan acara, atau nambah foto galeri kapan saja lewat dasbor. Link undangannya gak bakal berubah kok.",
+    q: "Bisa gak data diubah setelah link disebar?",
+    a: "Bisa. Kamu bisa ganti tanggal, lokasi, susunan acara, atau menambah foto galeri kapan saja lewat dasbor. Link undangan tetap sama.",
   },
   {
-    q: "Bisa pakai musik latar (backsound) sesuai request kita?",
-    a: "Tentu bisa! Sudah ada fitur pemutar musik otomatis yang dilengkapi tombol play/pause. Kamu bebas pilih dari daftar lagu yang tersedia atau pakai lagu pilihanmu sendiri biar makin syahdu.",
+    q: "Bisa pakai musik latar sesuai pilihan sendiri?",
+    a: "Bisa. Ada pemutar musik otomatis dengan tombol play/pause. Kamu bisa pilih dari daftar lagu yang tersedia atau pakai lagu sendiri.",
   },
 ];
 
@@ -35,11 +35,10 @@ const isOpen = (index) => {
   return openIndex.value === index;
 };
 
-// Kurva pegas premium untuk transisi list kelompok FAQ
 const premiumSpring = {
-  type: 'spring',
+  type: "spring",
   stiffness: 50,
-  damping: 18
+  damping: 18,
 };
 </script>
 
@@ -50,19 +49,23 @@ const premiumSpring = {
   >
     <!-- Header Section -->
     <div class="px-4 max-w-7xl mx-auto">
-      <p 
+      <p
         v-motion
         :initial="{ opacity: 0, y: 20 }"
         :visible-once="{ opacity: 1, y: 0, transition: { duration: 600 } }"
         class="text-primary text-sm font-bold uppercase tracking-widest mb-4"
       >
-        Tanya-Jawab
+        FAQ
       </p>
 
       <h2
         v-motion
         :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 800, delay: 100 } }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 800, delay: 100 },
+        }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
         Punya Pertanyaan? Kami Punya Jawabannya
@@ -71,12 +74,15 @@ const premiumSpring = {
       <p
         v-motion
         :initial="{ opacity: 0, y: 30 }"
-        :visible-once="{ opacity: 1, y: 0, transition: { duration: 800, delay: 200 } }"
+        :visible-once="{
+          opacity: 1,
+          y: 0,
+          transition: { duration: 800, delay: 200 },
+        }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Ada hal yang masih bikin kamu penasaran? Tenang, berikut beberapa hal
-        penting yang paling sering ditanyakan seputar fitur dan cara mengelola
-        undangan digitalmu.
+        Beberapa hal yang paling sering ditanyakan seputar fitur dan cara
+        mengelola undanganmu.
       </p>
     </div>
 
@@ -84,21 +90,25 @@ const premiumSpring = {
     <div class="relative max-w-4xl mx-auto px-4">
       <div class="space-y-3">
         <!-- Item Card Loop with Staggered Entrance -->
-        <div 
-          v-for="(faq, index) in faqs" 
-          :key="index" 
+        <div
+          v-for="(faq, index) in faqs"
+          :key="index"
           v-motion
           :initial="{ opacity: 0, y: 30 }"
-          :visible-once="{ 
-            opacity: 1, 
-            y: 0, 
-            transition: { ...premiumSpring, delay: index * 80 } 
+          :visible-once="{
+            opacity: 1,
+            y: 0,
+            transition: { ...premiumSpring, delay: index * 80 },
           }"
           class="group relative"
         >
           <div
             class="relative bg-white/60 dark:bg-dark border rounded-xl transition-all duration-300"
-            :class="isOpen(index) ? 'border-primary/40 shadow-lg shadow-primary/5' : 'border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'"
+            :class="
+              isOpen(index)
+                ? 'border-primary/40 shadow-lg shadow-primary/5'
+                : 'border-black/10 dark:border-white/10 hover:border-black/20 dark:hover:border-white/20'
+            "
           >
             <!-- Question Button -->
             <button
@@ -112,9 +122,13 @@ const premiumSpring = {
               >
                 {{ faq.q }}
               </span>
-              <div 
+              <div
                 class="w-8 h-8 rounded-full border flex items-center justify-center transition-all duration-300"
-                :class="isOpen(index) ? 'border-primary/20 bg-primary/5' : 'border-black/10 dark:border-white/10 group-hover/btn:border-primary/30 group-hover/btn:bg-primary/5'"
+                :class="
+                  isOpen(index)
+                    ? 'border-primary/20 bg-primary/5'
+                    : 'border-black/10 dark:border-white/10 group-hover/btn:border-primary/30 group-hover/btn:bg-primary/5'
+                "
               >
                 <i
                   :class="[
@@ -130,9 +144,9 @@ const premiumSpring = {
             <!-- Smooth Dynamic Expanding Answer Area -->
             <div
               class="accordion-collapse"
-              :style="{ 
+              :style="{
                 gridTemplateRows: isOpen(index) ? '1fr' : '0fr',
-                opacity: isOpen(index) ? '1' : '0'
+                opacity: isOpen(index) ? '1' : '0',
               }"
             >
               <div class="overflow-hidden">
@@ -147,7 +161,6 @@ const premiumSpring = {
                 </div>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -159,7 +172,14 @@ const premiumSpring = {
 /* CSS Grid Trick untuk Animasi Ketinggian (Height: auto) yang Mulus Maksimal */
 .accordion-collapse {
   display: grid;
-  transition: grid-template-rows 400px, opacity 350ms;
-  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1); /* Garis lengkung percepatan melambat premium */
+  transition:
+    grid-template-rows 400px,
+    opacity 350ms;
+  transition-timing-function: cubic-bezier(
+    0.25,
+    1,
+    0.5,
+    1
+  ); /* Garis lengkung percepatan melambat premium */
 }
 </style>

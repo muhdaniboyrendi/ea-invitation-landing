@@ -11,7 +11,7 @@ useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk
       ? `EA Invitation - ${titleChunk}`
-      : "EA Invitation - Platform Undangan Pernikahan Digital Unik & Premium";
+      : "EA Invitation - Platform Undangan Pernikahan Digital Modern dengan Desain Anti-mainstream";
   },
   link: [
     {

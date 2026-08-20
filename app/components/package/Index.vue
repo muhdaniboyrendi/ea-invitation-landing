@@ -60,7 +60,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Pilih Paket yang Paling Pas untuk Hari Bahagiamu
+        Pilih Paket Sesuai Kebutuhanmu
       </h2>
 
       <p
@@ -73,9 +73,7 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Temukan kombinasi fitur terbaik yang sesuai dengan kebutuhan acaramu.
-        Tenang saja, kamu punya kebebasan penuh buat upgrade paket kapan saja
-        kamu butuhkan tanpa ribet.
+        Semua paket bisa diupgrade kapan saja sesuai kebutuhan acaramu.
       </p>
     </div>
 

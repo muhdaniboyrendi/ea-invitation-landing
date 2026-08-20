@@ -40,7 +40,7 @@ export default defineNuxtConfig({
     url: "https://eainvitation.com",
     name: "EA Invitation",
     description:
-      "Bosan dengan template undangan digital sejuta umat? Bikin undangan pernikahan web kamu sendiri di EA Invitation. Banyak pilihan desain premium, anti-mainstream, gampang, instan, dan bebas kuota tamu!",
+      "Bikin undangan pernikahan digital sendiri di EA Invitation. Tema dengan desain berbeda dari kebanyakan dan mudah diedit.",
     defaultLocale: "id",
     indexable: true,
   },

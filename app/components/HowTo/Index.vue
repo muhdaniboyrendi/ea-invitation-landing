@@ -3,31 +3,29 @@
 const steps = [
   {
     stepNumber: "01",
-    title: "Daftar & Masuk ke Dasbor",
+    title: "Daftar Akun",
     description:
-      "Buat akun atau langsung login ke dasbor EA Invitation untuk membuka ruang kreasi digitalmu.",
+      "Buat akun untuk mulai mengelola undanganmu di dasbor EA Invitation.",
   },
   {
     stepNumber: "02",
-    title: "Isi Detail Acara Bahagiamu",
+    title: "Isi Detail Acara",
     description:
-      "Masukkan info akad, resepsi, peta lokasi, foto prewedding terbaik, hingga musik latar pilihanmu lewat panel yang simpel.",
+      "Masukkan info akad, resepsi, lokasi, foto prewedding, dan musik latar pilihanmu.",
   },
   {
     stepNumber: "03",
     title: "Pilih Tema Desain Favorit",
-    description:
-      "Pilih satu dari deretan koleksi tema anti-mainstream kami yang estetik, responsif, dan cocok dengan konsep pernikahanmu.",
+    description: "Pilih tema yang paling cocok dengan konsep pernikahanmu.",
   },
   {
     stepNumber: "04",
-    title: "Siap Rilis & Sebar Undangan",
+    title: "Undangan Siap Dibagikan",
     description:
-      "Undangan web premium milikmu langsung aktif seketika. Tinggal salin tautannya dan bagikan ke keluarga serta teman dekat.",
+      "Undanganmu langsung aktif. Tinggal salin link-nya dan bagikan ke keluarga serta teman dekat.",
   },
 ];
 
-// Konfigurasi kurva pegas premium (low stiffness, high damping)
 const premiumSpring = {
   type: "spring",
   stiffness: 45,
@@ -62,7 +60,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        4 Langkah Mudah Bikin Undangan Unikmu
+        4 Langkah Bikin Undangan
       </h2>
 
       <p
@@ -75,9 +73,8 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Gak perlu keahlian khusus atau paham coding. Sistem kami didesain super
-        ramah pengguna agar kamu bisa merancang, mengubah, dan mengelola
-        undangan digitalmu sendiri dengan cepat.
+        Gak perlu keahlian desain atau coding. Kamu bisa membuat dan mengelola
+        undangan sendiri lewat panel yang simpel.
       </p>
     </div>
 
@@ -155,7 +152,7 @@ const premiumSpring = {
               Video Panduan
             </h3>
             <p class="text-black/60 dark:text-white/60 text-sm">
-              Lihat langsung gimana seru dan gampangnya bikin undangan dalam
+              Lihat cara membuat undangan dari awal sampai selesai dalam
               hitungan menit.
             </p>
           </div>

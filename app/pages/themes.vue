@@ -1,12 +1,12 @@
 <script setup>
 useSeoMeta({
-  title: "Pilihan Desain Undangan Unik & Gak Pasaran",
+  title: "Tema Undangan Pernikahan Digital",
   description:
-    "Intip koleksi tema undangan pernikahan digital premium dari EA Invitation. Temukan deretan layout estetik, modern, dan penuh karakter yang siap bikin undangan pernikahanmu berkesan!",
+    "Koleksi tema undangan pernikahan digital dari EA Invitation. Dari gaya Instagram, budaya tradisional, sampai tampilan Windows 11 — pilih yang paling cocok dengan konsep pernikahanmu.",
 
-  ogTitle: "EA Invitation - Pilihan Desain Undangan Unik & Gak Pasaran",
+  ogTitle: "EA Invitation - Tema Undangan Pernikahan Digital",
   ogDescription:
-    "Cari template undangan web yang beda dari yang lain? Jelajahi galeri tema premium EA Invitation yang responsif, interaktif, dan mudah dimodifikasi sesuai konsep acaramu.",
+    "Jelajahi tema undangan digital EA Invitation dengan desain yang berbeda dari kebanyakan, mudah disesuaikan dengan konsep acaramu.",
 
   ogImage: "/og-image.webp",
   ogUrl: "https://eainvitation.com/themes",

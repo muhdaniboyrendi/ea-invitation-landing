@@ -7,7 +7,7 @@ const dashboardAppUrl = config.public.dashboardAppUrl;
 const props = defineProps(["package"]);
 
 const showAllFeatures = ref(false);
-const maxFeatures = 5;
+const maxFeatures = 10;
 
 const displayedFeatures = computed(() => {
   if (showAllFeatures.value || props.package.features.length <= maxFeatures) {
@@ -91,7 +91,7 @@ const toggleFeatures = () => {
     </a>
 
     <!-- Features List -->
-    <transition-group name="features" tag="ul" class="space-y-1 mb-4">
+    <transition-group name="features" tag="ul" class="space-y-0.5 mb-4">
       <li
         v-for="(feature, index) in displayedFeatures"
         :key="`feature-${index}`"

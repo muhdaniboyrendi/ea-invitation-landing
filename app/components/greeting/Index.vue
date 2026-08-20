@@ -1,10 +1,9 @@
 <!-- components/features/BentoGrid.vue -->
 <script setup>
-// Konfigurasi Spring Elegan khas produk premium
 const premiumSpring = {
   type: "spring",
-  stiffness: 50, // Gerakan meluncur mantap dan tenang
-  damping: 22, // Meredam pantulan berlebih agar terasa mewah
+  stiffness: 50,
+  damping: 22,
   mass: 1,
 };
 </script>
@@ -32,7 +31,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Fitur Cerdas untuk Momen Istimewamu
+        Semua yang Kamu Butuhkan untuk Hari Pernikahan
       </h2>
 
       <p
@@ -45,9 +44,8 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Bukan sekadar undangan digital biasa. Kami menggabungkan kebebasan
-        berekspresi dengan kepraktisan teknologi untuk memastikan hari bahagiamu
-        running sempurna.
+        Semua kebutuhan undangan pernikahanmu ada di satu dasbor — dari desain,
+        jadwal acara, sampai konfirmasi kehadiran tamu.
       </p>
     </div>
 
@@ -74,13 +72,12 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Koleksi Desain Anti-Mainstream
+                Desain Anti-Mainstream
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Hari pernikahanmu itu spesial, jadi undangannya gak boleh pakai
-                desain sejuta umat. Kami mengurasi pilihan tema unik
-                berkarakter—mulai dari gaya ala Instagram, layout etnik modern,
-                hingga tampilan OS masa kini yang kreatif banget.
+                Kebanyakan undangan digital pakai template yang mirip semua. EA
+                Invitation punya tema dengan gaya berbeda — dari Instagram,
+                budaya tradisional, sampai tampilan Windows 11.
               </p>
             </div>
           </div>
@@ -119,29 +116,28 @@ const premiumSpring = {
                   <h4
                     class="text-black dark:text-white text-xl md:text-2xl md:text-3xl font-bold"
                   >
-                    Koleksi Unik & Berkelas
+                    Bukan Template yang Itu-itu Saja
                   </h4>
 
                   <NuxtLink
                     to="#themes"
-                    class="block lg:hidden py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg hover:bg-primary/80 transition"
+                    class="block lg:hidden py-2 px-6 w-full md:w-fit text-center text-white font-bold bg-primary rounded-full hover:bg-primary/80 transition"
                   >
-                    Lihat Desain Unik Kami
+                    Lihat Koleksi Tema
                     <i class="bi bi-arrow-right ml-1"></i>
                   </NuxtLink>
                 </div>
 
                 <p class="text-black/60 dark:text-white/60">
-                  Temukan tema idamanmu, mulai dari minimalis modern yang clean,
-                  gaya interaktif yang seru, hingga adaptasi budaya klasik yang
-                  dikemas secara kekinian.
+                  Ada tema minimalis, tema interaktif, sampai tema budaya
+                  tradisional yang dikemas dengan sentuhan modern.
                 </p>
 
                 <NuxtLink
                   to="#themes"
-                  class="hidden lg:block py-2 px-4 w-full md:w-fit text-center text-white font-bold bg-primary rounded-lg mt-6 hover:bg-primary/80 transition"
+                  class="hidden lg:block py-2 px-6 w-full md:w-fit text-center text-white font-bold bg-primary rounded-full mt-6 hover:bg-primary/80 transition"
                 >
-                  Lihat Desain Unik Kami
+                  Lihat Koleksi Tema
                   <i class="bi bi-arrow-right ml-1"></i>
                 </NuxtLink>
               </div>
@@ -174,12 +170,11 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Bikin Instan & Tanpa Ribet
+                Buat dalam Hitungan Menit
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Mempersiapkan pernikahan itu sudah cukup menyita waktu. Makanya,
-                sistem kami dibuat seefisien mungkin agar undangan kerenmu siap
-                dibagikan hanya dalam hitungan menit.
+                Persiapan pernikahan sudah banyak yang harus diurus. Isi data
+                acara, pilih tema, undanganmu langsung siap dibagikan.
               </p>
             </div>
           </div>
@@ -208,12 +203,12 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Bebas Kustomisasi Kapan Saja
+                Bisa Diedit Kapan Saja
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Ada perubahan jadwal, lokasi, atau mendadak mau ganti musik
-                latar? Tenang, gak perlu cemas. Kamu punya kendali penuh buat
-                perbarui detail informasi sesukamu tanpa batas.
+                Tanggal berubah atau lokasi pindah mendadak? Buka dasbor, edit
+                informasinya, selesai. Link undangan yang sudah disebar gak
+                perlu diganti.
               </p>
             </div>
           </div>
@@ -244,12 +239,12 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Pantau Tamu & RSVP Jadi Mudah
+                RSVP dan Tamu, Tercatat Otomatis
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Kelola jalannya acara dengan rapi. Pantau konfirmasi kehadiran
-                (RSVP), jumlah rombongan, hingga ucapan doa dari para tamu
-                secara langsung (*real-time*) lewat dasbor kendali yang elegan.
+                Konfirmasi kehadiran, jumlah rombongan, dan ucapan dari tamu
+                langsung tercatat di dasbor. Gak perlu rekap manual dari chat
+                atau komentar.
               </p>
             </div>
           </div>
