@@ -4,25 +4,24 @@ const steps = [
   {
     stepNumber: "01",
     title: "Daftar Akun",
-    description:
-      "Buat akun untuk mulai mengelola undanganmu di dasbor EA Invitation.",
+    description: "Buat akun untuk mulai membuat dan mengelola undangan.",
   },
   {
     stepNumber: "02",
-    title: "Isi Detail Acara",
-    description:
-      "Masukkan info akad, resepsi, lokasi, foto prewedding, dan musik latar pilihanmu.",
+    title: "Pilih Desain Undangan",
+    description: "Pilih tema yang paling cocok dengan konsep pernikahanmu.",
   },
   {
     stepNumber: "03",
-    title: "Pilih Tema Desain Favorit",
-    description: "Pilih tema yang paling cocok dengan konsep pernikahanmu.",
+    title: "Isi Detail Acara",
+    description:
+      "Masukkan info akad, resepsi, lokasi, foto prewedding, musik latar, dll.",
   },
   {
     stepNumber: "04",
     title: "Undangan Siap Dibagikan",
     description:
-      "Undanganmu langsung aktif. Tinggal salin link-nya dan bagikan ke keluarga serta teman dekat.",
+      "Undangan aktif, langsung bagikan ke keluarga serta teman dekat.",
   },
 ];
 
@@ -60,7 +59,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        4 Langkah Bikin Undangan
+        4 Langkah Membuat Undangan
       </h2>
 
       <p
@@ -73,8 +72,8 @@ const premiumSpring = {
         }"
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Gak perlu keahlian desain atau coding. Kamu bisa membuat dan mengelola
-        undangan sendiri lewat panel yang simpel.
+        Tanpa perlu keahlian desain atau coding. Kamu bisa membuat dan mengelola
+        undangan digital sendiri dengan mudah.
       </p>
     </div>
 

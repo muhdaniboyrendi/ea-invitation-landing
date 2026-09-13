@@ -31,7 +31,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Semua yang Kamu Butuhkan untuk Hari Pernikahan
+        Semua yang Kamu Butuhkan Di Hari Pernikahan
       </h2>
 
       <p
@@ -72,12 +72,11 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Desain Anti-Mainstream
+                Desain Modern dan Anti-Mainstream
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Kebanyakan undangan digital pakai template yang mirip semua. EA
-                Invitation punya tema dengan gaya berbeda — dari Instagram,
-                budaya tradisional, sampai tampilan Windows 11.
+                Kami menghadirkan berbagai desain undangan yang modern dan
+                mungkin belum pernah anda temui sebelumnya.
               </p>
             </div>
           </div>
@@ -203,11 +202,11 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                Bisa Diedit Kapan Saja
+                Edit Kapan Saja
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
                 Tanggal berubah atau lokasi pindah mendadak? Buka dasbor, edit
-                informasinya, selesai. Link undangan yang sudah disebar gak
+                informasinya, selesai. Link undangan yang sudah disebar tidak
                 perlu diganti.
               </p>
             </div>
@@ -239,12 +238,11 @@ const premiumSpring = {
               <h3
                 class="text-black dark:text-white text-xl md:text-2xl font-semibold mb-2"
               >
-                RSVP dan Tamu, Tercatat Otomatis
+                RSVP dan Ucapan Tamu
               </h3>
               <p class="max-w-2xl text-black/60 dark:text-white/60">
-                Konfirmasi kehadiran, jumlah rombongan, dan ucapan dari tamu
-                langsung tercatat di dasbor. Gak perlu rekap manual dari chat
-                atau komentar.
+                Konfirmasi kehadiran, dan ucapan dari tamu langsung tercatat di
+                dasbor. Tanpa perlu rekap manual dari chat atau komentar.
               </p>
             </div>
           </div>

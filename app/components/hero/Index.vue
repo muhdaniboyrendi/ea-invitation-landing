@@ -27,10 +27,10 @@ const premiumTransition = {
           y: 0,
           transition: premiumTransition,
         }"
-        class="max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold md:font-medium tracking-tighter text-black dark:text-white text-balance"
+        class="max-w-5xl text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold lg:font-medium tracking-tighter text-black dark:text-white text-balance"
       >
-        Undangan Pernikahan dengan Desain yang
-        <span class="text-primary"> Anti-mainstream </span>
+        <span class="text-primary"> Solusi Instan </span>
+        Undangan Pernikahan Dalam Satu Platform
       </h1>
 
       <!-- 2. SUB-TEXT: Muncul sedikit lebih lambat (staggered delay) -->
@@ -42,12 +42,10 @@ const premiumTransition = {
           y: 0,
           transition: { ...premiumTransition, delay: 200 },
         }"
-        class="mt-4 md:mt-8 max-w-3xl text-lg md:text-xl text-black/60 dark:text-white/60 font-medium text-balance-dashboard"
+        class="mt-4 md:mt-8 max-w-3xl sm:text-lg md:text-xl text-black/60 dark:text-white/60 font-medium text-balance-dashboard"
       >
-        Kebanyakan undangan digital pakai template yang sama. EA Invitation
-        punya koleksi tema dengan gaya berbeda — dari Instagram, budaya
-        tradisional, sampai Windows 11. Pilih tema, isi data, undanganmu
-        langsung siap dibagikan.
+        Buat undangan digital dalam hitungan menit dengan berbagai pilihan
+        desain yang unik dan modern serta fitur lengkap.
       </p>
 
       <!-- 3. BUTTONS CTA: Muncul paling akhir dengan transisi halus -->
@@ -66,12 +64,12 @@ const premiumTransition = {
           rel="external"
           class="py-3 px-8 bg-primary border border-black/20 dark:border-white/20 hover:bg-primary/80 text-light font-bold rounded-full shrink-0 active:scale-95 transition duration-300"
         >
-          Coba Gratis Sekarang
+          Buat Sekarang Gratis
         </a>
 
         <NuxtLink
           to="/#themes"
-          class="py-3 px-8 text-black dark:text-white font-bold rounded-full shrink-0 hover:bg-black/10 dark:hover:bg-white/10 active:scale-95 transition duration-300"
+          class="py-3 px-8 bg-black/10 dark:bg-white/10 text-black dark:text-white font-bold rounded-full shrink-0 hover:bg-black/15 dark:hover:bg-white/15 active:scale-95 transition duration-300"
         >
           Lihat Koleksi Tema
           <i class="bi bi-arrow-right ml-1"></i>
