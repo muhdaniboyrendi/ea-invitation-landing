@@ -104,6 +104,7 @@ useSchemaOrg([
     <HowTo />
     <ThemesHome />
     <Package />
+    <PrintedInvitation />
     <Faq />
   </NuxtLayout>
 </template>

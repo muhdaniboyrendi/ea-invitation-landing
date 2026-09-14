@@ -33,16 +33,14 @@ const getThemeCount = (category) => {
       <h2
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Koleksi Tema Anti-maintsream
+        Koleksi Tema Yang Siap Kamu Pakai
       </h2>
 
       <p
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
-        Tema yang kami buat gak ikut format undangan pada umumnya. Ada yang
-        terinspirasi dari tampilan Instagram, budaya Jawa dan Jepang, sampai
-        antarmuka Windows 11 — dirancang detail supaya tamu ingat undanganmu,
-        bukan cuma buka lalu tutup.
+        Kami menghadirkan berbagai desain undangan mulai dari yang modern,
+        klasik, unik, dll.
       </p>
     </div>
 
