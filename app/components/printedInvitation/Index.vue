@@ -32,7 +32,7 @@ const premiumSpring = {
         }"
         class="text-black dark:text-white text-4xl font-semibold tracking-tighter mb-4"
       >
-        Undangan Cetak by EA Printing
+        Undangan Cetak by Erlan Printing
       </h2>
 
       <p
@@ -46,7 +46,8 @@ const premiumSpring = {
         class="max-w-3xl text-black/60 dark:text-white/60 md:text-lg font-medium leading-relaxed mb-14"
       >
         Kini EA Invitation juga menyediakan undangan cetak, bekerja sama dengan
-        EA Printing dengan pilihan desain yang identik dengan undangan digital.
+        Erlan Printing dengan menghadirkan desain undangan dengan tema yang sama
+        dengan undangan digital.
       </p>
     </div>
 

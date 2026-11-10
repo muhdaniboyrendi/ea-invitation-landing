@@ -20,7 +20,7 @@ export const usePackageStore = defineStore("package", () => {
       id: 2,
       name: "Basic",
       price: "100000.00",
-      discount: 10,
+      discount: 11,
       features: [
         "250 tamu undangan",
         "Akses tema basic",
@@ -42,7 +42,7 @@ export const usePackageStore = defineStore("package", () => {
       id: 3,
       name: "Premium",
       price: "200000.00",
-      discount: 25,
+      discount: 26,
       features: [
         "1000 tamu undangan",
         "Akses tema premium",
@@ -66,7 +66,7 @@ export const usePackageStore = defineStore("package", () => {
       id: 4,
       name: "Luxury",
       price: "300000.00",
-      discount: 15,
+      discount: 17,
       features: [
         "Unlimited tamu undangan",
         "Akses tema luxury",
